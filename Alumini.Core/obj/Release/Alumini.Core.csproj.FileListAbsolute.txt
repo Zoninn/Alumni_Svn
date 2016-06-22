@@ -1,0 +1,8 @@
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\Alumini.Core\bin\Release\Alumini.Core.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\Alumini.Core\bin\Release\Alumini.Core.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\Alumini.Core\obj\Release\Alumini.Core.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\Alumini.Core\obj\Release\Alumini.Core.pdb
+D:\MYAlumniNewDesignCopyRepo\Alumini.Core\bin\Release\Alumini.Core.dll
+D:\MYAlumniNewDesignCopyRepo\Alumini.Core\bin\Release\Alumini.Core.pdb
+D:\MYAlumniNewDesignCopyRepo\Alumini.Core\obj\Release\Alumini.Core.dll
+D:\MYAlumniNewDesignCopyRepo\Alumini.Core\obj\Release\Alumini.Core.pdb

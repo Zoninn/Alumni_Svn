@@ -1,0 +1,1473 @@
+﻿@model AluminiWebApp.Models.UserMembersModel
+@{
+    ViewBag.Title = "Members";
+    Layout = "~/Areas/Alumini/Views/Shared/_SRKRDesignLayout.cshtml";
+}
+
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script>
+<section id="nicdark_parallax_title" class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img-single-teacher-1" style="background-position: 50% -60px;margin-top:-150px;">
+
+    <div class="nicdark_filter greydark">
+
+
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+
+            <div class="grid grid_12">
+                <div class="nicdark_space100"></div>
+                <div class="nicdark_space100"></div>
+                <h1 class=" subtitle">Alumni Members <span></span> </h1>
+                <div class="nicdark_space20">Alumni Members</div>
+                <div class="nicdark_divider left big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space40"></div>
+                <div class="nicdark_space50"></div>
+            </div>
+
+        </div>
+        <!--end nicdark_container-->
+
+    </div>
+
+</section>
+
+<section class="nicdark_section">
+    <!--start nicdark_container-->
+    <div class="nicdark_container nicdark_clearfix">
+
+        <div class="nicdark_space50"></div>
+
+        <div class="grid grid_12">
+            <h1 class="subtitle greydark">ALUMNI MEMBERS (@Model.GetUsers.Count()) &nbsp;</h1>
+            <br />
+            <h5>Search By &nbsp; <a href="javascript:;" id="CompanySearch">Company & Roles</a> &nbsp;&nbsp;<a href="javascript:;" id="NameEmail">Email</a> &nbsp;&nbsp;<a href="javascript:;" id="CourseandYears">Course & year</a></h5>
+            <br />
+            <div id="DivOpen">
+                <h5><a href="javascript:;" id="Checkemailsearch" class="link-blue">Email search</a> &nbsp;&nbsp; <a href="javascript:;" id="CheckNameearch" class="link-blue">Name search</a></h5>
+            </div>
+            <div id="NameBasedsearch">
+                <div class="nicdark_container nicdark_clearfix">
+                    <div class="nicdark_space50"></div>
+                    <div class="grid grid_12 nicdark_bg_grey nicdark_shadow nicdark_radius nicdark_relative">
+                        <a class="nicdark_displaynone_iphoneland nicdark_displaynone_iphonepotr nicdark_btn_icon nicdark_bg_green  extrabig nicdark_radius_left white nicdark_absolute" href="#"><i class="icon-search-2"></i></a>
+                        <div class="nicdark_textevidence">
+                            <div class="nicdark_margin1820 nicdark_marginleft100 nicdark_marginleft20_iphoneland nicdark_marginleft20_iphonepotr">
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <input type="text" id="AlumniNameSearch" size="200" value="" placeholder="Name Search" class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle">
+                                </div>
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        <input type="button" id="AlumniNamebasedsearch" value="SEARCH" class="nicdark_btn fullwidth nicdark_bg_green medium nicdark_shadow nicdark_radius white nicdark_press">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div id="Namesearch">
+                <div class="nicdark_container nicdark_clearfix">
+                    <div class="nicdark_space50"></div>
+                    <div class="grid grid_12 nicdark_bg_grey nicdark_shadow nicdark_radius nicdark_relative">
+                        <a class="nicdark_displaynone_iphoneland nicdark_displaynone_iphonepotr nicdark_btn_icon nicdark_bg_green  extrabig nicdark_radius_left white nicdark_absolute" href="#"><i class="icon-search-2"></i></a>
+                        <div class="nicdark_textevidence">
+                            <div class="nicdark_margin1820 nicdark_marginleft100 nicdark_marginleft20_iphoneland nicdark_marginleft20_iphonepotr">
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <input type="text" id="EmailAutosearch" size="200" value="" placeholder="Email Search" class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle">
+                                </div>
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        <input type="button" id="AlumniEmailsearch" value="SEARCH" class="nicdark_btn fullwidth nicdark_bg_green medium nicdark_shadow nicdark_radius white nicdark_press">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="CompanyBasedsearch">
+                <div class="nicdark_container nicdark_clearfix">
+                    <div class="nicdark_space50"></div>
+                    <div class="grid grid_12 nicdark_bg_grey nicdark_shadow nicdark_radius nicdark_relative">
+                        <a class="nicdark_displaynone_iphoneland nicdark_displaynone_iphonepotr nicdark_btn_icon nicdark_bg_green  extrabig nicdark_radius_left white nicdark_absolute" href="#"><i class="icon-search-2"></i></a>
+                        <div class="nicdark_textevidence">
+                            <div class="nicdark_margin1820 nicdark_marginleft100 nicdark_marginleft20_iphoneland nicdark_marginleft20_iphonepotr">
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <input type="text" id="CompanyAutosearch" size="200" value="" placeholder="Company search" class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle">
+                                </div>
+
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        <input type="text" id="CompanyDesignation" size="200" value="" placeholder="Role" class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle">
+                                    </div>
+                                </div>
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        <input type="button" id="AlumniCompanyserach" value="SEARCH" class="nicdark_btn fullwidth nicdark_bg_green medium nicdark_shadow nicdark_radius white nicdark_press">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="CourseSerach">
+                <div class="nicdark_container nicdark_clearfix">
+                    <div class="nicdark_space50"></div>
+                    <div class="grid grid_12 nicdark_bg_grey nicdark_shadow nicdark_radius nicdark_relative">
+                        <a class="nicdark_displaynone_iphoneland nicdark_displaynone_iphonepotr nicdark_btn_icon nicdark_bg_green  extrabig nicdark_radius_left white nicdark_absolute" href="#"><i class="icon-search-2"></i></a>
+                        <div class="nicdark_textevidence">
+                            <div class="nicdark_margin1820 nicdark_marginleft100 nicdark_marginleft20_iphoneland nicdark_marginleft20_iphonepotr">
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    @Html.DropDownListFor(x => x.CourseCategoryId, new SelectList(Model.Coursecategorys, "Id", "CourseCategoryName"), "Select", new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle", required = "required" })
+                                    @Html.ValidationMessageFor(x => x.CourseCategoryId, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        <select id="ddlCourses" class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle" name="CourseId" required="required">
+                                            <option value="">Select</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        <select id="ddlGraduationYear" class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle" name="Batch" required="required">
+                                            <option value="">Select</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        <input type="button" id="SearchByCourseCategory" value="SEARCH" class="nicdark_btn fullwidth nicdark_bg_green medium nicdark_shadow nicdark_radius white nicdark_press">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div hidden="hidden">
+                <br /><input type="text" id="txtCompany" class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle" placeholder="Search" />
+            </div>
+            <div>
+                <br />
+                <br />
+                <br />
+                @*  <input  type="submit" value="Search" class=" nicdark_btn nicdark_bg_blue medium nicdark_shadow nicdark_radius white nicdark_press" />*@
+            </div>
+            <h3 class="nicdark_space20"></h3>
+            <h3 class="subtitle grey"></h3>
+            <div class="nicdark_space20"></div>
+            <div class="nicdark_divider left big"><span class="nicdark_bg_orange nicdark_radius"></span></div>
+            <div class="nicdark_space10"></div>
+        </div>
+        <div id="HideAllContent">
+            @{
+                var i = 0;
+            }
+            @foreach (var Memories in @Model.GetUsers)
+            {
+                switch (i)
+                {
+                    case 0:
+                        <div class="grid grid_6">
+                            <div class="nicdark_archive1 nicdark_bg_violet nicdark_radius nicdark_shadow">
+                                <div class="nicdark_textevidence nicdark_width_percentage40 nicdark_width100_responsive">
+                                    @if (File.Exists(Server.MapPath(@Memories.ProfilePicture)))
+                                    {
+                                        <img src="@Memories.ProfilePicture" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />
+                                    }
+                                    else
+                                    {
+                                        <img alt="" class="nicdark_radiu nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" style="height:200px" />
+                                    }
+                                </div>
+
+                                <div class="nicdark_textevidence nicdark_width_percentage50 nicdark_width100_responsive">
+                                    <div class="nicdark_margin20">
+
+                                        <h4 class="white"><a href="#" class="white">@Memories.FirstName &nbsp;&nbsp; @Memories.LastName</a></h4>
+                                        <div class="nicdark_space20"></div>
+                                        <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                                        <div class="nicdark_space20"></div>
+                                        @if (@Memories.CourseCategoryName != null)
+                                        {
+                                            <p class="white">@Memories.CourseCategoryName</p>
+                                        }
+                                        else
+                                        {
+                                            <p class="white">@Memories.DesignationName</p>
+                                            <p class="white">@Memories.DepartmentName</p>
+                                            <p class="white">@Memories.WorkingFrom - @Memories.WorkingTo</p>
+                                        }
+                                        <p class="white">@Memories.CourseName</p>
+                                        <p class="white">@Memories.Batch</p>
+                                        <div class="nicdark_space20"></div>
+                                        @**@
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                                        break;
+
+                    case 1:
+                    <div class="grid grid_6">
+                        <div class="nicdark_archive1 nicdark_bg_orange nicdark_radius nicdark_shadow">
+                            <div class="nicdark_textevidence nicdark_width_percentage40 nicdark_width100_responsive">
+                                @if (File.Exists(Server.MapPath(@Memories.ProfilePicture)))
+                                {
+                                    <img src="@Memories.ProfilePicture" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />
+                                }
+                                else
+                                {
+                                    <img alt="" class="nicdark_radiu nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" style="height:200px" />
+                                }
+                            </div>
+
+                            <div class="nicdark_textevidence nicdark_width_percentage50 nicdark_width100_responsive">
+                                <div class="nicdark_margin20">
+
+                                    <h4 class="white"><a href="#" class="white">@Memories.FirstName &nbsp;&nbsp; @Memories.LastName</a></h4>
+                                    <div class="nicdark_space20"></div>
+                                    <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                                    <div class="nicdark_space20"></div>
+                                    @if (@Memories.CourseCategoryName != null)
+                                    {
+                                        <p class="white">@Memories.CourseCategoryName</p>
+                                    }
+                                    else
+                                    {
+                                        <p class="white">@Memories.DesignationName</p>
+                                        <p class="white">@Memories.DepartmentName</p>
+                                        <p class="white">@Memories.WorkingFrom - @Memories.WorkingTo</p>
+                                    }
+                                    <p class="white">@Memories.CourseName</p>
+                                    <p class="white">@Memories.Batch</p>
+                                    <div class="nicdark_space20"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                                    break;
+                    case 2:
+                    <div class="grid grid_6">
+                        <div class="nicdark_archive1 nicdark_bg_green nicdark_radius nicdark_shadow">
+                            <div class="nicdark_textevidence nicdark_width_percentage40 nicdark_width100_responsive">
+                                @if (File.Exists(Server.MapPath(@Memories.ProfilePicture)))
+                                {
+                                    <img src="@Memories.ProfilePicture" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />
+                                }
+                                else
+                                {
+                                    <img alt="" class="nicdark_radiu nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" style="height:200px" />
+                                }
+                            </div>
+
+                            <div class="nicdark_textevidence nicdark_width_percentage50 nicdark_width100_responsive">
+                                <div class="nicdark_margin20">
+
+                                    <h4 class="white"><a href="#" class="white">@Memories.FirstName &nbsp;&nbsp; @Memories.LastName</a></h4>
+                                    <div class="nicdark_space20"></div>
+                                    <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                                    <div class="nicdark_space20"></div>
+                                    @if (@Memories.CourseCategoryName != null)
+                                    {
+                                        <p class="white">@Memories.CourseCategoryName</p>
+                                    }
+                                    else
+                                    {
+                                        <p class="white">@Memories.DesignationName</p>
+                                        <p class="white">@Memories.DepartmentName</p>
+                                        <p class="white">@Memories.WorkingFrom - @Memories.WorkingTo</p>
+                                    }
+                                    <p class="white">@Memories.CourseName</p>
+                                    <p class="white">@Memories.Batch</p>
+                                    <div class="nicdark_space20"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                                    break;
+                    case 3:
+                    <div class="grid grid_6">
+                        <div class="nicdark_archive1 nicdark_bg_blue nicdark_radius nicdark_shadow">
+                            <div class="nicdark_textevidence nicdark_width_percentage40 nicdark_width100_responsive">
+                                @if (File.Exists(Server.MapPath(@Memories.ProfilePicture)))
+                                {
+                                    <img src="@Memories.ProfilePicture" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />
+                                }
+                                else
+                                {
+                                    <img alt="" class="nicdark_radiu nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" style="height:200px" />
+                                }
+                            </div>
+
+                            <div class="nicdark_textevidence nicdark_width_percentage50 nicdark_width100_responsive">
+                                <div class="nicdark_margin20">
+
+                                    <h4 class="white"><a href="#" class="white">@Memories.FirstName &nbsp;&nbsp; @Memories.LastName</a></h4>
+                                    <div class="nicdark_space20"></div>
+                                    <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                                    <div class="nicdark_space20"></div>
+                                    @if (@Memories.CourseCategoryName != null)
+                                    {
+                                        <p class="white">@Memories.CourseCategoryName</p>
+                                    }
+                                    else
+                                    {
+                                        <p class="white">@Memories.DesignationName</p>
+                                        <p class="white">@Memories.DepartmentName</p>
+                                        <p class="white">@Memories.WorkingFrom - @Memories.WorkingTo</p>
+                                    }
+                                    <p class="white">@Memories.CourseName</p>
+                                    <p class="white">@Memories.Batch</p>
+                                    <div class="nicdark_space20"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                                    break;
+                    case 4:
+                    <div class="grid grid_6">
+                        <div class="nicdark_archive1 nicdark_bg_yellow nicdark_radius nicdark_shadow">
+                            <div class="nicdark_textevidence nicdark_width_percentage40 nicdark_width100_responsive">
+                                @if (File.Exists(Server.MapPath(@Memories.ProfilePicture)))
+                                {
+                                    <img src="@Memories.ProfilePicture" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />
+                                }
+                                else
+                                {
+                                    <img alt="" class="nicdark_radiu nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" style="height:200px" />
+                                }
+                            </div>
+
+                            <div class="nicdark_textevidence nicdark_width_percentage50 nicdark_width100_responsive">
+                                <div class="nicdark_margin20">
+
+                                    <h4 class="white"><a href="#" class="white">@Memories.FirstName &nbsp;&nbsp; @Memories.LastName</a></h4>
+                                    <div class="nicdark_space20"></div>
+                                    <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                                    <div class="nicdark_space20"></div>
+                                    @if (@Memories.CourseCategoryName != null)
+                                    {
+                                        <p class="white">@Memories.CourseCategoryName</p>
+                                    }
+                                    else
+                                    {
+                                        <p class="white">@Memories.DesignationName</p>
+                                        <p class="white">@Memories.DepartmentName</p>
+                                        <p class="white">@Memories.WorkingFrom - @Memories.WorkingTo</p>
+                                    }
+                                    <p class="white">@Memories.CourseName</p>
+                                    <p class="white">@Memories.Batch</p>
+                                    <div class="nicdark_space20"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                                    break;
+                    case 5:
+                    <div class="grid grid_6">
+                        <div class="nicdark_archive1 nicdark_bg_green nicdark_radius nicdark_shadow">
+                            <div class="nicdark_textevidence nicdark_width_percentage40 nicdark_width100_responsive">
+                                @if (File.Exists(Server.MapPath(@Memories.ProfilePicture)))
+                                {
+                                    <img src="@Memories.ProfilePicture" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />
+                                }
+                                else
+                                {
+                                    <img alt="" class="nicdark_radiu nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" style="height:200px" />
+                                }
+                            </div>
+
+                            <div class="nicdark_textevidence nicdark_width_percentage50 nicdark_width100_responsive">
+                                <div class="nicdark_margin20">
+
+                                    <h4 class="white"><a href="#" class="white">@Memories.FirstName &nbsp;&nbsp; @Memories.LastName</a></h4>
+                                    <div class="nicdark_space20"></div>
+                                    <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                                    <div class="nicdark_space20"></div>
+                                    @if (@Memories.CourseCategoryName != null)
+                                    {
+                                        <p class="white">@Memories.CourseCategoryName</p>
+                                    }
+                                    else
+                                    {
+                                        <p class="white">@Memories.DesignationName</p>
+                                        <p class="white">@Memories.DepartmentName</p>
+                                        <p class="white">@Memories.WorkingFrom - @Memories.WorkingTo</p>
+                                    }
+                                    <p class="white">@Memories.CourseName</p>
+                                    <p class="white">@Memories.Batch</p>
+                                    <div class="nicdark_space20"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                                    break;
+                    case 6:
+                    <div class="grid grid_6">
+                        <div class="nicdark_archive1 nicdark_bg_blue nicdark_radius nicdark_shadow">
+                            <div class="nicdark_textevidence nicdark_width_percentage40 nicdark_width100_responsive">
+                                @if (File.Exists(Server.MapPath(@Memories.ProfilePicture)))
+                                {
+                                    <img src="@Memories.ProfilePicture" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />
+                                }
+                                else
+                                {
+                                    <img alt="" class="nicdark_radiu nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" style="height:200px" />
+                                }
+                            </div>
+
+                            <div class="nicdark_textevidence nicdark_width_percentage50 nicdark_width100_responsive">
+                                <div class="nicdark_margin20">
+
+                                    <h4 class="white"><a href="#" class="white">@Memories.FirstName &nbsp;&nbsp; @Memories.LastName</a></h4>
+                                    <div class="nicdark_space20"></div>
+                                    <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                                    <div class="nicdark_space20"></div>
+                                    @if (@Memories.CourseCategoryName != null)
+                                    {
+                                        <p class="white">@Memories.CourseCategoryName</p>
+                                    }
+                                    else
+                                    {
+                                        <p class="white">@Memories.DesignationName</p>
+                                        <p class="white">@Memories.DepartmentName</p>
+                                        <p class="white">@Memories.WorkingFrom - @Memories.WorkingTo</p>
+                                    }
+                                    <p class="white">@Memories.CourseName</p>
+                                    <p class="white">@Memories.Batch</p>
+                                    <div class="nicdark_space20"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                                    break;
+                    case 7:
+                    <div class="grid grid_6">
+                        <div class="nicdark_archive1 nicdark_bg_yellow nicdark_radius nicdark_shadow">
+                            <div class="nicdark_textevidence nicdark_width_percentage40 nicdark_width100_responsive">
+                                @if (File.Exists(Server.MapPath(@Memories.ProfilePicture)))
+                                {
+                                    <img src="@Memories.ProfilePicture" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />
+                                }
+                                else
+                                {
+                                    <img alt="" class="nicdark_radiu nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" style="height:200px" />
+                                }
+                            </div>
+
+                            <div class="nicdark_textevidence nicdark_width_percentage50 nicdark_width100_responsive">
+                                <div class="nicdark_margin20">
+
+                                    <h4 class="white"><a href="#" class="white">@Memories.FirstName &nbsp;&nbsp; @Memories.LastName</a></h4>
+                                    <div class="nicdark_space20"></div>
+                                    <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                                    <div class="nicdark_space20"></div>
+                                    @if (@Memories.CourseCategoryName != null)
+                                    {
+                                        <p class="white">@Memories.CourseCategoryName</p>
+                                    }
+                                    else
+                                    {
+                                        <p class="white">@Memories.DesignationName</p>
+                                        <p class="white">@Memories.DepartmentName</p>
+                                        <p class="white">@Memories.WorkingFrom - @Memories.WorkingTo</p>
+                                    }
+                                    <p class="white">@Memories.CourseName</p>
+                                    <p class="white">@Memories.Batch</p>
+                                    <div class="nicdark_space20"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                                    break;
+                    case 8:
+                    <div class="grid grid_6">
+                        <div class="nicdark_archive1 nicdark_bg_violet nicdark_radius nicdark_shadow">
+                            <div class="nicdark_textevidence nicdark_width_percentage40 nicdark_width100_responsive">
+                                @if (File.Exists(Server.MapPath(@Memories.ProfilePicture)))
+                                {
+                                    <img src="@Memories.ProfilePicture" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />
+                                }
+                                else
+                                {
+                                    <img alt="" class="nicdark_radiu nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" style="height:200px" />
+                                }
+                            </div>
+
+                            <div class="nicdark_textevidence nicdark_width_percentage50 nicdark_width100_responsive">
+                                <div class="nicdark_margin20">
+
+                                    <h4 class="white"><a href="#" class="white">@Memories.FirstName &nbsp;&nbsp; @Memories.LastName</a></h4>
+                                    <div class="nicdark_space20"></div>
+                                    <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                                    <div class="nicdark_space20"></div>
+                                    @if (@Memories.CourseCategoryName != null)
+                                    {
+                                        <p class="white">@Memories.CourseCategoryName</p>
+                                    }
+                                    else
+                                    {
+                                        <p class="white">@Memories.DesignationName</p>
+                                        <p class="white">@Memories.DepartmentName</p>
+                                        <p class="white">@Memories.WorkingFrom - @Memories.WorkingTo</p>
+                                    }
+                                    <p class="white">@Memories.CourseName</p>
+                                    <p class="white">@Memories.Batch</p>
+                                    <div class="nicdark_space20"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                                    break;
+                    case 9:
+                    <div class="grid grid_6">
+                        <div class="nicdark_archive1 nicdark_bg_orange nicdark_radius nicdark_shadow">
+                            <div class="nicdark_textevidence nicdark_width_percentage40 nicdark_width100_responsive">
+                                @if (File.Exists(Server.MapPath(@Memories.ProfilePicture)))
+                                {
+                                    <img src="@Memories.ProfilePicture" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />
+                                }
+                                else
+                                {
+                                    <img alt="" class="nicdark_radiu nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" style="height:200px" />
+                                }
+                            </div>
+
+                            <div class="nicdark_textevidence nicdark_width_percentage50 nicdark_width100_responsive">
+                                <div class="nicdark_margin20">
+
+                                    <h4 class="white"><a href="#" class="white">@Memories.FirstName &nbsp;&nbsp; @Memories.LastName</a></h4>
+                                    <div class="nicdark_space20"></div>
+                                    <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                                    <div class="nicdark_space20"></div>
+                                    @if (@Memories.CourseCategoryName != null)
+                                    {
+                                        <p class="white">@Memories.CourseCategoryName</p>
+                                    }
+                                    else
+                                    {
+                                        <p class="white">@Memories.DesignationName</p>
+                                        <p class="white">@Memories.DepartmentName</p>
+                                        <p class="white">@Memories.WorkingFrom - @Memories.WorkingTo</p>
+                                    }
+                                    <p class="white">@Memories.CourseName</p>
+                                    <p class="white">@Memories.Batch</p>
+                                    <div class="nicdark_space20"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    if (i == 9)
+                                    {
+                                        i = 0;
+                                    }
+                                    break;
+                }
+                i++;
+
+            }
+        </div>
+        <div id="circleG" style="display:none;" class="nicdark_clearfix">
+            <div id="circleG_1" class="circleG"></div>
+            <div id="circleG_2" class="circleG"></div>
+            <div id="circleG_3" class="circleG"></div>
+            <div id="circleG_4" class="circleG"></div>
+            <div id="circleG_5" class="circleG"></div>
+        </div>
+        <div id="DivLoadData">
+        </div>
+
+        <div class="nicdark_clearfix"></div>
+        <div>
+            @*<div class="grid grid_4">
+                    <div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow">
+                        <div class="nicdark_textevidence nicdark_bg_yellow nicdark_radius_top">
+                            <h4 class="white nicdark_margin20">SEARCH</h4>
+                            <i class="icon-search-outline nicdark_iconbg right medium yellow"></i>
+                        </div>
+                        <div class="nicdark_margin20">
+                            <input type="text" placeholder="KEYWORD" size="200" value="" class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle">
+                            <div class="nicdark_space20"></div>
+                            <div id="ComapnysEarch" class="nicdark_width_percentage100"></div>
+                            <input type="submit" id="searchbyEmail" value="SEND" class="nicdark_btn nicdark_bg_yellow medium nicdark_shadow nicdark_radius white">
+                        </div>
+                    </div>
+                </div>*@
+            <div id="BindMembers">
+            </div>
+
+        </div>
+
+        @* <div><a class="nicdark_zoom nicdark_btn nicdark_bg_green medium nicdark_shadow nicdark_radius white" href="@Url.Action("Login", "Account", new { area="",id="4" },null)"><i class="icon-info-circled"></i>&nbsp;&nbsp;&nbsp;view More</a></div>*@
+        <div class="nicdark_space50"></div>
+
+    </div>
+    <!--end nicdark_container-->
+
+</section>
+<script>
+    $(document).ready(function () {
+
+
+        $("#CompanyDesignation").autocomplete({
+            width: 320,
+            max: 4,
+            highlight: false,
+            multiple: true,
+            multipleSeparator: ",",
+            scroll: true,
+            scrollHeight: 300,
+            delay: 10,
+            source: function (request, response) {
+                var Auto = $("#CompanyDesignation").val();
+                $.ajax({
+                    url: "/Home/GetProfDetails",
+                    data: ({ "Auto": "", "Designation": Auto }),
+                    dataType: "json",
+                    type: "GET",
+                    contentType: "application/json; charset=utf-8",
+                    dataFilter: function (data) { return data; },
+                    success: function (data) {
+                        if (data == "") {
+                            //alert("No Records FOund");
+                        }
+                        else {
+                            response($.map(data, function (item) {
+                                return {
+
+                                    value: item.Designation
+                                }
+                            }))
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert(textStatus);
+                    }
+                });
+            },
+            minLength: 2
+        });
+
+
+
+
+        $('#AlumniCompanyserach').click(function () {
+            var ComanyName = $('#CompanyAutosearch').val();
+            var Designation = $('#CompanyDesignation').val();
+
+            if (ComanyName != "" && Designation != "") {
+                alert(ComanyName);
+                alert(Designation);
+                $.ajax({
+                    type: "Get",
+                    contentType: "application/json",
+                    url: "/Alumini/AlumniMembers/EmailSearchandDesignation",
+                    dataType: "json",
+                    data: { "Email": ComanyName, "id": 1, "Designation": Designation },
+                    success: function (data) {
+                        $('#BindMembers').empty();
+                        $('#circleG').hide();
+                        $('#HideAllContent').empty();
+                        $.each(data, function (key, value) {
+                            var html = '<div class="grid grid_4">';
+                            html += '<div class="nicdark_archive1 nicdark_bg_orange nicdark_radius nicdark_shadow">';
+                            html += '<div class="nicdark_textevidence nicdark_width_percentage40 nicdark_width100_responsive">';
+                            if (value.ProfilePicture != null) {
+
+                                html += '<img src="' + value.ProfilePicture + '" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />';
+                            }
+                            else {
+                                html += '<img src="~/Content/DesignContent/css/images/no_image.jpg" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />';
+                            }
+                            //html += '<img alt="" class="nicdark_radiu nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" style="height:200px" />';
+                            html += '</div>';
+                            html += '<div class="nicdark_textevidence nicdark_width_percentage60 nicdark_width100_responsive">';
+                            html += '<div class="nicdark_margin10">';
+                            html += '<p class="white">' + value.FirstName + '&nbsp;&nbsp; ' + value.LastName + '</p>'
+                            //html + '<h4 ><a href="#" class="white">' + value.FirstName + ' </a></h4>';
+                            html += '<div class="nicdark_space10"></div>';
+                            html += '<div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>';
+                            html += '<div class="nicdark_space10"></div>';
+                            if (value.CourseCategoryName != null) {
+                                html += '<p class="white" style="font-size:12px;">' + value.CourseCategoryName + '</p>';
+                            }
+                            if (value.Designation != null) {
+                                html += '<p class="white" style="font-size:12px;">' + value.Designation + '</p>';
+                            }
+                            if (value.DepartmentName != null) {
+                                html += '<p class="white" style="font-size:12px;">' + value.DepartmentName + '</p>';
+                            }
+                            if (value.WorkedFrom != null) {
+                                html += '<p class="white" style="font-size:12px;">' + value.WorkedFrom + '-' + value.WorkedTill + '</p>';
+                            }
+                            if (value.CourseName != null) {
+                                html += '<p class="white" style="font-size:12px;">' + value.CourseName + '</p>';
+                            }
+                            if (value.Batch != null) {
+                                html += '<p class="white" style="font-size:12px;">' + value.Batch + '</p>';
+                            }
+                            html += '<div class="nicdark_space10"></div>';
+                            html += '</div>';
+                            html += '</div>';
+                            html += '</div>';
+                            html += '</div>';
+                            $('#BindMembers').append(html);
+                        });
+                    }
+                });
+            }
+
+            else if (ComanyName != "") {
+                $.ajax({
+                    type: "post",
+                    contentType: "application/json",
+                    url: "/Alumini/AlumniMembers/GetUsersBySearch",
+                    dataType: "json",
+                    data: JSON.stringify({ "ComanyName": ComanyName, id: 1 }),
+                    success: function (data) {
+                        $('#BindMembers').empty();
+                        $('#circleG').hide();
+                        $('#HideAllContent').empty();
+                        $.each(data, function (key, value) {
+                            var html = '<div class="grid grid_4">';
+                            html += '<div class="nicdark_archive1 nicdark_bg_orange nicdark_radius nicdark_shadow">';
+                            html += '<div class="nicdark_textevidence nicdark_width_percentage40 nicdark_width100_responsive">';
+                            if (value.ProfilePicture != null) {
+
+                                html += '<img src="' + value.ProfilePicture + '" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />';
+                            }
+                            else {
+                                html += '<img src="~/Content/DesignContent/css/images/no_image.jpg" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />';
+                            }
+                            //html += '<img alt="" class="nicdark_radiu nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" style="height:200px" />';
+                            html += '</div>';
+                            html += '<div class="nicdark_textevidence nicdark_width_percentage60 nicdark_width100_responsive">';
+                            html += '<div class="nicdark_margin10">';
+                            html += '<p class="white">' + value.FirstName + '&nbsp;&nbsp; ' + value.LastName + '</p>'
+                            //html + '<h4 ><a href="#" class="white">' + value.FirstName + ' </a></h4>';
+                            html += '<div class="nicdark_space10"></div>';
+                            html += '<div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>';
+                            html += '<div class="nicdark_space10"></div>';
+                            if (value.CourseCategoryName != null) {
+                                html += '<p class="white" style="font-size:12px;">' + value.CourseCategoryName + '</p>';
+                            }
+                            if (value.Designation != null) {
+                                html += '<p class="white" style="font-size:12px;">' + value.Designation + '</p>';
+                            }
+                            if (value.DepartmentName != null) {
+                                html += '<p class="white" style="font-size:12px;">' + value.DepartmentName + '</p>';
+                            }
+                            if (value.WorkedFrom != null) {
+                                html += '<p class="white" style="font-size:12px;">' + value.WorkedFrom + '-' + value.WorkedTill + '</p>';
+                            }
+                            if (value.CourseName != null) {
+                                html += '<p class="white" style="font-size:12px;">' + value.CourseName + '</p>';
+                            }
+                            if (value.Batch != null) {
+                                html += '<p class="white" style="font-size:12px;">' + value.Batch + '</p>';
+                            }
+                            html += '<div class="nicdark_space10"></div>';
+                            html += '</div>';
+                            html += '</div>';
+                            html += '</div>';
+                            html += '</div>';
+                            $('#BindMembers').append(html);
+                        });
+                    }
+                });
+            }
+            else if (Designation != "") {
+                $.ajax({
+                    type: "Post",
+                    contentType: "application/json",
+                    url: "/Alumini/AlumniMembers/GetUsersBySearch",
+                    dataType: "json",
+                    data: JSON.stringify({ "ComanyName": Designation, "id": 5 }),
+                    success: function (data) {
+                        $('#BindMembers').empty();
+                        $('#circleG').hide();
+                        $('#HideAllContent').empty();
+                        $.each(data, function (key, value) {
+                            var html = '<div class="grid grid_4">';
+                            html += '<div class="nicdark_archive1 nicdark_bg_orange nicdark_radius nicdark_shadow">';
+                            html += '<div class="nicdark_textevidence nicdark_width_percentage40 nicdark_width100_responsive">';
+                            if (value.ProfilePicture != null) {
+
+                                html += '<img src="' + value.ProfilePicture + '" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />';
+                            }
+                            else {
+                                html += '<img src="~/Content/DesignContent/css/images/no_image.jpg" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />';
+                            }
+                            //html += '<img alt="" class="nicdark_radiu nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" style="height:200px" />';
+                            html += '</div>';
+                            html += '<div class="nicdark_textevidence nicdark_width_percentage60 nicdark_width100_responsive">';
+                            html += '<div class="nicdark_margin10">';
+                            html += '<p class="white">' + value.FirstName + '&nbsp;&nbsp; ' + value.LastName + '</p>'
+                            //html + '<h4 ><a href="#" class="white">' + value.FirstName + ' </a></h4>';
+                            html += '<div class="nicdark_space10"></div>';
+                            html += '<div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>';
+                            html += '<div class="nicdark_space10"></div>';
+                            if (value.CourseCategoryName != null) {
+                                html += '<p class="white" style="font-size:12px;">' + value.CourseCategoryName + '</p>';
+                            }
+                            if (value.Designation != null) {
+                                html += '<p class="white" style="font-size:12px;">' + value.Designation + '</p>';
+                            }
+                            if (value.DepartmentName != null) {
+                                html += '<p class="white" style="font-size:12px;">' + value.DepartmentName + '</p>';
+                            }
+                            if (value.WorkedFrom != null) {
+                                html += '<p class="white" style="font-size:12px;">' + value.WorkedFrom + '-' + value.WorkedTill + '</p>';
+                            }
+                            if (value.CourseName != null) {
+                                html += '<p class="white" style="font-size:12px;">' + value.CourseName + '</p>';
+                            }
+                            if (value.Batch != null) {
+                                html += '<p class="white" style="font-size:12px;">' + value.Batch + '</p>';
+                            }
+                            html += '<div class="nicdark_space10"></div>';
+                            html += '</div>';
+                            html += '</div>';
+                            html += '</div>';
+                            html += '</div>';
+                            $('#BindMembers').append(html);
+                        });
+                    }
+                });
+            }
+
+        });
+
+
+        $("#CompanyAutosearch").autocomplete({
+            width: 320,
+            max: 4,
+            highlight: false,
+            multiple: true,
+            multipleSeparator: ",",
+            scroll: true,
+            scrollHeight: 300,
+            delay: 10,
+            source: function (request, response) {
+                var Auto = $("#CompanyAutosearch").val();
+                $.ajax({
+                    url: "../Jobs/JobsAutosearch",
+                    data: ({ "JobTitle": Auto, "Status": 2 }),
+                    dataType: "json",
+                    type: "GET",
+                    contentType: "application/json; charset=utf-8",
+                    dataFilter: function (data) { return data; },
+                    success: function (data) {
+                        if (data == "") {
+                            alert("No Records FOund");
+                        }
+                        else {
+                            response($.map(data, function (item) {
+                                return {
+
+                                    value: item.ComanyName
+                                }
+                            }))
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert(textStatus);
+                    }
+                });
+            },
+            minLength: 2
+        });
+
+
+
+
+        $('#SearchByCourseCategory').click(function () {
+            var Coursecategory = $('#CourseCategoryId option:selected').text();
+            var Course = $('#ddlCourses option:selected').text();
+            var Year = $('#ddlGraduationYear option:selected').text();
+
+            $.ajax({
+                type: "Get",
+                dataType: "json",
+                url: "/Alumini/AlumniMembers/GetsearchbasedonCourse",
+                contentType: "Application/json",
+                data: { "Coursecategory": Coursecategory, "Course": Course, "Year": Year },
+                success: function (data) {
+                    $('#BindMembers').empty();
+                    $('#HideAllContent').empty();
+                    $('#circleG').hide();
+                    $.each(data, function (key, value) {
+                        var html = '<div class="grid grid_4">';
+                        html += '<div class="nicdark_archive1 nicdark_bg_orange nicdark_radius nicdark_shadow">';
+                        html += '<div class="nicdark_textevidence nicdark_width_percentage40 nicdark_width100_responsive">';
+                        if (value.ProfilePicture != null) {
+
+                            html += '<img src="' + value.ProfilePicture + '" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />';
+                        }
+                        else {
+                            html += '<img src="~/Content/DesignContent/css/images/no_image.jpg" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />';
+                        }
+                        //html += '<img alt="" class="nicdark_radiu nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" style="height:200px" />';
+                        html += '</div>';
+                        html += '<div class="nicdark_textevidence nicdark_width_percentage60 nicdark_width100_responsive">';
+                        html += '<div class="nicdark_margin10">';
+                        html += '<p class="white">' + value.FirstName + '&nbsp;&nbsp; ' + value.LastName + '</p>'
+                        //html + '<h4 ><a href="#" class="white">' + value.FirstName + ' </a></h4>';
+                        html += '<div class="nicdark_space10"></div>';
+                        html += '<div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>';
+                        html += '<div class="nicdark_space10"></div>';
+                        if (value.CourseCategoryName != null) {
+                            html += '<p class="white" style="font-size:12px;">' + value.CourseCategoryName + '</p>';
+                        }
+                        if (value.Designation != null) {
+                            html += '<p class="white" style="font-size:12px;">' + value.Designation + '</p>';
+                        }
+                        if (value.DepartmentName != null) {
+                            html += '<p class="white" style="font-size:12px;">' + value.DepartmentName + '</p>';
+                        }
+                        if (value.WorkedFrom != null) {
+                            html += '<p class="white" style="font-size:12px;">' + value.WorkedFrom + '-' + value.WorkedTill + '</p>';
+                        }
+                        if (value.CourseName != null) {
+                            html += '<p class="white" style="font-size:12px;">' + value.CourseName + '</p>';
+                        }
+                        if (value.Batch != null) {
+                            html += '<p class="white" style="font-size:12px;">' + value.Batch + '</p>';
+                        }
+                        html += '<div class="nicdark_space10"></div>';
+                        html += '</div>';
+                        html += '</div>';
+                        html += '</div>';
+                        html += '</div>';
+                        $('#BindMembers').append(html);
+                    });
+                }
+            });
+        });
+
+        $("#CourseCategoryId").change(function () {
+            $('#ddlCourses').empty();
+            var CategoryCourseId = $("#CourseCategoryId").val();
+            $.ajax({
+                type: "Get",
+                dataType: "json",
+                url: "/Account/GetCourses?CourseCategoryId=" + CategoryCourseId,
+                contentType: "Application/json",
+                data: {},
+                success: function (data) {
+                    $("#ddlCourses").append($("<option></option>").val("").html("Selet Course"));
+                    $.each(data, function (key, value) {
+                        $("#ddlCourses").append($("<option></option>").val(value.Id).html(value.CourseName));
+                    });
+                }
+            });
+        });
+
+
+        $("#ddlCourses").change(function () {
+            var StateId = $("#ddlCourses").val();
+            $('#ddlGraduationYear').empty();
+            $.ajax({
+                type: "Get",
+                dataType: "json",
+                url: "/Account/GetYears?CourseId=" + StateId,
+                contentType: "Application/json",
+                data: {},
+                success: function (data) {
+                    $("#ddlGraduationYear").append($("<option></option>").val("").html("Select"));
+                    $.each(data, function (key, value) {
+                        $("#ddlGraduationYear").append($("<option></option>").val(value.Year).html(value.Year));
+                    });
+                }
+            });
+        });
+        $('#DivOpen').hide();
+        $('#EmailAutosearch').val('');
+        $('#Namesearch').hide();
+        $('#CourseSerach').hide();
+        $('#CompanyBasedsearch').hide();
+        $('#CompanySearch').click(function () {
+            $('#DivOpen').hide();
+            $('#CompanyBasedsearch').show();
+            $('#CourseSerach').hide();
+            $('#Namesearch').hide();
+            $('#NameBasedsearch').hide();
+        });
+        $('#CourseandYears').click(function () {
+            $('#DivOpen').hide();
+            $('#CourseSerach').show();
+            $('#Namesearch').hide();
+            $('#CompanyBasedsearch').hide();
+            $('#NameBasedsearch').hide();
+
+        });
+        $('#Checkemailsearch').click(function () {
+            $('#Namesearch').show();
+            $('#NameBasedsearch').hide();
+        });
+        $('#NameEmail').click(function () {
+            $('#CourseSerach').hide();
+            $('#Namesearch').show();
+            $('#CompanyBasedsearch').hide();
+            $('#DivOpen').show();
+            $('#NameBasedsearch').hide();
+        });
+        $('#CheckNameearch').click(function () {
+            $('#NameBasedsearch').show();
+            $('#Namesearch').hide();
+        });
+
+        $('#AlumniNamebasedsearch').click(function () {
+            var ComanyName = $("#AlumniNameSearch").val();
+
+            $.ajax({
+                type: "post",
+                contentType: "application/json",
+                url: "/Alumini/AlumniMembers/GetUsersBySearch",
+                dataType: "json",
+                data: JSON.stringify({ "ComanyName": ComanyName, id: 4 }),
+                success: function (data) {
+                    $('#BindMembers').empty();
+                    $('#HideAllContent').empty();
+                    $('#circleG').hide();
+                    $.each(data, function (key, value) {
+                        var html = '<div class="grid grid_4">';
+                        html += '<div class="nicdark_archive1 nicdark_bg_orange nicdark_radius nicdark_shadow">';
+                        html += '<div class="nicdark_textevidence nicdark_width_percentage40 nicdark_width100_responsive">';
+                        if (value.ProfilePicture != null) {
+
+                            html += '<img src="' + value.ProfilePicture + '" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />';
+                        }
+                        else {
+                            html += '<img src="~/Content/DesignContent/css/images/no_image.jpg" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />';
+                        }
+                        //html += '<img alt="" class="nicdark_radiu nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" style="height:200px" />';
+                        html += '</div>';
+                        html += '<div class="nicdark_textevidence nicdark_width_percentage60 nicdark_width100_responsive">';
+                        html += '<div class="nicdark_margin10">';
+                        html += '<p class="white">' + value.FirstName + '&nbsp;&nbsp; ' + value.LastName + '</p>'
+                        //html + '<h4 ><a href="#" class="white">' + value.FirstName + ' </a></h4>';
+                        html += '<div class="nicdark_space10"></div>';
+                        html += '<div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>';
+                        html += '<div class="nicdark_space10"></div>';
+                        if (value.CourseCategoryName != null) {
+                            html += '<p class="white" style="font-size:12px;">' + value.CourseCategoryName + '</p>';
+                        }
+                        if (value.Designation != null) {
+                            html += '<p class="white" style="font-size:12px;">' + value.Designation + '</p>';
+                        }
+                        if (value.DepartmentName != null) {
+                            html += '<p class="white" style="font-size:12px;">' + value.DepartmentName + '</p>';
+                        }
+                        if (value.WorkedFrom != null) {
+                            html += '<p class="white" style="font-size:12px;">' + value.WorkedFrom + '-' + value.WorkedTill + '</p>';
+                        }
+                        if (value.CourseName != null) {
+                            html += '<p class="white" style="font-size:12px;">' + value.CourseName + '</p>';
+                        }
+                        if (value.Batch != null) {
+                            html += '<p class="white" style="font-size:12px;">' + value.Batch + '</p>';
+                        }
+                        html += '<div class="nicdark_space10"></div>';
+                        html += '</div>';
+                        html += '</div>';
+                        html += '</div>';
+                        html += '</div>';
+                        $('#BindMembers').append(html);
+                    });
+                }
+            });
+
+        });
+
+
+
+
+        $('#AlumniEmailsearch').click(function () {
+            var ComanyName = $("#EmailAutosearch").val();
+
+            $.ajax({
+                type: "post",
+                contentType: "application/json",
+                url: "/Alumini/AlumniMembers/GetUsersBySearch",
+                dataType: "json",
+                data: JSON.stringify({ "ComanyName": ComanyName, id: 3 }),
+                success: function (data) {
+                    $('#BindMembers').empty();
+                    $('#HideAllContent').empty();
+                    $('#circleG').hide();
+                    $.each(data, function (key, value) {
+                        var html = '<div class="grid grid_4">';
+                        html += '<div class="nicdark_archive1 nicdark_bg_orange nicdark_radius nicdark_shadow">';
+                        html += '<div class="nicdark_textevidence nicdark_width_percentage40 nicdark_width100_responsive">';
+                        if (value.ProfilePicture != null) {
+
+                            html += '<img src="' + value.ProfilePicture + '" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />';
+                        }
+                        else {
+                            html += '<img src="~/Content/DesignContent/css/images/no_image.jpg" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />';
+                        }
+                        //html += '<img alt="" class="nicdark_radiu nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" style="height:200px" />';
+                        html += '</div>';
+                        html += '<div class="nicdark_textevidence nicdark_width_percentage60 nicdark_width100_responsive">';
+                        html += '<div class="nicdark_margin10">';
+                        html += '<p class="white">' + value.FirstName + '&nbsp;&nbsp; ' + value.LastName + '</p>'
+                        //html + '<h4 ><a href="#" class="white">' + value.FirstName + ' </a></h4>';
+                        html += '<div class="nicdark_space10"></div>';
+                        html += '<div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>';
+                        html += '<div class="nicdark_space10"></div>';
+                        if (value.CourseCategoryName != null) {
+                            html += '<p class="white" style="font-size:12px;">' + value.CourseCategoryName + '</p>';
+                        }
+                        if (value.Designation != null) {
+                            html += '<p class="white" style="font-size:12px;">' + value.Designation + '</p>';
+                        }
+                        if (value.DepartmentName != null) {
+                            html += '<p class="white" style="font-size:12px;">' + value.DepartmentName + '</p>';
+                        }
+                        if (value.WorkedFrom != null) {
+                            html += '<p class="white" style="font-size:12px;">' + value.WorkedFrom + '-' + value.WorkedTill + '</p>';
+                        }
+                        if (value.CourseName != null) {
+                            html += '<p class="white" style="font-size:12px;">' + value.CourseName + '</p>';
+                        }
+                        if (value.Batch != null) {
+                            html += '<p class="white" style="font-size:12px;">' + value.Batch + '</p>';
+                        }
+                        html += '<div class="nicdark_space10"></div>';
+                        html += '</div>';
+                        html += '</div>';
+                        html += '</div>';
+                        html += '</div>';
+                        $('#BindMembers').append(html);
+                    });
+                }
+            });
+
+        });
+        $('#NameBasedsearch').hide();
+        $("#AlumniNameSearch").autocomplete({
+            width: 320,
+            max: 4,
+            highlight: false,
+            multiple: true,
+            multipleSeparator: ",",
+            scroll: true,
+            scrollHeight: 300,
+            delay: 10,
+            source: function (request, response) {
+                var Auto = $("#AlumniNameSearch").val();
+                $.ajax({
+                    url: "../AlumniMembers/EmailSearch",
+                    data: ({ "Email": Auto, "id": 2 }),
+                    dataType: "json",
+                    type: "GET",
+                    contentType: "application/json; charset=utf-8",
+                    dataFilter: function (data) { return data; },
+                    success: function (data) {
+                        if (data == "") {
+                            alert("No Records FOund");
+                        }
+                        else {
+                            response($.map(data, function (item) {
+                                return {
+
+                                    value: item.FirstName
+                                }
+                            }))
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert(textStatus);
+                    }
+                });
+            },
+            minLength: 2
+        });
+
+
+
+
+
+        $("#EmailAutosearch").autocomplete({
+            width: 320,
+            max: 4,
+            highlight: false,
+            multiple: true,
+            multipleSeparator: ",",
+            scroll: true,
+            scrollHeight: 300,
+            delay: 10,
+            source: function (request, response) {
+                var Auto = $("#EmailAutosearch").val();
+                $.ajax({
+                    url: "../AlumniMembers/EmailSearch",
+                    data: ({ "Email": Auto, "id": 1 }),
+                    dataType: "json",
+                    type: "GET",
+                    contentType: "application/json; charset=utf-8",
+                    dataFilter: function (data) { return data; },
+                    success: function (data) {
+                        if (data == "") {
+                            alert("No Records FOund");
+                        }
+                        else {
+                            response($.map(data, function (item) {
+                                return {
+
+                                    value: item.Email
+                                }
+                            }))
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert(textStatus);
+                    }
+                });
+            },
+            minLength: 2
+        });
+
+        $("#Company").click(function () {
+            $("#HideAllContent").hide();
+            $('#circleG').show();
+            $('#DivLoadData').empty();
+            $.ajax({
+                type: "post",
+                contentType: "application/json",
+                url: "/Alumini/AlumniMembers/SearchBy",
+                dataType: "json",
+                data: JSON.stringify({ "id": 1 }),
+                success: function (data) {
+                    $.each(data, function (key, value) {
+                        var html = '<div class="grid grid_3" id="CompanysHide">';
+                        var fun = "GetUsers('" + value.ComapnyName.split(' ').join('_') + "','" + 1 + "')";
+                        html += '<a onclick=' + fun + ' class="small"  href="javascript:;" style="width:100%;padding: 7px 0;"><p>' + value.ComapnyName + ' (' + value.TotalMembers + ')</p> </a>';
+                        html += '</div>';
+                        $('#circleG').hide();
+                        $('#DivLoadData').append(html);
+                    });
+
+                }
+            });
+        });
+        $("#Roles").click(function () {
+            $("#HideAllContent").hide();
+            $('#circleG').show();
+            $('#DivLoadData').empty();
+            $.ajax({
+                type: "post",
+                contentType: "application/json",
+                url: "/Alumini/AlumniMembers/SearchBy",
+                dataType: "json",
+                data: JSON.stringify({ "id": 2 }),
+                success: function (data) {
+                    $.each(data, function (key, value) {
+                        var html = '<div class="grid grid_3">';
+                        var fun = "GetUsers('" + value.ComapnyName.split(' ').join('_') + "','" + 2 + "')";
+                        html += '<a onclick=' + fun + ' class="small"  href="javascript:;" style="width:100%;padding: 7px 0;"><p>' + value.ComapnyName + ' (' + value.TotalMembers + ')</p> </a>';
+                        html += '</div>';
+                        $('#circleG').hide();
+                        $('#DivLoadData').append(html);
+                    });
+
+                }
+            });
+        });
+        $("#Industry").click(function () {
+            $("#HideAllContent").hide();
+        });
+    });
+    function GetUsers(ComanyName, id) {
+        $('#circleG').show();
+        ComanyName = ComanyName.split('_').join(' ');
+        if (id == 1) {
+
+            $.ajax({
+                type: "post",
+                contentType: "application/json",
+                url: "/Alumini/AlumniMembers/SearchBy",
+                dataType: "json",
+                data: JSON.stringify({ "id": 1 }),
+                success: function (data) {
+                    $("#ComapnysEarch").empty('');
+                    $("#DivLoadData").hide();
+                    var html = '<ul style="height:200px;overflow-y:scroll;">';
+                    $.each(data, function (key, value) {
+                        //search
+                        var fun = "GetUsers('" + value.ComapnyName.split(' ').join('_') + "','" + 1 + "')";
+                        html += '<li><a href="javascript:' + fun + ';">' + value.ComapnyName + ' (' + value.TotalMembers + ')</a></li>';
+                    });
+                    html += '</ul>';
+                    $("#ComapnysEarch").append(html);
+                }
+            });
+            //
+
+
+            $.ajax({
+                type: "post",
+                contentType: "application/json",
+                url: "/Alumini/AlumniMembers/GetUsersBySearch",
+                dataType: "json",
+                data: JSON.stringify({ "ComanyName": ComanyName, id: 1 }),
+                success: function (data) {
+                    $('#BindMembers').empty();
+                    $('#circleG').hide();
+                    $.each(data, function (key, value) {
+                        var html = '<div class="grid grid_4">';
+                        html += '<div class="nicdark_archive1 nicdark_bg_orange nicdark_radius nicdark_shadow">';
+                        html += '<div class="nicdark_textevidence nicdark_width_percentage40 nicdark_width100_responsive">';
+                        if (value.ProfilePicture != null) {
+
+                            html += '<img src="' + value.ProfilePicture + '" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />';
+                        }
+                        else {
+                            html += '<img src="~/Content/DesignContent/css/images/no_image.jpg" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />';
+                        }
+                        //html += '<img alt="" class="nicdark_radiu nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" style="height:200px" />';
+                        html += '</div>';
+                        html += '<div class="nicdark_textevidence nicdark_width_percentage60 nicdark_width100_responsive">';
+                        html += '<div class="nicdark_margin10">';
+                        html += '<p class="white">' + value.FirstName + '&nbsp;&nbsp; ' + value.LastName + '</p>'
+                        //html + '<h4 ><a href="#" class="white">' + value.FirstName + ' </a></h4>';
+                        html += '<div class="nicdark_space10"></div>';
+                        html += '<div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>';
+                        html += '<div class="nicdark_space10"></div>';
+                        if (value.CourseCategoryName != null) {
+                            html += '<p class="white" style="font-size:12px;">' + value.CourseCategoryName + '</p>';
+                        }
+                        if (value.Designation != null) {
+                            html += '<p class="white" style="font-size:12px;">' + value.Designation + '</p>';
+                        }
+                        if (value.DepartmentName != null) {
+                            html += '<p class="white" style="font-size:12px;">' + value.DepartmentName + '</p>';
+                        }
+                        if (value.WorkedFrom != null) {
+                            html += '<p class="white" style="font-size:12px;">' + value.WorkedFrom + '-' + value.WorkedTill + '</p>';
+                        }
+                        if (value.CourseName != null) {
+                            html += '<p class="white" style="font-size:12px;">' + value.CourseName + '</p>';
+                        }
+                        if (value.Batch != null) {
+                            html += '<p class="white" style="font-size:12px;">' + value.Batch + '</p>';
+                        }
+                        html += '<div class="nicdark_space10"></div>';
+                        html += '</div>';
+                        html += '</div>';
+                        html += '</div>';
+                        html += '</div>';
+                        $('#BindMembers').append(html);
+                    });
+                }
+            });
+        }
+        else if (id == 2) {
+
+            $.ajax({
+                type: "post",
+                contentType: "application/json",
+                url: "/Alumini/AlumniMembers/SearchBy",
+                dataType: "json",
+                data: JSON.stringify({ "id": 2 }),
+                success: function (data) {
+                    $("#ComapnysEarch").empty('');
+                    $("#DivLoadData").hide();
+                    var html = '<ul style="height:200px;overflow-y:scroll;">';
+                    $.each(data, function (key, value) {
+                        //search
+                        var fun = "GetUsers('" + value.ComapnyName.split(' ').join('_') + "','" + 1 + "')";
+                        html += '<li><a href="javascript:' + fun + ';">' + value.ComapnyName + ' (' + value.TotalMembers + ')</a></li>';
+                    });
+                    html += '</ul>';
+                    $("#ComapnysEarch").append(html);
+                }
+            });
+
+
+            $.ajax({
+                type: "post",
+                contentType: "application/json",
+                url: "/Alumini/AlumniMembers/GetUsersBySearch",
+                dataType: "json",
+                data: JSON.stringify({ "ComanyName": ComanyName, id: 2 }),
+                success: function (data) {
+                    $.each(data, function (key, value) {
+                        $('#BindMembers').empty();
+                        $('#circleG').hide();
+                        $.each(data, function (key, value) {
+                            var html = '<div class="grid grid_4">';
+                            html += '<div class="nicdark_archive1 nicdark_bg_orange nicdark_radius nicdark_shadow">';
+                            html += '<div class="nicdark_textevidence nicdark_width_percentage40 nicdark_width100_responsive">';
+                            if (value.ProfilePicture != null) {
+
+                                html += '<img src="' + value.ProfilePicture + '" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />';
+                            }
+                            else {
+                                html += '<img src="~/Content/DesignContent/css/images/no_image.jpg" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />';
+                            }
+                            //html += '<img alt="" class="nicdark_radiu nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" style="height:200px" />';
+                            html += '</div>';
+                            html += '<div class="nicdark_textevidence nicdark_width_percentage60 nicdark_width100_responsive">';
+                            html += '<div class="nicdark_margin10">';
+                            html += '<p class="white">' + value.FirstName + '&nbsp;&nbsp; ' + value.LastName + '</p>'
+                            //html + '<h4 ><a href="#" class="white">' + value.FirstName + ' </a></h4>';
+                            html += '<div class="nicdark_space10"></div>';
+                            html += '<div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>';
+                            html += '<div class="nicdark_space10"></div>';
+                            if (value.CourseCategoryName != null) {
+                                html += '<p class="white" style="font-size:12px;">' + value.CourseCategoryName + '</p>';
+                            }
+                            if (value.Designation != null) {
+                                html += '<p class="white" style="font-size:12px;">' + value.Designation + '</p>';
+                            }
+                            if (value.DepartmentName != null) {
+                                html += '<p class="white" style="font-size:12px;">' + value.DepartmentName + '</p>';
+                            }
+                            if (value.WorkedFrom != null) {
+                                html += '<p class="white" style="font-size:12px;">' + value.WorkedFrom + '-' + value.WorkedTill + '</p>';
+                            }
+                            html += '<p class="white" style="font-size:12px;">' + value.CourseName + '</p>';
+                            html += '<p class="white" style="font-size:12px;">' + value.Batch + '</p>';
+                            html += '<div class="nicdark_space10"></div>';
+                            html += '</div>';
+                            html += '</div>';
+                            html += '</div>';
+                            html += '</div>';
+                            $('#BindMembers').append(html);
+                        });
+                    });
+                }
+            });
+        }
+    }
+</script>

@@ -1,0 +1,565 @@
+﻿@model AluminiWebApp.Areas.Alumini.Models.WhiteBoardModel
+@using AluminiRepository;
+@{
+    ViewBag.Title = "WhiteBoard";
+    Layout = "~/Areas/Alumini/Views/Shared/_SRKRDesignLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("Index", "WhiteBoard", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    try
+    {
+        @Html.ValidationSummary(true);
+
+                                     //New Design
+                                    <section class="nicdark_section">
+                                        <!--start nicdark_container-->
+                                        <div class="nicdark_container nicdark_clearfix">
+                                            <div class="nicdark_space40"></div>
+
+                                            <div class="grid grid_12">
+                                                <div class="nicdark_archive1 nicdark_bg_grey2 nicdark_radius nicdark_shadow">
+                                                    <div class="nicdark_textevidence nicdark_bg_orange nicdark_radius_top">
+                                                        <h4 class="white nicdark_margin20">White Board <span class="white nicdark_margin20 pull-right">@TempData["DeletedMessage"]</span></h4>
+                                                        <i class="icon-mail nicdark_iconbg right medium orange"></i>
+                                                    </div>
+                                                    <div class="nicdark_space20"></div>
+                                                    <div class="fullwidth_div">
+                                                        @Html.TextAreaFor(x => x.Message, new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle", @rows = "5", @placeholder = "TYPE YOUR MESSAGE HERE", @title = "Message", style = "background:#fff;" })
+                                                        @*  @Html.ValidationMessageFor(x => x.Message, "", new { @class = "text-danger" })*@
+                                                        <div class="nicdark_space20"></div>
+                                                        @Html.DropDownListFor(x => x.Batchyear, new SelectList(Model.Viewdetails, "Batch", "BatchName"), new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle", @title = "Privacy", @style = "width: 263px;" })
+                                                        @Html.ValidationMessageFor(x => x.Batchyear, "", new { @class = "text-danger" })
+                                                        &nbsp;
+                                                        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                                                        <label for="fileUpload" class="nicdark_displaynone_ipadpotr nicdark_btn_icon nicdark_tooltip nicdark_bg_red medium nicdark_shadow nicdark_radius_circle white nicdark_margin010" href="#" title="Add Multiple Pictures">
+                                                            <i class="icon-attach-outline nicdark_rotate"></i>
+                                                            <input type="file" id="fileUpload" multiple="multiple" class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle hide" name="Images" />
+                                                        </label>
+                                                        <div class="nicdark_space20"></div>
+                                                        <div>
+                                                            <div class="pull-left">
+                                                               
+                                                            </div>
+                                                            <div id="dvPreview" class="nicdark_margin100">
+                                                            </div>
+                                                            <input type="submit" id="btnPost" value="Post" class="nicdark_btn nicdark_bg_red medium nicdark_shadow nicdark_radius white nicdark_margin10 pull-right" />
+                                                            <br />
+                                                            <br />
+                                                            <br />
+                                                            <select class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle" id="selectType" style="width: 263px;">
+                                                                <option value="0">Select</option>
+                                                                <option value="1">Visible To All</option>
+                                                                <option value="2">My BatchMates</option>
+                                                            </select>
+
+                                                        </div>
+
+                                                        <div class="pull-right">
+                                                            <br />
+                                                            <br />
+                                                            @*<a id="searchLink" class="nicdark_btn nicdark_bg_orange medium nicdark_shadow nicdark_radius white nicdark_press">Search</a>*@
+                                                            @*  <input id="Search" type="button" value="Search" class="nicdark_mpopup_ajax nicdark_btn nicdark_bg_orange medium nicdark_shadow nicdark_radius white nicdark_press" />*@
+                                                        </div>
+                                                        <div class="nicdark_space20"></div>
+
+                                                        <div class="comments white">
+                                                            @if (ViewBag.Userdata != null)
+                                                            {
+                                                                <div class="commentlist">
+
+                                                                    @{ int UserId = Convert.ToInt32(Session["UserId"].ToString()); }
+                                                                    <input type="hidden" id="Usersid" value="@UserId" />
+                                                                    @foreach (UserPostsData post in ViewBag.Userdata)
+                                                                    {
+                                                                        <div class="comment">
+                                                                            <div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow">
+
+                                                                                <div class="nicdark_margin20 comment_container nicdark_clearfix" style="display:block;">
+
+                                                                                    <div class="nicdark_textevidence nicdark_width_percentage95 nicdark_width100_responsive">
+                                                                                        <img alt="" class="nicdark_displaynone_ipadpotr nicdark_radius_circle nicdark_absolute" style="width:100px;height:100px;" src="@post.UserImage">
+                                                                                        <div class="nicdark_activity nicdark_marginleft120 nicdark_disable_marginleft_ipadpotr comment-text">
+                                                                                            <h4 class="">
+                                                                                                @post.UserName @post.LastName
+                                                                                                @if (@post.EventName != "CasualPost")
+                                                                                                {
+                                                                                                    <span>- </span> @post.EventName
+                                                                                                }
+                                                                                                <small class="pull-right">
+                                                                                                    @post.UserPostDate |
+                                                                                                    @if (post.BatchVisible == "Visible To All")
+                                                                                                    {
+                                                                                                        <i class="icon-globe" id="Visibletoall" style="cursor:pointer" title="Visible to All"></i>
+                                                                                                    }
+                                                                                                    else
+                                                                                                    {
+                                                                                                        <i class="icon-users" style="cursor:pointer" title="Visible to My batch"></i>
+                                                                                                    }
+                                                                                                </small>
+                                                                                            </h4>
+                                                                                            <div class="nicdark_space10"></div>
+                                                                                            <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                                                                                            <div class="nicdark_space10"></div>
+                                                                                            <p class=" post-message">@post.UserPostMessage</p>
+
+                                                                                            <div class="postImages nicdark_clearfix">
+                                                                                                @foreach (string url in post.imageUrls)
+                                                                                                {
+
+                                                                                                    <a href="javascript:;" class="imgPopup"><img src="@url" width="50" /></a>
+                                                                                                }
+                                                                                                <div class="clear-fix"></div>
+                                                                                            </div>
+                                                                                            <div>
+                                                                                                @if (post.UserLikecheck == null)
+                                                                                                {
+                                                                                                    <span style="width:80%"><a id="LikePost" style="text-decoration:underline;color:blue" onclick="UserPostLikes(@post.PostId,this)">Like</a> </span>
+                                                                                                }
+                                                                                                else
+                                                                                                {
+                                                                                                    <span style="width:80%"><a id="UserUnLikePost" style="text-decoration:underline;color:blue" onclick="UserUnLikePost(@post.PostId,this)">UnLike</a> </span>
+                                                                                                }
+                                                                                                | <a id="displayComment" style="text-decoration:underline;color:blue" onclick="CommentsFunction(@post.PostId,this)">Comment</a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+
+                                                                                    <div class="nicdark_textevidence nicdark_width_percentage5 nicdark_displaynone_responsive text-center">
+                                                                                        <div class="nicdark_space5"></div>
+                                                                                        @* <a title="View" target="_blank" href="@Url.Action(" eventdetails", "WhiteBoard" , new { area="Alumini" , @id=@post.PostId })" class="nicdark_rotate nicdark_tooltip nicdark_btn_icon small nicdark_bg_orangedark nicdark_radius_circle white"><i class="icon-eye"></i></a>*@
+                                                                                        <div class="nicdark_space20"></div>
+                                                                                        @if (post.UserId != null)
+                                                                                        {
+                                                                                            if (post.UserId == UserId)
+                                                                                            {
+                                                                                                <a title="Delete" href="@Url.Action("deleteuserpost","WhiteBoard", new{area="Alumini" , @id=@post.PostId })" clas class="nicdark_rotate nicdark_tooltip nicdark_btn_icon small nicdark_bg_orangedark nicdark_radius_circle white"><i class="icon-cancel"></i></a>
+                                                                                                <div class="nicdark_space10"></div>
+                                                                                            }
+                                                                                        }
+                                                                                    </div>
+
+                                                                                </div>
+
+                                                                                <div class="nicdark_space10"></div>
+
+
+                                                                                <div id="displayUserComments" class="nicdark_margin20 full-width nicdark_clearfix">
+                                                                                    <div>
+                                                                                        <span class="day" id="lblLikes">@post.UserPostsCount Likes</span> | <span class="day" id="lblComments"> @post.UserCommentCount <a id="displayComment" onclick="CommentsFunction(@post.PostId,this)">Comments</a></span>
+                                                                                    </div>
+                                                                                    <div class="commentsBox" id="commentLine">
+                                                                                        <div>
+                                                                                            <div class="commentInput clear-fix">
+                                                                                                <textarea id="txtComment" class="commentTextInput nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle" name="Comment" placeholder="Enter your comment here"></textarea>
+                                                                                                <div class="nicdark_space5"></div>
+                                                                                                <input type="button" id="btnSubmit" value="Submit" onclick="UserComments(@post.PostId,this)" class="nicdark_btn nicdark_bg_red small nicdark_shadow nicdark_radius white nicdark_margin10 pull-right commentPostBtn" />
+
+
+                                                                                            </div>
+                                                                                            <div class="comments comments-small">
+                                                                                                <div id="lblCommentmesage" class="commentlist">
+                                                                                                    <div class="nicdark_margin20 nicdark_clearfix" style="display:block;">
+                                                                                                        @foreach (var UserComments in @post.UserComments)
+                                                                                                        {
+                                                                                                            <div class="nicdark_focus nicdark_relative nicdark_clearfix commentBox_@UserComments.CommentId">
+                                                                                                                <img alt="" class="nicdark_radius_circle nicdark_absolute comment-img" width="65" src="@UserComments.ProfilePic">
+                                                                                                                <div class="nicdark_activity nicdark_marginleft85">
+                                                                                                                    <h5 class="">@UserComments.CommentedByFirstName</h5>
+                                                                                                                    <div class="nicdark_space10"></div>
+                                                                                                                    <p class="">@UserComments.Comment</p>
+                                                                                                                </div>
+                                                                                                                <div class="nicdark_space20"></div>
+                                                                                                                <a class='nicdark_rotate nicdark_tooltip nicdark_btn_icon small nicdark_bg_orangedark nicdark_radius_circle white' href='javascript:;' onclick="DeleteUserComment(@UserComments.CommentId,@post.PostId,this)" title='Delete'><i class='icon-cancel'></i></a>
+                                                                                                            </div>
+                                                                                                        }
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+
+                                                                            </div>
+
+                                                                        </div>
+                                                                        <div class="nicdark_space20"></div>
+                                                                    }
+                                                                </div>
+                                                            }
+                                                        </div>
+
+
+                                                    </div>
+
+
+
+
+                                                </div>
+
+                                                <input type="hidden" id="LazyBindid" />
+
+                                            </div>
+                                            <div align="center">
+                                                <input type="button" id="LazyLoad" class="nicdark_zoom  nicdark_btn nicdark_bg_green medium nicdark_shadow nicdark_radius white" value="View More" />
+                                            </div>
+
+                                            <img src="~/Images/spin.gif" width="50" id="loadingImage" />
+                                            <div class="nicdark_space50"></div>
+
+                                        </div>
+                                        <!--end nicdark_container-->
+
+                                    </section>
+
+        //End Design
+
+    }
+    catch
+    {
+    }
+}
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+<style>
+    .postImages img {
+        height: 30px;
+        margin: 5px;
+        float: left;
+    }
+
+    .popupBack {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 99999999;
+    }
+
+    .popupBox {
+        padding: 20px;
+        border-radius: 10px;
+        margin: 100px auto;
+        width: 60%;
+        text-align: center;
+        background: rgba(255, 255, 255, 1);
+    }
+
+        .popupBox img {
+            display: inline;
+            width: auto;
+            height: 300px;
+            border: 1px solid #000;
+            border-radius: 10px;
+        }
+</style>
+<script>
+    $(document).ready(function () {
+        $('body').on('click', '.imgPopup', function () {
+            var div = $('<div class="popupBack"></div>');
+            var div1 = $('<div class="popupBox" align="center"></div>');
+            var img = $('<img />')
+                .attr('src', $(this).find('img').attr('src'));
+            $(img).appendTo(div1);
+            $(div1).appendTo(div);
+            $(div).appendTo('body');
+        });
+        $('body').on('click', '.popupBack', function () {
+            $(this).remove();
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#loadingImage').hide();
+        $(".commentsBox").hide();
+    });
+    function CommentsFunction(PostId, dis) {
+        $(dis).parents(".comment").find(".commentsBox").show();
+        $(dis).parents(".comment").find(".commentInput").show();
+    };
+
+    function UserPostLikes(PostId, dis) {
+        $.ajax({
+            type: "post",
+            contentType: "application/json",
+            dataType: "Json",
+            url: "../Faculty/WhiteBoard/UserLikesfoPosts",
+            data: JSON.stringify({ "PostId": PostId }),
+            success: function (data) {
+                $(dis).parents('.comment').find('#lblLikes').html(data + " Likes");
+                $(dis).replaceWith('<a id="UserUnLikePost" style="text-decoration:underline;color:blue" onclick="UserUnLikePost(' + PostId + ',this)">UnLike</a>');
+            }
+        });
+    }
+
+    function UserUnLikePost(PostId, dis) {
+        $.ajax({
+            type: "post",
+            contentType: "application/json",
+            dataType: "Json",
+            url: "../Faculty/WhiteBoard/UserUnLikesfoPosts",
+            data: JSON.stringify({ "PostId": PostId }),
+            success: function (data) {
+                $(dis).parents('.comment').find('#lblLikes').html(data + " Likes");
+                $(dis).replaceWith('<a id="LikePost" style="text-decoration:underline;color:blue" onclick="UserPostLikes(' + PostId + ',this)">Like</a>');
+            }
+        });
+    }
+
+
+    function UserComments(PostId, dis) {
+        var UserCommentcommentonPost = $(dis).prev().prev().val();
+        if (UserCommentcommentonPost == "") {
+            alert("Please write the comment");
+        }
+        else {
+            $.ajax({
+                type: "post",
+                contentType: "application/json",
+                dataType: "Json",
+                url: "../Faculty/WhiteBoard/UserPostComments",
+                data: JSON.stringify({ "PostId": PostId, "comment": UserCommentcommentonPost }),
+                success: function (data) {
+                    $(dis).prev().prev().val("");
+                    $(dis).prev().val('');
+                    var Count = 0
+
+                    $(dis).parents('.comment').find('#lblCommentmesage .nicdark_margin20').empty();
+                    $.each(data, function (mess, val) {
+                        Count = Count + 1;
+                        var comment = '<div class="nicdark_focus nicdark_relative commentBox_' + val.CommentId + '">';
+                        comment += '<img alt="" class="nicdark_radius_circle nicdark_absolute comment-img" width="65" src="' + val.UserPic + '">';
+                        comment += '<div class="nicdark_activity nicdark_marginleft85">';
+                        comment += '<h5 class="">' + val.UserName + "&nbsp;" + val.LastName + '</h5>';
+                        comment += '<div class="nicdark_space10"></div>';
+                        comment += '<p class="">' + val.UserMessage + '</p>';
+                        comment += '</div>';
+                        comment += '<div class="nicdark_space20"></div>';
+                        $(dis).parents('.comment').find('#lblCommentmesage .nicdark_margin20').append(comment + "<a class='nicdark_rotate nicdark_tooltip nicdark_btn_icon small nicdark_bg_orangedark nicdark_radius_circle white' href='javascript:;' onclick='DeleteUserComment(" + val.CommentId + "," + PostId + ",this)' title='Delete'><i class='icon-cancel'></i></a>");
+
+                    });
+                    $(dis).parents('.comment').find('#lblComments').html(Count + '  <a id="displayComment" onclick="CommentsFunction(' + PostId + ',this)">Comments</a>');
+                    //$(dis).parents(".comment").find(".commentInput").hide();
+                }
+            });
+        }
+    }
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#LazyBindid').val("");
+        $("#txtStartPostings").val("");
+        $("#LikePost").click(function () {
+        });
+        $('#selectType').change(function () {
+            var Value = $("#selectType option:selected").val();
+            window.location.href = "/Alumini/WhiteBoard?Type=" + Value;
+        });
+
+        ///////////////
+        $(window).scroll(function () {
+            if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+                //alert();
+            }
+        });
+
+        $('#LazyLoad').click(function () {
+            var Userid = $('#Usersid').val();
+
+            $('#LazyLoad').attr('disabled', true);
+            $('#loadingImage').show();
+            var Value = $("#LazyBindid").val();
+            var BindValue = 2;
+            if (Value == "") {
+
+                $("#LazyBindid").val(2);
+            }
+            else {
+                $("#LazyBindid").val((parseInt(($("#LazyBindid").val()))) + 1);
+                BindValue = $("#LazyBindid").val();
+            }
+            $.ajax({
+                type: "Get",
+                dataType: "json",
+                contentType: "Application/json",
+                url: "./WhiteBoard/GetPostsonLazyLoad",
+                data: { "page": BindValue },
+                success: function (data) {
+                    $('#loadingImage').hide();
+                    $('#LazyLoad').removeAttr('disabled');
+                    var html = "";
+                    $.each(data, function (key, value) {
+                        var dateString = value.UserPostDate.substr(6);
+                        var currentTime = new Date(parseInt(dateString));
+                        var month = currentTime.getMonth() + 1;
+                        var day = currentTime.getDate();
+                        var year = currentTime.getFullYear();
+                        var date = day + "/" + month + "/" + year
+
+                        html += '<div class="comment">'
+                        html += '<div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow">'
+                        html += ' <div style="display:block;" class="nicdark_margin20 comment_container nicdark_clearfix">'
+                        html += ' <div class="nicdark_textevidence nicdark_width_percentage95 nicdark_width100_responsive">'
+                        html += '<img src=' + value.UserImage + ' style="width:100px;height:100px;" class="nicdark_displaynone_ipadpotr nicdark_radius_circle nicdark_absolute" alt="">'
+                        html += ' <div class="nicdark_activity nicdark_marginleft120 nicdark_disable_marginleft_ipadpotr comment-text">'
+
+                        if (value.EventName != "CasualPost") {
+                            html += '<span>- </span>' + value.EventName + ''
+                        }
+                        html += '<h4 class="">' + value.UserName + '&nbsp' + value.LastName + '<small class="pull-right">' + currentTime.toString("dd-MM-yyyy hh:mm tt").replace(/GMT.+/, "") + ' |'
+                        if (value.BatchVisible == "Visible To All") {
+                            html += '  <i class="icon-globe" id="Visibletoall" style="cursor:pointer" title="Visible to All"></i>'
+                        }
+                        else {
+                            html += '<i class="icon-users" style="cursor:pointer" title="Visible to My batch"></i>'
+
+                        }
+                        html += ' </small>'
+                        html += '  </h4>'
+                        html += '  <div class="nicdark_space10"></div>'
+                        html += ' <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>'
+                        html += ' <div class="nicdark_space10"></div>'
+                        html += ' <div class="postImages nicdark_clearfix">'
+                        $.each(value.imageUrls, function (key, url) {
+                            html += ' <a href="javascript:;" class="imgPopup"><img src=' + url + ' width="50" /></a>'
+                        });
+                        html += ' <div class="clear-fix"></div>'
+                        html += '</div>'
+
+                        if (value.UserPostMessage != null) {
+                            html += '<p class=" post-message">' + value.UserPostMessage + '</p>'
+                        }
+                        else {
+                            html += '<p class=" post-message"></p>'
+                        }
+                        html += '<div class="postImages nicdark_clearfix"> <div class="clear-fix"></div></div>'
+                        if (value.UserLikecheck == null) {
+                            html += ' <div> <span style="width:80%"><a onclick="UserPostLikes(' + value.PostId + ',this)" style="text-decoration:underline;color:blue" id="LikePost">Like</a> </span> | <a onclick="CommentsFunction(' + value.PostId + ',this)" id="displayComment" style="text-decoration:underline;color:blue">Comment</a></div>  </div></div>'
+                        }
+                        else {
+                            html += ' <div> <span style="width:80%"><a onclick="UserUnLikePost(' + value.PostId + ',this)" style="text-decoration:underline;color:blue" id="UserUnLikePost">UnLike</a> </span> | <a onclick="CommentsFunction(150,this)" id="displayComment">Comment</a></div>  </div></div>'
+                        }
+
+
+                        html += ' <div class="nicdark_textevidence nicdark_width_percentage5 nicdark_displaynone_responsive text-center"> <div class="nicdark_space5"></div> <div class="nicdark_space20">'
+                        if (value.UserId != null) {
+                            if (value.UserId == Userid) {
+                                html += '<a class="nicdark_rotate nicdark_tooltip nicdark_btn_icon small nicdark_bg_orangedark nicdark_radius_circle white" href="/Alumini/WhiteBoard/deleteuserpost/' + value.PostId + '" title="Delete"><i class="icon-cancel"></i></a>'
+                            }
+                        }
+
+
+                        html += '</div> </div></div>'
+                        html += '   <div class="nicdark_space10"></div>'
+                        html += ' <div class="nicdark_margin20 full-width nicdark_clearfix" id="displayUserComments"><div> <span id="lblLikes" class="day">' + value.UserPostsCount + '&nbsp; Likes</span> | <span id="lblComments" class="day">' + value.UserCommentCount + ' <a onclick="CommentsFunction(' + value.PostId + ',this)" id="displayComment">Comments</a></span></div>'
+                        html += '<div id="commentLine" class="commentsBox" style="display: none;">'
+                        html += '  <div>'
+                        html += '<div class="commentInput clear-fix">'
+                        html += ' <textarea placeholder="Enter your comment here" name="Comment" class="commentTextInput nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle" id="txtComment"></textarea>'
+                        html += ' <div class="nicdark_space5"></div>'
+                        html += '<input type="button" class="nicdark_btn nicdark_bg_red small nicdark_shadow nicdark_radius white nicdark_margin10 pull-right commentPostBtn" onclick="UserComments(' + value.PostId + ',this)" value="Submit" id="btnSubmit">'
+                        html += '  </div>'
+                        html += ' <div class="comments comments-small">'
+                        html += '<div class="commentlist" id="lblCommentmesage">'
+                        html += ' <div style="display:block;" class="nicdark_margin20 nicdark_clearfix">'
+                        $.each(value.UserComments, function (key, Comments) {
+                            html += ' <div class="nicdark_focus nicdark_relative nicdark_clearfix commentBox_' + Comments.CommentId + '">'
+                            html += '<img alt="" class="nicdark_radius_circle nicdark_absolute comment-img" width="65" src=' + Comments.ProfilePic + '">'
+                            html += '  <div class="nicdark_activity nicdark_marginleft85">'
+                            html += ' <h5 class="">' + Comments.CommentedByFirstName + '</h5>'
+                            html += ' <div class="nicdark_space10"></div>'
+                            html += ' <p class="">' + Comments.Comment + '</p>'
+                            html += ' </div>'
+                            html += ' <div class="nicdark_space20"></div>'
+                            html += '<a class="nicdark_rotate nicdark_tooltip nicdark_btn_icon small nicdark_bg_orangedark nicdark_radius_circle white" href="javascript:;" onclick="DeleteUserComment(' + Comments.CommentId + ',' + value.PostId + ',this)" title="Delete"><i class="icon-cancel"></i>Delete</a>'
+                            html += ' </div>'
+                        });
+                        html += ' </div>'
+                        html += ' </div>'
+                        html += '</div>'
+                        html += ' </div>'
+                        html += ' </div>'
+                        html += ' </div>'
+                        html += ' </div>'
+                        html += ' </div><div class="nicdark_space20"></div>'                      
+                    });
+                    $('.commentlist').append(html);
+
+                }
+            });
+        });
+
+
+        ///////////////////////////
+    });
+    function DeleteUserComment(id, PostId, dis) {
+
+        $.ajax({
+            type: "Post",
+            dataType: "json",
+            contentType: "Application/json",
+            url: "../Faculty/WhiteBoard/DeleteComments",
+            data: JSON.stringify({ "Commentid": id, "Postid": PostId }),
+            success: function (data) {
+                $('.commentBox_' + id).remove();
+                //alert(data.length + ':' + $(dis).parentsUntil('.comment').find('#lblComments').html());
+                $(dis).parentsUntil('.comment').find('#lblComments').html(data.length + '  <a onclick="CommentsFunction(' + id + ',this)" id="displayComment">Comments</a>');
+            }
+        });
+    }
+</script>
+
+
+
+
+<script language="javascript" type="text/javascript">
+    window.onload = function () {
+        var fileUpload = document.getElementById("fileUpload");
+        fileUpload.onchange = function () {
+            if (typeof (FileReader) != "undefined") {
+                var dvPreview = document.getElementById("dvPreview");
+                dvPreview.innerHTML = "";
+                var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.jpg|.jpeg|.gif|.png|.bmp)$/;
+                for (var i = 0; i < fileUpload.files.length; i++) {
+                    var file = fileUpload.files[i];
+                    if (regex.test(file.name.toLowerCase())) {
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            var div = document.createElement("div");
+                            div.style.float = 'left';
+                            div.style.width = '80px';
+                            div.style.height = '80px';
+                            div.style.textAlign = 'center';
+                            div.style.marginRight = '5px';
+                            var img = document.createElement("IMG");
+                            img.style.width = '80px';
+                            img.style.height = '80px';
+                            img.src = e.target.result;
+                            $(div).append(img);
+                            //$(div).append('<a href="#" onclick=Deletepic(' + img + ')>x</a>');
+                            $(dvPreview).append(div);
+                        }
+                        reader.readAsDataURL(file);
+                    } else {
+                        alert(file.name + " is not a valid image file.");
+                        dvPreview.innerHTML = "";
+                        return false;
+                    }
+                }
+            } else {
+                alert("This browser does not support HTML5 FileReader.");
+            }
+        }
+    };
+
+
+
+</script>

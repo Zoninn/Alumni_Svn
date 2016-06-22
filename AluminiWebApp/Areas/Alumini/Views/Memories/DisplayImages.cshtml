@@ -1,0 +1,131 @@
+﻿@model AluminiWebApp.Areas.Alumini.Models.MemoriesModel
+@{
+    Layout = "~/Areas/Alumini/Views/Shared/_SRKRDesignLayout.cshtml";
+}
+
+
+<section id="nicdark_parallax_title" class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img-single-teacher-1" style="background-position: 50% -60px;margin-top:-150px;">
+
+    <div class="nicdark_filter greydark">
+
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+
+            <div class="grid grid_12">
+                <div class="nicdark_space100"></div>
+                <div class="nicdark_space100"></div>
+                <h1 class="white subtitle">MEMORIES</h1>
+                <div class="nicdark_space20"></div>
+                <div class="nicdark_divider left big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space40"></div>
+                <div class="nicdark_space50"></div>
+            </div>
+
+        </div>
+        <!--end nicdark_container-->
+
+    </div>
+
+</section>
+
+<div class="nicdark_site">
+    <div class="nicdark_site_fullwidth nicdark_clearfix">
+        <div class="nicdark_overlay"></div>
+        <section class="nicdark_section">
+            <div class="nicdark_space10"></div>
+            <!--start nicdark_container-->
+            <div class="nicdark_container nicdark_clearfix">
+                <div class="grid memories-view">
+                    @TempData["Message"]
+                    <div class="nicdark_mpopup_gallery">
+                        <div class="nicdark_margin100">
+                            <a href="@Url.Action("DisplayImages", "Memories", new { area = "Alumini", @id = 1 })" class="nicdark_btn nicdark_bg_green medium nicdark_shadow nicdark_radius white memories_btn"><i class="icon-picture"></i>&nbsp;&nbsp;&nbsp;MY CLASS PICS</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+                        <div class="nicdark_margin100">
+                            <a href="@Url.Action("DisplayImages", "Memories", new { area = "Alumini", @id = 2 })" class="nicdark_btn nicdark_bg_yellow medium nicdark_shadow nicdark_radius white memories_btn"><i class="icon-picture-1"></i>&nbsp;&nbsp;&nbsp;ALL PICS</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+                        <div class="nicdark_margin100 pull-right">
+                            <a href="@Url.Action("memories", "Memories", new { area = "Alumini" })" class="nicdark_btn nicdark_bg_blue small nicdark_shadow nicdark_radius white"><i class="icon-plus"></i>&nbsp;&nbsp;&nbsp;ADD MEMORIES</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+                            <div class="ui-tabs-panel ui-widget-content ui-corner-bottom memories-list nicdark_clearfix">
+                                @foreach (var Memories in @Model.Memories)
+                                {
+                                    <div class="grid_3">
+                                        <div align="right" class="memory-options">
+                                            @if (Convert.ToInt32(Session["UserId"]) == Convert.ToInt32(Memories.Userid))
+                                            {
+                                                <span>
+                                                    <a href="@Url.Action("DisplayMemories", "Memories", new { area = "Alumini", @id = @Memories.Memoriesid })"><i class="icon-eye"></i></a> |
+                                                    @*<a id="EditMemories" href="@Url.Action("DisplayMemories", "Memories", new { area = "Alumini", @id = @Memories.Memoriesid })">Edit</a> |
+                                                        <a id="Deletememories" href="@Url.Action("DisplayMemories", "Memories", new { area = "Alumini", @id = @Memories.Memoriesid })">Delete</a>*@
+                                                    <a href="@Url.Action("memories", "Memories", new { area = "Alumini", MemoriesId = @Memories.Memoriesid })"><i class="icon-edit"></i></a> |
+                                                    @*<a id="EditMemories" href="../memories?Id=@Memories.Memoriesid">Edit</a>*@
+                                                    <a href="javascript:;" id="Deletememories" onclick='DeleteMemories(@Memories.Memoriesid)'><i class="icon-cancel"></i></a>
+                                                </span>
+                                            }
+                                            else
+                                            {
+                                                <a href="@Url.Action("DisplayMemories", "Memories", new { area = "Alumini", @id = @Memories.Memoriesid })">View</a>
+                                            }
+                                        </div>
+                                        @if (File.Exists(Server.MapPath(@Memories.MemroyImage)))
+                                        {
+                                            <a class="img-pop" href="@Memories.MemroyImage" title="Posted by @Memories.PostedBy on @Memories.PostedOn.Value.ToString("MMMM,dd,yyyy")">
+                                                <img alt="" class="nicdark_radius nicdark_opacity" src="@Memories.MemroyImage" height="200" />
+                                            </a>
+                                        }
+                                        else
+                                        {
+                                            <a class="img-pop" href="javascript:;" title="No Image">
+                                                <img alt="" class="nicdark_radius nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" height="200" />
+                                            </a>
+                                        }
+                                        
+                                        <div align="center" style="margin-top:10px;line-height:30px;border-bottom:3px solid #d3d3d3;margin:5px;margin-bottom:10px;">
+                                            <img src="@Memories.PostedbyImages" alt="" width="30"> <span style="line-height:25px;vertical-align: top;">@Memories.PostedBy on @Memories.PostedOn.Value.ToString("MMMM,dd,yyyy")</span>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+
+                    </div>
+                </div>
+                <div class="nicdark_space50"></div>
+            </div>
+            <!--end nicdark_container-->
+        </section>
+    </div>
+</div>
+@section Scripts{
+<script>
+    $(document).ready(function () {
+        $('a[href="' + window.location.pathname + '"]').addClass('active_btn_mem');
+        $('.memories_btn').click(function () {
+            $('.memories_btn').removeClass('active_btn_mem');
+        });
+    });
+    function DeleteMemories(id) {
+        if (confirm("Are you sure you want to delete?")) {
+
+            $.ajax({
+                type: "Get",
+                dataType: "json",
+                contenttype: "Application/json",
+                url: "../DeleteMemories",
+                data: { "id": id },
+                success: function (data) {
+                    $.each(data, function (key, value) {
+                        if (value.visibleTo == "To My Batch Mates") {
+                            window.location.href = "../DisplayImages/1";
+                        }
+                        else {
+                            window.location.href = "../DisplayImages/2";
+                        }
+                    });
+                }
+            });
+        }
+        return false;
+    }
+</script>
+}

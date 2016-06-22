@@ -1,0 +1,119 @@
+﻿@{
+
+    Layout = "~/Areas/Admin/Views/Shared/_AdminMasterLayoutPage.cshtml";
+
+}
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="panel panel-color panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Memories</h3>
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            Title : <span id="Memories"></span>
+                        </p>
+                        <p>
+                            Description : <span id="Description"></span>
+                        </p>
+                        <p>
+                            PostedBy : <span id="PostedBy"></span>
+                        </p>
+                        <p>
+                            Postedon : <span id="PostedOn"></span>
+                        </p>
+
+                        <br />
+                        <h4 class="alert alert-warning">Memories Images</h4>
+                        <table>
+                            
+                            <tr id="Images"></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="~/Custom.js/jquery-1.10.2.min.js"></script>
+<script src="~/Custom.js/jquery.blockUI.js"></script>
+<script type="text/javascript">
+    function getParameterByName(name) { name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]"); var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"), results = regex.exec(location.search); return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " ")); }
+    var EventId = getParameterByName('id');
+    $.ajax({
+        type: "Get",
+        dataType: "json",
+        contentType: "Application/json",
+        url: "../Memories/SingleMemories/" + EventId + "",
+        data: {},
+        success: function (data) {
+            $.each(data, function (key, value) {
+                $("#Memories").html(value.Title);
+                $("#Description").html(value.Description);
+                $("#PostedBy").html(value.PostedBy);
+                var dateString = value.PostedOn.substr(6);
+                var currentTime = new Date(parseInt(dateString));
+                var month = currentTime.getMonth() + 1;
+                var day = currentTime.getDate();
+                var year = currentTime.getFullYear();
+                var date = day + "/" + month + "/" + year;
+                $("#PostedOn").html(date);
+                $.each(value.MemoriesImages, function (key, Images) {
+                    $("#Images").append("<td><img src='" + Images.Image + "' width='150'/></td>");
+                });
+            });
+        }
+    });
+
+</script>
+
+<script type="text/javascript" src="~/Content/assets/plugins/isotope/dist/isotope.pkgd.min.js"></script>
+<script type="text/javascript" src="~/Content/assets/plugins/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
+
+<script type="text/javascript">
+    $(window).load(function () {
+        var $container = $('.portfolioContainer');
+        $container.isotope({
+            filter: '*',
+            animationOptions: {
+                duration: 750,
+                easing: 'linear',
+                queue: false
+            }
+        });
+
+        $('.portfolioFilter a').click(function () {
+            $('.portfolioFilter .current').removeClass('current');
+            $(this).addClass('current');
+
+            var selector = $(this).attr('data-filter');
+            $container.isotope({
+                filter: selector,
+                animationOptions: {
+                    duration: 750,
+                    easing: 'linear',
+                    queue: false
+                }
+            });
+            return false;
+        });
+    });
+    $(document).ready(function () {
+        $('.image-popup').magnificPopup({
+            type: 'image',
+            closeOnContentClick: true,
+            mainClass: 'mfp-fade',
+            gallery: {
+                enabled: true,
+                navigateByImgClick: true,
+                preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
+            }
+        });
+    });
+</script>

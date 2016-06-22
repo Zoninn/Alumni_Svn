@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "BookEvent";
+    Layout = "~/Areas/AlumniFaculty/Views/Shared/_SRKRLayout.cshtml";
+}
+<!-- section -->
+
+<section class="grid-row clear-fix padding-section">
+    <h2 class="center-text">Payments</h2>
+    <div class="grid-col-row">
+        <div class="grid-col grid-col-6">
+            <!-- instructor item -->
+            <div class="item-instructor bg-color-1">
+                @*<a href="page-profile.html" class="instructor-avatar">*@
+                    <img src="@ViewBag.BookingEvents.BannerImage " data-at2x="pic/210x220-img-1@2x.jpg" height="100">
+               @* </a>*@
+                <div class="info-box">
+                    <h3>@ViewBag.BookingEvents.EventName </h3>
+                    <span class="instructor-profession">@ViewBag.BookingEvents.EventVenue </span>
+                    <div class="divider"></div>
+                    <h3>Total Payment details</h3>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <p>Ticket Type</p>
+                                </td>
+                                <td><p>Quantity&nbsp;&nbsp;</p></td>
+                                <td><p>Price</p></td>
+                            </tr>
+                            @{ int TotalQuantity = 0; }
+                            @foreach (var PaymentTickets in ViewBag.BookingEvents.Useselections)
+                            {
+                                <tr>
+                                    <td>
+                                        <p>@PaymentTickets.TicketTypeHeading</p>
+                                    </td>
+                                    <td><p>@PaymentTickets.TotalNoOfTickets</p></td>
+                                    <td><p>@PaymentTickets.TotalAmount</p></td>
+                                </tr>
+
+                            }
+                            <tr>
+                                <td>--------------------------------------------------------</td>
+                                <td>--------------</td>
+                                <td>-------</td>
+                            </tr>
+                            <tr>
+                                <td><h3>Total Quantity</h3></td>
+                                <td><h3>@ViewBag.BookingEvents.TotalNoOfTickets</h3></td>
+                                <td><h3>@ViewBag.BookingEvents.TotalAmount</h3></td>
+                            </tr>
+                        </table>
+
+                    </div>
+                    <div class="social-link">
+                    </div>
+                </div>
+            </div>
+
+            <!-- / instructor item -->
+        </div>
+        <div class="grid-col grid-col-6">
+
+        </div>
+    </div>
+</section>
+<!-- / section -->
+<div align="left">
+    <input type="submit" class="cws-button bt-color-4 border-radius" value="Print">&nbsp;&nbsp;
+</div>

@@ -1,0 +1,51 @@
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiService.Test\bin\Debug\AluminiService.Test.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiService.Test\bin\Debug\AluminiService.Test.pdb
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiService.Test\obj\Debug\AluminiService.Test.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiService.Test\obj\Debug\AluminiService.Test.pdb
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiService.Test\bin\Debug\FluentAssertions.Core.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiService.Test\bin\Debug\FluentAssertions.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiService.Test\bin\Debug\Moq.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiService.Test\bin\Debug\FluentAssertions.pdb
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiService.Test\bin\Debug\FluentAssertions.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiService.Test\bin\Debug\FluentAssertions.Core.pdb
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiService.Test\bin\Debug\FluentAssertions.Core.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiService.Test\bin\Debug\Moq.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiService.Test\bin\Debug\AluminiService.Test.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiService.Test\bin\Debug\AluminiService.Test.pdb
+C:\Users\tulasiram\Documents\collegealumini\AluminiService.Test\obj\Debug\AluminiService.Test.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiService.Test\obj\Debug\AluminiService.Test.pdb
+D:\FRESHCOPY ALUMNI\AluminiService.Test\bin\Debug\AluminiService.Test.dll
+D:\FRESHCOPY ALUMNI\AluminiService.Test\bin\Debug\AluminiService.Test.pdb
+D:\FRESHCOPY ALUMNI\AluminiService.Test\obj\Debug\AluminiService.Test.dll
+D:\FRESHCOPY ALUMNI\AluminiService.Test\obj\Debug\AluminiService.Test.pdb
+D:\FRESHCOPY ALUMNI\AluminiService.Test\obj\Debug\AluminiService.Test.csprojResolveAssemblyReference.cache
+C:\Alumni Copy\AluminiService.Test\bin\Debug\AluminiService.Test.dll
+C:\Alumni Copy\AluminiService.Test\bin\Debug\AluminiService.Test.pdb
+C:\Alumni Copy\AluminiService.Test\obj\Debug\AluminiService.Test.dll
+C:\Alumni Copy\AluminiService.Test\obj\Debug\AluminiService.Test.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiService.Test\bin\Debug\AluminiService.Test.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiService.Test\bin\Debug\AluminiService.Test.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiService.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiService.Test\obj\Debug\AluminiService.Test.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiService.Test\obj\Debug\AluminiService.Test.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiService.Test\obj\Debug\AluminiService.Test.csprojResolveAssemblyReference.cache
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiService.Test\bin\Debug\AluminiService.Test.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiService.Test\bin\Debug\AluminiService.Test.pdb
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiService.Test\obj\Debug\AluminiService.Test.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiService.Test\obj\Debug\AluminiService.Test.pdb
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiService.Test\bin\Debug\AluminiService.Test.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiService.Test\bin\Debug\AluminiService.Test.pdb
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiService.Test\obj\Debug\AluminiService.Test.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiService.Test\obj\Debug\AluminiService.Test.pdb
+D:\RepoAlumni\AluminiService.Test\bin\Debug\AluminiService.Test.dll
+D:\RepoAlumni\AluminiService.Test\bin\Debug\AluminiService.Test.pdb
+D:\RepoAlumni\AluminiService.Test\obj\Debug\AluminiService.Test.dll
+D:\RepoAlumni\AluminiService.Test\obj\Debug\AluminiService.Test.pdb
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiService.Test\bin\Debug\AluminiService.Test.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiService.Test\bin\Debug\AluminiService.Test.pdb
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiService.Test\obj\Debug\AluminiService.Test.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiService.Test\obj\Debug\AluminiService.Test.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiService.Test\bin\Debug\AluminiService.Test.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiService.Test\bin\Debug\AluminiService.Test.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiService.Test\obj\Debug\AluminiService.Test.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiService.Test\obj\Debug\AluminiService.Test.pdb

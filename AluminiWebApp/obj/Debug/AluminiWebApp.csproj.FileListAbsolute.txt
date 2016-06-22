@@ -1,0 +1,817 @@
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\AluminiWebApp.dll.config
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\AluminiWebApp.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\AluminiWebApp.pdb
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Antlr3.Runtime.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\EntityFramework.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\EntityFramework.SqlServer.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Microsoft.AspNet.Identity.Core.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Microsoft.AspNet.Identity.Owin.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Microsoft.Owin.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Microsoft.Owin.Host.SystemWeb.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Microsoft.Owin.Security.Cookies.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Microsoft.Owin.Security.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Microsoft.Owin.Security.Facebook.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Microsoft.Owin.Security.Google.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Microsoft.Owin.Security.OAuth.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Microsoft.Owin.Security.Twitter.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Microsoft.Web.Infrastructure.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Newtonsoft.Json.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Owin.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\System.Web.Helpers.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\System.Web.Mvc.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\System.Web.Optimization.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\System.Web.Razor.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\System.Web.WebPages.Deployment.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\System.Web.WebPages.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\System.Web.WebPages.Razor.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\WebGrease.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\System.Web.Helpers.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\System.Web.Mvc.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\System.Web.Optimization.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\System.Web.Razor.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\System.Web.WebPages.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\System.Web.WebPages.Deployment.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\System.Web.WebPages.Razor.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Antlr3.Runtime.pdb
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Newtonsoft.Json.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\EntityFramework.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\EntityFramework.SqlServer.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Microsoft.AspNet.Identity.Core.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Microsoft.AspNet.Identity.Owin.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Microsoft.Owin.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Microsoft.Owin.Host.SystemWeb.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Microsoft.Owin.Security.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Microsoft.Owin.Security.Facebook.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Microsoft.Owin.Security.Cookies.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Microsoft.Owin.Security.OAuth.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Microsoft.Owin.Security.Google.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Microsoft.Owin.Security.Twitter.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\obj\Debug\AluminiWebApp.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\obj\Debug\AluminiWebApp.pdb
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Alumini.Core.dll
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\NLog.dll
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Alumini.Core.pdb
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\NLog.xml
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\obj\Debug\AluminiWebApp.csprojResolveAssemblyReference.cache
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Alumini.Logger.dll
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\AluminiRepository.dll
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\AluminiService.dll
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Alumini.Logger.pdb
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\AluminiRepository.pdb
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\AluminiService.pdb
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Ninject.dll
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Ninject.Web.Common.dll
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Ninject.Web.Mvc.dll
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\WebActivatorEx.dll
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Ninject.xml
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Ninject.Web.Common.xml
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp\bin\Ninject.Web.Mvc.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\obj\Debug\AluminiWebApp.csprojResolveAssemblyReference.cache
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\AluminiWebApp.dll.config
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\AluminiWebApp.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\AluminiWebApp.pdb
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Alumini.Core.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Alumini.Logger.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\AluminiRepository.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\AluminiService.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Antlr3.Runtime.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\EntityFramework.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\EntityFramework.SqlServer.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Microsoft.Owin.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Microsoft.Owin.Security.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Newtonsoft.Json.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Ninject.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Ninject.Web.Common.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Ninject.Web.Mvc.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\NLog.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Owin.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\System.Web.Helpers.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\System.Web.Mvc.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\System.Web.Optimization.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\System.Web.Razor.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\System.Web.WebPages.Deployment.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\System.Web.WebPages.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\System.Web.WebPages.Razor.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\WebActivatorEx.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\WebGrease.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Alumini.Core.pdb
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Alumini.Logger.pdb
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\AluminiRepository.pdb
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\AluminiService.pdb
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Ninject.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Ninject.Web.Common.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Ninject.Web.Mvc.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\NLog.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\System.Web.Helpers.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\System.Web.Mvc.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\System.Web.Optimization.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\System.Web.Razor.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\System.Web.WebPages.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\System.Web.WebPages.Deployment.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\System.Web.WebPages.Razor.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Antlr3.Runtime.pdb
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Newtonsoft.Json.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\EntityFramework.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\EntityFramework.SqlServer.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Microsoft.Owin.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Microsoft.Owin.Security.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\obj\Debug\AluminiWebApp.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp\obj\Debug\AluminiWebApp.pdb
+D:\FRESHCOPY ALUMNI\AluminiWebApp\obj\Debug\AluminiWebApp.csprojResolveAssemblyReference.cache
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\AluminiWebApp.dll.config
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\AluminiWebApp.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\AluminiWebApp.pdb
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Alumini.Core.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Alumini.Logger.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\AluminiRepository.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Antlr3.Runtime.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\EntityFramework.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\EntityFramework.SqlServer.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Microsoft.AspNet.Identity.Core.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Microsoft.Owin.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Microsoft.Owin.Security.Cookies.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Microsoft.Owin.Security.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Microsoft.Owin.Security.Facebook.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Microsoft.Owin.Security.Google.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Microsoft.Owin.Security.OAuth.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Microsoft.Owin.Security.Twitter.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Microsoft.Web.Infrastructure.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Newtonsoft.Json.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Ninject.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Ninject.Web.Common.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Ninject.Web.Mvc.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\NLog.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Owin.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\System.Web.Helpers.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\System.Web.Mvc.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\System.Web.Optimization.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\System.Web.Razor.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\System.Web.WebPages.Deployment.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\System.Web.WebPages.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\System.Web.WebPages.Razor.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\WebActivatorEx.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\WebGrease.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Alumini.Core.pdb
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Alumini.Logger.pdb
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\AluminiRepository.pdb
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\AluminiService.pdb
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Ninject.xml
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Ninject.Web.Common.xml
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Ninject.Web.Mvc.xml
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\NLog.xml
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\System.Web.Helpers.xml
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\System.Web.Mvc.xml
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\System.Web.Optimization.xml
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\System.Web.Razor.xml
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\System.Web.WebPages.xml
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\System.Web.WebPages.Deployment.xml
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\System.Web.WebPages.Razor.xml
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Antlr3.Runtime.pdb
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Newtonsoft.Json.xml
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\EntityFramework.xml
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\EntityFramework.SqlServer.xml
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Microsoft.AspNet.Identity.Core.xml
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Microsoft.Owin.xml
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Microsoft.Owin.Security.xml
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Microsoft.Owin.Security.Facebook.xml
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Microsoft.Owin.Security.Cookies.xml
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Microsoft.Owin.Security.OAuth.xml
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Microsoft.Owin.Security.Google.xml
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Microsoft.Owin.Security.Twitter.xml
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\FRESHCOPY ALUMNI\AluminiWebApp\obj\Debug\AluminiWebApp.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp\obj\Debug\AluminiWebApp.pdb
+D:\FRESHCOPY ALUMNI\AluminiWebApp\bin\AluminiService.dll
+C:\Alumni Copy\AluminiWebApp\bin\AluminiWebApp.dll.config
+C:\Alumni Copy\AluminiWebApp\bin\AluminiWebApp.dll
+C:\Alumni Copy\AluminiWebApp\bin\AluminiWebApp.pdb
+C:\Alumni Copy\AluminiWebApp\bin\Alumini.Core.dll
+C:\Alumni Copy\AluminiWebApp\bin\Alumini.Logger.dll
+C:\Alumni Copy\AluminiWebApp\bin\AluminiRepository.dll
+C:\Alumni Copy\AluminiWebApp\bin\AluminiService.dll
+C:\Alumni Copy\AluminiWebApp\bin\Antlr3.Runtime.dll
+C:\Alumni Copy\AluminiWebApp\bin\EntityFramework.dll
+C:\Alumni Copy\AluminiWebApp\bin\EntityFramework.SqlServer.dll
+C:\Alumni Copy\AluminiWebApp\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Alumni Copy\AluminiWebApp\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Alumni Copy\AluminiWebApp\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Alumni Copy\AluminiWebApp\bin\Microsoft.Owin.dll
+C:\Alumni Copy\AluminiWebApp\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Alumni Copy\AluminiWebApp\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Alumni Copy\AluminiWebApp\bin\Microsoft.Owin.Security.dll
+C:\Alumni Copy\AluminiWebApp\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Alumni Copy\AluminiWebApp\bin\Microsoft.Owin.Security.Google.dll
+C:\Alumni Copy\AluminiWebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Alumni Copy\AluminiWebApp\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Alumni Copy\AluminiWebApp\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Alumni Copy\AluminiWebApp\bin\Microsoft.Web.Infrastructure.dll
+C:\Alumni Copy\AluminiWebApp\bin\Newtonsoft.Json.dll
+C:\Alumni Copy\AluminiWebApp\bin\Ninject.dll
+C:\Alumni Copy\AluminiWebApp\bin\Ninject.Web.Common.dll
+C:\Alumni Copy\AluminiWebApp\bin\Ninject.Web.Mvc.dll
+C:\Alumni Copy\AluminiWebApp\bin\NLog.dll
+C:\Alumni Copy\AluminiWebApp\bin\Owin.dll
+C:\Alumni Copy\AluminiWebApp\bin\System.Web.Helpers.dll
+C:\Alumni Copy\AluminiWebApp\bin\System.Web.Mvc.dll
+C:\Alumni Copy\AluminiWebApp\bin\System.Web.Optimization.dll
+C:\Alumni Copy\AluminiWebApp\bin\System.Web.Razor.dll
+C:\Alumni Copy\AluminiWebApp\bin\System.Web.WebPages.Deployment.dll
+C:\Alumni Copy\AluminiWebApp\bin\System.Web.WebPages.dll
+C:\Alumni Copy\AluminiWebApp\bin\System.Web.WebPages.Razor.dll
+C:\Alumni Copy\AluminiWebApp\bin\WebActivatorEx.dll
+C:\Alumni Copy\AluminiWebApp\bin\WebGrease.dll
+C:\Alumni Copy\AluminiWebApp\bin\AluminiService.pdb
+C:\Alumni Copy\AluminiWebApp\bin\Alumini.Core.pdb
+C:\Alumni Copy\AluminiWebApp\bin\Alumini.Logger.pdb
+C:\Alumni Copy\AluminiWebApp\bin\AluminiRepository.pdb
+C:\Alumni Copy\AluminiWebApp\bin\Ninject.xml
+C:\Alumni Copy\AluminiWebApp\bin\Ninject.Web.Common.xml
+C:\Alumni Copy\AluminiWebApp\bin\Ninject.Web.Mvc.xml
+C:\Alumni Copy\AluminiWebApp\bin\NLog.xml
+C:\Alumni Copy\AluminiWebApp\bin\System.Web.Helpers.xml
+C:\Alumni Copy\AluminiWebApp\bin\System.Web.Mvc.xml
+C:\Alumni Copy\AluminiWebApp\bin\System.Web.Optimization.xml
+C:\Alumni Copy\AluminiWebApp\bin\System.Web.Razor.xml
+C:\Alumni Copy\AluminiWebApp\bin\System.Web.WebPages.xml
+C:\Alumni Copy\AluminiWebApp\bin\System.Web.WebPages.Deployment.xml
+C:\Alumni Copy\AluminiWebApp\bin\System.Web.WebPages.Razor.xml
+C:\Alumni Copy\AluminiWebApp\bin\Antlr3.Runtime.pdb
+C:\Alumni Copy\AluminiWebApp\bin\Newtonsoft.Json.xml
+C:\Alumni Copy\AluminiWebApp\bin\EntityFramework.xml
+C:\Alumni Copy\AluminiWebApp\bin\EntityFramework.SqlServer.xml
+C:\Alumni Copy\AluminiWebApp\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Alumni Copy\AluminiWebApp\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Alumni Copy\AluminiWebApp\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Alumni Copy\AluminiWebApp\bin\Microsoft.Owin.xml
+C:\Alumni Copy\AluminiWebApp\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Alumni Copy\AluminiWebApp\bin\Microsoft.Owin.Security.xml
+C:\Alumni Copy\AluminiWebApp\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Alumni Copy\AluminiWebApp\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Alumni Copy\AluminiWebApp\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Alumni Copy\AluminiWebApp\bin\Microsoft.Owin.Security.Google.xml
+C:\Alumni Copy\AluminiWebApp\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Alumni Copy\AluminiWebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Alumni Copy\AluminiWebApp\obj\Debug\AluminiWebApp.dll
+C:\Alumni Copy\AluminiWebApp\obj\Debug\AluminiWebApp.pdb
+C:\Alumni Copy\AluminiWebApp\obj\Debug\AluminiWebApp.csprojResolveAssemblyReference.cache
+C:\Alumni Copy\AluminiWebApp\bin\DotNetOpenAuth.AspNet.dll
+C:\Alumni Copy\AluminiWebApp\bin\DotNetOpenAuth.Core.dll
+C:\Alumni Copy\AluminiWebApp\bin\DotNetOpenAuth.OAuth.Consumer.dll
+C:\Alumni Copy\AluminiWebApp\bin\DotNetOpenAuth.OAuth.dll
+C:\Alumni Copy\AluminiWebApp\bin\DotNetOpenAuth.OpenId.dll
+C:\Alumni Copy\AluminiWebApp\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+C:\Alumni Copy\AluminiWebApp\bin\System.Net.Http.Extensions.dll
+C:\Alumni Copy\AluminiWebApp\bin\System.Net.Http.Primitives.dll
+C:\Alumni Copy\AluminiWebApp\bin\Org.Mentalis.Security.Cryptography.dll
+C:\Alumni Copy\AluminiWebApp\bin\Mono.Math.dll
+C:\Alumni Copy\AluminiWebApp\bin\DotNetOpenAuth.AspNet.xml
+C:\Alumni Copy\AluminiWebApp\bin\DotNetOpenAuth.Core.xml
+C:\Alumni Copy\AluminiWebApp\bin\DotNetOpenAuth.OAuth.xml
+C:\Alumni Copy\AluminiWebApp\bin\DotNetOpenAuth.OAuth.Consumer.xml
+C:\Alumni Copy\AluminiWebApp\bin\DotNetOpenAuth.OpenId.xml
+C:\Alumni Copy\AluminiWebApp\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+C:\Alumni Copy\AluminiWebApp\bin\System.Net.Http.Extensions.xml
+C:\Alumni Copy\AluminiWebApp\bin\System.Net.Http.Primitives.xml
+C:\Alumni Copy\AluminiWebApp\bin\Org.Mentalis.Security.Cryptography.xml
+C:\Alumni Copy\AluminiWebApp\bin\Mono.Math.xml
+C:\Alumni Copy\AluminiWebApp\obj\Debug\AluminiWebApp.csproj.App.config
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\AluminiWebApp.dll.config
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\AluminiWebApp.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\AluminiWebApp.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Alumini.Core.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Alumini.Logger.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\AluminiRepository.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\AluminiService.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Antlr3.Runtime.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\DotNetOpenAuth.AspNet.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\DotNetOpenAuth.Clients.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\DotNetOpenAuth.Core.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\DotNetOpenAuth.OAuth.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\DotNetOpenAuth.OpenId.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\EntityFramework.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\EntityFramework.SqlServer.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Facebook.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Microsoft.AspNet.Facebook.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Microsoft.AspNet.Identity.Core.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Microsoft.Owin.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Microsoft.Owin.Security.Cookies.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Microsoft.Owin.Security.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Microsoft.Owin.Security.Facebook.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Microsoft.Owin.Security.Google.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Microsoft.Owin.Security.OAuth.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Microsoft.Owin.Security.Twitter.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Microsoft.Web.Infrastructure.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Newtonsoft.Json.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Ninject.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Ninject.Web.Common.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Ninject.Web.Mvc.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Owin.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\System.Net.Http.Extensions.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\System.Net.Http.Formatting.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\System.Net.Http.Primitives.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\System.Web.Helpers.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\System.Web.Http.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\System.Web.Http.WebHost.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\System.Web.Mvc.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\System.Web.Optimization.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\System.Web.Razor.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\System.Web.WebPages.Deployment.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\System.Web.WebPages.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\System.Web.WebPages.Razor.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\WebActivatorEx.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\WebGrease.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\NLog.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Org.Mentalis.Security.Cryptography.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Mono.Math.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Alumini.Core.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Alumini.Logger.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\AluminiRepository.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\AluminiService.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\DotNetOpenAuth.AspNet.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\DotNetOpenAuth.Core.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\DotNetOpenAuth.OAuth.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\DotNetOpenAuth.OpenId.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Facebook.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Microsoft.AspNet.Facebook.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Ninject.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Ninject.Web.Common.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Ninject.Web.Mvc.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\System.Net.Http.Extensions.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\System.Net.Http.Formatting.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\System.Net.Http.Primitives.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\System.Web.Http.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\System.Web.Http.WebHost.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\System.Web.Helpers.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\System.Web.Mvc.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\System.Web.Optimization.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\System.Web.Razor.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\System.Web.WebPages.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\System.Web.WebPages.Deployment.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\System.Web.WebPages.Razor.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Antlr3.Runtime.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Newtonsoft.Json.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\EntityFramework.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\EntityFramework.SqlServer.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Microsoft.AspNet.Identity.Core.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Microsoft.Owin.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Microsoft.Owin.Security.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Microsoft.Owin.Security.Facebook.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Microsoft.Owin.Security.Cookies.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Microsoft.Owin.Security.OAuth.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Microsoft.Owin.Security.Google.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Microsoft.Owin.Security.Twitter.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\NLog.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Org.Mentalis.Security.Cryptography.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\bin\Mono.Math.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\obj\Debug\AluminiWebApp.csproj.App.config
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\obj\Debug\AluminiWebApp.csprojResolveAssemblyReference.cache
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\obj\Debug\AluminiWebApp.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\obj\Debug\AluminiWebApp.pdb
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\AluminiWebApp.dll.config
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\AluminiWebApp.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\AluminiWebApp.pdb
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Alumini.Core.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Alumini.Logger.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\AluminiRepository.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\AluminiService.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Antlr3.Runtime.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\DotNetOpenAuth.AspNet.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\DotNetOpenAuth.Clients.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\DotNetOpenAuth.Core.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\DotNetOpenAuth.OAuth.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\DotNetOpenAuth.OpenId.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\EntityFramework.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\EntityFramework.SqlServer.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Facebook.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Microsoft.AspNet.Facebook.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Microsoft.AspNet.Identity.Core.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Microsoft.Owin.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Microsoft.Owin.Security.Cookies.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Microsoft.Owin.Security.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Microsoft.Owin.Security.Facebook.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Microsoft.Owin.Security.Google.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Microsoft.Owin.Security.OAuth.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Microsoft.Owin.Security.Twitter.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Microsoft.Web.Infrastructure.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Newtonsoft.Json.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Ninject.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Ninject.Web.Common.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Ninject.Web.Mvc.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Owin.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\System.Net.Http.Extensions.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\System.Net.Http.Formatting.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\System.Net.Http.Primitives.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\System.Web.Helpers.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\System.Web.Http.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\System.Web.Http.WebHost.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\System.Web.Mvc.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\System.Web.Optimization.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\System.Web.Razor.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\System.Web.WebPages.Deployment.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\System.Web.WebPages.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\System.Web.WebPages.Razor.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\WebActivatorEx.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\WebGrease.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\NLog.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Org.Mentalis.Security.Cryptography.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Mono.Math.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Alumini.Core.pdb
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Alumini.Logger.pdb
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\AluminiRepository.pdb
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\AluminiService.pdb
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\DotNetOpenAuth.AspNet.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\DotNetOpenAuth.Core.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\DotNetOpenAuth.OAuth.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\DotNetOpenAuth.OpenId.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Facebook.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Microsoft.AspNet.Facebook.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Ninject.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Ninject.Web.Common.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Ninject.Web.Mvc.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\System.Net.Http.Extensions.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\System.Net.Http.Formatting.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\System.Net.Http.Primitives.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\System.Web.Http.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\System.Web.Http.WebHost.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\System.Web.Mvc.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\System.Web.Helpers.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\System.Web.Optimization.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\System.Web.Razor.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\System.Web.WebPages.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\System.Web.WebPages.Deployment.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\System.Web.WebPages.Razor.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Antlr3.Runtime.pdb
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Newtonsoft.Json.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\EntityFramework.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\EntityFramework.SqlServer.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Microsoft.AspNet.Identity.Core.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Microsoft.Owin.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Microsoft.Owin.Security.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Microsoft.Owin.Security.Facebook.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Microsoft.Owin.Security.Cookies.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Microsoft.Owin.Security.OAuth.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Microsoft.Owin.Security.Google.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Microsoft.Owin.Security.Twitter.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\NLog.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Org.Mentalis.Security.Cryptography.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\Mono.Math.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\obj\Debug\AluminiWebApp.csproj.App.config
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\obj\Debug\AluminiWebApp.csprojResolveAssemblyReference.cache
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\obj\Debug\AluminiWebApp.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\obj\Debug\AluminiWebApp.pdb
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp\bin\McjDevelopment.Mvc3ValidationGroups.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\AluminiWebApp.dll.config
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\AluminiWebApp.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\AluminiWebApp.pdb
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Alumini.Core.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Alumini.Logger.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\AluminiRepository.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\AluminiService.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Antlr3.Runtime.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\DotNetOpenAuth.AspNet.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\DotNetOpenAuth.Clients.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\DotNetOpenAuth.Core.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\DotNetOpenAuth.OAuth.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\DotNetOpenAuth.OpenId.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\EntityFramework.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\EntityFramework.SqlServer.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Facebook.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\McjDevelopment.Mvc3ValidationGroups.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Microsoft.AspNet.Facebook.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Microsoft.AspNet.Identity.Core.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Microsoft.Owin.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Microsoft.Owin.Security.Cookies.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Microsoft.Owin.Security.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Microsoft.Owin.Security.Facebook.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Microsoft.Owin.Security.Google.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Microsoft.Owin.Security.OAuth.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Microsoft.Owin.Security.Twitter.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Microsoft.Web.Infrastructure.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Newtonsoft.Json.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Ninject.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Ninject.Web.Common.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Ninject.Web.Mvc.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Owin.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\System.Net.Http.Extensions.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\System.Net.Http.Formatting.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\System.Net.Http.Primitives.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\System.Web.Helpers.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\System.Web.Http.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\System.Web.Http.WebHost.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\System.Web.Mvc.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\System.Web.Optimization.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\System.Web.Razor.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\System.Web.WebPages.Deployment.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\System.Web.WebPages.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\System.Web.WebPages.Razor.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\WebActivatorEx.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\WebGrease.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\NLog.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Org.Mentalis.Security.Cryptography.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Mono.Math.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Alumini.Core.pdb
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Alumini.Logger.pdb
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\AluminiRepository.pdb
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\AluminiService.pdb
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\DotNetOpenAuth.AspNet.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\DotNetOpenAuth.Core.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\DotNetOpenAuth.OAuth.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\DotNetOpenAuth.OpenId.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Facebook.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Microsoft.AspNet.Facebook.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Ninject.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Ninject.Web.Common.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Ninject.Web.Mvc.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\System.Net.Http.Extensions.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\System.Net.Http.Formatting.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\System.Net.Http.Primitives.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\System.Web.Http.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\System.Web.Http.WebHost.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\System.Web.Mvc.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\System.Web.Helpers.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\System.Web.Optimization.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\System.Web.Razor.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\System.Web.WebPages.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\System.Web.WebPages.Deployment.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\System.Web.WebPages.Razor.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Antlr3.Runtime.pdb
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Newtonsoft.Json.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\EntityFramework.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\EntityFramework.SqlServer.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Microsoft.AspNet.Identity.Core.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Microsoft.Owin.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Microsoft.Owin.Security.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Microsoft.Owin.Security.Facebook.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Microsoft.Owin.Security.Cookies.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Microsoft.Owin.Security.OAuth.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Microsoft.Owin.Security.Google.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Microsoft.Owin.Security.Twitter.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\NLog.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Org.Mentalis.Security.Cryptography.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\bin\Mono.Math.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\obj\Debug\AluminiWebApp.csproj.App.config
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\obj\Debug\AluminiWebApp.csprojResolveAssemblyReference.cache
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\obj\Debug\AluminiWebApp.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp\obj\Debug\AluminiWebApp.pdb
+D:\RepoAlumni\AluminiWebApp\bin\AluminiWebApp.dll.config
+D:\RepoAlumni\AluminiWebApp\bin\AluminiWebApp.dll
+D:\RepoAlumni\AluminiWebApp\bin\AluminiWebApp.pdb
+D:\RepoAlumni\AluminiWebApp\bin\Alumini.Core.dll
+D:\RepoAlumni\AluminiWebApp\bin\Alumini.Logger.dll
+D:\RepoAlumni\AluminiWebApp\bin\AluminiRepository.dll
+D:\RepoAlumni\AluminiWebApp\bin\AluminiService.dll
+D:\RepoAlumni\AluminiWebApp\bin\Antlr3.Runtime.dll
+D:\RepoAlumni\AluminiWebApp\bin\DotNetOpenAuth.AspNet.dll
+D:\RepoAlumni\AluminiWebApp\bin\DotNetOpenAuth.Clients.dll
+D:\RepoAlumni\AluminiWebApp\bin\DotNetOpenAuth.Core.dll
+D:\RepoAlumni\AluminiWebApp\bin\DotNetOpenAuth.OAuth.Consumer.dll
+D:\RepoAlumni\AluminiWebApp\bin\DotNetOpenAuth.OAuth.dll
+D:\RepoAlumni\AluminiWebApp\bin\DotNetOpenAuth.OpenId.dll
+D:\RepoAlumni\AluminiWebApp\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+D:\RepoAlumni\AluminiWebApp\bin\EntityFramework.dll
+D:\RepoAlumni\AluminiWebApp\bin\EntityFramework.SqlServer.dll
+D:\RepoAlumni\AluminiWebApp\bin\Facebook.dll
+D:\RepoAlumni\AluminiWebApp\bin\McjDevelopment.Mvc3ValidationGroups.dll
+D:\RepoAlumni\AluminiWebApp\bin\Microsoft.AspNet.Facebook.dll
+D:\RepoAlumni\AluminiWebApp\bin\Microsoft.AspNet.Identity.Core.dll
+D:\RepoAlumni\AluminiWebApp\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\RepoAlumni\AluminiWebApp\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\RepoAlumni\AluminiWebApp\bin\Microsoft.Owin.dll
+D:\RepoAlumni\AluminiWebApp\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\RepoAlumni\AluminiWebApp\bin\Microsoft.Owin.Security.Cookies.dll
+D:\RepoAlumni\AluminiWebApp\bin\Microsoft.Owin.Security.dll
+D:\RepoAlumni\AluminiWebApp\bin\Microsoft.Owin.Security.Facebook.dll
+D:\RepoAlumni\AluminiWebApp\bin\Microsoft.Owin.Security.Google.dll
+D:\RepoAlumni\AluminiWebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\RepoAlumni\AluminiWebApp\bin\Microsoft.Owin.Security.OAuth.dll
+D:\RepoAlumni\AluminiWebApp\bin\Microsoft.Owin.Security.Twitter.dll
+D:\RepoAlumni\AluminiWebApp\bin\Microsoft.Web.Infrastructure.dll
+D:\RepoAlumni\AluminiWebApp\bin\Newtonsoft.Json.dll
+D:\RepoAlumni\AluminiWebApp\bin\Ninject.dll
+D:\RepoAlumni\AluminiWebApp\bin\Ninject.Web.Common.dll
+D:\RepoAlumni\AluminiWebApp\bin\Ninject.Web.Mvc.dll
+D:\RepoAlumni\AluminiWebApp\bin\Owin.dll
+D:\RepoAlumni\AluminiWebApp\bin\System.Net.Http.Extensions.dll
+D:\RepoAlumni\AluminiWebApp\bin\System.Net.Http.Formatting.dll
+D:\RepoAlumni\AluminiWebApp\bin\System.Net.Http.Primitives.dll
+D:\RepoAlumni\AluminiWebApp\bin\System.Web.Helpers.dll
+D:\RepoAlumni\AluminiWebApp\bin\System.Web.Http.dll
+D:\RepoAlumni\AluminiWebApp\bin\System.Web.Http.WebHost.dll
+D:\RepoAlumni\AluminiWebApp\bin\System.Web.Optimization.dll
+D:\RepoAlumni\AluminiWebApp\bin\System.Web.Razor.dll
+D:\RepoAlumni\AluminiWebApp\bin\System.Web.WebPages.Deployment.dll
+D:\RepoAlumni\AluminiWebApp\bin\System.Web.WebPages.dll
+D:\RepoAlumni\AluminiWebApp\bin\System.Web.WebPages.Razor.dll
+D:\RepoAlumni\AluminiWebApp\bin\WebActivatorEx.dll
+D:\RepoAlumni\AluminiWebApp\bin\WebGrease.dll
+D:\RepoAlumni\AluminiWebApp\bin\NLog.dll
+D:\RepoAlumni\AluminiWebApp\bin\Org.Mentalis.Security.Cryptography.dll
+D:\RepoAlumni\AluminiWebApp\bin\Mono.Math.dll
+D:\RepoAlumni\AluminiWebApp\bin\Alumini.Core.pdb
+D:\RepoAlumni\AluminiWebApp\bin\Alumini.Logger.pdb
+D:\RepoAlumni\AluminiWebApp\bin\AluminiRepository.pdb
+D:\RepoAlumni\AluminiWebApp\bin\AluminiService.pdb
+D:\RepoAlumni\AluminiWebApp\bin\DotNetOpenAuth.AspNet.xml
+D:\RepoAlumni\AluminiWebApp\bin\DotNetOpenAuth.Core.xml
+D:\RepoAlumni\AluminiWebApp\bin\DotNetOpenAuth.OAuth.xml
+D:\RepoAlumni\AluminiWebApp\bin\DotNetOpenAuth.OAuth.Consumer.xml
+D:\RepoAlumni\AluminiWebApp\bin\DotNetOpenAuth.OpenId.xml
+D:\RepoAlumni\AluminiWebApp\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+D:\RepoAlumni\AluminiWebApp\bin\Facebook.xml
+D:\RepoAlumni\AluminiWebApp\bin\Microsoft.AspNet.Facebook.xml
+D:\RepoAlumni\AluminiWebApp\bin\Ninject.xml
+D:\RepoAlumni\AluminiWebApp\bin\Ninject.Web.Common.xml
+D:\RepoAlumni\AluminiWebApp\bin\Ninject.Web.Mvc.xml
+D:\RepoAlumni\AluminiWebApp\bin\System.Net.Http.Extensions.xml
+D:\RepoAlumni\AluminiWebApp\bin\System.Net.Http.Formatting.xml
+D:\RepoAlumni\AluminiWebApp\bin\System.Net.Http.Primitives.xml
+D:\RepoAlumni\AluminiWebApp\bin\System.Web.Http.xml
+D:\RepoAlumni\AluminiWebApp\bin\System.Web.Http.WebHost.xml
+D:\RepoAlumni\AluminiWebApp\bin\System.Web.Helpers.xml
+D:\RepoAlumni\AluminiWebApp\bin\System.Web.Optimization.xml
+D:\RepoAlumni\AluminiWebApp\bin\System.Web.Razor.xml
+D:\RepoAlumni\AluminiWebApp\bin\System.Web.WebPages.xml
+D:\RepoAlumni\AluminiWebApp\bin\System.Web.WebPages.Deployment.xml
+D:\RepoAlumni\AluminiWebApp\bin\System.Web.WebPages.Razor.xml
+D:\RepoAlumni\AluminiWebApp\bin\Antlr3.Runtime.pdb
+D:\RepoAlumni\AluminiWebApp\bin\Newtonsoft.Json.xml
+D:\RepoAlumni\AluminiWebApp\bin\EntityFramework.xml
+D:\RepoAlumni\AluminiWebApp\bin\EntityFramework.SqlServer.xml
+D:\RepoAlumni\AluminiWebApp\bin\Microsoft.AspNet.Identity.Core.xml
+D:\RepoAlumni\AluminiWebApp\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\RepoAlumni\AluminiWebApp\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\RepoAlumni\AluminiWebApp\bin\Microsoft.Owin.xml
+D:\RepoAlumni\AluminiWebApp\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\RepoAlumni\AluminiWebApp\bin\Microsoft.Owin.Security.xml
+D:\RepoAlumni\AluminiWebApp\bin\Microsoft.Owin.Security.Facebook.xml
+D:\RepoAlumni\AluminiWebApp\bin\Microsoft.Owin.Security.Cookies.xml
+D:\RepoAlumni\AluminiWebApp\bin\Microsoft.Owin.Security.OAuth.xml
+D:\RepoAlumni\AluminiWebApp\bin\Microsoft.Owin.Security.Google.xml
+D:\RepoAlumni\AluminiWebApp\bin\Microsoft.Owin.Security.Twitter.xml
+D:\RepoAlumni\AluminiWebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\RepoAlumni\AluminiWebApp\bin\NLog.xml
+D:\RepoAlumni\AluminiWebApp\bin\Org.Mentalis.Security.Cryptography.xml
+D:\RepoAlumni\AluminiWebApp\bin\Mono.Math.xml
+D:\RepoAlumni\AluminiWebApp\obj\Debug\AluminiWebApp.csproj.App.config
+D:\RepoAlumni\AluminiWebApp\obj\Debug\AluminiWebApp.csprojResolveAssemblyReference.cache
+D:\RepoAlumni\AluminiWebApp\obj\Debug\AluminiWebApp.dll
+D:\RepoAlumni\AluminiWebApp\obj\Debug\AluminiWebApp.pdb
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiWebApp\bin\AluminiWebApp.dll.config
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiWebApp\bin\AluminiWebApp.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiWebApp\bin\AluminiWebApp.pdb
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiWebApp\bin\Alumini.Core.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiWebApp\bin\Alumini.Logger.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiWebApp\bin\AluminiRepository.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiWebApp\bin\AluminiService.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiWebApp\bin\NLog.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiWebApp\bin\Alumini.Core.pdb
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiWebApp\bin\Alumini.Logger.pdb
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiWebApp\bin\AluminiRepository.pdb
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiWebApp\bin\AluminiService.pdb
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiWebApp\bin\NLog.xml
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiWebApp\obj\Debug\AluminiWebApp.csproj.App.config
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiWebApp\obj\Debug\AluminiWebApp.csprojResolveAssemblyReference.cache
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiWebApp\obj\Debug\AluminiWebApp.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiWebApp\obj\Debug\AluminiWebApp.pdb
+E:\Sachin\ZonInnovative\Alumini\Alumni Updated final Project\AluminiWebApp\bin\AluminiWebApp.dll.config
+E:\Sachin\ZonInnovative\Alumini\Alumni Updated final Project\AluminiWebApp\bin\AluminiWebApp.dll
+E:\Sachin\ZonInnovative\Alumini\Alumni Updated final Project\AluminiWebApp\bin\AluminiWebApp.pdb
+E:\Sachin\ZonInnovative\Alumini\Alumni Updated final Project\AluminiWebApp\bin\Alumini.Core.dll
+E:\Sachin\ZonInnovative\Alumini\Alumni Updated final Project\AluminiWebApp\bin\Alumini.Logger.dll
+E:\Sachin\ZonInnovative\Alumini\Alumni Updated final Project\AluminiWebApp\bin\AluminiRepository.dll
+E:\Sachin\ZonInnovative\Alumini\Alumni Updated final Project\AluminiWebApp\bin\AluminiService.dll
+E:\Sachin\ZonInnovative\Alumini\Alumni Updated final Project\AluminiWebApp\bin\NLog.dll
+E:\Sachin\ZonInnovative\Alumini\Alumni Updated final Project\AluminiWebApp\bin\Alumini.Core.pdb
+E:\Sachin\ZonInnovative\Alumini\Alumni Updated final Project\AluminiWebApp\bin\Alumini.Logger.pdb
+E:\Sachin\ZonInnovative\Alumini\Alumni Updated final Project\AluminiWebApp\bin\AluminiRepository.pdb
+E:\Sachin\ZonInnovative\Alumini\Alumni Updated final Project\AluminiWebApp\bin\AluminiService.pdb
+E:\Sachin\ZonInnovative\Alumini\Alumni Updated final Project\AluminiWebApp\bin\NLog.xml
+E:\Sachin\ZonInnovative\Alumini\Alumni Updated final Project\AluminiWebApp\obj\Debug\AluminiWebApp.csproj.App.config
+E:\Sachin\ZonInnovative\Alumini\Alumni Updated final Project\AluminiWebApp\obj\Debug\AluminiWebApp.csprojResolveAssemblyReference.cache
+E:\Sachin\ZonInnovative\Alumini\Alumni Updated final Project\AluminiWebApp\obj\Debug\AluminiWebApp.dll
+E:\Sachin\ZonInnovative\Alumini\Alumni Updated final Project\AluminiWebApp\obj\Debug\AluminiWebApp.pdb
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiWebApp\bin\AluminiWebApp.dll.config
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiWebApp\bin\AluminiWebApp.dll
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiWebApp\bin\AluminiWebApp.pdb
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiWebApp\bin\Alumini.Core.dll
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiWebApp\bin\Alumini.Logger.dll
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiWebApp\bin\AluminiRepository.dll
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiWebApp\bin\AluminiService.dll
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiWebApp\bin\NLog.dll
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiWebApp\bin\Alumini.Core.pdb
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiWebApp\bin\Alumini.Logger.pdb
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiWebApp\bin\AluminiRepository.pdb
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiWebApp\bin\AluminiService.pdb
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiWebApp\bin\NLog.xml
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiWebApp\obj\Debug\AluminiWebApp.csproj.App.config
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiWebApp\obj\Debug\AluminiWebApp.csprojResolveAssemblyReference.cache
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiWebApp\obj\Debug\AluminiWebApp.dll
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiWebApp\obj\Debug\AluminiWebApp.pdb
+E:\Sachin\ZonInnovative\Alumini\Alumini 04-04-2016\Alumni Bit Bucket\AluminiWebApp\obj\Debug\AluminiWebApp.csproj.App.config
+E:\Sachin\ZonInnovative\Alumini\Alumini 04-04-2016\Alumni Bit Bucket\AluminiWebApp\obj\Debug\AluminiWebApp.csprojResolveAssemblyReference.cache
+E:\Sachin\ZonInnovative\Alumini\Alumini 04-04-2016\Alumni Bit Bucket\AluminiWebApp\obj\Debug\AluminiWebApp.dll
+E:\Sachin\ZonInnovative\Alumini\Alumini 04-04-2016\Alumni Bit Bucket\AluminiWebApp\obj\Debug\AluminiWebApp.pdb
+E:\Sachin\ZonInnovative\Alumini\Alumini 04-04-2016\Alumni Bit Bucket\AluminiWebApp\bin\AluminiWebApp.dll.config
+E:\Sachin\ZonInnovative\Alumini\Alumini 04-04-2016\Alumni Bit Bucket\AluminiWebApp\bin\AluminiWebApp.dll
+E:\Sachin\ZonInnovative\Alumini\Alumini 04-04-2016\Alumni Bit Bucket\AluminiWebApp\bin\AluminiWebApp.pdb
+E:\Sachin\ZonInnovative\Alumini\Alumini 04-04-2016\Alumni Bit Bucket\AluminiWebApp\bin\Alumini.Core.dll
+E:\Sachin\ZonInnovative\Alumini\Alumini 04-04-2016\Alumni Bit Bucket\AluminiWebApp\bin\Alumini.Logger.dll
+E:\Sachin\ZonInnovative\Alumini\Alumini 04-04-2016\Alumni Bit Bucket\AluminiWebApp\bin\AluminiRepository.dll
+E:\Sachin\ZonInnovative\Alumini\Alumini 04-04-2016\Alumni Bit Bucket\AluminiWebApp\bin\AluminiService.dll
+E:\Sachin\ZonInnovative\Alumini\Alumini 04-04-2016\Alumni Bit Bucket\AluminiWebApp\bin\NLog.dll
+E:\Sachin\ZonInnovative\Alumini\Alumini 04-04-2016\Alumni Bit Bucket\AluminiWebApp\bin\Alumini.Core.pdb
+E:\Sachin\ZonInnovative\Alumini\Alumini 04-04-2016\Alumni Bit Bucket\AluminiWebApp\bin\Alumini.Logger.pdb
+E:\Sachin\ZonInnovative\Alumini\Alumini 04-04-2016\Alumni Bit Bucket\AluminiWebApp\bin\AluminiRepository.pdb
+E:\Sachin\ZonInnovative\Alumini\Alumini 04-04-2016\Alumni Bit Bucket\AluminiWebApp\bin\AluminiService.pdb
+E:\Sachin\ZonInnovative\Alumini\Alumini 04-04-2016\Alumni Bit Bucket\AluminiWebApp\bin\NLog.xml
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp\bin\AluminiWebApp.dll.config
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp\bin\AluminiWebApp.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp\bin\AluminiWebApp.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp\bin\Alumini.Core.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp\bin\Alumini.Logger.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp\bin\AluminiRepository.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp\bin\AluminiService.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp\bin\GridMvc.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp\bin\NLog.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp\bin\Alumini.Core.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp\bin\Alumini.Logger.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp\bin\AluminiRepository.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp\bin\AluminiService.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp\bin\NLog.xml
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp\obj\Debug\AluminiWebApp.csproj.App.config
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp\obj\Debug\AluminiWebApp.csprojResolveAssemblyReference.cache
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp\obj\Debug\AluminiWebApp.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp\obj\Debug\AluminiWebApp.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp\bin\LinkedIn.NET.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp\bin\LinkedIn.NET.xml
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp\bin\LinkedIn.Api.Client.Core.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp\bin\LinkedIn.Api.Client.Owin.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp\bin\Owin.Security.Providers.dll

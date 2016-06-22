@@ -1,0 +1,142 @@
+﻿@model AluminiWebApp.Models.Gallery
+
+@{
+    ViewBag.Title = "Gallery";
+    Layout = "~/Views/Shared/_SRKRDesignLayout.cshtml";
+}
+
+<section id="nicdark_parallax_title" class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img-single-teacher-1" style="background-position: 50% -60px;margin-top:-150px;">
+
+    <div class="nicdark_filter greydark">
+
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+
+            <div class="grid grid_12">
+                <div class="nicdark_space100"></div>
+                <div class="nicdark_space100"></div>
+                <h1 class="white subtitle">Gallery</h1>
+                <div class="nicdark_space20"></div>
+                <div class="nicdark_divider left big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space40"></div>
+                <div class="nicdark_space50"></div>
+            </div>
+
+        </div>
+        <!--end nicdark_container-->
+
+    </div>
+
+</section>
+
+<div class="nicdark_site">
+    <div class="nicdark_site_fullwidth nicdark_clearfix">
+        <div class="nicdark_overlay"></div>
+        <section class="nicdark_section">
+            <div class="nicdark_space10"></div>
+            <!--start nicdark_container-->
+            <div class="nicdark_container nicdark_clearfix">
+                <div class="grid memories-view">
+                    @TempData["Message"]
+                    <div class="nicdark_mpopup_gallery">
+                        <div class="nicdark_margin100">
+                            <a href="@Url.Action("Gallery", "Home", new { area = "", @id = 1 })" class="nicdark_btn nicdark_bg_green medium nicdark_shadow nicdark_radius white memories_btn"><i class="icon-picture"></i>&nbsp;&nbsp;&nbsp;Images</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+                        <div class="nicdark_margin100">
+                            <a href="@Url.Action("Gallery", "Home", new { area = "", @id = 2 })" class="nicdark_btn nicdark_bg_yellow medium nicdark_shadow nicdark_radius white memories_btn"><i class="icon-picture-1"></i>&nbsp;&nbsp;&nbsp;Videos</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div>
+                        <div class="nicdark_margin100 pull-right">
+
+                        </div>
+                        <div class="ui-tabs-panel ui-widget-content ui-corner-bottom memories-list nicdark_clearfix">
+                            @foreach (var Memories in @Model.Galleries)
+                            {
+                                <div class="grid_3">
+                                    @if (File.Exists(Server.MapPath(@Memories.Image)))
+                                    {
+
+                                        if (Memories.AlbumType == "Videos")
+                                        {
+                                            <div class="tp-banner-container">
+                                                <div id="nicdark_slide1" class="tp-banner">
+
+                                                    <ul>
+
+                                                        <!-- SLIDE  -->
+                                                        <li data-transition="slidehorizontal" data-slotamount="7" data-masterspeed="1000" data-fstransition="fade" data-fsmasterspeed="1000" data-fsslotamount="7">
+                                                            <!-- MAIN IMAGE -->
+                                                            <!-- LAYERS -->
+                                                            <!-- LAYER NR. 1 -->
+                                                            <div class="tp-caption tp-fade fadeout fullscreenvideo"
+                                                                 data-x="0"
+                                                                 data-y="0"
+                                                                 data-speed="1000"
+                                                                 data-start="1100"
+                                                                 data-easing="Power4.easeOut"
+                                                                 data-endspeed="1500"
+                                                                 data-endeasing="Power4.easeIn"
+                                                                 data-autoplay="false"
+                                                                 data-autoplayonlyfirsttime="false"
+                                                                 data-nextslideatend="true"
+                                                                 data-forcecover="1"
+                                                                 data-aspectratio="16:9"
+                                                                 data-forcerewind="on"
+                                                                 style="z-index: 2">
+
+
+                                                                <video class="video-js vjs-default-skin" preload="none" width="100%" height="200"
+                                                                       poster='/Content/DesignContent/img/video-play-icon-386x170.jpg' data-setup="{}">
+                                                                    <source src="@Memories.Image" type='video/mp4' />
+
+                                                                </video>
+                                                                <div align="center">
+                                                                    @Memories.AlbumName
+                                                                </div>
+                                                            </div>
+                                                        </li>
+
+                                                    </ul>
+
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <a class="img-pop" href="@Memories.Image">
+                                                <img alt="" class="nicdark_radius nicdark_opacity" src="@Memories.Image" height="200" />
+                                            </a>
+                                            <div align="center">
+                                                @Memories.AlbumName
+                                            </div>
+                                        }
+
+
+                                    }
+                                    else
+                                    {
+                                        <a class="img-pop" href="javascript:;" title="No Image">
+                                            <img alt="" class="nicdark_radius nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" height="200" />
+                                        </a>
+                                        <div align="center">
+                                            @Memories.AlbumName
+                                        </div>
+                                    }
+                                </div>
+                            }
+                            <div class="nicdark_space50"></div>
+                            <div class="nicdark_space50"></div>
+                            <div class="nicdark_space50"></div>
+                            <div class="nicdark_space50"></div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="nicdark_space50"></div>
+            </div>
+            <!--end nicdark_container-->
+        </section>
+    </div>
+</div>
+<!--start section-->
+<section class="nicdark_section"></section>
+<!--end section-->

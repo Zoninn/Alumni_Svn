@@ -1,0 +1,308 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <title>SRKR Engineering College</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <!-- style -->
+
+    <link rel="shortcut icon" src="~/Content/img/favicon.png" />
+    <link rel="stylesheet" href="~/Content/css/font-awesome.css" />
+    <link rel="stylesheet" href="~/Content/fi/flaticon.css" />
+    <link rel="stylesheet" href="~/Content/css/main.css" />
+    <link rel="stylesheet" type="text/css" src="~/Content/tuner/js/colorpicker.js">
+    <link rel="stylesheet" type="text/css" src="~/Content/css/styles.css" />
+    <link rel="stylesheet" type="text/css" src="~/Content/jquery.fancybox.css" />
+    <link rel="stylesheet" href="~/Content/css/owl.carousel.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/rs-plugin/css/settings.css" media="screen">
+    <link rel="stylesheet" href="~/Content/css/animate.css" />
+    <!--styles -->
+
+</head>
+<body>
+    <!-- page header -->
+    <header class="only-color">
+        <!-- sticky menu -->
+        <div class="sticky-wrapper">
+            <div class="sticky-menu">
+                <div class="grid-row clear-fix">
+                    <!-- logo -->
+                    <a href="index.html" class="logo">
+                        <img src="~/Content/img/logo.jpg" />
+                        <h1><strong>SRKR</strong> <span class="collegename-postfix">Engineering College</span></h1>
+                    </a>
+                    <!-- / logo -->
+                    <nav class="main-nav">
+                        <ul class="clear-fix pull-left">
+                            <li>
+                                <a href="#" class="active">Home</a>
+                            </li>
+                            <li>
+                                <a href="#">About</a>
+                            </li>
+                            <li>
+                                <a href="#">Academics</a>
+                            </li>
+                            <li>
+                                <a href="@Url.Action("News", "NewsRooms", new { area = "Faculty" })">
+                                    News Room
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">Contact</a>
+                            </li>                       
+                        </ul>
+                        <ul class="pull-right account-login-register">
+                            <li>
+                                <a href="@Url.Action("LogOff", "Account", new { area="" })" class="loginLink">Logout</a>
+                            </li>
+                            <li>
+                                @*<a href="@Url.Action("Register", "Account")" class="registerLink">Register</a>*@
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- sticky menu -->
+    </header>
+    <!-- / page header -->
+    <!-- content -->
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    @*<script src="~/Content/js/jquery.min.js"></script>*@
+    <div class="container">
+        <div class="alumni_menu">
+            <div class="alumni_menu_row">
+                <a href="@Url.Action("Index", "WhiteBoard", new { area="Faculty" })" class="alumni_menu_item">
+                    <span class="whiteboard">WhiteBoard</span>
+                    <hr class="divider-color" />
+                </a>
+                <div href="javascript:;" class="alumni_menu_item">
+                    <span class="events">Events</span>
+                    <hr class="divider-color" />
+                    <div class="alumni_sub_menu">
+                        <a href="@Url.Action("Events", "FacultyEvents", new { area = "Faculty" })" class="alumni_sub_menu_item">
+                            <span class="events">View Events</span>
+                        </a>
+                        <a href="@Url.Action("MyEvents", "FacultyEvents", new { area = "Faculty" })" class="alumni_sub_menu_item">
+                            <span class="tickets">My Event Tickets</span>
+                        </a>
+                    </div>
+                </div>
+                <div href="javascript:;" class="alumni_menu_item">
+                    <span class="jobs">Jobs</span>
+                    <hr class="divider-color" />
+                    <div class="alumni_sub_menu">
+                        <a href="@Url.Action("JobPosting", "Jobs", new { area = "Faculty" })" class="alumni_sub_menu_item">
+                            <span class="jobs">Post A Job</span>
+                        </a>
+                        <a href="@Url.Action("ViewJobs", "Jobs", new { area = "Faculty" })" class="alumni_sub_menu_item">
+                            <span class="jobs">View Jobs</span>
+                        </a>
+                        <a href="@Url.Action("MyPostedJobs", "Jobs", new { area = "Faculty" })" class="alumni_sub_menu_item">
+                            <span class="jobs">MyPosted Jobs</span>
+                        </a>
+                    </div>
+                </div>
+                <div href="javascript:;" class="alumni_menu_item">
+                    <span class="jobs">Donations</span>
+                    <hr class="divider-color" />
+                    <div class="alumni_sub_menu">
+                        <a href="@Url.Action("Donations", "Home", new { area = "" })" class="alumni_sub_menu_item">
+                            <span class="jobs">Donations</span>
+                        </a>
+                        <a href="@Url.Action("DonationReport", "Donations", new { area = "Alumini" })" class="alumni_sub_menu_item">
+                            <span class="jobs">Donations Report</span>
+                        </a>
+                    </div>
+                </div>
+                <div href="javascript:;" class="alumni_menu_item">
+                    <span class="memories">Memories</span>
+                    <hr class="divider-color" />
+                    <div class="alumni_sub_menu">
+                        <a href="@Url.Action("memories", "Memories", new { area = "Faculty" })" class="alumni_sub_menu_item">
+                            <span class="jobs">Memories</span>
+                        </a>
+                        <a href="@Url.Action("DisplayImages", "Memories", new { area = "Faculty", @id = 1 })" class="alumni_sub_menu_item">
+                            <span class="jobs">Display Memories</span>
+                        </a>
+                    </div>
+                </div>
+                <a href="@Url.Action("Profile", "Profile", new { area = "Faculty" })" class="alumni_menu_item">
+                    <span class="profile">Profile</span>
+                    <hr class="divider-color" />
+                </a>       
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            AddStickyMenu();
+            function AddStickyMenu() {
+                $('.sticky-menu')
+                    .addClass('scrolling')
+                    .css('box-shadow', '0px 4px 9px 0px rgba(0, 0, 0, 0.1)')
+                    .css('-webkit-box-shadow', '0px 4px 9px 0px rgba(0, 0, 0, 0.1)')
+                    .css('-moz-box-shadow', '0px 4px 9px 0px rgba(0, 0, 0, 0.1)');
+                $('.sticky-wrapper').css('height', '64px');
+                setTimeout(AddStickyMenu, 100);
+            }
+        });
+    </script>
+    @RenderBody()
+    <!-- parallax section -->
+    <hr class="divider-color" />
+    <!-- section -->
+    @*<section class="fullwidth-background testimonial padding-section">
+        <div class="grid-row">
+            <h2 class="center-text">Testimonials</h2>
+            <div class="owl-carousel testimonials-carousel">
+                <div class="gallery-item">
+                    <div class="quote-avatar-author clear-fix"><img src="~/Content/pic/94x94-img-1.jpg" data-at2x="~/Content/pic/94x94-img-1@2x.jpg" alt=""><div class="author-info">Karl Doe<br><span>Writer</span></div></div>
+                    <p>Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. </p>
+                </div>
+                <div class="gallery-item">
+                    <div class="quote-avatar-author clear-fix"><img src="~/Content/pic/94x94-img-1.jpg" data-at2x="~/Content/pic/94x94-img-1@2x.jpg" alt=""><div class="author-info">Karl Doe<br><span>Writer</span></div></div>
+                    <p>Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. </p>
+                </div>
+                <div class="gallery-item">
+                    <div class="quote-avatar-author clear-fix"><img src="~/Content/pic/94x94-img-1.jpg" data-at2x="~/Content/pic/94x94-img-1@2x.jpg" alt=""><div class="author-info">Karl Doe<br><span>Writer</span></div></div>
+                    <p>Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. </p>
+                </div>
+            </div>
+        </div>
+    </section>*@
+    <!-- / section -->
+    <!-- / content -->
+    <!-- footer -->
+    <footer>
+        <div class="grid-row">
+            <div class="grid-col-row clear-fix">
+                <section class="grid-col grid-col-4 footer-about">
+                    <h2 class="corner-radius">About Us</h2>
+                    <div>
+                        <h3>Sed aliquet dui auctor blandit ipsum tincidunt</h3>
+                        <p>Quis rhoncus lorem dolor eu sem. Aenean enim risus, convallis id ultrices eget.</p>
+                    </div>
+                    <address>
+                        <p></p>
+                        <a href="tel:123-123456789" class="phone-number">123-123456789</a>
+                        <br />
+                        <a href="mailto:email@domain.com" class="email">email@domain.com</a>
+                        <br />
+                        <a href="#" class="site">www.sample.com</a>
+                        <br />
+                        <a href="#" class="address">SRKR Engineering College,<br /> Chinna Amiram, Bhimavaram</a>
+                    </address>
+                    <div class="footer-social">
+                        <a href="" class="fa fa-facebook"></a>
+                        <a href="" class="fa fa-twitter"></a>
+                        <a href="" class="fa fa-google-plus"></a>
+                    </div>
+                </section>
+                <section class="grid-col grid-col-4 footer-latest">
+                    <h2 class="corner-radius">Latest News</h2>
+                    <article>
+                        <img src="~/Content/pic/83x83-img-2.jpg" data-at2x="~/Content/pic/83x83-img-2@2x.jpg" alt>
+                        <h3>Sed aliquet dui at auctor blandit</h3>
+                        <div class="course-date">
+                            <div>10:00</div>
+                            <div>23.02.15</div>
+                        </div>
+                        <p>
+                            Sed pharetra lorem ut dolor dignissim,
+                            sit amet pretium tortor mattis.
+                        </p>
+                    </article>
+                    <article>
+                        <img src="~/Content/pic/83x83-img-1.jpg" data-at2x="~/Content/pic/83x83-img-1@2x.jpg" alt>
+                        <h3>Sed aliquet dui at auctor blandit</h3>
+                        <div class="course-date">
+                            <div>10:00</div>
+                            <div>23.02.15</div>
+                        </div>
+                        <p>
+                            Sed pharetra lorem ut dolor dignissim,
+                            sit amet pretium tortor mattis.
+                        </p>
+                    </article>
+                </section>
+                <section class="grid-col grid-col-4 footer-latest-jobs">
+                    <h2 class="corner-radius">Latest Jobs</h2>
+                    <article>
+                        <img src="~/Content/pic/83x83-img-2.jpg" data-at2x="~/Content/pic/83x83-img-2@2x.jpg" />
+                        <h3>Sed aliquet dui at auctor blandit</h3>
+                        <div class="course-date">
+                            <div>10:00</div>
+                            <div>23.02.15</div>
+                        </div>
+                        <p>
+                            Sed pharetra lorem ut dolor dignissim,
+                            sit amet pretium tortor mattis.
+                        </p>
+                    </article>
+                    <article>
+                        <img src="~/Content/pic/83x83-img-1.jpg" data-at2x="~/Content/pic/83x83-img-1@2x.jpg" />
+                        <h3>Sed aliquet dui at auctor blandit</h3>
+                        <div class="course-date">
+                            <div>10:00</div>
+                            <div>23.02.15</div>
+                        </div>
+                        <p>
+                            Sed pharetra lorem ut dolor dignissim,
+                            sit amet pretium tortor mattis.
+                        </p>
+                    </article>
+                </section>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="grid-row clear-fix">
+                <div class="copyright">SRKR Engineering College<span></span> 2015 . All Rights Reserved</div>
+                <nav class="footer-nav">
+                    <ul class="clear-fix">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                            <a href="#">Academics</a>
+                        </li>
+                        <li>
+                            <a href="~/Home/ExecutiveBoard">ExecutiveBoard</a>
+                        </li>
+                        <li>
+                            <a href="contact-us.html">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- / footer -->
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox_packed.js"></script>
+    @*<script type='text/javascript' src="~/Content/js/jquery.validate.min.js"></script>*@
+    <script src="~/Content/js/jquery.form.min.js"></script>
+    <script src="~/Content/js/TweenMax.min.js"></script>
+    <script src="~/Content/js/main.js"></script>
+    <!-- jQuery REVOLUTION Slider  -->
+    <script type="text/javascript" src="~/Content/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="~/Content/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="~/Content/js/jquery.isotope.min.js"></script>
+    <script src="~/Content/js/owl.carousel.min.js"></script>
+    <script src="~/Content/js/jquery-ui.min.js"></script>
+    <script src="~/Content/js/jflickrfeed.min.js"></script>
+    <script src="~/Content/js/jquery.tweet.js"></script>
+    <script src="~/Content/js/jquery.fancybox.pack.js"></script>
+    <script src="~/Content/js/jquery.fancybox-media.js"></script>
+    <script src="~/Content/js/retina.min.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

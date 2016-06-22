@@ -1,0 +1,79 @@
+﻿@{
+    ViewBag.Title = "BookEvent";
+    Layout = "~/Areas/Alumini/Views/Shared/_SRKRDesignLayout.cshtml";
+}
+<!-- section -->
+@using (Html.BeginForm())
+{
+
+    <section class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img-single-event" id="nicdark_parallax_title"
+             style="background-position: 100% 0;background: rgba(0, 0, 0, 0) url('@ViewBag.BookingEvents.BannerImage') repeat fixed 50% 190px ;">
+        <div class="nicdark_filter greydark">
+            <!--start nicdark_container-->
+            <div class="nicdark_container nicdark_clearfix">
+                <div class="grid grid_12">
+                    <div class="nicdark_space100"></div>
+                    <div class="nicdark_space100"></div>
+                    <h1 class="white subtitle">EVENT: @ViewBag.BookingEvents.EventName | PAYMENTS</h1>
+                    <div class="nicdark_space10"></div>
+                    <h3 class="subtitle white">VENUE: @ViewBag.BookingEvents.EventVenue</h3>
+                    <div class="nicdark_space20"></div>
+                    <div class="nicdark_divider left big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                    <div class="nicdark_space40"></div>
+                    <div class="nicdark_space50"></div>
+                </div>
+            </div>
+            <!--end nicdark_container-->
+        </div>
+
+    </section>
+      <!--start section-->
+    <section class="nicdark_section">
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+            <div class="nicdark_space20"></div>
+            <div class="grid grid_12">
+                <h3>Total Payment details</h3>
+                <div style="border:1px solid #d3d3d3;padding:20px;margin-top:10px;" id="TicketsDisplay">
+                    <table style="width:100%;">
+                        <thead>
+                            <tr style="height:25px;">
+                                <th align="left"><h5>Ticket Type</h5></th>
+                                <th align="left"><h5>Quantity</h5></th>
+                                <th align="left"><h5>Price</h5></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="3"><hr style="opacity:0.3;" /></td>
+                            </tr>
+                            @{ int TotalQuantity = 0; }
+                            @foreach (var PaymentTickets in ViewBag.BookingEvents.Useselections)
+                            {
+                                <tr style="height:25px;">
+                                    <td>
+                                        <h4>@PaymentTickets.TicketTypeHeading</h4>
+                                    </td>
+                                    <td><h4>@PaymentTickets.TotalNoOfTickets</h4></td>
+                                    <td><h4>@PaymentTickets.TotalAmount</h4></td>
+                                </tr>
+                            }
+                            <tr>
+                                <td colspan="3"><hr style="opacity:0.1;" /></td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td><h3>Total Quantity</h3></td>
+                                <td><h3>@ViewBag.BookingEvents.TotalNoOfTickets</h3></td>
+                                <td><h3>@ViewBag.BookingEvents.TotalAmount</h3></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <input type="submit" class="nicdark_btn nicdark_bg_green medium nicdark_shadow nicdark_radius white pull-right" value="PAY NOW">
+                </div>
+            </div>
+        </div>
+        <div class="nicdark_space50"></div>
+    </section>
+}

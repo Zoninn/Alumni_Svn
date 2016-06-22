@@ -1,0 +1,112 @@
+﻿@{
+    ViewBag.Title = "EventTypes";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminMasterLayoutPage.cshtml";
+}
+@section styles{
+    <link href="~/Content/assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/dataTables.colVis.css" rel="stylesheet" type="text/css" />
+}
+<h2 style="text-align:center">Ticket Types</h2>
+
+@section scripts{
+
+    <script src="~/Content/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.bootstrap.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.buttons.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/buttons.bootstrap.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/jszip.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/pdfmake.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/vfs_fonts.js"></script>
+    <script src="~/Content/assets/plugins/datatables/buttons.html5.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/buttons.print.min.js"></script>
+
+    <script src="~/Content/assets/plugins/datatables/dataTables.fixedHeader.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.keyTable.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.responsive.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/responsive.bootstrap.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.scroller.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.colVis.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //$('#datatable').dataTable();
+            $('#datatable-keytable').DataTable({ keys: true });
+            $('#datatable-responsive').DataTable();
+            $('#datatable-colvid').DataTable({
+                "dom": 'C<"clear">lfrtip',
+                "colVis": {
+                    "buttonText": "Change columns"
+                }
+            });
+            //$('#datatable-scroller').DataTable({ ajax: "/Content/assets/plugins/datatables/json/scroller-demo.json", deferRender: true, scrollY: 380, scrollCollapse: true, scroller: true });
+            var table = $('#datatable-fixed-header').DataTable({ fixedHeader: true });
+        });
+        TableManageButtons.init();
+
+    </script>
+}
+
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card-box">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h4 class="m-t-0 header-title"><b></b></h4>
+                           
+                                <div class="alert alert-warning">
+                                    <strong>EVENT TICKET TYPES!</strong>
+                                </div>
+                          
+
+                            <div class="p-20">
+                                <table class="table table-condensed m-0">
+
+                                    <thead>
+                                        <tr>
+                                            <th>Id</th>
+                                            <th>Type</th>
+                                            <th>Desription</th>
+                                            <th>Quantity</th>
+                                            <th>Price</th>
+                                            <th>Created on</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        @foreach (var EventTypes in ViewBag.Events)
+                                        {
+                                            <tr>
+                                                <th scope="row">@EventTypes.TypeId</th>
+                                                <td>
+                                                    @EventTypes.Heading
+                                                </td>
+                                                <td>
+                                                    @EventTypes.Description
+                                                </td>
+                                                <td>@EventTypes.Quantity</td>
+                                                <td>
+                                                    @EventTypes.Price
+                                                </td>
+                                                <td>@EventTypes.CreatedOn</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,90 @@
+﻿@{
+    ViewBag.Title = "UpdateProfile";
+    Layout = "~/Views/Shared/_SRKRDesignLayout.cshtml";
+}
+
+<section id="nicdark_parallax_title" class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img8" style="background-position: 50% 0px;">
+
+    <div class="nicdark_filter greydark">
+
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+
+            <div class="grid grid_12">
+                <div class="nicdark_space100"></div>
+                <div class="nicdark_space100"></div>
+                <h1 class="white subtitle">Update Profile</h1>
+                <div class="nicdark_space10"></div>
+                <div class="nicdark_divider left big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space40"></div>
+                <div class="nicdark_space50"></div>
+            </div>
+
+        </div>
+        <!--end nicdark_container-->
+
+    </div>
+
+</section>
+<section class="nicdark_section">
+    <div class="nicdark_container nicdark_clearfix">
+        <div class="nicdark_space50"></div>
+        <div class="grid grid_12">
+            <h3 class="subtitle greydark">Basic Information</h3>
+            <div class="nicdark_space20"></div>
+            <div class="nicdark_divider left small"><span class="nicdark_bg_yellow nicdark_radius"></span></div>
+        </div>
+        <div class="grid grid_12">
+
+            <!--start nicdark_tabs-->
+            <div class="nicdark_tab ui-tabs ui-widget ui-widget-content ui-corner-all">
+
+                <ul class="nicdark_tabslist ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+                    <li class=""><a href="@Url.Action("BasicInformation", "AlumniProfileUpdate", new { area = "" })" class="nicdark_btn nicdark_bg_yellow medium nicdark_radius_top white ui-tabs-anchor"><i class=" nicdark_displaynone_iphoneland nicdark_displaynone_iphonepotr nicdark_marginright10">1</i> Update Account</a></li>
+                </ul>
+                <div class="nicdark_tabs nicdark_bg_grey nicdark_radius nicdark_shadow">
+
+                    <div class="nicdark_margin20 ui-tabs-panel ui-widget-content ui-corner-bottom" style="display: block;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="nicdark_section">
+    <div class="nicdark_container nicdark_clearfix">
+        <div class="nicdark_space20"></div>
+        <div class="grid grid_12 nicdark_bg_grey nicdark_shadow nicdark_radius nicdark_relative">
+            <div align="center">
+                <div class="nicdark_space20"></div>
+                <p style="text-align:center">
+                    <aside class="widget-categories">
+                        <h2>Categories</h2>
+                        <ul>
+                            <li class="cat-item cat-item-1 current-cat">
+                                <a href=""> Basic Information</a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="cat-item cat-item-1 current-cat">
+                                <a href="../Profile/ContactInformation"> Location & Contact details</a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="cat-item cat-item-1 current-cat">
+                                <a href="../Profile/UpdateAlumni"> Education details</a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li class="cat-item cat-item-1 current-cat">
+                                <a href="../Profile/ProfessionalDetails"> Work / Education details</a>
+                            </li>
+                        </ul>
+                    </aside>
+                </p>
+                <div class="nicdark_space20"></div>
+            </div>
+        </div>
+        <div class="nicdark_space60"></div>
+    </div>
+</section>

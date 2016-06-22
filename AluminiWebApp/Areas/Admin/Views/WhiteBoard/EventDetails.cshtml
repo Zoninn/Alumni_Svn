@@ -1,0 +1,53 @@
+﻿@model AluminiRepository.UserPostsData
+
+@{
+    ViewBag.Title = "EventDetails";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminMasterLayoutPage.cshtml";
+}
+
+<div class="content">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-8">
+                <div class="portlet">
+                    <div class="portlet-heading bg-inverse">
+                        <h3 class="portlet-title">
+                           WHITE BOARD POST DETAILS
+                        </h3>
+                        <div class="portlet-widgets">
+                            <a data-toggle="reload" href="javascript:;"><i class="ion-refresh"></i></a>
+                            <span class="divider"></span>
+                            @*<a href="#bg-info" data-parent="#accordion1" data-toggle="collapse"><i class="ion-minus-round"></i></a>*@
+                            <span class="divider"></span>
+                            @*<a data-toggle="remove" href="#"><i class="ion-close-round"></i></a>*@
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="panel-collapse collapse in" id="bg-info">
+                        <div class="portlet-body">
+                            <p>  Event  : @Model.EventName</p>
+                            <p> Post message:  @Model.UserPostMessage</p>
+                            <p>  Posted by :   @Model.UserName @Model.LastName</p>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        @foreach (var item in Model.imageUrls)
+                        {
+                            <div class="col-sm-4">
+                                <img width="200" class="img-responsive img-rounded" alt="image" src="@item">
+                                <p class="m-t-15 m-b-0">                                   
+                                </p>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+

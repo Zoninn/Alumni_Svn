@@ -1,0 +1,64 @@
+﻿@model AluminiWebApp.Models.ExternalLoginConfirmationViewModel
+@{
+    ViewBag.Title = "External Login Confirmation";
+    Layout = "~/Views/Shared/_SRKRDesignLayout.cshtml";
+}
+
+<section id="nicdark_parallax_title" class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img8" style="background-position: 50% 0px;">
+
+    <div class="nicdark_filter greydark">
+
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+
+            <div class="grid grid_12">
+                <div class="nicdark_space100"></div>
+                <div class="nicdark_space100"></div>
+                <h1 class="white subtitle">Redirecting</h1>
+                <div class="nicdark_space10"></div>
+                <div class="nicdark_divider left big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space40"></div>
+                <div class="nicdark_space50"></div>
+            </div>
+
+        </div>
+        <!--end nicdark_container-->
+
+    </div>
+
+</section>
+
+<section class="nicdark_section">
+    <div class="nicdark_container nicdark_clearfix">
+        <div class="nicdark_space20"></div>
+
+        <div class="grid grid_12 nicdark_bg_grey nicdark_shadow nicdark_radius nicdark_relative">
+            <div align="center">
+                <div class="nicdark_space20"></div>
+                <p style="text-align:center">
+                    Please wait while processing your request...
+                </p>
+                <div class="nicdark_space20"></div>
+                <img src="~/Content/img/loading_apple.gif" style="width:50px;height:50px;" />
+                <div class="nicdark_space20"></div>
+                <p style="text-align:center">@Model.Email</p>
+                <div class="nicdark_space20"></div>
+            </div>
+        </div>
+        <div class="nicdark_space60"></div>
+    </div>
+</section>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+
+    @if (@Model.Email != null)
+    {
+        <script type="text/javascript">
+            $(document).ready(function () {
+                window.location.href = "../Account/UserRegistration";
+            });
+        </script>
+    }
+}

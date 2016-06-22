@@ -1,0 +1,287 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <title>SRKR Engineering College</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <!-- style -->
+
+    <link rel="shortcut icon" src="~/Content/img/favicon.png" />
+    <link rel="stylesheet" href="~/Content/css/font-awesome.css" />
+    <link rel="stylesheet" href="~/Content/fi/flaticon.css" />
+    <link rel="stylesheet" href="~/Content/css/main.css" />
+    <link rel="stylesheet" type="text/css" src="~/Content/tuner/js/colorpicker.js">
+    <link rel="stylesheet" type="text/css" src="~/Content/css/styles.css" />
+    <link rel="stylesheet" type="text/css" src="~/Content/jquery.fancybox.css" />
+    <link rel="stylesheet" href="~/Content/css/owl.carousel.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/rs-plugin/css/settings.css" media="screen">
+    <link rel="stylesheet" href="~/Content/css/animate.css" />
+    <!--styles -->
+
+</head>
+<body>
+    <!-- page header -->
+    <header class="only-color">
+        <!-- header top panel -->
+        <div class="page-header-top">
+            <div class="grid-row clear-fix">
+                <div class="header-top-panel active_social">
+                    <div id="top_social_links_wrapper" class="expanded">
+                        <div class="cws_social_links">
+                            <a href="https://plus.google.com/" class="cws_social_link" title="Google +" style="z-index: 1; transform: matrix(1, 0, 0, 1, 0, 0);">
+                                <i class="share-icon fa fa-google-plus header-social-icons" style="transform: matrix(1, 0, 0, 1, 0, 0);"></i>
+                            </a>
+                            <a href="http://twitter.com/" class="cws_social_link" title="Twitter" style="z-index: 2; transform: matrix(1, 0, 0, 1, -38, 0);">
+                                <i class="share-icon fa fa-twitter header-social-icons" style="transform: matrix(1, 0, 0, 1, 0, 0);"></i>
+                            </a>
+                            <a href="http://facebook.com" class="cws_social_link" title="Facebook" style="z-index: 3; transform: matrix(1, 0, 0, 1, -76, 0);">
+                                <i class="share-icon fa fa-facebook header-social-icons" style="transform: matrix(1, 0, 0, 1, 0, 0);"></i>
+                            </a>
+                        </div>
+                        <!--<div class="share-toggle-button hide">
+                            <i class="share-icon fa fa-share-alt"></i>
+                        </div>-->
+                    </div>
+
+                </div>
+                <address>
+                    <a href="tel:123-123456789" class="phone-number"><i class="fa fa-phone"></i>123-123456789</a>
+                    <a href="mailto:email@domain.com" class="email"><i class="fa fa-envelope-o"></i>email@domain.com</a>
+                </address>
+            </div>
+        </div>
+        <!-- / header top panel -->
+        <!-- sticky menu -->
+        <div class="sticky-wrapper">
+            <div class="sticky-menu">
+                <div class="grid-row clear-fix">
+                    <!-- logo -->
+                    <a href="index.html" class="logo">
+                        <img src="~/Content/img/logo.jpg" />
+                        <h1><strong>SRKR</strong> <span class="collegename-postfix">Engineering College</span></h1>
+                    </a>
+                    <!-- / logo -->
+                    <nav class="main-nav">
+                        <ul class="clear-fix pull-left">
+                            <li>
+                                <a href="../Home/index" class="active">Home</a>
+                            </li>
+                            <li>
+                                <a href="#">About</a>
+                            </li>
+                            <li>
+                                <a href="#">Academics</a>
+                            </li>
+                            <li>
+                                <a href="~/Home/ExecutiveBoard">ExecutiveBoard</a>
+                            </li>
+                            <li>
+                                <a href="#">Contact</a>
+                            </li>
+                        </ul>
+                        <ul class="pull-right account-login-register">
+                            @if (@Session["UserId"] == null)
+                            {
+                                <li>
+                                    <a href="@Url.Action("Login", "Account")" class="loginLink">Login</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Register", "Account")" class="registerLink">Register</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <a href="@Url.Action("LogOff", "Account", new { area="" })" class="loginLink">Logout</a>
+                                </li>
+                            }
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- sticky menu -->
+    </header>
+    <!-- / page header -->
+    <hr class="divider-color">
+    <!-- content -->
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    @*<script src="~/Content/js/jquery.min.js"></script>*@
+    <div class="page-content container clear-fix">
+        <div class="grid-col-row">
+            <div class="grid-col grid-col-3 sidebar">
+                <!-- widget categories -->
+                <aside class="widget-categories">
+                    <h2>Admin Menu</h2>
+                    <hr class="divider-big">
+                    <ul>
+                        <li class="cat-item cat-item-1 current-cat"><a href="@Url.Action("Index", "UserRegistrations", new { area = "Admin" })">User Approvals</a></li>
+                        <li class="cat-item cat-item-1 current-cat"><a href="@Url.Action("CreateEvent", "Events", new { area = "Admin" })">Create Event</a></li>
+                        <li class="cat-item cat-item-1 current-cat"><a href="@Url.Action("EventPayments", "Events", new { area = "Admin" })">Event Payments</a></li>
+                        <li class="cat-item cat-item-1 current-cat"><a href="@Url.Action("PendingJobs", "Jobs", new { area = "Admin" })">Job Approvals</a></li>
+                    </ul>
+                </aside>
+                <!-- widget categories -->
+            </div>
+            <div class="grid-col grid-col-9">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    
+    <!-- parallax section -->
+    <hr class="divider-color" />
+    <!-- section -->
+    @*<section class="fullwidth-background testimonial padding-section">
+            <div class="grid-row">
+                <h2 class="center-text">Testimonials</h2>
+                <div class="owl-carousel testimonials-carousel">
+                    <div class="gallery-item">
+                        <div class="quote-avatar-author clear-fix"><img src="~/Content/pic/94x94-img-1.jpg" data-at2x="~/Content/pic/94x94-img-1@2x.jpg" alt=""><div class="author-info">Karl Doe<br><span>Writer</span></div></div>
+                        <p>Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. </p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="quote-avatar-author clear-fix"><img src="~/Content/pic/94x94-img-1.jpg" data-at2x="~/Content/pic/94x94-img-1@2x.jpg" alt=""><div class="author-info">Karl Doe<br><span>Writer</span></div></div>
+                        <p>Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. </p>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="quote-avatar-author clear-fix"><img src="~/Content/pic/94x94-img-1.jpg" data-at2x="~/Content/pic/94x94-img-1@2x.jpg" alt=""><div class="author-info">Karl Doe<br><span>Writer</span></div></div>
+                        <p>Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. </p>
+                    </div>
+                </div>
+            </div>
+        </section>*@
+    <!-- / section -->
+    <!-- / content -->
+    <!-- footer -->
+    <footer>
+        <div class="grid-row">
+            <div class="grid-col-row clear-fix">
+                <section class="grid-col grid-col-4 footer-about">
+                    <h2 class="corner-radius">About Us</h2>
+                    <div>
+                        <h3>Sed aliquet dui auctor blandit ipsum tincidunt</h3>
+                        <p>Quis rhoncus lorem dolor eu sem. Aenean enim risus, convallis id ultrices eget.</p>
+                    </div>
+                    <address>
+                        <p></p>
+                        <a href="tel:123-123456789" class="phone-number">123-123456789</a>
+                        <br />
+                        <a href="mailto:email@domain.com" class="email">email@domain.com</a>
+                        <br />
+                        <a href="#" class="site">www.sample.com</a>
+                        <br />
+                        <a href="#" class="address">SRKR Engineering College,<br /> Chinna Amiram, Bhimavaram</a>
+                    </address>
+                    <div class="footer-social">
+                        <a href="" class="fa fa-facebook"></a>
+                        <a href="" class="fa fa-twitter"></a>
+                        <a href="" class="fa fa-google-plus"></a>
+                    </div>
+                </section>
+                <section class="grid-col grid-col-4 footer-latest">
+                    <h2 class="corner-radius">Latest News</h2>
+                    <article>
+                        <img src="~/Content/pic/83x83-img-2.jpg" data-at2x="~/Content/pic/83x83-img-2@2x.jpg" alt>
+                        <h3>Sed aliquet dui at auctor blandit</h3>
+                        <div class="course-date">
+                            <div>10:00</div>
+                            <div>23.02.15</div>
+                        </div>
+                        <p>
+                            Sed pharetra lorem ut dolor dignissim,
+                            sit amet pretium tortor mattis.
+                        </p>
+                    </article>
+                    <article>
+                        <img src="~/Content/pic/83x83-img-1.jpg" data-at2x="~/Content/pic/83x83-img-1@2x.jpg" alt>
+                        <h3>Sed aliquet dui at auctor blandit</h3>
+                        <div class="course-date">
+                            <div>10:00</div>
+                            <div>23.02.15</div>
+                        </div>
+                        <p>
+                            Sed pharetra lorem ut dolor dignissim,
+                            sit amet pretium tortor mattis.
+                        </p>
+                    </article>
+                </section>
+                <section class="grid-col grid-col-4 footer-latest-jobs">
+                    <h2 class="corner-radius">Latest Jobs</h2>
+                    <article>
+                        <img src="~/Content/pic/83x83-img-2.jpg" data-at2x="~/Content/pic/83x83-img-2@2x.jpg" />
+                        <h3>Sed aliquet dui at auctor blandit</h3>
+                        <div class="course-date">
+                            <div>10:00</div>
+                            <div>23.02.15</div>
+                        </div>
+                        <p>
+                            Sed pharetra lorem ut dolor dignissim,
+                            sit amet pretium tortor mattis.
+                        </p>
+                    </article>
+                    <article>
+                        <img src="~/Content/pic/83x83-img-1.jpg" data-at2x="~/Content/pic/83x83-img-1@2x.jpg" />
+                        <h3>Sed aliquet dui at auctor blandit</h3>
+                        <div class="course-date">
+                            <div>10:00</div>
+                            <div>23.02.15</div>
+                        </div>
+                        <p>
+                            Sed pharetra lorem ut dolor dignissim,
+                            sit amet pretium tortor mattis.
+                        </p>
+                    </article>
+                </section>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="grid-row clear-fix">
+                <div class="copyright">SRKR Engineering College<span></span> 2015 . All Rights Reserved</div>
+                <nav class="footer-nav">
+                    <ul class="clear-fix">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                            <a href="#">Academics</a>
+                        </li>
+                        <li>
+                            <a href="~/Home/ExecutiveBoard">ExecutiveBoard</a>
+                        </li>
+                        <li>
+                            <a href="contact-us.html">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- / footer -->
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox_packed.js"></script>
+    @*<script type='text/javascript' src="~/Content/js/jquery.validate.min.js"></script>*@
+    <script src="~/Content/js/jquery.form.min.js"></script>/script>
+    <script src="~/Content/js/TweenMax.min.js"></script>
+    <script src="~/Content/js/main.js"></script>
+    <!-- jQuery REVOLUTION Slider  -->
+    <script type="text/javascript" src="~/Content/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+    <script type="text/javascript" src="~/Content/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="~/Content/js/jquery.isotope.min.js"></script>
+    <script src="~/Content/js/owl.carousel.min.js"></script>
+    <script src="~/Content/js/jquery-ui.min.js"></script>
+    <script src="~/Content/js/jflickrfeed.min.js"></script>
+    <script src="~/Content/js/jquery.tweet.js"></script>
+    <script src="~/Content/js/jquery.fancybox.pack.js"></script>
+    <script src="~/Content/js/jquery.fancybox-media.js"></script>
+    <script src="~/Content/js/retina.min.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,49 @@
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp.Test\bin\Debug\AluminiWebApp.Test.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp.Test\bin\Debug\AluminiWebApp.Test.pdb
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp.Test\obj\Debug\AluminiWebApp.Test.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp.Test\obj\Debug\AluminiWebApp.Test.pdb
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp.Test\bin\Debug\FluentAssertions.Core.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp.Test\bin\Debug\FluentAssertions.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp.Test\bin\Debug\Moq.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp.Test\bin\Debug\FluentAssertions.pdb
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp.Test\bin\Debug\FluentAssertions.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp.Test\bin\Debug\FluentAssertions.Core.pdb
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp.Test\bin\Debug\FluentAssertions.Core.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiWebApp.Test\bin\Debug\Moq.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp.Test\bin\Debug\AluminiWebApp.Test.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp.Test\bin\Debug\AluminiWebApp.Test.pdb
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp.Test\obj\Debug\AluminiWebApp.Test.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiWebApp.Test\obj\Debug\AluminiWebApp.Test.pdb
+D:\FRESHCOPY ALUMNI\AluminiWebApp.Test\bin\Debug\AluminiWebApp.Test.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp.Test\bin\Debug\AluminiWebApp.Test.pdb
+D:\FRESHCOPY ALUMNI\AluminiWebApp.Test\obj\Debug\AluminiWebApp.Test.dll
+D:\FRESHCOPY ALUMNI\AluminiWebApp.Test\obj\Debug\AluminiWebApp.Test.pdb
+C:\Alumni Copy\AluminiWebApp.Test\bin\Debug\AluminiWebApp.Test.dll
+C:\Alumni Copy\AluminiWebApp.Test\bin\Debug\AluminiWebApp.Test.pdb
+C:\Alumni Copy\AluminiWebApp.Test\obj\Debug\AluminiWebApp.Test.dll
+C:\Alumni Copy\AluminiWebApp.Test\obj\Debug\AluminiWebApp.Test.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp.Test\bin\Debug\AluminiWebApp.Test.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp.Test\bin\Debug\AluminiWebApp.Test.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp.Test\obj\Debug\AluminiWebApp.Test.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp.Test\obj\Debug\AluminiWebApp.Test.pdb
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp.Test\bin\Debug\AluminiWebApp.Test.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp.Test\bin\Debug\AluminiWebApp.Test.pdb
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp.Test\obj\Debug\AluminiWebApp.Test.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiWebApp.Test\obj\Debug\AluminiWebApp.Test.pdb
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp.Test\bin\Debug\AluminiWebApp.Test.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp.Test\bin\Debug\AluminiWebApp.Test.pdb
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp.Test\obj\Debug\AluminiWebApp.Test.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiWebApp.Test\obj\Debug\AluminiWebApp.Test.pdb
+D:\RepoAlumni\AluminiWebApp.Test\bin\Debug\AluminiWebApp.Test.dll
+D:\RepoAlumni\AluminiWebApp.Test\bin\Debug\AluminiWebApp.Test.pdb
+D:\RepoAlumni\AluminiWebApp.Test\obj\Debug\AluminiWebApp.Test.dll
+D:\RepoAlumni\AluminiWebApp.Test\obj\Debug\AluminiWebApp.Test.pdb
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiWebApp.Test\bin\Debug\AluminiWebApp.Test.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiWebApp.Test\bin\Debug\AluminiWebApp.Test.pdb
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiWebApp.Test\obj\Debug\AluminiWebApp.Test.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiWebApp.Test\obj\Debug\AluminiWebApp.Test.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp.Test\bin\Debug\AluminiWebApp.Test.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp.Test\bin\Debug\AluminiWebApp.Test.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp.Test\obj\Debug\AluminiWebApp.Test.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp.Test\obj\Debug\AluminiWebApp.Test.pdb

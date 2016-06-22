@@ -1,0 +1,323 @@
+﻿@model AluminiWebApp.Areas.Admin.Models.EventModel
+@{
+    ViewBag.Title = "CreateEvent";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminMasterLayoutPage.cshtml";
+}
+
+
+@using (Html.BeginForm("CreateEvent", "Events", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h4 class="page-title">Form elements</h4>
+                <ol class="breadcrumb">
+
+                    <li>
+                        <a href="#">Forms</a>
+                    </li>
+                    <li class="active">
+                        General elements
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card-box">
+                    <h4 class="m-t-0 header-title"><b></b></h4>
+                    <p class="text-muted m-b-30 font-13">
+                        <div class="alert alert-warning">
+                            <strong>ADD YOUR COLLEGE EVENTS HERE!</strong>
+                        </div>
+                    </p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div role="form" class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Heading</label>
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(x => x.EventName, new { @class = "form-control", @placeholder = "Event Heading" })
+                                        @Html.ValidationMessageFor(x => x.EventName, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="example-email" class="col-md-2 control-label">Mobile</label>
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(x => x.MobileNumber, new { @class = "form-control", @placeholder = "Contact Mobile" })
+                                        @Html.ValidationMessageFor(x => x.MobileNumber, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Venue</label>
+                                    <div class="col-md-10">
+                                        @Html.TextAreaFor(x => x.EventVenue, new { @class = "form-control", @placeholder = "Event Venue", @rows = "3" })
+                                        @Html.ValidationMessageFor(x => x.EventVenue, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Start Date</label>
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(x => x.EventStartdate, new { @class = "form-control", @placeholder = " Start Date :dd/mm/yyyy" })
+                                        @Html.ValidationMessageFor(x => x.EventStartdate, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Start Time</label>
+                                    <div class="col-md-10">
+                                        @Html.DropDownListFor(x => x.StartTime, new SelectList(Model.EventStartDates, "StartsDate", "StartsDate"), "Select", new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(x => x.StartTime, "", new { @class = "text-danger" })
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Select</label>
+                                    <div class="col-md-10">
+                                        @Html.DropDownListFor(x => x.StartAfter, new SelectList(Model.AMS, "AMS", "AMS"), "Select", new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(x => x.StartAfter, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Total Tickets</label>
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(x => x.TotalNoOfTickets, new { @class = "form-control", @placeholder = "Total Tickets" })
+                                        @Html.ValidationMessageFor(x => x.TotalNoOfTickets, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div role="form" class="form-horizontal">
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Email</label>
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @placeholder = "Contact Email" })
+                                        @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Banner Image</label>
+                                    <div class="col-md-10">
+                                        <input type="file" class="form-control" name="BannerImage" id="BannerImages" />
+                                        @Html.ValidationMessageFor(x => x.BannerImage, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Description</label>
+                                    <div class="col-sm-10">
+                                        @Html.TextAreaFor(x => x.EventDescription, new { @class = "form-control", @placeholder = "Event Description", @rows = "2" })
+                                        @Html.ValidationMessageFor(x => x.EventDescription, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">End Date</label>
+                                    <div class="col-sm-10">
+                                        @Html.TextBoxFor(x => x.EndDate, new { @class = "form-control", @placeholder = " End Date :dd/mm/yyyy" })
+                                        @Html.ValidationMessageFor(x => x.EndDate, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">End Time</label>
+                                    <div class="col-sm-10">
+                                        @Html.DropDownListFor(x => x.EndTime, new SelectList(Model.EventStartDates, "StartsDate", "StartsDate"), "Select", new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(x => x.StartTime, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Select</label>
+                                    <div class="col-sm-10">
+                                        @Html.DropDownListFor(x => x.StartEve, new SelectList(Model.AMS, "AMS", "AMS"), "Select", new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(x => x.StartEve, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">Gallery Images</label>
+                                    <div class="col-sm-10">
+                                        <input type="file" multiple="multiple" name="Gallery" class="form-control" />
+                                    </div>
+                                </div>
+
+                                <div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card-box">
+                    <h4 class="m-t-0 header-title"><b></b></h4>
+                    <p class="text-muted m-b-30 font-13">
+                        <div class="alert alert-warning">
+                            <strong>ADD YOUR EVENT TICKETS HERE!</strong>
+                        </div>
+                    </p>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table id="TicketTypes">
+                                <tr>
+                                    <th>Ticket Type &nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                    <th>Description&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                    <th>Price &nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                    <th>Quantity</th>
+                                </tr>
+                                <tr id="HideTextfilds">
+                                    <td>
+
+                                        @Html.TextBoxFor(x => x.Heading, new { @class = "form-control", @placeholder = "Ticket Type" })
+                                        @Html.ValidationMessageFor(x => x.Heading, "", new { @class = "text-danger" })
+
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(x => x.Description, new { @class = "form-control", @placeholder = "Ticket Type Description" })
+                                        @Html.ValidationMessageFor(x => x.Description, "", new { @class = "text-danger" })
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(x => x.Price, new { @class = "form-control", @placeholder = "Ticket Price" })
+                                        @Html.ValidationMessageFor(x => x.Price, "", new { @class = "text-danger" })
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(x => x.Quantity, new { @class = "form-control", @placeholder = "Quantity" })
+                                        @Html.ValidationMessageFor(x => x.Quantity, "", new { @class = "text-danger" })
+                                    </td>
+                                    <td>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <input type="button" id="Add" value="Add" class="btn btn-primary" />
+                                    </td>
+                                    <td>
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div>
+                        <br />
+                    </div>
+                    <div>
+
+                        <input id="btnSave" type="submit" value="Save" class="btn btn-success btn-rounded waves-effect waves-light-lg" />
+                        @if (TempData["SuccessMessage"] == "Total Tickets must equal to Tickets Quantity")
+                        {
+                            <h4 class="text-danger">@TempData["SuccessMessage"]</h4>
+                        }
+                        else
+                        {
+                            <h4 class="text-custom">@TempData["SuccessMessage"]</h4>
+                        }
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+}
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/Scripts/jquery-ui-1.11.4.min.js"></script>
+<script src="~/Scripts/jquery.timepicker.js"></script>
+<script src="~/Scripts/jquery.timepicker.min.js"></script>
+<link href="~/Scripts/jquery.timepicker.css" rel="stylesheet" />
+<script src="~/Custom.js/jquery.blockUI.js"></script>
+<script type="text/javascript">
+
+
+    $(document).ready(function () {
+        $('#EndDate').html("");
+        $("#Add").click(function () {
+            $("#TicketTypes").append("<tr><td> <input type='text' name='Heading' class='form-control' /></td><td> <input type='text' name='Description'  class='form-control' /></td><td> <input type='text' name='Price' class='form-control' /></td><td> <input type='text' name='Quantity' class='form-control' /></td><td> &nbsp;&nbsp;&nbsp;<a href='javascript:void(0);' class='remCF' id='addCF'>Remove</a></td></td></tr>");
+        });
+
+        $.ajax({
+            type: "Get",
+            dataType: "JSON",
+            contentType: "Application/json",
+            url: "../Events/GetEvents",
+            data: JSON.stringify(),
+            success: function (data) {
+
+                $.each(data, function (key, value) {
+                    var dateString = (value.CreatedOn).substr(6);
+                    var currentTime = new Date(parseInt(dateString));
+                    var month = currentTime.getMonth() + 1;
+                    var day = currentTime.getDate();
+                    var year = currentTime.getFullYear();
+                    var date = day + "/" + month + "/" + year;
+                    $("#Eventdetails").append("<tr><td>" + value.EventId + "</td><td>" + value.EventName + "</td><td>" + value.Email + "</td><td>" + value.MobileNumber + "</td><td>" + date + "</td><td>" + value.TotalNoOfTickets + "</td><td><img width=200 height=80 src=" + value.BannerImage + ">&nbsp;&nbsp;</td>&nbsp;&nbsp;<td><a href=../Events/EventTypes?Id=" + value.EventId + ">View</a></td><td><a href='#' onclick='EditEvents(" + value.EventId + ")'>Edit</a></td><td><a href='#' onclick='DeleteEvent(" + value.EventId + ")'>Delete</a></td></tr><br/>");
+                });
+            }
+
+        });
+        $("#TicketTypes").on('click', '.remCF', function () {
+            $(this).parents('tr').remove();
+        });
+        $('#btnSave').click(function () {
+            var TotalnoTickets = parseInt($('#TotalNoOfTickets').val());
+            if ($('#TotalNoOfTickets').val() != "" && $('#EventName').val() != "" && $('#Email').val() != "" && $('#MobileNumber').val() != "" && $('#EventVenue').val() != "" && $('#EventDescription').val() != "" && $('#EventName').val() != "" && $('#EventStartdate').val() != "" && $('#EndDate').val() != "" && $('#BannerImages').val()) {
+                var Totaltickets = 0;
+                $('input[name^=Quantity]').each(function () {
+                    if ($(this).val() != "") {
+
+                        var Quantity = parseInt($(this).val());
+                        if (Quantity != null) {
+
+                            Totaltickets += Quantity;
+                        }
+                    }
+
+                });
+                if (Totaltickets == TotalnoTickets) {
+                    return true;
+                }
+                else {
+                    alert("Total Tickets must equal to Quantity");
+                    return false;
+                }
+            }
+            else {
+                return true;
+            }
+        });
+
+    })
+
+    $(function () {
+        $('#datetimepicker1').datetimepicker();
+    });
+
+
+</script>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script>
+    $(function () {
+        $("#EventStartdate,#EndDate").datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+    });
+</script>

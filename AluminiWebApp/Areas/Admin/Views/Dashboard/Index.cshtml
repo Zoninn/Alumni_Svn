@@ -1,0 +1,321 @@
+﻿@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminMasterLayoutPage.cshtml";
+}
+<div class="content">
+    <div class="container">
+        <!-- Page-Title -->
+        <div class="row">
+            <div class="col-sm-12">
+                <h4 class="page-title">Dashboard</h4>
+                <p class="text-muted page-title-alt">Welcome to Ubold admin panel !</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-lg-3">
+                <div class="widget-bg-color-icon card-box fadeInDown animated">
+                    <div class="bg-icon bg-icon-info pull-left">
+                        <i class="md md-wallet-giftcard text-info"></i>
+                    </div>
+                    <div class="text-right">
+                        <a href="./Events/AdminEvents">
+                            <h3 id="TotalEvents" class="text-dark"><b class="counter"></b></h3>
+                            <p class="text-muted">Total Events</p>
+                        </a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="widget-bg-color-icon card-box">
+                    <div class="bg-icon bg-icon-pink pull-left">
+                        <i class="md md-face-unlock text-pink"></i>
+                    </div>
+                    <div class="text-right">
+                        <a href="./UserRegistrations/index">
+                            <h3 id="TotalUsersCount" class="text-dark"><b class="counter"></b></h3>
+                            <p class="text-muted">Total Users</p>
+                        </a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="widget-bg-color-icon card-box">
+                    <div class="bg-icon bg-icon-purple pull-left">
+                        <i class="md md-redeem text-purple"></i>
+                    </div>
+                    <div class="text-right">
+                        <a href="./Jobs/PendingJobs">
+                            <h3 id="TotalJobs" class="text-dark"><b class="counter"></b></h3>
+                            <p class="text-muted">Total Jobs</p>
+                        </a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="widget-bg-color-icon card-box">
+                    <div class="bg-icon bg-icon-success pull-left">
+                        <i class="md md-attach-money text-success"></i>
+                    </div>
+                    <div class="text-right">
+                        <a href="@Url.Action("EventPayments", "Events", new {area="Admin",@id=0 })"><h3 id="TotalEvenstAmoun" class="text-dark"><b class="counter"></b></h3></a>
+                        <p class="text-muted">Event Amounts</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="card-box">
+                    <div class="bar-widget">
+                        <div class="table-box">
+                            <div class="table-detail">
+                                <div class="iconbox bg-info">
+                                    <i class="icon-layers"></i>
+                                </div>
+                            </div>
+                            <div class="table-detail">
+                                <a href="./UserRegistrations/index">
+                                    <h4 id="PendingUsers" class="m-t-0 m-b-5"><b></b></h4>
+                                    <h5 class="text-muted m-b-0 m-t-0">Pending Users</h5>
+                                </a>
+
+                            </div>
+                            <div class="table-detail text-right">
+                                <span data-height="45" data-width="120" data-colors="#34d3eb,#ebeff2" data-plugin="peity-bar" style="display: none;">5,3,9,6,5,9,7,3,5,2,9,7,2,1</span><svg class="peity" height="45" width="120"><rect fill="#34d3eb" x="0.8571428571428571" y="20" width="6.857142857142858" height="25" /><rect fill="#ebeff2" x="9.428571428571429" y="30" width="6.857142857142856" height="15" /><rect fill="#34d3eb" x="18" y="0" width="6.857142857142858" height="45" /><rect fill="#ebeff2" x="26.571428571428573" y="15" width="6.857142857142858" height="30" /><rect fill="#34d3eb" x="35.14285714285714" y="20" width="6.857142857142861" height="25" /><rect fill="#ebeff2" x="43.714285714285715" y="0" width="6.857142857142854" height="45" /><rect fill="#34d3eb" x="52.285714285714285" y="10" width="6.857142857142861" height="35" /><rect fill="#ebeff2" x="60.857142857142854" y="30" width="6.857142857142854" height="15" /><rect fill="#34d3eb" x="69.42857142857143" y="20" width="6.857142857142861" height="25" /><rect fill="#ebeff2" x="78" y="35" width="6.857142857142861" height="10" /><rect fill="#34d3eb" x="86.57142857142857" y="0" width="6.857142857142861" height="45" /><rect fill="#ebeff2" x="95.14285714285714" y="10" width="6.857142857142861" height="35" /><rect fill="#34d3eb" x="103.71428571428571" y="35" width="6.857142857142861" height="10" /><rect fill="#ebeff2" x="112.28571428571429" y="40" width="6.857142857142847" height="5" /></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card-box">
+                    <div class="bar-widget">
+                        <div class="table-box">
+                            <div class="table-detail">
+                                <div class="iconbox bg-custom">
+                                    <i class="icon-layers"></i>
+                                </div>
+                            </div>
+                            <div class="table-detail">
+                                <a href="./UserRegistrations/index">
+                                    <h4 id="RejectedUsers" class="m-t-0 m-b-5"><b></b></h4>
+                                    <h5 class="text-muted m-b-0 m-t-0">Rejected Users</h5>
+                                </a>
+                            </div>
+                            <div class="table-detail text-right">
+                                <span data-height="45" data-width="50" data-colors="#5fbeaa,#ebeff2" data-plugin="peity-pie" style="display: none;">1/5</span><svg class="peity" height="45" width="50"><path d="M 25 0 A 22.5 22.5 0 0 1 46.39877161664096 15.547117626563683 L 25 22.5" fill="#5fbeaa" /><path d="M 46.39877161664096 15.547117626563683 A 22.5 22.5 0 1 1 24.999999999999996 0 L 25 22.5" fill="#ebeff2" /></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card-box">
+                    <div class="bar-widget">
+                        <div class="table-box">
+                            <div class="table-detail">
+                                <div class="iconbox bg-danger">
+                                    <i class="icon-layers"></i>
+                                </div>
+                            </div>
+                            <div class="table-detail">
+                                <h4 class="m-t-0 m-b-5"><b>1256</b></h4>
+                                <h5 class="text-muted m-b-0 m-t-0">Visiters</h5>
+                            </div>
+                            <div class="table-detail text-right">
+                                <span data-height="45" data-width="50" data-colors="#f05050,#ebeff2" data-plugin="peity-donut" style="display: none;">1/5</span><svg class="peity" height="45" width="50"><path d="M 25 0 A 22.5 22.5 0 0 1 46.39877161664096 15.547117626563683 L 35.69938580832048 19.02355881328184 A 11.25 11.25 0 0 0 25 11.25" fill="#f05050" /><path d="M 46.39877161664096 15.547117626563683 A 22.5 22.5 0 1 1 24.999999999999996 0 L 24.999999999999996 11.25 A 11.25 11.25 0 1 0 35.69938580832048 19.02355881328184" fill="#ebeff2" /></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end row -->
+
+        <div class="row">
+            <!-- Transactions -->
+            <div class="col-lg-4">
+                <div class="card-box">
+                    <h4 class="m-t-0 m-b-20 header-title"><b>Latest Jobs</b></h4>
+                    <div class="nicescroll mx-box" style="overflow: hidden;" tabindex="5001">
+                        <ul id="AppendLiJobs" class="conversation-list nicescroll" style="overflow-y: scroll;" tabindex="5002"></ul>
+                    </div>
+                </div>
+            </div> <!-- end col -->
+            <!-- CHAT -->
+            <div class="col-lg-4">
+                <div class="card-box">
+                    <h4 class="m-t-0 m-b-20 header-title"><b>WhiteBoard Conversations</b></h4>
+                    <div class="chat-conversation">
+                        <ul id="DisplayMessahe" class="conversation-list nicescroll" style="overflow-y: scroll;" tabindex="5002"></ul>
+                        <div class="row">
+                            <div class="col-sm-9 chat-inputbar">
+                                <br />
+                                <br />
+                                @* <input  type="text" placeholder="Enter your text" class="form-control chat-input">*@
+                            </div>
+                            <div class="col-sm-3 chat-send">
+                                @* <button class="btn btn-md btn-info btn-block waves-effect waves-light" type="submit">Send</button>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end col-->
+            <!-- Todos app -->
+            <div class="col-lg-4">
+                <div class="card-box">
+                    <h4 class="m-t-0 m-b-20 header-title"><b>Latest Events</b></h4>
+                    <div class="nicescroll mx-box" style="overflow: hidden;" tabindex="5001">
+                        <ul id="AppendLatestEvents" class="conversation-list nicescroll" style="overflow-y: scroll;" tabindex="5002"></ul>
+                    </div>
+                </div>
+            </div> <!-- end col -->
+        </div>
+        <!-- end row -->
+
+    </div> <!-- container -->
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var Count = 0;
+        $.ajax({
+            type: "get",
+            dataType: "json",
+            contentTYpe: "Application/json",
+            url: '/UserRegistrations/GetDashboard',
+            data: { "Status": 0 },
+            success: function (data) {
+                $('#TotalEvents').html('');
+                $('#TotalEvents').html(data.TotalEvents);
+                $('#TotalJobs').html('');
+                $('#TotalJobs').html(data.TotalJobs);
+                $('#TotalUsersCount').html('');
+                $('#TotalUsersCount').html(data.TotalUsers);
+                $('#PendingUsers').html('');
+                $('#PendingUsers').html(data.PendingUsers);
+                $('#RejectedUsers').html('');
+                $('#RejectedUsers').html(data.RejectedUsers);
+            }
+        });
+        $.ajax({
+            type: "get",
+            dataType: "json",
+            contentTYpe: "Application/json",
+            url: '/Events/GetAllPayments',
+            data: {},
+            success: function (data) {
+                var Amount = 0;
+                $.each(data, function (key, value) {
+                    if (value.TotalAmount != 0) {
+                        Amount += value.TotalAmount;
+                    }
+                });
+                $('#TotalEvenstAmoun').html(Amount + ".00");
+            }
+        });
+
+        $.ajax({
+            type: "get",
+            dataType: "json",
+            contentTYpe: "Application/json",
+            url: '/admin/WhiteBoard/GetUserPostForAdmin',
+            data: {},
+            success: function (data) {
+                var html = "";
+                $.each(data, function (key, value) {
+                    var dateString = (value.UserPostDate).substr(6);
+                    var currentTime = new Date(parseInt(dateString));
+                    var month = currentTime.getMonth() + 1;
+                    var day = currentTime.getDate();
+                    var year = currentTime.getFullYear();
+                    var date = day + "/" + month + "/" + year;
+
+                    html += "<li class='clearfix'><div class='chat-avatar'><img alt='male' src=" + value.UserImage + "><i>" + date + "</i></div><div class='conversation-text'><div class='ctext-wrap'><i>" + value.UserName + "</i>  <p>" + value.UserMessage + "!</p><p><a href='javascript:;' onclick=DeleteMessage(" + value.PostId + ")><i data-toggle='tooltip' title='Delete post' class='glyphicon glyphicon-remove'></i></a></p></div> </div> </li>"
+                });
+                $('#DisplayMessahe').append(html);
+
+            }
+        });
+
+
+        $.ajax({
+            type: "get",
+            dataType: "json",
+            contentTYpe: "Application/json",
+            url: '/admin/Events/GetEvents',
+            data: {},
+            success: function (data) {
+                var html = "";
+                $.each(data, function (key, value) {
+                    html += ' <a href="./Events/AdminEvents"><li><span class="tran-text">' + value.EventName + '</span>  </li></a>'
+                });
+                $('#AppendLatestEvents').append(html);
+
+            }
+        });
+
+
+        $.ajax({
+            type: "Get",
+            dataType: "json",
+            contentTYpe: "Application/json",
+            url: './Jobs/GetApprovedJobs',
+            data: {},
+            success: function (data) {
+                var html = "";
+                $.each(data, function (key, value) {
+                    html += '<a href="./Jobs/PendingJobs?id=1"> <li><span class="tran-text">' + value.JobTitle + '</span></a>  </li>'
+                });
+                $('#AppendLiJobs').append(html);
+            }
+        });
+
+
+    });
+
+    function DeleteMessage(id) {
+        var r = confirm("Are you sure you want to delete");
+        if (r == true) {
+            $.ajax({
+                type: "Get",
+                dataType: "json",
+                contentType: "Application/json",
+                url: "./WhiteBoard/deletePosts",
+                data: { "Id": id },
+                success: function (data) {
+                    alert('Deleted successfully');
+                    $('#DisplayMessahe').empty();
+                    $.ajax({
+                        type: "get",
+                        dataType: "json",
+                        contentTYpe: "Application/json",
+                        url: '/admin/WhiteBoard/GetUserPostForAdmin',
+                        data: {},
+                        success: function (data) {
+                            var html = "";
+                            $.each(data, function (key, value) {
+                                var dateString = (value.UserPostDate).substr(6);
+                                var currentTime = new Date(parseInt(dateString));
+                                var month = currentTime.getMonth() + 1;
+                                var day = currentTime.getDate();
+                                var year = currentTime.getFullYear();
+                                var date = day + "/" + month + "/" + year;
+
+                                html += "<li class='clearfix'><div class='chat-avatar'><img alt='male' src=" + value.UserImage + "><i>" + date + "</i></div><div class='conversation-text'><div class='ctext-wrap'><i>" + value.UserName + "</i>  <p>" + value.UserMessage + "!</p><p><a href='javascript:;' onclick=DeleteMessage(" + value.PostId + ")><i data-toggle='tooltip' title='Delete post' class='glyphicon glyphicon-remove'></i></a></p></div> </div> </li>"
+                            });
+                            $('#DisplayMessahe').append(html);
+
+                        }
+                    });
+                }
+            });
+        }
+        else {
+
+        }
+    }
+</script>

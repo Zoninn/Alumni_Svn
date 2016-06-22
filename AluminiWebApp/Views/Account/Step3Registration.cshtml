@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "Step3Registration";
+}
+<div style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.3);z-index:999999999;" id="SteudentDivelent">
+    <img src="~/Content/img/loading_apple.gif" width="50" style="position:absolute;top:49%;left:49%;" />
+</div>
+<section id="nicdark_parallax_title" class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img8" style="background-position: 50% 0px;">
+
+    <div class="nicdark_filter greydark">
+
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+
+            <div class="grid grid_12">
+                <div class="nicdark_space100"></div>
+                <div class="nicdark_space100"></div>
+                <h1 class="white subtitle">Registration</h1>
+                <div class="nicdark_space10"></div>
+                <div class="nicdark_divider left big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space40"></div>
+                <div class="nicdark_space50"></div>
+            </div>
+
+        </div>
+        <!--end nicdark_container-->
+
+    </div>
+
+</section>
+
+    <section class="nicdark_section">
+        <div class="nicdark_container nicdark_clearfix">
+            <div class="nicdark_space50"></div>
+            <div class="grid grid_12">
+                <h3 class="subtitle greydark">Batch/Faculty Details</h3>
+                <div class="nicdark_space20"></div>
+                <div class="nicdark_divider left small"><span class="nicdark_bg_yellow nicdark_radius"></span></div>
+            </div>
+            <div class="grid grid_12">
+
+                <!--start nicdark_tabs-->
+                <div class="nicdark_tab ui-tabs ui-widget ui-widget-content ui-corner-all">
+
+                    <ul class="nicdark_tabslist ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+                        <li class="ui-state-default ui-corner-top"><a class="nicdark_tooltip nicdark_btn nicdark_bg_yellow medium nicdark_radius_top white ui-tabs-anchor" role="presentation" tabindex="-1"><i class=" nicdark_displaynone_iphoneland nicdark_displaynone_iphonepotr nicdark_marginright10">1</i> Create Account</a></li>
+                        <li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active ui-state-hover" role="tab" tabindex="0" aria-controls="tabs-7" aria-labelledby="ui-id-4" aria-selected="true"><a href="#tabs-7" class="nicdark_tooltip nicdark_btn nicdark_bg_yellow medium nicdark_radius_top white ui-tabs-anchor" role="presentation" tabindex="-1"><i class=" nicdark_displaynone_iphoneland nicdark_displaynone_iphonepotr nicdark_marginright10">2</i> Batch/Faculty Details</a></li>
+                        <li class="ui-state-default ui-corner-top"><a class="nicdark_tooltip nicdark_btn nicdark_bg_red medium nicdark_radius_top white ui-tabs-anchor" role="presentation" tabindex="-1"><i class=" nicdark_displaynone_iphoneland nicdark_displaynone_iphonepotr nicdark_marginright10">3</i> Contact Information</a></li>
+                        <li class="ui-state-default ui-corner-top"><a class="nicdark_tooltip nicdark_btn nicdark_bg_violet medium nicdark_radius_top white ui-tabs-anchor" role="presentation" tabindex="-1"><i class=" nicdark_displaynone_iphoneland nicdark_displaynone_iphonepotr nicdark_marginright10">4</i> Work Experience</a></li>
+                    </ul>
+
+                    <div class="nicdark_tabs nicdark_bg_grey nicdark_radius nicdark_shadow">
+
+                        <div class="nicdark_margin20 ui-tabs-panel ui-widget-content ui-corner-bottom" id="tabs-7" aria-labelledby="ui-id-4" role="tabpanel" aria-expanded="true" aria-hidden="false" style="display: block;">
+                            <div class="nicdark_space50"></div>
+                            <div class="nicdark_clearfix">
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    &nbsp;&nbsp;&nbsp;
+                                </div>
+                                <div class="nicdark_marginleft20 nicdark_focus nicdark_width_percentage25">
+                                    @Ajax.ActionLink("Register as Alumni", "StudentRegistration", null, new AjaxOptions { UpdateTargetId = "StudentorFaculty", InsertionMode = InsertionMode.Replace }, new { @class = "nicdark_btn fullwidth nicdark_bg_blue medium nicdark_shadow nicdark_radius white nicdark_press" })
+                                </div>
+                                <div class="nicdark_marginleft20 nicdark_focus nicdark_width_percentage25">
+                                    @Ajax.ActionLink("Register as Faculty", "FacultyRegistration", null, new AjaxOptions { UpdateTargetId = "StudentorFaculty", InsertionMode = InsertionMode.Replace }, new { @class = "nicdark_btn fullwidth nicdark_bg_blue medium nicdark_shadow nicdark_radius white nicdark_press" })
+                                </div>
+                            </div>
+                            <div class="nicdark_space50"></div>
+                            <div id="StudentorFaculty" class="nicdark_clearfix">
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+                <!--end nicdark_tabs-->
+                <div class="nicdark_space50"></div>
+
+            </div>
+        </div>
+    </section>
+@section Scripts{
+    @Scripts.Render("~/Custom.js/Registration.js")
+}
+
+        
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>

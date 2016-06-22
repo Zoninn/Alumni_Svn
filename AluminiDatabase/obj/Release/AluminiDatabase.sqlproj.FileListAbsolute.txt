@@ -1,0 +1,7 @@
+D:\MYAlumniNewDesignCopyRepo\AluminiDatabase\bin\Release\AluminiDatabase.dacpac
+D:\MYAlumniNewDesignCopyRepo\AluminiDatabase\obj\Release\Model.xml
+D:\MYAlumniNewDesignCopyRepo\AluminiDatabase\obj\Release\refactor.xml
+D:\MYAlumniNewDesignCopyRepo\AluminiDatabase\obj\Release\postdeploy.sql
+D:\MYAlumniNewDesignCopyRepo\AluminiDatabase\obj\Release\predeploy.sql
+D:\MYAlumniNewDesignCopyRepo\AluminiDatabase\obj\Release\AluminiDatabase.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiDatabase\obj\Release\AluminiDatabase.pdb

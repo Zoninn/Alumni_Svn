@@ -1,0 +1,9 @@
+D:\MYAlumniNewDesignCopyRepo\AluminiLogging.Test\bin\Release\AluminiLogging.Test.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiLogging.Test\bin\Release\AluminiLogging.Test.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiLogging.Test\bin\Release\Alumini.Logger.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiLogging.Test\bin\Release\NLog.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiLogging.Test\bin\Release\Alumini.Logger.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiLogging.Test\bin\Release\NLog.xml
+D:\MYAlumniNewDesignCopyRepo\AluminiLogging.Test\obj\Release\AluminiLogging.Test.csprojResolveAssemblyReference.cache
+D:\MYAlumniNewDesignCopyRepo\AluminiLogging.Test\obj\Release\AluminiLogging.Test.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiLogging.Test\obj\Release\AluminiLogging.Test.pdb

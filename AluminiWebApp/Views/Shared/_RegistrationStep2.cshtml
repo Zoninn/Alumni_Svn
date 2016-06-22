@@ -1,0 +1,118 @@
+﻿@model AluminiWebApp.Models.RegistrationStep2ViewModel
+@using (Ajax.BeginForm("UserRegistration", "Account", new AjaxOptions { UpdateTargetId = "RegistrationStep1", HttpMethod = "Post" }, new { @id = "form0", enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+    <h3 class="text-success">1.Create Account</h3>
+    <table width="800" style="margin:0 auto;">
+        <tr>
+            <td>
+                Email Id :
+                @Html.TextBoxFor(m => m.Email, new { @readonly = "readonly", @class = "form-control" })
+            </td>
+            <td>
+                Saluations :
+                @Html.DropDownListFor(x => x.SalutationId, new SelectList(Model.Salutation, "Id", "Salutation1"), "Select", new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.SalutationId, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                First Name :
+                @Html.TextBoxFor(x => x.FirstName, null, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.FirstName, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                Last Name:
+                @Html.TextBoxFor(x => x.LastName, null, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.LastName, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Gender :
+                <span class="form-control">
+                    @Html.RadioButtonFor(x => x.GenderId, 1) Male
+                    @Html.RadioButtonFor(x => x.GenderId, 2) Female
+                </span>
+                @Html.ValidationMessageFor(x => x.GenderId, "", new { @class = "text-danger" })
+            </td>
+            <td>
+                Date of Birth :
+                @Html.TextBoxFor(x => x.DOB, null, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.DOB, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        @*<tr>
+                <td>
+                    State :
+                </td>
+                <td>
+                    @Html.DropDownListFor(x => x.StateId, new SelectList(Model.States, "Id", "StateName"), "Select", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.StateId, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    District :
+                </td>
+                <td>
+                    <select id="ddlDistricts" class="form-control" name="">
+                        <option value="">Select</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    City :
+                </td>
+                <td>
+                    <select id="ddlCitys" name="HomeCityId" class="form-control">
+                        <option value="">Select</option>
+                    </select>
+                    @Html.ValidationMessageFor(x => x.HomeCityId, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Address :
+                </td>
+                <td>
+                    @Html.TextAreaFor(x => x.Address, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(x => x.Address, "", new { @class = "text-danger" })
+                </td>
+            </tr>*@
+        <tr>
+            <td>
+                Password:
+                @Html.PasswordFor(x => x.Password, new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Password, "", new { @class = "text-danger" })
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <hr />
+            </td>oninn
+        </tr>
+        <tr>
+
+            <td colspan="2">
+                <h3 class="text-success">Photograph</h3>
+                User image :
+                <input type="file" id="UserProfilePicyture">
+                <input name="ProfilePicture" id="ProfilePicture" hidden="hidden" />
+                @Html.ValidationMessageFor(x => x.ProfilePicture, "", new { @class = "text-danger" })
+                <img id="ImagePrivew" src="~/UserProfilePictures/avatar.png" width="200">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" class="btn btn-success" value="Save" />
+            </td>
+        </tr>
+
+    </table>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

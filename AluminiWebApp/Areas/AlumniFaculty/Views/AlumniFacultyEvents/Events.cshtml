@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Events";
+    Layout = "~/Areas/AlumniFaculty/Views/Shared/_SRKRLayout.cshtml";
+}
+<!-- section -->
+<section class="padding-section">
+    <div class="grid-row clear-fix">
+        <h3> @TempData["DisplayMessage"]</h3>
+        <h2 class="center-text">Latest Events</h2>
+        <div class="grid-col-row">
+
+            <!-- course item -->
+            @foreach (var UserEvents in ViewBag.GetEvents)
+            {  <div class="grid-col grid-col-4">
+                <div class="course-item">
+                    <div class="course-hover">
+                        <img src="@UserEvents.BannerImage" data-at2x="pic/370x280-img-1@2x.jpg" alt>
+                        <div class="hover-bg bg-color-1"></div>
+                        <a href="../AlumniFacultyEvents/SingleEvent?id=@UserEvents.EventId">See More</a>
+                    </div>
+                    <div class="course-name clear-fix">
+                        <span class="price">$75</span>
+                        <h3><a href="#">@UserEvents.EventName</a></h3>
+                    </div>
+                    <div class="course-date bg-color-1 clear-fix">
+                        <div class="day"><i class="fa fa-calendar"></i>@UserEvents.EventStartdate</div><div class="time"><i class="fa fa-clock-o"></i>End Date: @UserEvents.EndDate</div>
+                        <div class="divider"></div>
+                        <div class="address">Address: @UserEvents.EventVenue</div>
+                    </div>
+                </div>
+            </div>
+            }
+            <!-- / course item -->
+
+        </div>
+    </div>
+</section>
+<!-- / section -->

@@ -1,0 +1,47 @@
+﻿@model AluminiWebApp.Areas.Alumini.Models.JobPosting
+@{
+    Layout = "~/Views/Shared/_SRKRDesignLayout.cshtml";
+}
+
+<section class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img6" id="nicdark_parallax_title" style="background-position: 50% 0px;">
+    <div class="nicdark_filter greydark">
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+            <div class="grid grid_12">
+                <div class="nicdark_space100"></div>
+                <div class="nicdark_space100"></div>
+                <h1 class="white subtitle">FAQ</h1>
+                <div class="nicdark_space10"></div>
+                <h3 class="subtitle white">FREQUENTLY ASKED QUESTIONS</h3>
+                <div class="nicdark_space20"></div>
+                <div class="nicdark_divider left big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space40"></div>
+                <div class="nicdark_space50"></div>
+            </div>
+        </div>
+        <!--end nicdark_container-->
+    </div>
+</section>
+<div class=" grid grid_8">
+    <div class="nicdark_textevidence nicdark_bg_red nicdark_radius_top">
+        <h4 style="text-align:center" class="white nicdark_margin20">Job Details</h4>
+    </div>
+    <div class="nicdark_margin20">
+        <h3><b>Job Title: @Model.JobTitle</b></h3>
+    </div>
+    <div>
+        <h4><b>You need to login to access the content on this page</b></h4>
+    </div>
+    <div>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        <h4><b><a href="@Url.Action("Login", "Account", new { area = "", id = "2" },null)" class="nicdark_zoom  nicdark_btn nicdark_bg_green medium nicdark_shadow nicdark_radius white">Click here to Login</a></b></h4>&nbsp; &nbsp;<h4><b><a class="nicdark_zoom  nicdark_btn nicdark_bg_red medium nicdark_shadow nicdark_radius white" href="@Url.Action("Register", "Account", new { area = "" })">click here To register</a></b></h4>
+    </div>
+    <div>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+       
+    </div>
+</div>

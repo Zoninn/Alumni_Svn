@@ -1,0 +1,95 @@
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiLogging.Test\bin\Debug\AluminiLogging.Test.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiLogging.Test\bin\Debug\AluminiLogging.Test.pdb
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiLogging.Test\obj\Debug\AluminiLogging.Test.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiLogging.Test\obj\Debug\AluminiLogging.Test.pdb
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiLogging.Test\bin\Debug\FluentAssertions.Core.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiLogging.Test\bin\Debug\FluentAssertions.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiLogging.Test\bin\Debug\Moq.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiLogging.Test\bin\Debug\FluentAssertions.pdb
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiLogging.Test\bin\Debug\FluentAssertions.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiLogging.Test\bin\Debug\FluentAssertions.Core.pdb
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiLogging.Test\bin\Debug\FluentAssertions.Core.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiLogging.Test\bin\Debug\Moq.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiLogging.Test\obj\Debug\AluminiLogging.Test.csprojResolveAssemblyReference.cache
+C:\Users\tulasiram\Documents\collegealumini\AluminiLogging.Test\bin\Debug\AluminiLogging.Test.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiLogging.Test\bin\Debug\AluminiLogging.Test.pdb
+C:\Users\tulasiram\Documents\collegealumini\AluminiLogging.Test\bin\Debug\Alumini.Logger.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiLogging.Test\bin\Debug\NLog.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiLogging.Test\bin\Debug\Alumini.Logger.pdb
+C:\Users\tulasiram\Documents\collegealumini\AluminiLogging.Test\bin\Debug\NLog.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiLogging.Test\obj\Debug\AluminiLogging.Test.csprojResolveAssemblyReference.cache
+C:\Users\tulasiram\Documents\collegealumini\AluminiLogging.Test\obj\Debug\AluminiLogging.Test.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiLogging.Test\obj\Debug\AluminiLogging.Test.pdb
+D:\FRESHCOPY ALUMNI\AluminiLogging.Test\bin\Debug\AluminiLogging.Test.dll
+D:\FRESHCOPY ALUMNI\AluminiLogging.Test\bin\Debug\AluminiLogging.Test.pdb
+D:\FRESHCOPY ALUMNI\AluminiLogging.Test\bin\Debug\Alumini.Logger.dll
+D:\FRESHCOPY ALUMNI\AluminiLogging.Test\bin\Debug\NLog.dll
+D:\FRESHCOPY ALUMNI\AluminiLogging.Test\bin\Debug\Alumini.Logger.pdb
+D:\FRESHCOPY ALUMNI\AluminiLogging.Test\bin\Debug\NLog.xml
+D:\FRESHCOPY ALUMNI\AluminiLogging.Test\obj\Debug\AluminiLogging.Test.csprojResolveAssemblyReference.cache
+D:\FRESHCOPY ALUMNI\AluminiLogging.Test\obj\Debug\AluminiLogging.Test.dll
+D:\FRESHCOPY ALUMNI\AluminiLogging.Test\obj\Debug\AluminiLogging.Test.pdb
+C:\Alumni Copy\AluminiLogging.Test\bin\Debug\AluminiLogging.Test.dll
+C:\Alumni Copy\AluminiLogging.Test\bin\Debug\AluminiLogging.Test.pdb
+C:\Alumni Copy\AluminiLogging.Test\bin\Debug\Alumini.Logger.dll
+C:\Alumni Copy\AluminiLogging.Test\bin\Debug\NLog.dll
+C:\Alumni Copy\AluminiLogging.Test\bin\Debug\Alumini.Logger.pdb
+C:\Alumni Copy\AluminiLogging.Test\bin\Debug\NLog.xml
+C:\Alumni Copy\AluminiLogging.Test\obj\Debug\AluminiLogging.Test.csprojResolveAssemblyReference.cache
+C:\Alumni Copy\AluminiLogging.Test\obj\Debug\AluminiLogging.Test.dll
+C:\Alumni Copy\AluminiLogging.Test\obj\Debug\AluminiLogging.Test.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiLogging.Test\bin\Debug\AluminiLogging.Test.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiLogging.Test\bin\Debug\AluminiLogging.Test.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiLogging.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiLogging.Test\obj\Debug\AluminiLogging.Test.csprojResolveAssemblyReference.cache
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiLogging.Test\obj\Debug\AluminiLogging.Test.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiLogging.Test\obj\Debug\AluminiLogging.Test.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiLogging.Test\bin\Debug\Alumini.Logger.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiLogging.Test\bin\Debug\NLog.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiLogging.Test\bin\Debug\Alumini.Logger.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiLogging.Test\bin\Debug\NLog.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiLogging.Test\bin\Debug\AluminiLogging.Test.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiLogging.Test\bin\Debug\AluminiLogging.Test.pdb
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiLogging.Test\obj\Debug\AluminiLogging.Test.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiLogging.Test\obj\Debug\AluminiLogging.Test.pdb
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiLogging.Test\bin\Debug\Alumini.Logger.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiLogging.Test\bin\Debug\NLog.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiLogging.Test\bin\Debug\Alumini.Logger.pdb
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiLogging.Test\bin\Debug\NLog.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiLogging.Test\obj\Debug\AluminiLogging.Test.csprojResolveAssemblyReference.cache
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiLogging.Test\bin\Debug\AluminiLogging.Test.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiLogging.Test\bin\Debug\AluminiLogging.Test.pdb
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiLogging.Test\bin\Debug\Alumini.Logger.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiLogging.Test\bin\Debug\NLog.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiLogging.Test\bin\Debug\Alumini.Logger.pdb
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiLogging.Test\bin\Debug\NLog.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiLogging.Test\obj\Debug\AluminiLogging.Test.csprojResolveAssemblyReference.cache
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiLogging.Test\obj\Debug\AluminiLogging.Test.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiLogging.Test\obj\Debug\AluminiLogging.Test.pdb
+D:\RepoAlumni\AluminiLogging.Test\bin\Debug\AluminiLogging.Test.dll
+D:\RepoAlumni\AluminiLogging.Test\bin\Debug\AluminiLogging.Test.pdb
+D:\RepoAlumni\AluminiLogging.Test\obj\Debug\AluminiLogging.Test.dll
+D:\RepoAlumni\AluminiLogging.Test\obj\Debug\AluminiLogging.Test.pdb
+D:\RepoAlumni\AluminiLogging.Test\bin\Debug\Alumini.Logger.dll
+D:\RepoAlumni\AluminiLogging.Test\bin\Debug\NLog.dll
+D:\RepoAlumni\AluminiLogging.Test\bin\Debug\Alumini.Logger.pdb
+D:\RepoAlumni\AluminiLogging.Test\bin\Debug\NLog.xml
+D:\RepoAlumni\AluminiLogging.Test\obj\Debug\AluminiLogging.Test.csprojResolveAssemblyReference.cache
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiLogging.Test\bin\Debug\AluminiLogging.Test.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiLogging.Test\bin\Debug\AluminiLogging.Test.pdb
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiLogging.Test\bin\Debug\Alumini.Logger.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiLogging.Test\bin\Debug\NLog.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiLogging.Test\bin\Debug\Alumini.Logger.pdb
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiLogging.Test\bin\Debug\NLog.xml
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiLogging.Test\obj\Debug\AluminiLogging.Test.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiLogging.Test\obj\Debug\AluminiLogging.Test.pdb
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiLogging.Test\obj\Debug\AluminiLogging.Test.csprojResolveAssemblyReference.cache
+D:\MYAlumniNewDesignCopyRepo\AluminiLogging.Test\bin\Debug\AluminiLogging.Test.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiLogging.Test\bin\Debug\AluminiLogging.Test.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiLogging.Test\obj\Debug\AluminiLogging.Test.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiLogging.Test\obj\Debug\AluminiLogging.Test.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiLogging.Test\obj\Debug\AluminiLogging.Test.csprojResolveAssemblyReference.cache
+D:\MYAlumniNewDesignCopyRepo\AluminiLogging.Test\bin\Debug\Alumini.Logger.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiLogging.Test\bin\Debug\NLog.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiLogging.Test\bin\Debug\Alumini.Logger.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiLogging.Test\bin\Debug\NLog.xml

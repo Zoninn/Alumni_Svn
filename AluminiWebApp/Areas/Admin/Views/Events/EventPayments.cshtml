@@ -1,0 +1,223 @@
+﻿@model IEnumerable<AluminiRepository.Events>
+@{
+    ViewBag.Title = "Events";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminMasterLayoutPage.cshtml";
+}
+@using GridMvc.Html
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/gridmvc.js"></script>
+@*<link href="~/Content/Gridmvc.css" rel="stylesheet" />*@
+
+@section styles{
+    <link href="~/Content/assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/dataTables.colVis.css" rel="stylesheet" type="text/css" />
+}
+
+
+
+<div class="content">
+    <div class="container">
+        <!-- Page-Title -->
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card-box table-responsive">
+                    <h4 class="alert alert-warning"><b>EVENT PAYMENTS</b></h4>
+                    <div class="form-group">
+                        <div class="col-sm-10">
+                            select
+
+                            <select class="form-control" id="Events">
+                                <option value="0">Select All</option>
+                            </select>
+                            @* <a href="" id="Serach">Search</a>*@
+                            <br />
+                        </div>
+                    </div>
+                    <table class="table-bordered table table-hover" data-pagination="true" data-page-size="10" data-toggle="table" style="display: table;">
+                        <tbody>
+                            @Html.Grid(Model).Columns(columns =>
+                             {
+                                 columns.Add(c => c.UserName).Titled("Name").Filterable(true);
+                                 columns.Add(c => c.EventName).Titled("Name").Filterable(true);
+                                 columns.Add(c => c.TicketTypeHeading).Titled("Ticket Type").Filterable(true);
+                                 columns.Add(c => c.TotalNoOfTickets).Titled("Tickets").Filterable(true);
+                                 columns.Add(c => c.ActualTicketAmount).Titled("Ticket Price").Filterable(true);
+                                 columns.Add(c => c.TotalAmount).Titled("Tickets Amount").Filterable(true);
+                             }).WithPaging(10).Sortable(true)
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+
+    <script src="~/Content/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.bootstrap.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.buttons.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/buttons.bootstrap.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/jszip.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/pdfmake.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/vfs_fonts.js"></script>
+    <script src="~/Content/assets/plugins/datatables/buttons.html5.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/buttons.print.min.js"></script>
+
+    <script src="~/Content/assets/plugins/datatables/dataTables.fixedHeader.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.keyTable.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.responsive.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/responsive.bootstrap.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.scroller.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.colVis.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //$('#datatable').dataTable();
+            $('#datatable-keytable').DataTable({ keys: true });
+            $('#datatable-responsive').DataTable();
+            $('#datatable-colvid').DataTable({
+                "dom": 'C<"clear">lfrtip',
+                "colVis": {
+                    "buttonText": "Change columns"
+                }
+            });
+            //$('#datatable-scroller').DataTable({ ajax: "/Content/assets/plugins/datatables/json/scroller-demo.json", deferRender: true, scrollY: 380, scrollCollapse: true, scroller: true });
+            var table = $('#datatable-fixed-header').DataTable({ fixedHeader: true });
+        });
+        TableManageButtons.init();
+
+    </script>
+
+
+    <script type="text/javascript">
+        function test() {
+            $.ajax({ url: 'wait.php', cache: false });
+        }
+    </script>
+
+    <div id="domMessage" style="display:none;">
+        <h1>We are processing your request.  Please be patient.</h1>
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Custom.js/jquery.blockUI.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            blockPage();
+            test();
+            var TotalAmount = 0;
+            $.ajax({
+                type: "Get",
+                dataType: "json",
+                contentType: "Application/json",
+                url: "/Events/GetEventsNames",
+                data: {},
+                success: function (data) {
+                    unblockPage();
+                    $.each(data, function (key, value) {
+                        $("#Events").append($("<option></option>").val(value.EventId).html(value.EventName));
+                    });
+                }
+            });
+
+            $("#Events").change(function () {
+
+                var TotalAmountChange = 0;
+                $("#Amount").html("");
+                var Event = $("#Events option:selected").val();
+                window.location.href = "../EventPayments/" + Event + "";
+                //$('#Serach').attr('href', '../EventPayments/Event');
+                //if (Event == 0) {
+                //    $.ajax({
+                //        type: "Get",
+                //        dataType: "json",
+                //        contentType: "Application/json",
+                //        url: "../Events/GetAllPayments",
+                //        data: {},
+                //        success: function (data) {
+                //            $('#datatable').dataTable().destroy();
+                //            $('#datatable tbody').empty();
+
+                //            unblockPage();
+                //            $.each(data, function (key, value) {
+                //                TotalAmountChange += value.TotalAmount;
+                //                $("#Payments").append("<tr><td>" + value.UserName + "</td><td>" + value.TicketTypeHeading + "</td><td>" + value.TotalNoOfTickets + "</td><td>" + value.ActualTicketAmount + "</td><td>" + value.TotalAmount + "</td></tr>");
+                //            });
+                //            $('#datatable').dataTable();
+                //            $("#Amount").html(TotalAmountChange + "&nbsp;/-");
+                //        }
+                //    });
+                //}
+                //else {
+                //    $.ajax({
+                //        type: "Get",
+                //        dataType: "json",
+                //        contentType: "Application/json",
+                //        url: "../Events/GetEventPaymentsonEVentId",
+                //        data: { "EventId": Event },
+                //        success: function (data) {
+                //            unblockPage();
+                //            $('#datatable').dataTable().destroy();
+                //            $('#datatable tbody').empty();
+                //            $("#Amount").html("");
+                //            $.each(data, function (key, value) {
+                //                TotalAmountChange += value.TotalAmount;
+                //                $("#Payments").append("<tr><td>" + value.UserName + "</td><td>" + value.TicketTypeHeading + "</td><td>" + value.TotalNoOfTickets + "</td><td>" + value.ActualTicketAmount + "</td><td>" + value.TotalAmount + "</td></tr>");
+                //            });
+                //            $('#datatable').dataTable();
+                //            $("#Amount").html(TotalAmountChange + "&nbsp;/-");
+                //        }
+                //    });
+
+                //}
+            });
+
+
+            //$.ajax({
+            //    type: "Get",
+            //    dataType: "json",
+            //    contentType: "Application/json",
+            //    url: "../Events/GetAllPayments",
+            //    data: {},
+            //    success: function (data) {
+            //        $.each(data, function (key, value) {
+            //            TotalAmount += value.TotalAmount;
+            //            $("#Payments").append("<tr><td>" + value.UserName + "</td><td>" + value.TicketTypeHeading + "</td><td>" + value.TotalNoOfTickets + "</td><td>" + value.ActualTicketAmount + "</td><td>" + value.TotalAmount + "</td></tr>");
+            //        });
+            //        $("#Amount").html(TotalAmount + "&nbsp;/-");
+            //        $('#datatable').dataTable();
+            //    }
+            //});
+        });
+    </script>
+    <script>
+        $j = jQuery.noConflict();
+        //function to block the whole page
+        function blockPage() {
+            $j.blockUI({
+                message: '<h3>Please wait....</h3>',
+                css: {
+                    border: 'none',
+                    padding: '5px',
+                    'border-radius': '5px',
+                    margin: '0',
+                    opacity: .9
+                }
+            });
+            return false;
+        }
+        //function to unblock the page
+        function unblockPage() {
+            $j.unblockUI();
+        }
+    </script>
+}

@@ -1,0 +1,166 @@
+﻿@model AluminiWebApp.Models.StudentRegistrationModel
+@{
+    ViewBag.Title = "UpdateAlumni";
+    Layout = "~/Areas/Alumini/Views/Shared/_SRKRDesignLayout.cshtml";
+}
+
+
+<section id="nicdark_parallax_title" class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img8" style="background-position: 50% 0px;">
+
+    <div class="nicdark_filter greydark">
+
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+
+            <div class="grid grid_12">
+                <div class="nicdark_space100"></div>
+                <div class="nicdark_space100"></div>
+                <h1 class="white subtitle">Batch Details</h1>
+                <div class="nicdark_space10"></div>
+                <div class="nicdark_divider left big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space40"></div>
+                <div class="nicdark_space50"></div>
+            </div>
+
+        </div>
+        <!--end nicdark_container-->
+
+    </div>
+
+</section>
+
+
+@using (Html.BeginForm("UpdateAlumni", "Profile", FormMethod.Post))
+{
+    @Html.ValidationSummary(true);
+    @Html.AntiForgeryToken()
+    <section class="nicdark_section">
+        <div class="nicdark_container nicdark_clearfix">
+            <div class="nicdark_space50"></div>
+            <div class="grid grid_12">
+                <h3 class="subtitle greydark">Batch Details</h3>
+                <div class="nicdark_space20"></div>
+                <div class="nicdark_divider left small"><span class="nicdark_bg_yellow nicdark_radius"></span></div>
+            </div>
+            <div class="grid grid_12">
+
+                <!--start nicdark_tabs-->
+                <div class="nicdark_tab ui-tabs ui-widget ui-widget-content ui-corner-all">
+
+                    <ul class="nicdark_tabslist ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+                        <a href="@Url.Action("BasicInformation", "Profile", new { area = "Alumini" })" class="nicdark_btn nicdark_bg_green medium nicdark_shadow nicdark_radius white nicdark_margin10" style="background-color:#b1dac2"><i class="icon-pencil-1"></i>&nbsp;&nbsp;&nbsp;Basic Information</a>
+                        <a href="@Url.Action("UpdateAlumni", "Profile", new { area = "Alumini" })" class="nicdark_btn nicdark_bg_blue medium nicdark_shadow nicdark_radius white nicdark_margin10" style="background-color:rgb(74, 193, 222)"><i class="icon-pencil-1"></i>&nbsp;&nbsp;&nbsp;Batch Details</a>
+                        <a href="@Url.Action("UpdateContactDetails", "Profile", new { area = "Alumini" })" class="nicdark_btn nicdark_bg_orange medium nicdark_shadow nicdark_radius white nicdark_margin10" style="background-color:#ecc2b2"><i class="icon-pencil-1"></i>&nbsp;&nbsp;&nbsp;Location/Contact Information</a>
+                        <a href="@Url.Action("ProfessionalDetails", "Profile", new { area = "Alumini" })" class="nicdark_btn nicdark_bg_red medium nicdark_shadow nicdark_radius white nicdark_margin10" style="background-color:#eab1b1"><i class="icon-pencil-1"></i>&nbsp;&nbsp;&nbsp;Professional Details</a>
+
+                    </ul>
+
+
+                    <div class="nicdark_tabs nicdark_bg_grey nicdark_radius nicdark_shadow">
+
+                        <div class="nicdark_margin20 ui-tabs-panel ui-widget-content ui-corner-bottom" id="tabs-7" aria-labelledby="ui-id-4" role="tabpanel" aria-expanded="true" aria-hidden="false" style="display: block;">
+
+                            <div class="nicdark_focus nicdark_width_percentage25">
+                                <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                    @Html.DropDownListFor(x => x.CourseCategoryId, new SelectList(Model.Coursecategorys, "Id", "CourseCategoryName"), "Select", new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle", required = "required" })
+                                    @Html.ValidationMessageFor(x => x.CourseCategoryId, "", new { @class = "text-danger" })
+
+                                </div>
+                            </div>
+                            <div class="nicdark_focus nicdark_width_percentage25">
+                                <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                    <select id="ddlCourses" class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle" name="CourseId" required="required">
+                                        <option value="">Select</option>
+                                    </select>
+                                    @Html.ValidationMessageFor(x => x.CourseId, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="nicdark_focus nicdark_width_percentage25">
+                                <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                    <select id="ddlGraduationYear" class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle" name="Batch" required="required">
+                                        <option value="">Select</option>
+                                    </select>
+                                    @Html.ValidationMessageFor(x => x.Batch, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="nicdark_focus nicdark_width_percentage25">
+                                <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                    @*@Html.DropDownListFor(x => x.WorkedTill, new SelectList(Model.GraduationYears, "GraduationYear", "GraduationYear"), "Select working to", new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle" })
+                                        @Html.ValidationMessageFor(x => x.WorkedTill, "", new { @class = "text-danger" })*@
+                                </div>
+                            </div>
+                            <div class="nicdark_space20"></div>
+                            <div class="nicdark_focus">
+                                <div class="nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                    <input class="nicdark_btn nicdark_bg_yellow medium nicdark_shadow nicdark_radius white nicdark_press right" type="submit" value="Update">
+                                </div>
+                                
+                            </div>
+                           
+
+                            <div class="nicdark_space20">
+                              
+                            </div>
+                          @*  <a href="@Url.Action("RegisterAsFaculty", "Profile", new { area = "Alumini" })" value="Register as Faculty" class="nicdark_btn nicdark_bg_blue medium nicdark_shadow nicdark_radius white nicdark_press right">Register as faculty</a>*@
+                            
+                            
+                        </div>
+
+                    </div>
+
+                </div>
+                <!--end nicdark_tabs-->
+                <div class="nicdark_space50"></div>
+
+            </div>
+        </div>
+    </section>
+}
+
+
+
+
+@Scripts.Render("~/Custom.js/Registration.js")
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btnRegisterAlumni").click(function () {
+            window.location.href = "/profile/RegisterAsFaculty";
+        });
+
+        BindCoyrses(@Model.CourseCategoryId);
+    });
+    function BindCoyrses(DegreeId) {
+        $.ajax({
+            type: "Get",
+            dataType: "json",
+            url: "/Account/GetCourses?CourseCategoryId=" + DegreeId,
+            contentType: "Application/json",
+            data: {},
+            success: function (data) {
+                $.each(data, function (key, value) {
+                    $("#ddlCourses").append($("<option></option>").val(value.Id).html(value.CourseName));
+                });
+                $("#ddlCourses").val(@Model.CourseId);
+            }
+
+        });
+
+        $.ajax({
+            type: "Get",
+            dataType: "json",
+            url: "/Account/GetYears?CourseId=" + @Model.CourseId,
+            contentType: "Application/json",
+            data: {},
+            success: function (data) {
+                $.each(data, function (key, value) {
+                    $("#ddlGraduationYear").append($("<option></option>").val(value.Year).html(value.Year));
+                });
+                $("#ddlGraduationYear").val(@Model.Batch);
+            }
+        });
+    }
+</script>

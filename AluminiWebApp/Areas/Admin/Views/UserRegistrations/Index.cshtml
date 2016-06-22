@@ -1,0 +1,411 @@
+﻿@model  IEnumerable<Alumini.Core.View_UserDetails>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminMasterLayoutPage.cshtml";
+
+}
+
+
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Start content -->
+<div class="content">
+    <div class="container">
+        <!-- Page-Title -->
+        <div class="row">
+            <div class="col-sm-12">
+                <h4 class="page-title"></h4>
+                @*<ol class="breadcrumb">
+                        <li>
+                            <a href="#"></a>
+                        </li>
+                        <li>
+                            <a href="#"></a>
+                        </li>
+                        <li class="active">
+
+                        </li>
+                    </ol>*@
+                <div>
+                    <!-- Trigger the modal with a button -->
+                    @*  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>*@
+
+                    <!-- Modal -->
+                    <div id="myModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">User Full details</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                @Html.HiddenFor(m => m.FirstOrDefault().UserId)
+                                                @Html.HiddenFor(m => m.FirstOrDefault().UserStatus)
+                                                @Html.LabelFor(m => m.FirstOrDefault().HomeCityName)
+                                                @Html.TextBoxFor(m => m.FirstOrDefault().HomeCityName, null, new { @class = "form-control", @readonly = "readonly" })
+                                            </td>
+                                            <td>&nbsp;</td>
+                                            <td>
+
+                                                @Html.LabelFor(m => m.FirstOrDefault().LivesInCityName)
+                                                @Html.TextBoxFor(m => m.FirstOrDefault().LivesInCityName, null, new { @class = "form-control", @readonly = "readonly" })
+                                            </td>
+                                            <td>&nbsp;</td>
+                                            <td>
+
+                                                @Html.LabelFor(m => m.FirstOrDefault().DOB)
+                                                @Html.TextBoxFor(m => m.FirstOrDefault().DOB, null, new { @class = "form-control", @readonly = "readonly" })
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                @Html.LabelFor(m => m.FirstOrDefault().AlternateEmailId)
+                                                @Html.TextBoxFor(m => m.FirstOrDefault().AlternateEmailId, null, new { @class = "form-control", @readonly = "readonly" })
+                                            </td>
+                                            <td>&nbsp;</td>
+                                            <td>
+                                                @Html.LabelFor(m => m.FirstOrDefault().PhoneNumber)
+                                                @Html.TextBoxFor(m => m.FirstOrDefault().PhoneNumber, null, new { @class = "form-control", @readonly = "readonly" })
+                                            </td>
+                                            <td>&nbsp;</td>
+                                            <td>
+                                                @Html.LabelFor(m => m.FirstOrDefault().Salutation)
+                                                @Html.TextBoxFor(m => m.FirstOrDefault().Salutation, null, new { @class = "form-control", @readonly = "readonly" })
+
+                                            </td>
+                                        </tr>
+                                        <tr id="Alumni">
+
+                                            <td>
+                                                @Html.LabelFor(m => m.FirstOrDefault().HomePhoneNumber)
+                                                @Html.TextBoxFor(m => m.FirstOrDefault().HomePhoneNumber, null, new { @class = "form-control", @readonly = "readonly" })
+                                            </td>
+                                            <td>&nbsp;</td>
+                                            <td>
+                                                @Html.LabelFor(m => m.FirstOrDefault().CourseName)
+                                                @Html.TextBoxFor(m => m.FirstOrDefault().CourseName, null, new { @class = "form-control", @readonly = "readonly" })
+                                            </td>
+                                            <td>&nbsp;</td>
+                                            <td>
+                                                @Html.LabelFor(m => m.FirstOrDefault().Batch)
+                                                @Html.TextBoxFor(m => m.FirstOrDefault().Batch, null, new { @class = "form-control", @readonly = "readonly" })
+
+                                            </td>
+
+                                        </tr>
+                                        <tr id="AlumniId">
+                                            <td>
+                                                @Html.LabelFor(m => m.FirstOrDefault().CourseCategoryName)
+                                                @Html.TextBoxFor(m => m.FirstOrDefault().CourseCategoryName, null, new { @class = "form-control", @readonly = "readonly" })
+                                            </td>
+                                        </tr>
+                                        <tr id="Faculty">
+                                            <td>
+                                                @Html.LabelFor(m => m.FirstOrDefault().DesignationName)
+                                                @Html.TextBoxFor(m => m.FirstOrDefault().DesignationName, null, new { @class = "form-control", @readonly = "readonly" })
+                                            </td>
+                                            <td>&nbsp;</td>
+                                            <td>
+                                                @Html.LabelFor(m => m.FirstOrDefault().DepartmentName)
+                                                @Html.TextBoxFor(m => m.FirstOrDefault().DepartmentName, null, new { @class = "form-control", @readonly = "readonly" })
+                                            </td>
+                                            <td>&nbsp;</td>
+                                            <td>
+                                                @Html.LabelFor(m => m.FirstOrDefault().WorkingFrom)
+                                                @Html.TextBoxFor(m => m.FirstOrDefault().WorkingFrom, null, new { @class = "form-control", @readonly = "readonly" })
+                                            </td>
+
+                                        </tr>
+                                        <tr id="Facultyid">
+                                            <td>
+
+                                                @Html.LabelFor(m => m.FirstOrDefault().WorkingTo)
+                                                @Html.TextBoxFor(m => m.FirstOrDefault().WorkingTo, null, new { @class = "form-control", @readonly = "readonly" })
+
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="modal-footer">
+                                    <button id="btnUpdate" type="button" class="btn btn-default" onclick="UpdateUser();">Approve</button>
+                                    <button id="btnReject" type="button" class="btn btn-default" onclick="Rejected();">Rejected</button>
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card-box">
+                    <h4 class="m-t-0 header-title"><b>User Approvals</b></h4>
+                    <p class="text-muted m-b-30 font-13">
+
+                    </p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div role="form" class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Role</label>
+                                    <div class="col-md-10">
+                                        <select id="Roles" class="form-control" required="required">
+                                            <option value="">Select Role</option>
+                                            <option value="1">Alumini</option>
+                                            <option value="2">Faculty</option>
+                                            <option value="4">Alumni and Faculty</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="example-email" class="col-md-2 control-label">Status</label>
+                                    <div class="col-md-10">
+                                        <select id="Status" class="form-control" required="required">
+                                            <option value="">Select Status</option>
+                                            <option value="0">Pending</option>
+                                            <option value="1">Approved</option>
+                                            <option value="2">Rejected</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <input id="btnGet" type="button" value="Fetch" class="btn btn-default  btn-rounded waves-effect waves-light" />
+                                <br />
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card-box">
+                        <div class="row">
+                            <table class="gridtable table table-striped table-bordered" id="datatable">
+                                <thead>
+                                    <tr>
+                                        <th>FIrst Name</th>
+                                        <th>Last Name</th>
+                                        <th>Email</th>
+                                        <th>Mobile</th>
+                                        <th>Gender</th>
+                                        <th>Role</th>
+                                    </tr>
+                                    <tr>
+                                        <td><h3 id="Errormessage" class="text-danger"></h3></td>
+                                    </tr>
+                                </thead>
+                                <tbody id="UserData"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- container -->
+
+</div> <!-- content -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btnGet").click(function () {
+
+            var Role = $('#Roles option:selected').val();
+            var Status = $('#Status option:selected').val();
+            if (Role != "" && Status != "") {
+                var UserRole = "";
+                if (Role == 1) {
+                    $('#AlumniId').show();
+                    $('#Alumni').show();
+                    $('#Faculty').hide();
+                    $('#Facultyid').hide();
+                    UserRole = "Alumni";
+                }
+                else if (Role == 2) {
+                    $('#AlumniId').hide();
+                    $('#Alumni').hide();
+                    UserRole = "Faculty";
+                    $('#Faculty').show();
+                    $('#Facultyid').show();
+                }
+                else if (Role == 4) {
+                    UserRole = "Alumni and Faculty";
+                }
+                $.ajax({
+                    type: "get",
+                    dataType: 'json',
+                    contentType: 'application/json',
+                    data: { "Role": Role, 'UserStatus': Status },
+                    url: '/UserRegistrations/GetUsers',
+                    success: function (data) {
+                        $('#Errormessage').html('');
+                        if (data == "") {
+                            $('#UserData').empty();
+                            $('#Errormessage').html('No Records Found');
+                        }
+                        else {
+                            $('#Errormessage').html('');
+                            $('#UserData').empty();
+                            var Mobile = "";
+                            $.each(data, function (key, value) {
+                                if (value.PhoneNumber != null) {
+                                    Mobile = value.PhoneNumber;
+                                }
+                                else {
+                                    Mobile = "N/A";
+                                }
+                                $('#UserData').append('<tr><td>' + value.FirstName + '</td><td>' + value.LastName + '</td><td>' + value.LoginName + '</td><td>' + Mobile + '</td><td>' + value.GenderName + '</td><td>' + UserRole + '</td><td><td><button type="button"  class="btn btn-primary btn-rounded waves-effect waves-light"  data-toggle="modal" data-target="#myModal" onclick="userdetails(' + value.UserId + ');">View</button></td></td></tr>');
+                            });
+                        }
+                    }
+                });
+            }
+            else {
+                alert("Please select role and status");
+            }
+
+        });
+
+    });
+
+    function userdetails(id) {
+        $.ajax({
+            type: "get",
+            dataType: 'json',
+            contentType: 'application/json',
+            data: { "Userid": id },
+            url: '/UserRegistrations/GetUserdetailsonId',
+            success: function (data) {
+                $('#HomeCityName').val(data.HomeCityName);
+                $('#LivesInCityName').val(data.LivesInCityName);
+                var dateString = (data.DOB).substr(6);
+                var currentTime = new Date(parseInt(dateString));
+                var month = currentTime.getMonth() + 1;
+                var day = currentTime.getDate();
+                var year = currentTime.getFullYear();
+                var date = day + "/" + month + "/" + year;
+                $('#DOB').val(date);
+                $('#AlternateEmailId').val(data.AlternateEmailId);
+                $('#PhoneNumber').val(data.PhoneNumber);
+                $('#CourseName').val(data.CourseName);
+                $('#Batch').val(data.Batch);
+                $('#Salutation').val(data.Salutation);
+                $('#CourseCategoryName').val(data.CourseCategoryName);
+                $('#HomePhoneNumber').val(data.HomePhoneNumber);
+                $('#UserId').val(data.UserId);
+                $('#DesignationName').val(data.DesignationName);
+                $('#DepartmentName').val(data.DepartmentName);
+                $('#WorkingFrom').val(data.WorkingFrom);
+                $('#WorkingTo').val(data.WorkingTo);
+            }
+        });
+    }
+    function UpdateUser() {
+        var UserId = $('#UserId').val();
+        var UserStatus = $('#UserStatus').val();
+        $.ajax({
+            url: '/Admin/UserRegistrations/UpdateUserProfileStatus',
+            type: "POST",
+            contentType: 'application/json; charset=utf-8',
+            async: false,
+            data: JSON.stringify({ UserId: UserId, UserStatus: 1 }),
+            dataType: "json",
+            success: function () {
+                alert('Successfully approved');
+                $('.close').click();
+                $('#UserData').empty();
+                var Role = $('#Roles option:selected').val();
+                var Status = $('#Status option:selected').val();
+                $.ajax({
+                    type: "get",
+                    dataType: 'json',
+                    contentType: 'application/json',
+                    data: { "Role": Role, 'UserStatus': Status },
+                    url: '/UserRegistrations/GetUsers',
+                    success: function (data) {
+                        $('#Errormessage').html('');
+                        if (data == "") {
+                            $('#UserData').empty();
+                            $('#Errormessage').html('No Records Found');
+                        }
+                        else {
+                            $('#Errormessage').html('');
+                            $('#UserData').empty();
+                            var Mobile = "";
+                            $.each(data, function (key, value) {
+                                if (value.PhoneNumber != null) {
+                                    Mobile = value.PhoneNumber;
+                                }
+                                else {
+                                    Mobile = "N/A";
+                                }
+                                $('#UserData').append('<tr><td>' + value.FirstName + '</td><td>' + value.LastName + '</td><td>' + value.LoginName + '</td><td>' + Mobile + '</td><td>' + value.GenderName + '</td><td>Alumni</td><td><td><button type="button"  class="btn btn-primary btn-rounded waves-effect waves-light"  data-toggle="modal" data-target="#myModal" onclick="userdetails(' + value.UserId + ');">View</button></td></td></tr>');
+                            });
+                        }
+                    }
+                });
+            },
+            error: function (xhr) {
+                alert(xhr);
+            }
+        });
+    }
+    function Rejected() {
+        var UserId = $('#UserId').val();
+        var UserStatus = $('#UserStatus').val();
+        $.ajax({
+            url: '/Admin/UserRegistrations/UpdateUserProfileStatus',
+            type: "POST",
+            contentType: 'application/json; charset=utf-8',
+            async: false,
+            data: JSON.stringify({ UserId: UserId, UserStatus: 2 }),
+            dataType: "json",
+
+            success: function () {
+                alert('Successfully Rejected');
+                $('.close').click();
+                $('#UserData').empty();
+                var Role = $('#Roles option:selected').val();
+                var Status = $('#Status option:selected').val();
+                $.ajax({
+                    type: "get",
+                    dataType: 'json',
+                    contentType: 'application/json',
+                    data: { "Role": Role, 'UserStatus': Status },
+                    url: '/UserRegistrations/GetUsers',
+                    success: function (data) {
+                       
+                        $('#Errormessage').html('');
+                        if (data == "") {
+                            $('#UserData').empty();
+                            $('#Errormessage').html('No Records Found');
+                        }
+                        else {
+                            $('#Errormessage').html('');
+                            $('#UserData').empty();
+                            var Mobile = "";
+                            $.each(data, function (key, value) {
+                                if (value.PhoneNumber != null) {
+                                    Mobile = value.PhoneNumber;
+                                }
+                                else {
+                                    Mobile = "N/A";
+                                }
+                                $('#UserData').append('<tr><td>' + value.FirstName + '</td><td>' + value.LastName + '</td><td>' + value.LoginName + '</td><td>' + Mobile + '</td><td>' + value.GenderName + '</td><td>Alumni</td><td><td><button type="button"  class="btn btn-primary btn-rounded waves-effect waves-light"  data-toggle="modal" data-target="#myModal" onclick="userdetails(' + value.UserId + ');">View</button></td></td></tr>');
+                            });
+                        }
+                    }
+                });
+            },
+            error: function (xhr) {
+                alert(xhr);
+            }
+        });
+
+    }
+</script>

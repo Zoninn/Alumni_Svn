@@ -1,0 +1,270 @@
+﻿@model AluminiWebApp.Areas.Alumini.Models.AlumniEventsModel
+
+@{
+    ViewBag.Title = "EventSelection";
+    Layout = "~/Areas/AlumniFaculty/Views/Shared/_SRKRLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    foreach (var Events in ViewBag.EventsOnId)
+    {
+        <div class="page-content container clear-fix">
+
+            <div class="grid-col-row">
+
+                <div class="grid-col grid-col-9">
+                    <main>
+                        <div class="blog-post">
+                            <article>
+                                <div class="post-info clear-fix">
+                                    <div class="date-post"><div class="day">26</div><div class="month">Feb</div></div>
+                                    <div class="post-info-main">
+                                        <div class="author-post">@Events.EventName</div>
+
+                                    </div>
+                                </div>
+                                <div class="blog-media picture">
+                                    <div class="hover-effect"></div>
+                                    <div class="link-cont">
+
+                                    </div>
+                                    <img src="@Events.BannerImage" class="columns-col-12" alt>
+                                </div>
+                                <h2>Venue</h2><h5>@Events.EventName</h5> <h5>@Events.EventVenue</h5>
+                                <h2>Get your Tickets Now!</h2>
+                                <div style="border:1px solid #d3d3d3;padding:20px">
+                                    <table>
+                                        <tr id="BindTickets"></tr>
+                                        <tr>
+                                            <td>Total Amount:</td>
+                                            <td style="text-align:left"> <label id="TotalAmount"></label></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <br />
+                                                @if (Events.EventExpired == 1)
+                                                {
+                                                    <script type="text/javascript">
+                                                        $(document).ready(function () {
+                                                            alert("This Event is expired....");
+                                                            $("#EventExpired").html("This Event is expired...");
+                                                        });
+                                                    </script>
+                                                }
+                                                else
+                                                {
+                                                    <script type="text/javascript">
+                                                        $(document).ready(function () {
+                                                            $("#EventExpired").html("");
+                                                        });
+                                                    </script>
+                                                    <input type="submit" id="BookTickets" class="cws-button bt-color-4 border-radius" value="BOOK NOW" />
+                                                }
+                                                @*<a id="BookTickets" class=" cws-button bt-color-4 border-radius">BOOK NOW</a>*@
+                                            </td>
+                                        </tr>
+
+                                    </table>
+                                </div>
+
+                                <div>
+                                    <br />
+                                    <br />
+
+                                    <table style="border:1px solid #d3d3d3;padding:20px">
+                                        <tr>
+                                            <td>
+                                                <br />
+                                                <u> <h3 style="text-align:center">Event Description</h3></u>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+
+                                                <br />
+                                                <h5 style="text-align:center">
+                                                    "@Events.EventDescription
+                                                </h5>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                            </article>
+                        </div>
+                    </main>
+                </div>
+                <div class="grid-col grid-col-3 sidebar">
+                    <!-- widget event -->
+                    <aside class="widget-event">
+                        <h2>Upcoming Events</h2>
+                        @{
+        int date = 0;
+                        }
+                        @foreach (var UpcomingEvents in ViewBag.EventsOnId)
+                        {
+                            foreach (var EventUsers in UpcomingEvents.EventIds)
+                            {
+
+
+                                <article class="clear-fix">
+                                    <div class="date"><div class="day">@EventUsers.EventStartDate.ToString("dd")</div><div class="month">Feb</div></div>
+                                    <div class="event-description"><span>@EventUsers.EventStartDate.ToString("dd-MM-yyyy")</span><p>@EventUsers.EventName</p></div>
+                                    <a style="text-align:right" class="active" data-boxs-tab="1" href="../AlumniEvents/SingleEvent?id=@EventUsers.EventId">View More</a>
+                                </article>
+                            }
+                        }
+                    </aside>
+                    <!-- / widget event -->
+                    <!-- widget archive -->
+                    <aside class="widget-archives">
+                        <h2 style="text-align:center">Support</h2>
+                        <hr class="divider-big" />
+                        <ul>
+                            <li><h5>Event ID : @Events.EventId</h5></li>
+                            <li><h5>@Events.Email</h5></li>
+                            <li><h5>@Events.MobileNumber</h5></li>
+                            <li><h5>Start Date : @Events.EventStartdate.ToString("dd-MM-yyyy")</h5></li>
+                            <li><h5>End Date : @Events.EndDate.ToString("dd-MM-yyyy")</h5></li>
+
+                        </ul>
+                    </aside>
+                    <!-- / widget archive -->
+                    <!-- widget recent comments -->
+                    @*<aside class="widget-comments">
+                            <h2>Recent Comments</h2>
+                            <hr class="divider-big" />
+                            <div class="comments">
+                                <div class="comment">
+                                    <div class="header-comments">
+                                        <div class="date">22.04.14 /</div>
+                                        <div class="author">Michael Lawson</div>
+                                    </div>
+                                    <p>Donec ut velit varius, sodales velit ac, aliquet purus. Fusce nec nisl</p>
+                                </div>
+                                <div class="comment">
+                                    <div class="header-comments">
+                                        <div class="date">19.04.14 /</div>
+                                        <div class="author">Steven Granger</div>
+                                    </div>
+                                    <p>Donec ut velit varius, sodales velit ac, aliquet purus. Fusce nec nisl</p>
+                                </div>
+                                <div class="comment">
+                                    <div class="header-comments">
+                                        <div class="date">14.04.14 /</div>
+                                        <div class="author">Mark Blackwood</div>
+                                    </div>
+                                    <p>Donec ut velit varius, sodales velit ac, aliquet purus. Fusce nec nisl</p>
+                                </div>
+                            </div>
+                        </aside>*@
+                    <!--/ widget recent comments -->
+                </div>
+            </div>
+        </div>
+        <div>
+            <table>
+                <tr id="TicketTypesEventTypeId"></tr>
+                <tr id="TypeAmount"></tr>
+                <tr id="TicketQuantity"></tr>
+            </table>
+        </div>
+
+    }
+}
+
+
+<script type="text/javascript">
+    function getParameterByName(name) { name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]"); var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"), results = regex.exec(location.search); return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " ")); }
+    var EventId = getParameterByName('id');
+    $(document).ready(function () {
+        $.ajax({
+            type: "Get",
+            dataType: "json",
+            contenttype: "Application/json",
+            url: "../AlumniFacultyEvents/GetEventTypesOnId",
+            data: ({ "EventId": EventId }),
+            success: function (data) {
+                $.each(data, function (key, value) {
+                    var selectList = "<select class='selectAggregate'>";
+                    var TotalTicketsCount = value.Quantity;
+                    if (TotalTicketsCount == 0) {
+                        $("#BindTickets").append("<tr><td hidden='hidden'>" + value.TypeId + "</td><td><h3>" + value.Heading + "</h2>&nbsp;&nbsp;&nbsp;</td><td><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + value.Price + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3></td><td><h5>SOLD OUT<h5></td></tr>");
+                    }
+                    else {
+                        for (var i = 0; i <= TotalTicketsCount; i++) {
+                            selectList += "<option>" + i + "</option>";
+                        }
+                        $("#BindTickets").append("<tr><td hidden='hidden'>" + value.TypeId + "</td><td><h3>" + value.Heading + "</h2>&nbsp;&nbsp;&nbsp;</td><td><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + value.Price + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3></td><td>" + selectList + "</td></tr>");
+                    }
+                });
+            }
+        });
+        $(document).on('change', ".selectAggregate", function () {
+
+            $("#TicketTypesEventTypeId").empty();
+            $("#TypeAmount").empty();
+            $("#TicketQuantity").empty();
+
+            var list = new Array();
+            var EventTypeId = new Array();
+            var TicketAmounts = new Array();
+            var TicketsQuantity = new Array();
+            $('.selectAggregate').each(function () {
+                var HiddentTicketTypeId = $(this).closest('tr').children('td:first').text();
+                var QuantityValue = $("option:selected", this).text();
+                var TicketAmount = $(this).closest('tr').children(' td:nth-child(3)').text();
+                var TotalCalAmount = (QuantityValue * TicketAmount);
+                if (TotalCalAmount != 0) {
+                    list.push(TotalCalAmount);
+                    EventTypeId.push(HiddentTicketTypeId);
+                    TicketAmounts.push(TicketAmount);
+                    TicketsQuantity.push(QuantityValue);
+                }
+            });
+            var TotalPurchasedAmount = 0;
+            $.each(list, function (key, value) {
+                if (value != 0) {
+                    TotalPurchasedAmount += value;
+                }
+            });
+            $("#TotalAmount").html(TotalPurchasedAmount + ".00");
+
+            var TicketCost = 0;
+            $.each(EventTypeId, function (key, value) {
+
+                $("#TicketTypesEventTypeId").append("<tr><td><input type='hidden' id='HiddenEventTypeId'  name='EventTypeId' value=" + value + " /><td></tr>");
+            });
+
+            $.each(TicketAmounts, function (key, value) {
+
+                $("#TypeAmount").append("<tr><td><input type='hidden'  name='TicketAmount' value=" + value + " /><td></tr>");
+            });
+
+
+            $.each(TicketsQuantity, function (key, value) {
+
+                $("#TicketQuantity").append("<tr><td><input type='hidden'  name='TicketsQuantity' value=" + value + " /><td></tr>");
+            });
+
+        });
+        $("#BookTickets").click(function () {
+            var TotalAmount = $("#TotalAmount").html();
+            if (TotalAmount != "" && TotalAmount != null) {
+                alert("Are you sure you want to book now");
+                window.location.href = "../AlumniFacultyEvents/BookEvent";
+            }
+            else {
+                alert("Please select the Tickets")
+            }
+
+
+        });
+    });
+</script>
+<style>
+    Link.css {
+
+    }
+</style>

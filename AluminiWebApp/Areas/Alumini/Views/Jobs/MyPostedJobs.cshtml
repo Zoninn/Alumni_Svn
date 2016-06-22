@@ -1,0 +1,188 @@
+﻿@model IEnumerable<AluminiRepository.UserJobPostings>
+@{
+    Layout = "~/Areas/Alumini/Views/Shared/_SRKRDesignLayout.cshtml";
+}
+<div class="nicdark_site">
+    <div class="nicdark_site_fullwidth nicdark_clearfix">
+        <div class="nicdark_overlay"></div>
+        <section class="nicdark_section">
+            <div class="nicdark_space10"></div>
+            <!--start nicdark_container-->
+            <div class="nicdark_container nicdark_clearfix">
+                @TempData["Message"]
+                <div>
+                    <div class="nicdark_margin100">
+                        <a href="@Url.Action("MyPostedJobs", new { area = "Alumini" })" class="nicdark_btn nicdark_bg_green medium nicdark_shadow nicdark_radius white memories_btn"><i class="icon-picture"></i>&nbsp;&nbsp;&nbsp;MY POSTED JOBS</a>
+                    </div>
+                    <div class="nicdark_margin100 pull-right">
+                        <a href="@Url.Action("JobPosting", new { area = "Alumini" })" class="nicdark_btn nicdark_bg_blue small nicdark_shadow nicdark_radius white"><i class="icon-plus"></i>&nbsp;&nbsp;&nbsp;ADD JOB</a>
+                    </div>
+                </div>
+                @{int i = 0;}
+                @foreach (var item in Model)
+                {
+                    switch (i)
+                    {
+                        case 0:
+                            <div class="grid grid_4 fade-left animate1 animated fadeInLeft">
+                                <div class="nicdark_textevidence nicdark_bg_blue nicdark_shadow nicdark_radius">
+                                    <div class="nicdark_margin20">
+                                        <h4 class="white">@item.JobTitle - <strong>@item.ComanyName</strong><small class="pull-right">(Exp: @item.ExperienceRequired)</small></h4>
+                                        <div class="nicdark_space20"></div>
+                                        @if (item.Description != null)
+                                        {
+                                            if (item.Description.ToString().Length >= 60)
+                                            {
+                                                <p class="white">@item.Description.Substring(0, 60)...</p>
+                                            }
+                                            else
+                                            {
+                                                <p class="white">@item.Description.ToString()...</p>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <p class="white">No Description Available...</p>
+                                        }
+                                        <div class="nicdark_space20"></div>
+                                        <a href="@Url.Action("SingleJob", new { id = item.Jobid, Area="Alumini" })" class="nicdark_btn nicdark_press nicdark_bg_bluedark white medium nicdark_shadow nicdark_radius fade-down animate2 animated fadeInDown pull-right">MORE</a>
+                                        <a href="@Url.Action("JobPosting", new { Jobid = item.Jobid, Area = "Alumini" })" class="nicdark_btn nicdark_press nicdark_bg_bluedark white medium nicdark_shadow nicdark_radius fade-down animate2 animated fadeInDown">Edit</a>
+                                        <a href="javascript:;" class="nicdark_btn nicdark_press nicdark_bg_bluedark white medium nicdark_shadow nicdark_radius fade-down animate2 animated fadeInDown" onclick="DeletJob(@item.Jobid)">Delete</a>
+                                    </div>
+                                    <i class="icon-graduation-cap nicdark_iconbg right small blue"></i>
+                                </div>
+                            </div>
+                                        break;
+                        case 1:
+                        <div class="grid grid_4 fade-left animate1 animated fadeInLeft">
+                            <div class="nicdark_textevidence nicdark_bg_green nicdark_shadow nicdark_radius">
+                                <div class="nicdark_margin20">
+                                    <h4 class="white">@item.JobTitle - <strong>@item.ComanyName</strong><small class="pull-right">(Exp: @item.ExperienceRequired)</small></h4>
+                                    <div class="nicdark_space20"></div>
+                                    @if (item.Description != null)
+                                    {
+                                        if (item.Description.ToString().Length >= 60)
+                                        {
+                                            <p class="white">@item.Description.Substring(0, 60)...</p>
+                                        }
+                                        else
+                                        {
+                                            <p class="white">@item.Description.ToString()...</p>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <p class="white">No Description Available...</p>
+                                    }
+                                    <div class="nicdark_space20"></div>
+                                    <a href="@Url.Action("SingleJob", new { id = item.Jobid, Area="Alumini" })" class="nicdark_btn nicdark_press nicdark_bg_greendark white medium nicdark_shadow nicdark_radius fade-down animate2 animated fadeInDown pull-right">MORE</a>
+                                    <a href="@Url.Action("JobPosting", new { Jobid = item.Jobid, Area = "Alumini" })" class="nicdark_btn nicdark_press nicdark_bg_greendark white medium nicdark_shadow nicdark_radius fade-down animate2 animated fadeInDown">Edit</a>
+                                    <a href="javascript:;" class="nicdark_btn nicdark_press nicdark_bg_greendark white medium nicdark_shadow nicdark_radius fade-down animate2 animated fadeInDown" onclick="DeletJob(@item.Jobid)">Delete</a>
+                                </div>
+                                <i class="icon-graduation-cap nicdark_iconbg right small green"></i>
+                            </div>
+                        </div>
+                                    break;
+                        case 2:
+                        <div class="grid grid_4 fade-left animate1 animated fadeInLeft">
+                            <div class="nicdark_textevidence nicdark_bg_orange nicdark_shadow nicdark_radius">
+                                <div class="nicdark_margin20">
+                                    <h4 class="white">@item.JobTitle - <strong>@item.ComanyName</strong><small class="pull-right">(Exp: @item.ExperienceRequired)</small></h4>
+                                    <div class="nicdark_space20"></div>
+                                    @if (item.Description != null)
+                                    {
+                                        if (item.Description.ToString().Length >= 60)
+                                        {
+                                            <p class="white">@item.Description.Substring(0, 60)...</p>
+                                        }
+                                        else
+                                        {
+                                            <p class="white">@item.Description.ToString()...</p>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <p class="white">No Description Available...</p>
+                                    }
+                                    <div class="nicdark_space20"></div>
+                                    <a href="@Url.Action("SingleJob", new { id = item.Jobid, Area="Alumini" })" class="nicdark_btn nicdark_press nicdark_bg_orangedark white medium nicdark_shadow nicdark_radius fade-down animate2 animated fadeInDown pull-right">MORE</a>
+                                    <a href="@Url.Action("JobPosting", new { Jobid = item.Jobid, Area = "Alumini" })" class="nicdark_btn nicdark_press nicdark_bg_orangedark white medium nicdark_shadow nicdark_radius fade-down animate2 animated fadeInDown">Edit</a>
+                                    <a href="javascript:;" class="nicdark_btn nicdark_press nicdark_bg_orangedark white medium nicdark_shadow nicdark_radius fade-down animate2 animated fadeInDown" onclick="DeletJob(@item.Jobid)">Delete</a>
+                                </div>
+                                <i class="icon-graduation-cap nicdark_iconbg right small orange"></i>
+                            </div>
+                        </div>
+                                    break;
+                        case 3:
+                        <div class="grid grid_4 fade-left animate1 animated fadeInLeft">
+                            <div class="nicdark_textevidence nicdark_bg_yellow nicdark_shadow nicdark_radius">
+                                <div class="nicdark_margin20">
+                                    <h4 class="white">@item.JobTitle - <strong>@item.ComanyName</strong><small class="pull-right">(Exp: @item.ExperienceRequired)</small></h4>
+                                    <div class="nicdark_space20"></div>
+                                    @if (item.Description != null)
+                                    {
+                                        if (item.Description.ToString().Length >= 60)
+                                        {
+                                            <p class="white">@item.Description.Substring(0, 60)...</p>
+                                        }
+                                        else
+                                        {
+                                            <p class="white">@item.Description.ToString()...</p>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <p class="white">No Description Available...</p>
+                                    }
+                                    <div class="nicdark_space20"></div>
+                                    <a href="@Url.Action("SingleJob", new { id = item.Jobid, Area="Alumini" })" class="nicdark_btn nicdark_press nicdark_bg_yellowdark white medium nicdark_shadow nicdark_radius fade-down animate2 animated fadeInDown pull-right">MORE</a>
+                                    <a href="@Url.Action("JobPosting", new { Jobid = item.Jobid, Area = "Alumini" })" class="nicdark_btn nicdark_press nicdark_bg_yellowdark white medium nicdark_shadow nicdark_radius fade-down animate2 animated fadeInDown">Edit</a>
+                                    <a href="javascript:;" class="nicdark_btn nicdark_press nicdark_bg_yellowdark white medium nicdark_shadow nicdark_radius fade-down animate2 animated fadeInDown" onclick="DeletJob(@item.Jobid)">Delete</a>
+                                </div>
+                                <i class="icon-graduation-cap nicdark_iconbg right small yellow"></i>
+                            </div>
+                        </div>
+                                    i = -1;
+                                    break;
+                    }
+                    i++;
+                }
+            </div>
+            <div class="nicdark_space50"></div>
+        </section>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    function DeletJob(id) {
+        $("#Successmessage").html("")
+        if (confirm("Are you sure you want to delete?")) {
+            $.ajax({
+                type: "Get",
+                dataType: "json",
+                contentType: "Application/json",
+                url: "../Jobs/DeleteMyJob",
+                data: { "Jobid": id },
+                success: function (data) {
+                    
+                    $.ajax({
+                        type: "Get",
+                        dataType: "json",
+                        contentType: "Application/json",
+                        url: "../Jobs/GetUserpostedJobs",
+                        data: {},
+                        success: function (data) {
+                            window.location.reload();
+                        }
+                    });
+                }
+            });
+        }
+        else {
+            return false;
+        }
+    }
+
+</script>

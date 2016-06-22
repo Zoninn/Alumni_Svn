@@ -1,0 +1,1553 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_Alumni_TestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Album_Gallery">
+    <Key>
+      <PropertyRef Name="Galleryid" />
+    </Key>
+    <Property Name="Galleryid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AlbumName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="GalleryDate" Type="datetime" />
+    <Property Name="CreateOn" Type="datetime" />
+    <Property Name="AlbumType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="Album_Gallery_Images">
+    <Key>
+      <PropertyRef Name="Imagesid" />
+    </Key>
+    <Property Name="Imagesid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Image" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="AlbumId" Type="int" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="AlbumType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="Alumni_ContactUs">
+    <Key>
+      <PropertyRef Name="conatctId" />
+    </Key>
+    <Property Name="conatctId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="Message" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Banner_Imags">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Image" Type="nvarchar" MaxLength="300" />
+    <Property Name="Text" Type="nvarchar" MaxLength="150" />
+    <Property Name="Tages" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" />
+    <Property Name="CountryCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Custome_Templates">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Heading" Type="nvarchar" MaxLength="150" />
+    <Property Name="Subject" Type="nvarchar" MaxLength="250" />
+    <Property Name="Description" Type="nvarchar" MaxLength="300" />
+    <Property Name="Images" Type="nvarchar" MaxLength="100" />
+    <Property Name="createdOn" Type="datetime" />
+    <Property Name="UpdateOn" Type="datetime" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="db_Memories_images">
+    <Key>
+      <PropertyRef Name="Imageid" />
+    </Key>
+    <Property Name="Imageid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MemoriesId" Type="int" Nullable="false" />
+    <Property Name="Image" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="db_Memories_Info">
+    <Key>
+      <PropertyRef Name="MemoriesId" />
+    </Key>
+    <Property Name="MemoriesId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Userid" Type="bigint" />
+    <Property Name="Heading" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="MemoryDate" Type="datetime" />
+    <Property Name="VisibleTo" Type="nvarchar" MaxLength="50" />
+    <Property Name="VisibleBatchfrom" Type="int" />
+    <Property Name="VisibleBatchTo" Type="int" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="db_NewsRooms">
+    <Key>
+      <PropertyRef Name="NewRoomId" />
+    </Key>
+    <Property Name="NewRoomId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="300" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Image" Type="nvarchar" MaxLength="200" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="Def_Events">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EventName" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="BannerImage" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="EventStartdate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="StartTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="EndTime" Type="nvarchar" MaxLength="50" />
+    <Property Name="MobileNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Landline" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="EventVenue" Type="nvarchar" MaxLength="300" />
+    <Property Name="EventDescription" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="VisitorsCount" Type="int" />
+    <Property Name="TotalNoOfTickets" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Donation_Details">
+    <Key>
+      <PropertyRef Name="Donation_ID" />
+    </Key>
+    <Property Name="Donation_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Donation_Title" Type="nvarchar" MaxLength="150" />
+    <Property Name="Donation_Description" Type="nvarchar(max)" />
+    <Property Name="Donation_Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Donation_Banner" Type="nvarchar" MaxLength="500" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="UpdatedBy" Type="bigint" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="Donor_Details">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Donation_ID" Type="bigint" />
+    <Property Name="Donor_ID" Type="bigint" />
+    <Property Name="Donation_Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Donation_Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="Transaction_ID" Type="bigint" />
+    <Property Name="Comments" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="Event_AttendingStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EventId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="bigint" Nullable="false" />
+    <Property Name="UserGoingStatus" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Event_Faqs">
+    <Key>
+      <PropertyRef Name="FaqId" />
+    </Key>
+    <Property Name="FaqId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Eventid" Type="int" Nullable="false" />
+    <Property Name="Faqs" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Event_Gallery">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EventId" Type="int" Nullable="false" />
+    <Property Name="EventImage" Type="nvarchar" MaxLength="250" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Event_TicketTypes">
+    <Key>
+      <PropertyRef Name="TypeId" />
+    </Key>
+    <Property Name="TypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Heading" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="EventId" Type="int" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Event_UserPayments">
+    <Key>
+      <PropertyRef Name="PaymentId" />
+    </Key>
+    <Property Name="PaymentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="bigint" Nullable="false" />
+    <Property Name="UserSelectionId" Type="int" Nullable="false" />
+    <Property Name="ConfirmationDate" Type="datetime" />
+    <Property Name="BookingDate" Type="datetime" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="PaymentStatus" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Event_UserSelections">
+    <Key>
+      <PropertyRef Name="EventSelectionId" />
+    </Key>
+    <Property Name="EventSelectionId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EventId" Type="int" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="UserBookingDate" Type="datetime" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="UpdatedBy" Type="int" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="EventCategorys">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="Events_UserBookings">
+    <Key>
+      <PropertyRef Name="BookId" />
+    </Key>
+    <Property Name="BookId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TicketTypeId" Type="int" />
+    <Property Name="EventSelectionId" Type="int" Nullable="false" />
+    <Property Name="TotalAmount" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="TotalTickets" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="int" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="Executive_board">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ROle" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Image" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="GraduationYears">
+    <Key>
+      <PropertyRef Name="GraduationYearId" />
+    </Key>
+    <Property Name="GraduationYearId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Year" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CourseId" Type="int" />
+  </EntityType>
+  <EntityType Name="Job_FunctionalArea">
+    <Key>
+      <PropertyRef Name="FunctionalId" />
+    </Key>
+    <Property Name="FunctionalId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="Transaction_Details">
+    <Key>
+      <PropertyRef Name="Transaction_ID" />
+    </Key>
+    <Property Name="Transaction_ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Txn_Ref_No" Type="nvarchar" MaxLength="100" />
+    <Property Name="PG_Txn_ID" Type="nvarchar" MaxLength="100" />
+    <Property Name="Txn_Status" Type="nvarchar" MaxLength="50" />
+    <Property Name="Txn_Message" Type="nvarchar" MaxLength="100" />
+    <Property Name="Txn_Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Service_Tax" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Currency_Code" Type="nvarchar" MaxLength="10" />
+    <Property Name="Comments" Type="nvarchar" MaxLength="500" />
+    <Property Name="Payment_Mode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Card_Info" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedBy" Type="bigint" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="UpdatedBy" Type="bigint" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="UserPost_Comments">
+    <Key>
+      <PropertyRef Name="CommentId" />
+    </Key>
+    <Property Name="CommentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PostId" Type="int" />
+    <Property Name="Comment" Type="nvarchar(max)" />
+    <Property Name="Image" Type="nvarchar" MaxLength="250" />
+    <Property Name="Files" Type="nvarchar" MaxLength="250" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="UserPost_Files">
+    <Key>
+      <PropertyRef Name="FileId" />
+    </Key>
+    <Property Name="FileId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PostId" Type="int" />
+    <Property Name="FilePath" Type="nvarchar" MaxLength="250" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="UserPost_Images">
+    <Key>
+      <PropertyRef Name="PictureId" />
+    </Key>
+    <Property Name="PictureId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PostId" Type="int" />
+    <Property Name="ImagePath" Type="nvarchar" MaxLength="250" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="UserPost_Likes">
+    <Key>
+      <PropertyRef Name="LikeId" />
+    </Key>
+    <Property Name="LikeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="PostId" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="UserPosting_Jobs">
+    <Key>
+      <PropertyRef Name="Jobid" />
+    </Key>
+    <Property Name="Jobid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Userid" Type="bigint" />
+    <Property Name="JobTitle" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ComanyName" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="ComanyUrl" Type="nvarchar" MaxLength="200" />
+    <Property Name="ExperienceRequired" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Location" Type="nvarchar" MaxLength="50" />
+    <Property Name="Skills" Type="nvarchar" MaxLength="300" />
+    <Property Name="Salary" Type="nvarchar" MaxLength="150" />
+    <Property Name="FunctionalId" Type="int" />
+    <Property Name="Role" Type="nvarchar" MaxLength="300" />
+    <Property Name="Qualification" Type="nvarchar" MaxLength="300" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Filepath" Type="nvarchar" MaxLength="200" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="ExpiryDate" Type="datetime" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="1" />
+    <Property Name="UpdatedOn" Type="datetime" />
+    <Property Name="Status" Type="int" />
+  </EntityType>
+  <EntityType Name="UserPosts">
+    <Key>
+      <PropertyRef Name="PostId" />
+    </Key>
+    <Property Name="PostId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EventId" Type="int" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="UserMessage" Type="nvarchar(max)" />
+    <Property Name="Likes" Type="int" />
+    <Property Name="Unlike" Type="int" />
+    <Property Name="ViewBy" Type="nvarchar" MaxLength="150" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="UserPosts_Visisble">
+    <Key>
+      <PropertyRef Name="VisibleId" />
+    </Key>
+    <Property Name="VisibleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PostId" Type="int" />
+    <Property Name="Batch" Type="nvarchar" MaxLength="50" />
+    <Property Name="BatchTo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Branch" Type="nvarchar" MaxLength="50" />
+    <Property Name="Degreee" Type="int" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetRoles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cities">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityName" Type="varchar" MaxLength="50" />
+    <Property Name="Stateid" Type="int" />
+    <Property Name="DisctirctId" Type="int" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="CourseCategories">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CourseCategoryName" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="Years" Type="int" />
+  </EntityType>
+  <EntityType Name="Courses">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CourseName" Type="varchar" MaxLength="50" />
+    <Property Name="CourseCategoryId" Type="int" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="Districts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DistrictName" Type="varchar" MaxLength="50" />
+    <Property Name="StateId" Type="int" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="EducationalDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="bigint" />
+    <Property Name="CollegeName" Type="varchar" MaxLength="100" />
+    <Property Name="CourseId" Type="int" />
+    <Property Name="Batch" Type="int" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="FacultyWorkInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FacultyUserId" Type="bigint" Nullable="false" />
+    <Property Name="DesignationName" Type="varchar" MaxLength="100" />
+    <Property Name="DepartmentName" Type="varchar" MaxLength="20" />
+    <Property Name="WorkingFrom" Type="int" />
+    <Property Name="WorkingTo" Type="int" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GenderName" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="ProfessionalDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="bigint" Nullable="false" />
+    <Property Name="Company" Type="varchar" MaxLength="50" />
+    <Property Name="Designation" Type="varchar" MaxLength="50" />
+    <Property Name="WorkedFrom" Type="varchar" MaxLength="50" />
+    <Property Name="WorkedTill" Type="varchar" MaxLength="50" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="RelationshipStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RelationshipStatus" Type="varchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Salutations">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Salutation" Type="varchar" MaxLength="18" />
+  </EntityType>
+  <EntityType Name="States">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StateName" Type="varchar" MaxLength="50" />
+    <Property Name="CountryId" Type="int" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="UserDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AspnetUsersId" Type="nvarchar" MaxLength="128" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="500" />
+    <Property Name="PresentCity" Type="nvarchar" MaxLength="50" />
+    <Property Name="PresentDistid" Type="int" />
+    <Property Name="PermanentDistid" Type="int" />
+    <Property Name="PermanentCity" Type="nvarchar" MaxLength="50" />
+    <Property Name="HomeCityId" Type="int" Nullable="false" />
+    <Property Name="HomeVillegeOrAreaName" Type="varchar" MaxLength="50" />
+    <Property Name="LivesInCityId" Type="int" Nullable="false" />
+    <Property Name="LivesInVillegeOrAreaName" Type="int" />
+    <Property Name="SalutationId" Type="int" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="GenderId" Type="int" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="IsActive" Type="int" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="ProfilePicture" Type="varchar" MaxLength="500" />
+    <Property Name="UserStatus" Type="int" />
+    <Property Name="ProfileInfoPercentage" Type="int" />
+    <Property Name="AlternateEmailId" Type="nvarchar" MaxLength="50" />
+    <Property Name="CountryCode" Type="int" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="HomePhoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="PortalPassword" Type="nvarchar" MaxLength="50" />
+    <Property Name="PermanentAddress" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'db_Alumni_Test.db_Alumni.Alumni_Gallery' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Alumni_Gallery">
+    <Key>
+      <PropertyRef Name="Galleryid" />
+      <PropertyRef Name="AlbumName" />
+      <PropertyRef Name="Image" />
+      <PropertyRef Name="AlbumId" />
+    </Key>
+    <Property Name="Galleryid" Type="int" Nullable="false" />
+    <Property Name="AlbumName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="GalleryDate" Type="datetime" />
+    <Property Name="CreateOn" Type="datetime" />
+    <Property Name="AlbumType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Image" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="AlbumId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'db_Alumni_Test.db_Alumni.View_UserDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_UserDetails">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LoginName" />
+      <PropertyRef Name="RoleId" />
+      <PropertyRef Name="Role" />
+    </Key>
+    <Property Name="UserId" Type="bigint" Nullable="false" />
+    <Property Name="AspnetUsersId" Type="nvarchar" MaxLength="128" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="ProfilePicture" Type="varchar" MaxLength="500" />
+    <Property Name="Address" Type="varchar" MaxLength="500" />
+    <Property Name="HomeVillegeOrAreaName" Type="varchar" MaxLength="50" />
+    <Property Name="HomeCityName" Type="varchar" MaxLength="50" />
+    <Property Name="LivesInCityName" Type="varchar" MaxLength="50" />
+    <Property Name="UserStatus" Type="int" />
+    <Property Name="ProfileInfoPercentage" Type="int" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="AlternateEmailId" Type="nvarchar" MaxLength="50" />
+    <Property Name="HomePhoneNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="PortalPassword" Type="nvarchar" MaxLength="50" />
+    <Property Name="Salutation" Type="varchar" MaxLength="18" />
+    <Property Name="GenderName" Type="varchar" MaxLength="10" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="LoginName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Role" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="CollegeName" Type="varchar" MaxLength="100" />
+    <Property Name="CourseId" Type="int" />
+    <Property Name="CourseName" Type="varchar" MaxLength="50" />
+    <Property Name="Batch" Type="int" />
+    <Property Name="DesignationName" Type="varchar" MaxLength="100" />
+    <Property Name="DepartmentName" Type="varchar" MaxLength="20" />
+    <Property Name="WorkingFrom" Type="int" />
+    <Property Name="WorkingTo" Type="int" />
+    <Property Name="CourseCategoryName" Type="varchar" MaxLength="50" />
+    <Property Name="Years" Type="int" />
+    <Property Name="Company" Type="varchar" MaxLength="50" />
+    <Property Name="Designation" Type="varchar" MaxLength="50" />
+    <Property Name="WorkedFrom" Type="varchar" MaxLength="50" />
+    <Property Name="WorkedTill" Type="varchar" MaxLength="50" />
+    <Property Name="CityName" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Album_Gallery_Images_Album_Gallery">
+    <End Role="Album_Gallery" Type="Self.Album_Gallery" Multiplicity="1" />
+    <End Role="Album_Gallery_Images" Type="Self.Album_Gallery_Images" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Album_Gallery">
+        <PropertyRef Name="Galleryid" />
+      </Principal>
+      <Dependent Role="Album_Gallery_Images">
+        <PropertyRef Name="AlbumId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cities_Districts">
+    <End Role="Districts" Type="Self.Districts" Multiplicity="0..1" />
+    <End Role="Cities" Type="Self.Cities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Districts">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cities">
+        <PropertyRef Name="DisctirctId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cities_States">
+    <End Role="States" Type="Self.States" Multiplicity="0..1" />
+    <End Role="Cities" Type="Self.Cities" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="States">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cities">
+        <PropertyRef Name="Stateid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Courses_CourseCategories">
+    <End Role="CourseCategories" Type="Self.CourseCategories" Multiplicity="0..1" />
+    <End Role="Courses" Type="Self.Courses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CourseCategories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Courses">
+        <PropertyRef Name="CourseCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_db_Memories_images_db_Memories_Info">
+    <End Role="db_Memories_Info" Type="Self.db_Memories_Info" Multiplicity="1" />
+    <End Role="db_Memories_images" Type="Self.db_Memories_images" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="db_Memories_Info">
+        <PropertyRef Name="MemoriesId" />
+      </Principal>
+      <Dependent Role="db_Memories_images">
+        <PropertyRef Name="MemoriesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUsers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Districts_States">
+    <End Role="States" Type="Self.States" Multiplicity="0..1" />
+    <End Role="Districts" Type="Self.Districts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="States">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Districts">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Donor_Details_Donation_Details">
+    <End Role="Donation_Details" Type="Self.Donation_Details" Multiplicity="0..1" />
+    <End Role="Donor_Details" Type="Self.Donor_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Donation_Details">
+        <PropertyRef Name="Donation_ID" />
+      </Principal>
+      <Dependent Role="Donor_Details">
+        <PropertyRef Name="Donation_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Donor_Details_Transaction_Details">
+    <End Role="Transaction_Details" Type="Self.Transaction_Details" Multiplicity="0..1" />
+    <End Role="Donor_Details" Type="Self.Donor_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Transaction_Details">
+        <PropertyRef Name="Transaction_ID" />
+      </Principal>
+      <Dependent Role="Donor_Details">
+        <PropertyRef Name="Transaction_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Donor_Details_UserDetails">
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="0..1" />
+    <End Role="Donor_Details" Type="Self.Donor_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Donor_Details">
+        <PropertyRef Name="Donor_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EducationalDetails_Courses">
+    <End Role="Courses" Type="Self.Courses" Multiplicity="0..1" />
+    <End Role="EducationalDetails" Type="Self.EducationalDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EducationalDetails">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EducationalDetails_Users">
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="0..1" />
+    <End Role="EducationalDetails" Type="Self.EducationalDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EducationalDetails">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_AttendingStatus_Def_Events">
+    <End Role="Def_Events" Type="Self.Def_Events" Multiplicity="1" />
+    <End Role="Event_AttendingStatus" Type="Self.Event_AttendingStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Def_Events">
+        <PropertyRef Name="EventId" />
+      </Principal>
+      <Dependent Role="Event_AttendingStatus">
+        <PropertyRef Name="EventId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_AttendingStatus_UserDetails">
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="1" />
+    <End Role="Event_AttendingStatus" Type="Self.Event_AttendingStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Event_AttendingStatus">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_Faqs_Def_Events">
+    <End Role="Def_Events" Type="Self.Def_Events" Multiplicity="1" />
+    <End Role="Event_Faqs" Type="Self.Event_Faqs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Def_Events">
+        <PropertyRef Name="EventId" />
+      </Principal>
+      <Dependent Role="Event_Faqs">
+        <PropertyRef Name="Eventid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_Gallery_Def_Events">
+    <End Role="Def_Events" Type="Self.Def_Events" Multiplicity="1" />
+    <End Role="Event_Gallery" Type="Self.Event_Gallery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Def_Events">
+        <PropertyRef Name="EventId" />
+      </Principal>
+      <Dependent Role="Event_Gallery">
+        <PropertyRef Name="EventId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_TicketTypes_Def_Events">
+    <End Role="Def_Events" Type="Self.Def_Events" Multiplicity="1" />
+    <End Role="Event_TicketTypes" Type="Self.Event_TicketTypes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Def_Events">
+        <PropertyRef Name="EventId" />
+      </Principal>
+      <Dependent Role="Event_TicketTypes">
+        <PropertyRef Name="EventId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_UserPayments_Event_UserSelections">
+    <End Role="Event_UserSelections" Type="Self.Event_UserSelections" Multiplicity="1" />
+    <End Role="Event_UserPayments" Type="Self.Event_UserPayments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event_UserSelections">
+        <PropertyRef Name="EventSelectionId" />
+      </Principal>
+      <Dependent Role="Event_UserPayments">
+        <PropertyRef Name="UserSelectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_UserPayments_UserDetails">
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="1" />
+    <End Role="Event_UserPayments" Type="Self.Event_UserPayments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Event_UserPayments">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_UserSelections_Def_Events">
+    <End Role="Def_Events" Type="Self.Def_Events" Multiplicity="0..1" />
+    <End Role="Event_UserSelections" Type="Self.Event_UserSelections" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Def_Events">
+        <PropertyRef Name="EventId" />
+      </Principal>
+      <Dependent Role="Event_UserSelections">
+        <PropertyRef Name="EventId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_UserSelections_UserDetails">
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="0..1" />
+    <End Role="Event_UserSelections" Type="Self.Event_UserSelections" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Event_UserSelections">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Events_UserBookings_Event_TicketTypes">
+    <End Role="Event_TicketTypes" Type="Self.Event_TicketTypes" Multiplicity="0..1" />
+    <End Role="Events_UserBookings" Type="Self.Events_UserBookings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event_TicketTypes">
+        <PropertyRef Name="TypeId" />
+      </Principal>
+      <Dependent Role="Events_UserBookings">
+        <PropertyRef Name="TicketTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Events_UserBookings_Event_UserSelections">
+    <End Role="Event_UserSelections" Type="Self.Event_UserSelections" Multiplicity="1" />
+    <End Role="Events_UserBookings" Type="Self.Events_UserBookings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event_UserSelections">
+        <PropertyRef Name="EventSelectionId" />
+      </Principal>
+      <Dependent Role="Events_UserBookings">
+        <PropertyRef Name="EventSelectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FacultyWorkInfo_UserDetails">
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="1" />
+    <End Role="FacultyWorkInfo" Type="Self.FacultyWorkInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FacultyWorkInfo">
+        <PropertyRef Name="FacultyUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GraduationYears_Courses">
+    <End Role="Courses" Type="Self.Courses" Multiplicity="0..1" />
+    <End Role="GraduationYears" Type="Self.GraduationYears" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GraduationYears">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProfessionalDetails_Users">
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="1" />
+    <End Role="ProfessionalDetails" Type="Self.ProfessionalDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProfessionalDetails">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_States_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="States" Type="Self.States" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="States">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDetails_Cities">
+    <End Role="Cities" Type="Self.Cities" Multiplicity="1" />
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cities">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDetails">
+        <PropertyRef Name="HomeCityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDetails_Cities1">
+    <End Role="Cities" Type="Self.Cities" Multiplicity="1" />
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cities">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDetails">
+        <PropertyRef Name="LivesInCityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDetails_Gender">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="0..1" />
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDetails">
+        <PropertyRef Name="GenderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDetails_Salutations">
+    <End Role="Salutations" Type="Self.Salutations" Multiplicity="0..1" />
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Salutations">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDetails">
+        <PropertyRef Name="SalutationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDetails_UserDetails">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDetails">
+        <PropertyRef Name="CountryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPost_Comments_UserDetails">
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="0..1" />
+    <End Role="UserPost_Comments" Type="Self.UserPost_Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserPost_Comments">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPost_Comments_UserPost_Comments">
+    <End Role="UserPost_Comments" Type="Self.UserPost_Comments" Multiplicity="1" />
+    <End Role="UserPost_Comments1" Type="Self.UserPost_Comments" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="UserPost_Comments">
+        <PropertyRef Name="CommentId" />
+      </Principal>
+      <Dependent Role="UserPost_Comments1">
+        <PropertyRef Name="CommentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPost_Files_UserPosts">
+    <End Role="UserPosts" Type="Self.UserPosts" Multiplicity="0..1" />
+    <End Role="UserPost_Files" Type="Self.UserPost_Files" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserPosts">
+        <PropertyRef Name="PostId" />
+      </Principal>
+      <Dependent Role="UserPost_Files">
+        <PropertyRef Name="PostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPost_Images_UserPosts">
+    <End Role="UserPosts" Type="Self.UserPosts" Multiplicity="0..1" />
+    <End Role="UserPost_Images" Type="Self.UserPost_Images" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserPosts">
+        <PropertyRef Name="PostId" />
+      </Principal>
+      <Dependent Role="UserPost_Images">
+        <PropertyRef Name="PostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPost_Likes_UserDetails">
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="0..1" />
+    <End Role="UserPost_Likes" Type="Self.UserPost_Likes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserPost_Likes">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPost_Likes_UserPosts">
+    <End Role="UserPosts" Type="Self.UserPosts" Multiplicity="0..1" />
+    <End Role="UserPost_Likes" Type="Self.UserPost_Likes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserPosts">
+        <PropertyRef Name="PostId" />
+      </Principal>
+      <Dependent Role="UserPost_Likes">
+        <PropertyRef Name="PostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPosting_Jobs_Job_FunctionalArea">
+    <End Role="Job_FunctionalArea" Type="Self.Job_FunctionalArea" Multiplicity="0..1" />
+    <End Role="UserPosting_Jobs" Type="Self.UserPosting_Jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job_FunctionalArea">
+        <PropertyRef Name="FunctionalId" />
+      </Principal>
+      <Dependent Role="UserPosting_Jobs">
+        <PropertyRef Name="FunctionalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPosting_Jobs_UserDetails">
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="0..1" />
+    <End Role="UserPosting_Jobs" Type="Self.UserPosting_Jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserPosting_Jobs">
+        <PropertyRef Name="Userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPosts_EventCategorys">
+    <End Role="EventCategorys" Type="Self.EventCategorys" Multiplicity="0..1" />
+    <End Role="UserPosts" Type="Self.UserPosts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EventCategorys">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserPosts">
+        <PropertyRef Name="EventId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPosts_UserDetails">
+    <End Role="UserDetails" Type="Self.UserDetails" Multiplicity="0..1" />
+    <End Role="UserPosts" Type="Self.UserPosts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetails">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserPosts">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="db_Alumni_TestModelStoreContainer">
+    <EntitySet Name="Album_Gallery" EntityType="Self.Album_Gallery" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="Album_Gallery_Images" EntityType="Self.Album_Gallery_Images" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="Alumni_ContactUs" EntityType="Self.Alumni_ContactUs" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="Banner_Imags" EntityType="Self.Banner_Imags" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="Custome_Templates" EntityType="Self.Custome_Templates" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="db_Memories_images" EntityType="Self.db_Memories_images" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="db_Memories_Info" EntityType="Self.db_Memories_Info" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="db_NewsRooms" EntityType="Self.db_NewsRooms" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="Def_Events" EntityType="Self.Def_Events" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="Donation_Details" EntityType="Self.Donation_Details" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="Donor_Details" EntityType="Self.Donor_Details" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="Event_AttendingStatus" EntityType="Self.Event_AttendingStatus" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="Event_Faqs" EntityType="Self.Event_Faqs" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="Event_Gallery" EntityType="Self.Event_Gallery" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="Event_TicketTypes" EntityType="Self.Event_TicketTypes" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="Event_UserPayments" EntityType="Self.Event_UserPayments" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="Event_UserSelections" EntityType="Self.Event_UserSelections" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="EventCategorys" EntityType="Self.EventCategorys" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="Events_UserBookings" EntityType="Self.Events_UserBookings" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="Executive_board" EntityType="Self.Executive_board" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="GraduationYears" EntityType="Self.GraduationYears" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="Job_FunctionalArea" EntityType="Self.Job_FunctionalArea" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="Transaction_Details" EntityType="Self.Transaction_Details" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="UserPost_Comments" EntityType="Self.UserPost_Comments" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="UserPost_Files" EntityType="Self.UserPost_Files" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="UserPost_Images" EntityType="Self.UserPost_Images" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="UserPost_Likes" EntityType="Self.UserPost_Likes" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="UserPosting_Jobs" EntityType="Self.UserPosting_Jobs" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="UserPosts" EntityType="Self.UserPosts" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="UserPosts_Visisble" EntityType="Self.UserPosts_Visisble" Schema="db_Alumni" store:Type="Tables" />
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cities" EntityType="Self.Cities" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CourseCategories" EntityType="Self.CourseCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Courses" EntityType="Self.Courses" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Districts" EntityType="Self.Districts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EducationalDetails" EntityType="Self.EducationalDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FacultyWorkInfo" EntityType="Self.FacultyWorkInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProfessionalDetails" EntityType="Self.ProfessionalDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RelationshipStatus" EntityType="Self.RelationshipStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Salutations" EntityType="Self.Salutations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="States" EntityType="Self.States" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserDetails" EntityType="Self.UserDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Alumni_Gallery" EntityType="Self.Alumni_Gallery" store:Type="Views" store:Schema="db_Alumni">
+      <DefiningQuery>SELECT 
+    [Alumni_Gallery].[Galleryid] AS [Galleryid], 
+    [Alumni_Gallery].[AlbumName] AS [AlbumName], 
+    [Alumni_Gallery].[Description] AS [Description], 
+    [Alumni_Gallery].[GalleryDate] AS [GalleryDate], 
+    [Alumni_Gallery].[CreateOn] AS [CreateOn], 
+    [Alumni_Gallery].[AlbumType] AS [AlbumType], 
+    [Alumni_Gallery].[Image] AS [Image], 
+    [Alumni_Gallery].[CreatedOn] AS [CreatedOn], 
+    [Alumni_Gallery].[AlbumId] AS [AlbumId]
+    FROM [db_Alumni].[Alumni_Gallery] AS [Alumni_Gallery]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_UserDetails" EntityType="Self.View_UserDetails" store:Type="Views" store:Schema="db_Alumni">
+      <DefiningQuery>SELECT 
+    [View_UserDetails].[UserId] AS [UserId], 
+    [View_UserDetails].[AspnetUsersId] AS [AspnetUsersId], 
+    [View_UserDetails].[PasswordHash] AS [PasswordHash], 
+    [View_UserDetails].[FirstName] AS [FirstName], 
+    [View_UserDetails].[LastName] AS [LastName], 
+    [View_UserDetails].[ProfilePicture] AS [ProfilePicture], 
+    [View_UserDetails].[Address] AS [Address], 
+    [View_UserDetails].[HomeVillegeOrAreaName] AS [HomeVillegeOrAreaName], 
+    [View_UserDetails].[HomeCityName] AS [HomeCityName], 
+    [View_UserDetails].[LivesInCityName] AS [LivesInCityName], 
+    [View_UserDetails].[UserStatus] AS [UserStatus], 
+    [View_UserDetails].[ProfileInfoPercentage] AS [ProfileInfoPercentage], 
+    [View_UserDetails].[PhoneNumber] AS [PhoneNumber], 
+    [View_UserDetails].[AlternateEmailId] AS [AlternateEmailId], 
+    [View_UserDetails].[HomePhoneNumber] AS [HomePhoneNumber], 
+    [View_UserDetails].[PortalPassword] AS [PortalPassword], 
+    [View_UserDetails].[Salutation] AS [Salutation], 
+    [View_UserDetails].[GenderName] AS [GenderName], 
+    [View_UserDetails].[DOB] AS [DOB], 
+    [View_UserDetails].[CreatedDate] AS [CreatedDate], 
+    [View_UserDetails].[Email] AS [Email], 
+    [View_UserDetails].[LoginName] AS [LoginName], 
+    [View_UserDetails].[RoleId] AS [RoleId], 
+    [View_UserDetails].[Role] AS [Role], 
+    [View_UserDetails].[CollegeName] AS [CollegeName], 
+    [View_UserDetails].[CourseId] AS [CourseId], 
+    [View_UserDetails].[CourseName] AS [CourseName], 
+    [View_UserDetails].[Batch] AS [Batch], 
+    [View_UserDetails].[DesignationName] AS [DesignationName], 
+    [View_UserDetails].[DepartmentName] AS [DepartmentName], 
+    [View_UserDetails].[WorkingFrom] AS [WorkingFrom], 
+    [View_UserDetails].[WorkingTo] AS [WorkingTo], 
+    [View_UserDetails].[CourseCategoryName] AS [CourseCategoryName], 
+    [View_UserDetails].[Years] AS [Years], 
+    [View_UserDetails].[Company] AS [Company], 
+    [View_UserDetails].[Designation] AS [Designation], 
+    [View_UserDetails].[WorkedFrom] AS [WorkedFrom], 
+    [View_UserDetails].[WorkedTill] AS [WorkedTill], 
+    [View_UserDetails].[CityName] AS [CityName]
+    FROM [db_Alumni].[View_UserDetails] AS [View_UserDetails]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Album_Gallery_Images_Album_Gallery" Association="Self.FK_Album_Gallery_Images_Album_Gallery">
+      <End Role="Album_Gallery" EntitySet="Album_Gallery" />
+      <End Role="Album_Gallery_Images" EntitySet="Album_Gallery_Images" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cities_Districts" Association="Self.FK_Cities_Districts">
+      <End Role="Districts" EntitySet="Districts" />
+      <End Role="Cities" EntitySet="Cities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cities_States" Association="Self.FK_Cities_States">
+      <End Role="States" EntitySet="States" />
+      <End Role="Cities" EntitySet="Cities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Courses_CourseCategories" Association="Self.FK_Courses_CourseCategories">
+      <End Role="CourseCategories" EntitySet="CourseCategories" />
+      <End Role="Courses" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_db_Memories_images_db_Memories_Info" Association="Self.FK_db_Memories_images_db_Memories_Info">
+      <End Role="db_Memories_Info" EntitySet="db_Memories_Info" />
+      <End Role="db_Memories_images" EntitySet="db_Memories_images" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Districts_States" Association="Self.FK_Districts_States">
+      <End Role="States" EntitySet="States" />
+      <End Role="Districts" EntitySet="Districts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Donor_Details_Donation_Details" Association="Self.FK_Donor_Details_Donation_Details">
+      <End Role="Donation_Details" EntitySet="Donation_Details" />
+      <End Role="Donor_Details" EntitySet="Donor_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Donor_Details_Transaction_Details" Association="Self.FK_Donor_Details_Transaction_Details">
+      <End Role="Transaction_Details" EntitySet="Transaction_Details" />
+      <End Role="Donor_Details" EntitySet="Donor_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Donor_Details_UserDetails" Association="Self.FK_Donor_Details_UserDetails">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="Donor_Details" EntitySet="Donor_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EducationalDetails_Courses" Association="Self.FK_EducationalDetails_Courses">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="EducationalDetails" EntitySet="EducationalDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EducationalDetails_Users" Association="Self.FK_EducationalDetails_Users">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="EducationalDetails" EntitySet="EducationalDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_AttendingStatus_Def_Events" Association="Self.FK_Event_AttendingStatus_Def_Events">
+      <End Role="Def_Events" EntitySet="Def_Events" />
+      <End Role="Event_AttendingStatus" EntitySet="Event_AttendingStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_AttendingStatus_UserDetails" Association="Self.FK_Event_AttendingStatus_UserDetails">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="Event_AttendingStatus" EntitySet="Event_AttendingStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_Faqs_Def_Events" Association="Self.FK_Event_Faqs_Def_Events">
+      <End Role="Def_Events" EntitySet="Def_Events" />
+      <End Role="Event_Faqs" EntitySet="Event_Faqs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_Gallery_Def_Events" Association="Self.FK_Event_Gallery_Def_Events">
+      <End Role="Def_Events" EntitySet="Def_Events" />
+      <End Role="Event_Gallery" EntitySet="Event_Gallery" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_TicketTypes_Def_Events" Association="Self.FK_Event_TicketTypes_Def_Events">
+      <End Role="Def_Events" EntitySet="Def_Events" />
+      <End Role="Event_TicketTypes" EntitySet="Event_TicketTypes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_UserPayments_Event_UserSelections" Association="Self.FK_Event_UserPayments_Event_UserSelections">
+      <End Role="Event_UserSelections" EntitySet="Event_UserSelections" />
+      <End Role="Event_UserPayments" EntitySet="Event_UserPayments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_UserPayments_UserDetails" Association="Self.FK_Event_UserPayments_UserDetails">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="Event_UserPayments" EntitySet="Event_UserPayments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_UserSelections_Def_Events" Association="Self.FK_Event_UserSelections_Def_Events">
+      <End Role="Def_Events" EntitySet="Def_Events" />
+      <End Role="Event_UserSelections" EntitySet="Event_UserSelections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_UserSelections_UserDetails" Association="Self.FK_Event_UserSelections_UserDetails">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="Event_UserSelections" EntitySet="Event_UserSelections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Events_UserBookings_Event_TicketTypes" Association="Self.FK_Events_UserBookings_Event_TicketTypes">
+      <End Role="Event_TicketTypes" EntitySet="Event_TicketTypes" />
+      <End Role="Events_UserBookings" EntitySet="Events_UserBookings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Events_UserBookings_Event_UserSelections" Association="Self.FK_Events_UserBookings_Event_UserSelections">
+      <End Role="Event_UserSelections" EntitySet="Event_UserSelections" />
+      <End Role="Events_UserBookings" EntitySet="Events_UserBookings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FacultyWorkInfo_UserDetails" Association="Self.FK_FacultyWorkInfo_UserDetails">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="FacultyWorkInfo" EntitySet="FacultyWorkInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GraduationYears_Courses" Association="Self.FK_GraduationYears_Courses">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="GraduationYears" EntitySet="GraduationYears" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProfessionalDetails_Users" Association="Self.FK_ProfessionalDetails_Users">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="ProfessionalDetails" EntitySet="ProfessionalDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_States_Country" Association="Self.FK_States_Country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="States" EntitySet="States" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDetails_Cities" Association="Self.FK_UserDetails_Cities">
+      <End Role="Cities" EntitySet="Cities" />
+      <End Role="UserDetails" EntitySet="UserDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDetails_Cities1" Association="Self.FK_UserDetails_Cities1">
+      <End Role="Cities" EntitySet="Cities" />
+      <End Role="UserDetails" EntitySet="UserDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDetails_Gender" Association="Self.FK_UserDetails_Gender">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="UserDetails" EntitySet="UserDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDetails_Salutations" Association="Self.FK_UserDetails_Salutations">
+      <End Role="Salutations" EntitySet="Salutations" />
+      <End Role="UserDetails" EntitySet="UserDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDetails_UserDetails" Association="Self.FK_UserDetails_UserDetails">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="UserDetails" EntitySet="UserDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPost_Comments_UserDetails" Association="Self.FK_UserPost_Comments_UserDetails">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="UserPost_Comments" EntitySet="UserPost_Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPost_Comments_UserPost_Comments" Association="Self.FK_UserPost_Comments_UserPost_Comments">
+      <End Role="UserPost_Comments" EntitySet="UserPost_Comments" />
+      <End Role="UserPost_Comments1" EntitySet="UserPost_Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPost_Files_UserPosts" Association="Self.FK_UserPost_Files_UserPosts">
+      <End Role="UserPosts" EntitySet="UserPosts" />
+      <End Role="UserPost_Files" EntitySet="UserPost_Files" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPost_Images_UserPosts" Association="Self.FK_UserPost_Images_UserPosts">
+      <End Role="UserPosts" EntitySet="UserPosts" />
+      <End Role="UserPost_Images" EntitySet="UserPost_Images" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPost_Likes_UserDetails" Association="Self.FK_UserPost_Likes_UserDetails">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="UserPost_Likes" EntitySet="UserPost_Likes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPost_Likes_UserPosts" Association="Self.FK_UserPost_Likes_UserPosts">
+      <End Role="UserPosts" EntitySet="UserPosts" />
+      <End Role="UserPost_Likes" EntitySet="UserPost_Likes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPosting_Jobs_Job_FunctionalArea" Association="Self.FK_UserPosting_Jobs_Job_FunctionalArea">
+      <End Role="Job_FunctionalArea" EntitySet="Job_FunctionalArea" />
+      <End Role="UserPosting_Jobs" EntitySet="UserPosting_Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPosting_Jobs_UserDetails" Association="Self.FK_UserPosting_Jobs_UserDetails">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="UserPosting_Jobs" EntitySet="UserPosting_Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPosts_EventCategorys" Association="Self.FK_UserPosts_EventCategorys">
+      <End Role="EventCategorys" EntitySet="EventCategorys" />
+      <End Role="UserPosts" EntitySet="UserPosts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPosts_UserDetails" Association="Self.FK_UserPosts_UserDetails">
+      <End Role="UserDetails" EntitySet="UserDetails" />
+      <End Role="UserPosts" EntitySet="UserPosts" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,486 @@
+﻿@model AluminiWebApp.Models.StudentRegistrationModel
+
+@{
+    ViewBag.Title = "SerachUsers";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminMasterLayoutPage.cshtml";
+}
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+@Html.BeginForm()
+{
+<div>
+
+
+    <!-- Modal -->
+    <div id="SMS" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Send SMS /MAIL</h4>
+                </div>
+                <div class="modal-body">
+                    <table>
+                        <tr>
+                            <td>
+                                Heading :&nbsp;
+                            </td>
+                            <td>
+                                <input type="text" id="SMSHeading" class="form-control" />
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Subject :&nbsp;
+                            </td>
+                            <td>
+                                <input type="text" id="SMSSubject" class="form-control" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Message :&nbsp;
+                            </td>
+                            <td>
+                                <textarea id="SMSMessage" class="form-control" rows="5"></textarea>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" value="Send SMS" class="btn btn-inverse btn-rounded waves-effect waves-light" id="Sendsmsmessage" />
+                    <input type="button" value="Send Mail" class="btn btn-success btn-rounded waves-effect waves-light" id="SendMailmessage" />
+                    <button type="button" class="btn btn-default btn-rounded waves-effect waves-light" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <br />
+                    <div class="alert alert-success">
+                        <strong>Alumni Templates</strong>.
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <table class="media-right">
+                        <tr>
+                            <td>
+                                <img id="UserImage" lass="media-object img-circle" style="width: 64px; height: 64px;" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <br />
+                                <br />
+                            </td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+
+                            <td>
+                                <input type="text" readonly="readonly" id="txtFirstName" class="form-control" placeholder="Firstname" />
+                            </td>
+                            <td>&nbsp;</td>
+                            <td>
+                                <input type="text" readonly="readonly" id="txtLastName" class="form-control" placeholder="Lastname" />
+                            </td>
+                            <td>&nbsp;</td>
+                            <td>
+                                <input type="text" readonly="readonly" id="txtEmail" class="form-control" placeholder="Lastname" />
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+
+                            <td>
+                                <input type="text" readonly="readonly" id="txtMobile" class="form-control" placeholder="Mobile" />
+                            </td>
+                            <td>&nbsp;</td>
+                            <td>
+                                <input type="text" readonly="readonly" id="txtCoursecategory" class="form-control" placeholder="Course" />
+                            </td>
+                            <td>&nbsp;</td>
+                            <td>
+                                <input type="text" readonly="readonly" id="txtCourse" class="form-control" placeholder="Degree" />
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+
+                            <td>
+                                <input type="text" readonly="readonly" id="txtSalutation" class="form-control" placeholder="Salutation" />
+                            </td>
+                            <td>&nbsp;</td>
+                            <td>
+                                <input type="text" readonly="readonly" id="txtBatch" class="form-control" placeholder="Batch" />
+                            </td>
+                            <td>&nbsp;</td>
+                            <td>
+                                <input type="text" readonly="readonly" id="txtDoB" class="form-control" placeholder="Date of Birth" />
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+
+                            <td>
+                                <input type="text" readonly="readonly" id="txtCompany" class="form-control" placeholder="Company" />
+                            </td>
+                            <td>&nbsp;</td>
+                            <td>
+                                <input type="text" readonly="readonly" id="txtWorkingfrom" class="form-control" placeholder="Working from" />
+                            </td>
+                            <td>&nbsp;</td>
+                            <td>
+                                <input type="text" readonly="readonly" id="txtWorkingTill" class="form-control" placeholder="WorkedTill" />
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+
+                            <td>
+                                <input type="text" readonly="readonly" id="txtDesignation" class="form-control" placeholder="Designation" />
+                            </td>
+                            <td>&nbsp;</td>
+                            <td>
+                                <input type="text" readonly="readonly" id="txtHoveCity" class="form-control" placeholder="Home City" />
+                            </td>
+                            <td>&nbsp;</td>
+                            <td>
+                                <textarea id="txtAddress" class="form-control" placeholder="Address"></textarea>
+
+                            </td>
+
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container">
+
+            <div class="row">
+
+
+                <div class="col-sm-12">
+                    <div class="card-box">
+                        <h4 class="m-t-0 header-title"><b>Serach</b></h4>
+                        <p class="text-muted m-b-30 font-13">
+                        </p>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div role="form" class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label"></label>
+                                        <div class="col-md-10">
+                                            @Html.DropDownListFor(x => x.CourseCategoryId, new SelectList(Model.Coursecategorys, "Id", "CourseCategoryName"), "Select Degree", new { @class = "form-control", @required = "required" })
+                                            @Html.ValidationMessageFor(x => x.CourseCategoryId, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <form role="form" class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label"></label>
+                                        <div class="col-sm-10">
+                                            <select class="form-control" id="ddlcourses">
+                                                <option value="">Select Course</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="col-md-3">
+                                <form role="form" class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label"></label>
+                                        <div class="col-sm-10">
+                                            <select class="form-control" id="ddlBatch">
+                                                <option value="">Select Batch</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="col-md-3">
+                                <div role="form" class="form-horizontal" hidden="hidden">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label"></label>
+                                        <div class="col-sm-10">
+                                            <select class="form-control" id="ddlUsers">
+                                                <option value="">Select Alumni</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div>
+                                <input id="Search" type="button" value="Search" class="btn btn-info btn-rounded waves-effect waves-light" />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card-box">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h4 class="m-t-0 header-title"><b>Responsive tables</b></h4>
+                                <p class="text-muted font-13">
+                                </p>
+                                <div>
+
+                                    <button id="btnsendmessages" type="button" class="btn btn-info btn-rounded waves-effect waves-light" data-toggle="modal" data-target="#SMS">Send sms/mail</button>
+                                </div>
+                                <div class="p-20">
+                                    <div class="table-responsive">
+                                        <table class="table m-0">
+
+                                            <thead>
+                                                <tr style="text-align:right">
+                                                    @if (TempData["Error"] != null)
+                                                    {
+                                                        <td><h4 class="text-danger">@TempData["Error"] </h4></td>
+                                                    }
+                                                    <td>
+                                                        <input type="submit" id="btnexport" value="Export to excel" class="btn btn-default btn-rounded waves-effect waves-light" />
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Id</th>
+                                                    <th>First Name</th>
+                                                    <th>Last Name</th>
+                                                    <th>Email</th>
+                                                    <th>Mobile</th>
+                                                    <th>View</th>
+                                                    <th>Check All <input type="checkbox" id="chkAll" /></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="UserResult"></tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //$('#btnexport').click(function () {
+            //    var array = [];
+
+            //    var val = [];
+            //    $(':checkbox:checked').each(function (i) {
+            //        val[i] = $(this).val();
+            //        if (val[i] == "on") {
+
+            //        }
+            //        else {
+            //            array.push(val[i]);
+
+            //        }
+            //    });
+            //    $.ajax({
+            //        type: "Post",
+            //        dataType: "json",
+            //        contentType: "Application/json",
+            //        url: "/UserRegistrations/Excel",
+            //        data: JSON.stringify({ "Userids": array }),
+            //        success: function (data) {
+            //        }
+            //    });
+
+            //});
+            $('#btnsendmessages').click(function () {
+                $('#SMSHeading').val('');
+                $('#SMSSubject').val('');
+                $('#SMSMessage').val('');
+            });
+            $('#chkAll').attr('checked', false);
+            $("#chkAll").change(function () {
+                $("input:checkbox").prop('checked', $(this).prop("checked"));
+            });
+
+            $('#SendMailmessage').click(function () {
+                var Heading = $('#SMSHeading').val();
+                var Subject = $('#SMSSubject').val();
+                var Message = $('#SMSMessage').val();
+
+                var val = [];
+                $(':checkbox:checked').each(function (i) {
+
+                    val[i] = $(this).val();
+                    if (val[i] == "on") {
+
+                    }
+                    else {
+                        $.ajax({
+                            type: "Post",
+                            dataType: 'json',
+                            contentType: 'application/json',
+                            data: JSON.stringify({ "Userid": val[i], "Message": Message, "Heading": Heading, "Subject": Subject, "Status": 1 }),
+                            url: '/UserRegistrations/SENDEmail',
+                            success: function (data) {
+                            }
+                        });
+                    }
+                });
+
+            });
+
+
+            $("#ddlcourses").change(function () {
+                $.ajax({
+                    type: "Get",
+                    dataType: "json",
+                    contentType: "Application/json",
+                    url: "/UserRegistrations/BindYears",
+                    data: {},
+                    success: function (data) {
+                        $("#ddlBatch").empty();
+                        $("#ddlBatch").append($("<option></option>").val("").html("Select Batch"));
+                        $.each(data, function (key, value) {
+                            $("#ddlBatch").append($("<option></option>").val(value.GraduationYearId).html(value.GraduationYear));
+                        });
+                    }
+                });
+            });
+
+            $('#CourseCategoryId').change(function () {
+                var Coursecategoryid = $('#CourseCategoryId option:selected').val();
+                $.ajax({
+                    type: "Get",
+                    dataType: "json",
+                    contentType: "Application/json",
+                    url: "/Account/GetCourses",
+                    data: { "CourseCategoryId": Coursecategoryid },
+                    success: function (data) {
+                        $("#ddlcourses").empty();
+                        $("#ddlcourses").append($("<option></option>").val("").html("Select Course"));
+                        $.each(data, function (key, value) {
+                            $("#ddlcourses").append($("<option></option>").val(value.Id).html(value.CourseName));
+                        });
+                    }
+                });
+            });
+            $('#Search').click(function () {
+                var Batch = $('#ddlBatch option:selected').val();
+                var Coursecategory = $('#CourseCategoryId option:selected').text();
+                var Course = $('#ddlcourses option:selected').text();
+                var Users = $('#ddlUsers option:selected').val();
+                var SelectedCourses = "";
+
+                if (Coursecategory == "Select Degree") {
+                    alert("Please select Degree");
+                }
+                if (Course != "Select Course") {
+                    SelectedCourses = Course;
+                }
+                else {
+                    SelectedCourses = "";
+                }
+                $.ajax({
+                    type: "Get",
+                    dataType: "json",
+                    contentType: "Application/json",
+                    url: "/UserRegistrations/GetUsersonserach",
+                    data: { "Degree": Coursecategory, "Course": SelectedCourses, "Batch": Batch, "Userid": 0 },
+                    success: function (data) {
+                        $("#UserResult").empty();
+                        $.each(data, function (key, value) {
+                            $("#UserResult").append("<tr><td>" + value.UserId + "</td><td>" + value.FirstName + "</td><td>" + value.LastName + "</td><td>" + value.LoginName + "</td><td>" + value.PhoneNumber + "</td><td><a href='javascript:;' onclick='GetFulldetails(" + value.UserId + ")' class='btn btn-primary btn-rounded waves-effect waves-light' data-toggle='modal' data-target='#myModal' >View</a></td><td><input type='checkbox' name='Userids' value=" + value.UserId + " id='CheckUser'/></td><tr>");
+                        });
+                    }
+                });
+            });
+        });
+        function GetFulldetails(id) {
+            $.ajax({
+                type: "get",
+                dataType: 'json',
+                contentType: 'application/json',
+                data: { "Userid": id },
+                url: '/UserRegistrations/GetUserdetailsonId',
+                success: function (data) {
+
+                    var dateString = (data.DOB).substr(6);
+                    var currentTime = new Date(parseInt(dateString));
+                    var month = currentTime.getMonth() + 1;
+                    var day = currentTime.getDate();
+                    var year = currentTime.getFullYear();
+                    var date = day + "/" + month + "/" + year;
+
+                    $('#UserImage').attr('src', data.ProfilePicture);
+                    $('#txtFirstName').val(data.FirstName);
+                    $('#txtLastName').val(data.LastName);
+                    $('#txtEmail').val(data.LoginName);
+                    $('#txtMobile').val(data.PhoneNumber);
+                    $('#txtCoursecategory').val(data.CourseCategoryName);
+                    $('#txtCourse').val(data.CourseName);
+                    $('#txtSalutation').val(data.Salutation);
+                    $('#txtBatch').val(data.Batch);
+                    $('#txtDoB').val(date);
+                    $('#txtCompany').val(data.Company);
+                    $('#txtWorkingfrom').val(data.WorkedFrom);
+                    $('#txtWorkingTill').val(data.WorkedTill);
+                    $('#txtDesignation').val(data.Designation);
+                    $('#txtHoveCity').val(data.CityName);
+                    $('#txtAddress').val(data.Address);
+                }
+            });
+
+        }
+    </script>
+</div>
+
+}

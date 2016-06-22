@@ -1,0 +1,92 @@
+﻿@model Alumini.Core.View_UserDetails
+@{
+    Layout = "~/Areas/Faculty/Views/Shared/_SRKRLayout.cshtml";
+}
+<h2 style="text-align:center">Profile</h2>
+<div>
+    <table>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <img src="@Model.ProfilePicture" width="150" height="100" />
+            </td>
+        </tr>
+        <tr>
+            <td><h3>@Model.FirstName &nbsp; @Model.LastName</h3></td>
+        </tr>
+        <tr>
+            <td><h3>Department : @Model.DepartmentName </h3></td>
+        </tr>
+        <tr>
+            <td><h3>Designation @Model.DesignationName</h3></td>
+        </tr>
+        <tr>
+            <td><h5>Working From &nbsp; @Model.WorkingFrom || @Model.WorkingTo</h5></td>
+        </tr>
+        <tr>
+
+            @if (Model.ProfileInfoPercentage == 5)
+            {
+                <td>
+                    <h3 style="text-align:right">100 % Completed</h3>
+                </td>
+            }
+            @if (Model.ProfileInfoPercentage == 4)
+            {
+                <td>
+                    <h3 style="text-align:right">80 % Completed</h3>
+                </td>
+            }
+            @if (Model.ProfileInfoPercentage == 3)
+            {
+                <td>
+                    <h3 style="text-align:right">40 % Completed</h3>
+                </td>
+            }
+            @if (Model.ProfileInfoPercentage == 2)
+            {
+                <td>
+                    <h3 style="text-align:right">20 % Completed</h3>
+                </td>
+            }
+
+            @if (Model.ProfileInfoPercentage == 1)
+            {
+                <td>
+                    <h3 style="text-align:right">10 % Completed</h3>
+                </td>
+            }
+
+        </tr>
+        <tr>
+            <td><h3 style="text-align:center"> <b>Professional Details</b></h3></td>
+        </tr>
+        <tr>
+            <td><h5>@Model.DesignationName</h5></td>
+        </tr>
+        <tr>
+            <td><h5>@Model.DepartmentName</h5></td>
+        </tr>
+        <tr>
+            <td><h5>Working From &nbsp; @Model.WorkingFrom || @Model.WorkingTo</h5></td>
+        </tr> 
+        <tr>
+            <td><h3><i class="fa fa-user"></i>&nbsp;<b>Contact Information</b></h3></td>
+        </tr>
+        <tr>
+            <td>
+                Lives In : @Model.HomeCityName
+            </td>
+        </tr>
+        <tr>
+            <td>Address : &nbsp;@Model.Address</td>
+        </tr>
+        <tr><td>Email : @Model.Email</td></tr>
+        <tr><td>Mobile : @Model.PhoneNumber</td></tr>
+        
+    </table>
+</div>
+<script src="~/Custom.js/jquery-1.10.2.min.js"></script>
+

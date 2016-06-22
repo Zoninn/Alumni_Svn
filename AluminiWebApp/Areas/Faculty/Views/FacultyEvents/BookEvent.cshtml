@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "BookEvent";
+    Layout = "~/Areas/Faculty/Views/Shared/_SRKRLayout.cshtml";
+}
+<!-- section -->
+@using (Html.BeginForm())
+{
+    <section class="grid-row clear-fix padding-section">
+        <h2 class="center-text">Payments</h2>
+        <!-- instructor item -->
+        <div class="item-instructor">
+            @*<a href="page-profile.html" class="instructor-avatar">*@
+            <img src="@ViewBag.BookingEvents.BannerImage " data-at2x="pic/210x220-img-1@2x.jpg" height="100">
+            @*</a>*@
+            <div class="info-box">
+                <h3>@ViewBag.BookingEvents.EventName </h3>
+                <span class="instructor-profession">@ViewBag.BookingEvents.EventVenue </span>
+                <div class="divider"></div>
+                <h3>Total Payment details</h3>
+                <div class="woocommerce">
+                    <table class="shop_table cart">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Ticket Type
+                                </th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{ int TotalQuantity = 0; }
+                            @foreach (var PaymentTickets in ViewBag.BookingEvents.Useselections)
+                            {
+                                <tr class="cart_item">
+                                    <td>
+                                        @PaymentTickets.TicketTypeHeading
+                                    </td>
+                                    <td>@PaymentTickets.TotalNoOfTickets</td>
+                                    <td>@PaymentTickets.TotalAmount</td>
+                                </tr>
+
+                            }
+                        </tbody>
+                        <tr>
+                            <td><h3>Total Quantity</h3></td>
+                            <td><h3>@ViewBag.BookingEvents.TotalNoOfTickets</h3></td>
+                            <td><h3>@ViewBag.BookingEvents.TotalAmount</h3></td>
+                        </tr>
+                    </table>
+                    <input type="submit" class="cws-button bt-color-4 border-radius right" value="Pay Now">
+                </div>
+                <div class="social-link">
+                </div>
+            </div>
+        </div>
+        <!-- / instructor item -->
+    </section>
+    <!-- / section -->
+}

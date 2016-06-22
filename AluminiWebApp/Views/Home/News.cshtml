@@ -1,0 +1,68 @@
+﻿@model AluminiWebApp.Areas.Admin.Models.NewsRoomModel
+@{
+    Layout = "~/Views/Shared/_SRKRDesignLayout.cshtml";
+}
+
+<section id="nicdark_parallax_title" class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img8" style="background-position: 50% 0px;">
+
+    <div class="nicdark_filter greydark">
+
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+
+            <div class="grid grid_12">
+                <div class="nicdark_space100"></div>
+                <div class="nicdark_space100"></div>
+                <h1 class="white subtitle">NEWS</h1>
+                <div class="nicdark_space10"></div>
+                <div class="nicdark_divider left big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space40"></div>
+                <div class="nicdark_space50"></div>
+            </div>
+
+        </div>
+        <!--end nicdark_container-->
+
+    </div>
+
+</section>
+
+
+<section class="nicdark_section">
+
+    <!--start nicdark_container-->
+    <div class="nicdark_container nicdark_clearfix">
+
+        <div class="nicdark_space50"></div>
+
+
+
+        <div class="grid grid_12">
+            <img alt="" class="nicdark_radius nicdark_opacity" style="float:left;width:100%;" src="@Model.Image">
+
+            <div class="nicdark_space20"></div>
+
+            <div class="nicdark_textevidence nicdark_bg_orange nicdark_radius nicdark_shadow">
+                <div class="nicdark_size_big">
+                    <p class="white"><i class="icon-calendar-1 nicdark_marginright10"></i>@Model.PostedOn.Value.ToString("MMMM.dd.yyyy")</p>
+                </div>
+                <i class="icon-info-outline nicdark_iconbg right medium orange"></i>
+            </div>
+
+            <div class="nicdark_space50"></div>
+
+            <h1 class="subtitle greydark">@Model.Title</h1>
+            <div class="nicdark_space20"></div>
+            <div class="nicdark_divider left small"><span class="nicdark_bg_yellow nicdark_radius"></span></div>
+            <div class="nicdark_space20"></div>
+
+            <p><span class="white nicdark_dropcap nicdark_bg_yellow nicdark_radius nicdark_shadow">@Model.Description.Substring(0,1)</span>@Model.Description.Substring(1)</p>
+
+        </div>
+
+        <div class="nicdark_space50"></div>
+
+    </div>
+    <!--end nicdark_container-->
+
+</section>

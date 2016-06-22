@@ -1,0 +1,286 @@
+﻿@{
+    ViewBag.Title = "Events";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminMasterLayoutPage.cshtml";
+}
+
+@section styles{
+    <link href="~/Content/assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/dataTables.colVis.css" rel="stylesheet" type="text/css" />
+}
+
+
+<div class="content">
+    <div class="container">
+        <!-- Page-Title -->
+
+        <div class="row">
+            <div class="col-sm-14">
+                <div class="card-box table-responsive">
+                    <h4 class="alert alert-warning"><b>JOBS</b></h4>
+                    <div class="form-group">
+                        <div class="col-sm-10">
+                            <select id="JobApprovals" class="form-control">
+                                <option value="0">Select</option>
+                                <option value="1">Pending</option>
+                                <option value="2">Approved</option>
+                                <option value="3">Rejected</option>
+                            </select>
+                            <br />
+                        </div>
+                    </div>
+                    <table class="gridtable table table-striped table-bordered" id="datatable">
+                        <thead>
+                            <tr>
+                                <th>UserName</th>
+                                <th>Job Title</th>
+                                <th>Comapany</th>
+                                <th>Experience</th>
+                                <th>Mobile</th>
+                                <th>Email</th>
+                                <th>Status</th>                              
+                                <th>Approve / Reject</th>                              
+                            </tr>
+                        </thead>
+                        <tbody id="Jobs"></tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section scripts{
+
+    <script src="~/Content/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.bootstrap.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.buttons.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/buttons.bootstrap.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/jszip.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/pdfmake.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/vfs_fonts.js"></script>
+    <script src="~/Content/assets/plugins/datatables/buttons.html5.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/buttons.print.min.js"></script>
+
+    <script src="~/Content/assets/plugins/datatables/dataTables.fixedHeader.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.keyTable.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.responsive.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/responsive.bootstrap.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.scroller.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.colVis.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //$('#datatable').dataTable();
+            $('#datatable-keytable').DataTable({ keys: true });
+            $('#datatable-responsive').DataTable();
+            $('#datatable-colvid').DataTable({
+                "dom": 'C<"clear">lfrtip',
+                "colVis": {
+                    "buttonText": "Change columns"
+                }
+            });
+            //$('#datatable-scroller').DataTable({ ajax: "/Content/assets/plugins/datatables/json/scroller-demo.json", deferRender: true, scrollY: 380, scrollCollapse: true, scroller: true });
+            var table = $('#datatable-fixed-header').DataTable({ fixedHeader: true });
+        });
+        TableManageButtons.init();
+
+    </script>
+
+    <script type="text/javascript">
+        function test() {
+            $.ajax({ url: 'wait.php', cache: false });
+        }
+    </script>
+    <div id="domMessage" style="display:none;">
+        <h1>We are processing your request.  Please be patient.</h1>
+    </div>
+
+    <div>
+
+
+
+    </div>
+    
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Custom.js/jquery.blockUI.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#Approived").hide();
+            $("#Pending").hide();
+            $("#Rejected").hide();
+            $("#JobApprovals option:selected").removeAttr("selected");
+            $("#JobApprovals").change(function () {
+                var Value = $("#JobApprovals option:selected").text();
+
+                if (Value == "Pending") {
+                    blockPage();
+                    test();
+                    $("#Approived").hide();
+                    $("#Pending").show();
+                    $("#Rejected").hide();
+                    $.ajax({
+                        type: "Get",
+                        dataType: "json",
+                        contentType: "Application/json",
+                        url: "../Jobs/Jobs",
+                        data: { "Status": 0 },
+                        success: function (data) {
+                            unblockPage();
+                            $("#Jobs").empty();
+                            if (data == "") {
+                                $("#msg").html("No Records Found..");
+                            }
+                            else {
+                                $.each(data, function (key, value) {
+                                    $("#Jobs").append("<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.PostedBy + "&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.JobTitle + "&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.ComanyName + "</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.ExperienceRequired + "</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.Mobile + "</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.Email + "</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.Description + "</td><td>Pending</td><td>&nbsp;&nbsp;&nbsp;&nbsp; <input type=button value='Approve' class='btn btn-primary' onclick=Approve('" + value.Jobid + "')></td><td>&nbsp;&nbsp;&nbsp;&nbsp; <input type=button value='Reject' class='btn btn-primary' onclick=Reject('" + value.Jobid + "')></td></tr>");
+                                });
+                            }
+                            $('#datatable').dataTable();
+                        }
+                    });
+                }
+                else if (Value == "Approved") {
+                    blockPage();
+                    test();
+                    $("#Approived").show();
+                    $("#Pending").hide();
+                    $("#Rejected").hide();
+                    $("#Jobs").empty();
+                    $.ajax({
+                        type: "Get",
+                        dataType: "json",
+                        contentType: "Application/json",
+                        url: "../Jobs/GetApprovedJobs",
+                        data: {},
+                        success: function (data) {
+                            unblockPage();
+                            $("#Jobs").empty();
+                            if (data == "") {
+                                $("#msg").html("No Records Found..");
+                            }
+                            else {
+                                $("#msg").html("");
+                                $.each(data, function (key, value) {
+                                    $("#Jobs").append("<tr><td>" + value.PostedBy + "</td><td>" + value.JobTitle + "</td><td>" + value.ComanyName + "</td><td>" + value.ExperienceRequired + "</td><td>" + value.Mobile + "</td><td>" + value.Email + "</td><td>Approved</td></tr>");
+                                });
+                            }
+                            $('#datatable').dataTable();
+                        }
+                    });
+                }
+                else if (Value == "Rejected") {
+                    blockPage();
+                    test();
+                    $("#Approived").hide();
+                    $("#Pending").hide();
+                    $("#Rejected").show();
+                    $("#Jobs").empty();
+                    $.ajax({
+                        type: "Get",
+                        dataType: "json",
+                        contentType: "Application/json",
+                        url: "../Jobs/Jobs",
+                        data: { "Status": 2 },
+                        success: function (data) {
+                            unblockPage();
+                            $("#Jobs").empty();
+                            if (data == "") {
+                                $("#msg").html("No Records Found..");
+                            }
+                            else {
+                                $("#msg").html("");
+                                $.each(data, function (key, value) {
+                                    $("#Jobs").append("<tr><td>" + value.PostedBy + "</td><td>" + value.JobTitle + "</td><td>" + value.ComanyName + "</td><td>" + value.ExperienceRequired + "</td><td>" + value.Mobile + "</td><td>" + value.Email + "</td><td>Rejected</td><td><input type=button value='Approve' class='btn btn-primary' onclick=Approve('" + value.Jobid + "')></td></tr>");
+                                });
+                            }
+                            $('#datatable').dataTable();
+                        }
+                    });
+                }
+                else
+                {
+                    $("#datatable").empty();
+                }
+            });
+        });
+        function Approve(id) {
+            blockPage();
+            test();
+            $.ajax({
+                type: "Get",
+                dataType: "json",
+                contentType: "Application/json",
+                url: "../Jobs/UpdateJobs",
+                data: { "Jobid": id, "Status": 1 },
+                success: function (data) {                   
+                    unblockPage();
+                    alert("Job Approved  Successfully..");
+                    $("#Jobs").empty();
+                    $.each(data, function (key, value) {
+                        $("#Jobs").append("<tr><td>" + value.PostedBy + "</td><td>" + value.JobTitle + "</td><td>" + value.ComanyName + "</td><td>" + value.ExperienceRequired + "</td><td>" + value.Mobile + "</td><td>" + value.Email + "</td><td>Pending</td><td> <input type=button value='Approve' class='btn btn-primary' onclick=Approve('" + value.Jobid + "')></td><td><input type=button value='Reject' class='btn btn-primary' onclick=Reject('" + value.Jobid + "')></td></tr>");
+
+                    });
+                    $('#datatable').dataTable();
+                }
+            });
+        }
+
+        function Reject(id) {
+            blockPage();
+            test();
+            $.ajax({
+                type: "Get",
+                dataType: "json",
+                contentType: "Application/json",
+                url: "../Jobs/UpdateJobs",
+                data: { "Jobid": id, "Status": 2 },
+                success: function (data) {
+                    unblockPage();
+                    alert("Job Rejected  Successfully..");
+                    $("#Jobs").empty();
+                    if (data == "") {
+                        $("#msg").html("No Records Found..");
+                    }
+                    else {
+                        $("#msg").html("");
+
+                        $.each(data, function (key, value) {
+                            $("#Jobs").append("<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.PostedBy + "&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.JobTitle + "&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.ComanyName + "</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.ExperienceRequired + "</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.Mobile + "</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.Email + "</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.Description + "</td><td>&nbsp;&nbsp;&nbsp;&nbsp Pending</td><td>&nbsp;&nbsp;&nbsp;&nbsp; <input type=button value='Approve' class='btn btn-primary' onclick=Approve('" + value.Jobid + "')></td><td>&nbsp;&nbsp;&nbsp;&nbsp; <input type=button value='Reject' class='btn btn-primary' onclick=Reject('" + value.Jobid + "')></td></tr>");
+                        });
+                    }
+                    $('#datatable').dataTable();
+                }
+            });
+        }
+    </script>
+    <script>
+        $j = jQuery.noConflict();
+        //function to block the whole page
+        function blockPage() {
+            $j.blockUI({
+                message: '<h3>Please wait....</h3>',
+                css: {
+                    border: 'none',
+                    padding: '5px',
+                    'border-radius': '5px',
+                    margin: '0',
+                    opacity: .9
+                }
+            });
+            return false;
+        }
+        //function to unblock the page
+        function unblockPage() {
+            $j.unblockUI();
+        }
+    </script>
+}

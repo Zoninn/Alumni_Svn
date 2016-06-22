@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Payment";
+    int UserId = 0;
+    if (Session["UserRole"] != null)
+    {
+        UserId = Convert.ToInt32(Session["UserId"]);
+        if (Session["UserRole"].ToString() == "Alumini")
+        {
+            Layout = "~/Areas/Alumini/Views/Shared/_SRKRLayout.cshtml";
+        }
+        else if (Session["UserRole"].ToString() == "Faculty")
+        {
+            Layout = "~/Areas/Faculty/Views/Shared/_SRKRLayout.cshtml";
+        }
+    }
+    else
+    {
+        <script type="text/javascript">
+            window.location.href = "../../../Account/Login/3";
+        </script>
+    }
+}
+
+<h2>Payment Gateway</h2>
+
+@Html.Raw(ViewBag.Form)
+

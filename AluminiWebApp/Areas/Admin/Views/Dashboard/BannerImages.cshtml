@@ -1,0 +1,107 @@
+﻿@model AluminiWebApp.Areas.Admin.Models.BannerImages
+@{
+    ViewBag.Title = "BannerImages";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminMasterLayoutPage.cshtml";
+}
+@using (Html.BeginForm("BannerImages", "Dashboard", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card-box">
+                    <h4 class="m-t-0 header-title"><b>Input Types</b></h4>
+                    <p class="text-muted m-b-30 font-13">
+
+                    </p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div role="form" class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Text</label>
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(x => x.Text, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(x => x.Text, "", new { @class = "text-danger" })
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="example-email" class="col-md-2 control-label">Banner Image</label>
+                                    <div class="col-md-10">
+                                        <input type="file" name="Image" required />
+                                        @Html.ValidationMessageFor(x => x.Image, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Tags</label>
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(x => x.Tags, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(x => x.Tags, "", new { @class = "text-danger" })
+                                        @Html.HiddenFor(x => x.id)
+                                    </div>
+                                </div>
+                                <input type="submit" value="Save" class="btn btn-default btn-rounded waves-effect waves-light" />
+                                <h3>@TempData["Message"]</h3>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card-box">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h4 class="m-t-0 header-title"><b>Responsive tables</b></h4>
+                            <p class="text-muted font-13">
+
+                            </p>
+
+                            <div class="p-20">
+                                <div class="table-responsive">
+                                    <table class="table m-0">
+                                        <thead>
+                                            <tr>
+
+
+                                                <th>Message</th>
+                                                <th>Tags</th>
+                                                <th>Image</th>
+                                                <th>Edit</th>
+                                                <th>Delete</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var Data in @Model.HomeBannerImages)
+                                            {
+                                                <tr>
+
+
+                                                    <td>@Data.Text</td>
+                                                    <td>@Data.Tages</td>
+                                                    <td><img class="img-responsive thumb-lg" alt="image" src="@Data.Image"></td>
+                                                    <td><a href="@Url.Action("BannerImages", "Dashboard", new { @Area = "Admin", @id = @Data.Id })">Edit</a></td>
+                                                    <td><a href="@Url.Action("DeleteBanners", "Dashboard", new { @Area = "Admin", @id = @Data.Id })">Delete</a></td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

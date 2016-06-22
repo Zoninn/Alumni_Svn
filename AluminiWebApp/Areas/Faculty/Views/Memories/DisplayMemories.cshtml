@@ -1,0 +1,33 @@
+﻿@model AluminiWebApp.Areas.Alumini.Models.MemoriesModel
+@{
+    Layout = "~/Areas/Faculty/Views/Shared/_SRKRLayout.cshtml";
+}
+
+<div>
+    <table>
+        @foreach (var Memories in @Model.Memories)
+        {
+
+            <tr>
+                <td><h2 style="text-align:center"><b>@Memories.Title</b></h2></td>
+            </tr>
+            <tr><td><h5 style="text-align:center">Posted on : @Memories.PostedOn.Value.ToString("MMMM,dd,yyyy") &nbsp;&nbsp; Posted by: @Memories.PostedBy</h5></td></tr>
+            <tr>
+                <td>
+                    <h5 style="text-align:center">@Memories.Description</h5>
+                </td>
+            </tr>
+            <tr>
+                <td><h3 style="text-align:center"><b>Pictures</b></h3></td>
+            </tr>
+            <tr>
+                @foreach (var Images in @Memories.MemoriesImages)
+                {
+                    <td>
+                        <img style="text-align:center" src="@Images.Image" width="100">
+                    </td>
+                }
+            </tr>
+        }
+    </table>
+</div>

@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "ProfileUpdate";
+    Layout = "~/Areas/Alumini/Views/Shared/_SRKRDesignLayout.cshtml";
+}
+<section class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img8" id="nicdark_parallax_title" style="background-position: 50% 0px;">
+    <div class="nicdark_filter greydark">
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+            <div class="grid grid_12">
+                <div class="nicdark_space100"></div>
+                <div class="nicdark_space100"></div>
+                <h1 class="white subtitle">COMPONENTS</h1>
+                <div class="nicdark_space10"></div>
+                <h3 class="subtitle white">OVER 100+ COMPONENTS</h3>
+                <div class="nicdark_space20"></div>
+                <div class="nicdark_divider left big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space40"></div>
+                <div class="nicdark_space50"></div>
+            </div>
+        </div>
+        <!--end nicdark_container-->
+    </div>
+
+</section>
+<br />
+ <div class="grid grid_4">
+    <div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow">
+        <div class="nicdark_textevidence nicdark_bg_blue nicdark_radius_top">
+            <h4 class="white nicdark_margin20">Profile Update</h4>
+            <i class="icon-code nicdark_iconbg right medium blue"></i>
+        </div>
+        <ul class="nicdark_list border">
+
+            <li class="nicdark_border_grey">
+                <div class="nicdark_margin20">
+                    <div class="nicdark_activity">
+                        <p><i class="icon-right-open-outline"></i>&nbsp;<a href="@Url.Action("BasicInformation", "Profile", new { area = "Alumini" })">Basic Information</a></p>
+                    </div>
+                </div>
+            </li>
+            <li class="nicdark_border_grey">
+                <div class="nicdark_margin20">
+                    <div class="nicdark_activity">
+                        <p><i class="icon-right-open-outline"></i>&nbsp;<a href="@Url.Action("ContactInformation", "Profile", new { area = "Alumini" })">Location and Contact Info</a></p>
+                    </div>
+                </div>
+            </li>
+            <li class="nicdark_border_grey">
+                <div class="nicdark_margin20">
+                    <div class="nicdark_activity">
+                        <p><i class="icon-right-open-outline"></i>&nbsp;<a href="@Url.Action("ProfessionalDetails", "Profile", new { area = "Alumini" })">Professional Details</a></p>
+                    </div>
+                </div>
+            </li>
+            <li class="nicdark_border_grey">
+                <div class="nicdark_margin20">
+                    <div class="nicdark_activity">
+                        <p><i class="icon-right-open-outline"></i>&nbsp;<a href="@Url.Action("UpdateAlumni", "Profile", new { area = "Alumini" })">Batch / Faculty Information</a></p>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>

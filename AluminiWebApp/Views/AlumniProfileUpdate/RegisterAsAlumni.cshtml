@@ -1,0 +1,75 @@
+﻿@model AluminiWebApp.Models.StudentRegistrationModel
+
+@{
+    ViewBag.Title = "RegisterAsAlumni";
+    Layout = "~/Views/Shared/_SRKRLayout.cshtml";
+}
+
+<h3>Register As Alumni</h3>
+
+<div id="home" class="page-content grid-row">
+
+    @*<ul class="registerSteps">
+            <li>
+                <a class="active"><i>1</i> Create Account</a>
+            </li>
+            <li>
+                <a><i>2</i> Batch/Faculty Details</a>
+            </li>
+        </ul>*@
+    <div class="clear-fix"></div>
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <h5>Please select the course/program you pursured</h5>
+        <div class="grid-col-row clear-fix">
+            <div class="row clear-fix">
+                <div class="grid-col grid-col-3">
+                    <strong>Degree</strong>
+                </div>
+                <div class="grid-col grid-col-4">
+                    @Html.DropDownListFor(x => x.CourseCategoryId, new SelectList(Model.Coursecategorys, "Id", "CourseCategoryName"), "Select", new { @class = "form-control", required = "required" })
+                    @Html.ValidationMessageFor(x => x.CourseCategoryId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-col-row clear-fix">
+            <div class="row clear-fix">
+                <div class="grid-col grid-col-3">
+                    <strong>Courses</strong>
+                </div>
+                <div class="grid-col grid-col-4">
+                    <select id="ddlCourses" class="form-control" name="CourseId" required="required">
+                        <option value="">Select</option>
+                    </select>
+                    @Html.ValidationMessageFor(x => x.CourseId, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="grid-col-row clear-fix">
+            <div class="row clear-fix">
+                <div class="grid-col grid-col-3">
+                    <strong>Graduation year :</strong>
+                </div>
+                <div class="grid-col grid-col-4">
+                    <select id="ddlGraduationYear" class="form-control" name="Batch" required="required">
+                        <option value="">Select</option>
+                    </select>
+                    @Html.ValidationMessageFor(x => x.Batch, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="row clear-fix">
+            <div class="grid-col grid-col-3">
+                <input type="submit" value="Save" class="cws-button bt-color-3 border-radius" />
+
+            </div>
+        </div>
+
+    }
+    @Scripts.Render("~/Custom.js/Registration.js")
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    @*  <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>*@
+

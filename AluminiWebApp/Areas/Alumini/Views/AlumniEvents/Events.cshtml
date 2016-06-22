@@ -1,0 +1,387 @@
+﻿@model AluminiWebApp.Areas.Alumini.Models.MyEventsModel
+@{
+    ViewBag.Title = "Events";
+    Layout = "~/Areas/Alumini/Views/Shared/_SRKRDesignLayout.cshtml";
+}
+
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script>
+
+
+<section id="nicdark_parallax_title" class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img-single-teacher-1" style="background-position: 50% -60px;margin-top:-150px;">
+
+    <div class="nicdark_filter greydark">
+
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+
+            <div class="grid grid_12">
+                <div class="nicdark_space100"></div>
+                <div class="nicdark_space100"></div>
+                <h1 class="white subtitle">OUR EVENTS</h1>
+                <div class="nicdark_space20"></div>
+                <h3 class="subtitle white">CHECK OUT OUR BEST EVENTS</h3>
+                <div class="nicdark_space20"></div>
+                <div class="nicdark_divider left big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space40"></div>
+                <div class="nicdark_space50"></div>
+            </div>
+
+        </div>
+        <!--end nicdark_container-->
+
+    </div>
+
+</section>
+
+
+<!----New Design-->
+<section class="nicdark_section">
+    <!--start nicdark_container-->
+    <div class="nicdark_container nicdark_clearfix">
+        <div class="nicdark_space20"></div>
+        <div>
+            <div class="grid grid_12">
+                <input id="JobTitle" name="JobTitle" type="text" size="200" value="" placeholder="Search by Event Title" class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle" style="width:150px;" autocomplete="on">
+                <input id="SerachEvents" type="submit" value="Search" class="nicdark_zoom nicdark_btn nicdark_bg_red medium nicdark_shadow nicdark_radius white" />
+                <a href="@Url.Action("MyEvents", new { area = "Alumini" })" class="nicdark_btn nicdark_bg_green medium nicdark_shadow nicdark_radius white memories_btn pull-right"><i class="icon-picture"></i>&nbsp;&nbsp;&nbsp;MY EVENTS &nbsp;&nbsp;</a>
+              <a href="@Url.Action("Events", new { area = "Alumini" })" class="nicdark_btn nicdark_bg_green medium nicdark_shadow nicdark_radius white memories_btn pull-right" style="margin-right:10px;"><i class="icon-picture"></i>&nbsp;&nbsp;&nbsp;All Events</a>
+            </div>
+            <div>
+                <div class="nicdark_margin1820 nicdark_marginleft100 nicdark_marginleft20_iphoneland nicdark_marginleft20_iphonepotr">
+                    <div class="nicdark_focus nicdark_width_percentage25">
+                        
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="grid grid_12">@TempData["DisplayMessage"]</div>
+            <div class="nicdark_space10"></div>
+            @{int i = 0;}
+            @foreach (var EventData in Model.UserPurchasedEvents)
+            {
+
+                <div class="grid grid_3 event-list">
+                    <!--archive1-->
+                    @if (i == 0)
+                    {
+                        <div class="nicdark_archive1 nicdark_bg_green nicdark_radius nicdark_shadow">
+                            <a href="javascript:;" class="nicdark_btn nicdark_bg_greydark white medium nicdark_radius nicdark_absolute_left">@EventData.EventStartdate.Value.ToString("dd")<br /><small>@EventData.EventStartdate.Value.ToString("MMMM")</small></a>
+                            @if (File.Exists(Server.MapPath(@EventData.BannerImage)))
+                            {
+                                <img alt="" src="@EventData.BannerImage" style="height:160px;" />
+                            }
+                            else
+                            {
+                                <img src="~/Content/DesignContent/css/images/no_image.jpg" style="height:160px;" />
+                            }
+                            <div class=" nicdark_textevidence nicdark_bg_greydark">
+                                <h4 class="white nicdark_margin20 event-name1">@EventData.EventName</h4>
+                            </div>
+
+                            <div class="nicdark_margin20">
+                                <h5 class="white event-venue1"><i class="icon-pin-outline"></i>@EventData.EventVenue</h5>
+                                <div class="nicdark_space10"></div>
+                                <h5 class="white"><i class="icon-clock-1"></i>@EventData.EventStartdate.Value.ToString("MMMM dd,yyyy")</h5>
+                                <div class="nicdark_space20"></div>
+                                <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                                <div class="nicdark_space20"></div>
+                                @if (EventData.EventDescription != null)
+                                {
+                                    if (EventData.EventDescription.ToString().Length >= 60)
+                                    {
+                                        <p class="white event-description1">@EventData.EventDescription.Substring(0, 60)...</p>
+                                    }
+                                    else
+                                    {
+                                        <p class="white event-description1">@EventData.EventDescription.ToString()...</p>
+                                    }
+                                }
+                                else
+                                {
+                                    <p class="white event-description1">No Description Available...</p>
+                                }
+                                <div class="nicdark_space20"></div>
+                                <a href="../AlumniEvents/SingleEvent?EventId=@EventData.EventId" class=" nicdark_press nicdark_btn nicdark_bg_greendark white nicdark_radius nicdark_shadow medium">BOOK NOW</a>
+                            </div>
+
+                        </div>
+            <!--archive1-->
+                    }
+                    @if (i == 1)
+                    {
+                        <div class="nicdark_archive1 nicdark_bg_blue nicdark_radius nicdark_shadow">
+                            <a href="javascript:;" class="nicdark_btn nicdark_bg_greydark white medium nicdark_radius nicdark_absolute_left">@EventData.EventStartdate.Value.ToString("dd")<br /><small>@EventData.EventStartdate.Value.ToString("MMMM")</small></a>
+
+                            @if (File.Exists(Server.MapPath(@EventData.BannerImage)))
+                            {
+                                <img alt="" src="@EventData.BannerImage" style="height:160px;" />
+                            }
+                            else
+                            {
+
+                                <img src="~/Content/DesignContent/css/images/no_image.jpg" style="height:160px;" />
+                            }
+
+                            <div class=" nicdark_textevidence nicdark_bg_greydark">
+                                <h4 class="white nicdark_margin20 event-name1">@EventData.EventName</h4>
+                            </div>
+
+                            <div class="nicdark_margin20">
+                                <h5 class="white event-venue1"><i class="icon-pin-outline"></i>@EventData.EventVenue</h5>
+                                <div class="nicdark_space10"></div>
+                                <h5 class="white"><i class="icon-clock-1"></i>@EventData.EventStartdate.Value.ToString("MMMM dd,yyyy")</h5>
+                                <div class="nicdark_space20"></div>
+                                <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                                <div class="nicdark_space20"></div>
+                                @if (@EventData.EventDescription != null)
+                                {
+                                    if (@EventData.EventDescription.ToString().Length >= 60)
+                                    {
+                                        <p class="white event-description1">@EventData.EventDescription.Substring(0, 60)...</p>
+                                    }
+                                    else
+                                    {
+                                        <p class="white event-description1">@EventData.EventDescription.ToString()...</p>
+                                    }
+                                }
+                                else
+                                {
+                                    <p class="white event-description1">No Description Available...</p>
+                                }
+                                <div class="nicdark_space20"></div>
+                                <a href="../AlumniEvents/SingleEvent?EventId=@EventData.EventId" class="nicdark_press nicdark_btn nicdark_bg_bluedark white nicdark_radius nicdark_shadow medium">BOOK NOW</a>
+                            </div>
+
+                        </div>
+            <!--archive1-->
+                    }
+                    @if (i == 2)
+                    {
+                        <div class="nicdark_archive1 nicdark_bg_yellow nicdark_radius nicdark_shadow">
+                            <a href="javascript:;" class="nicdark_btn nicdark_bg_greydark white medium nicdark_radius nicdark_absolute_left">@EventData.EventStartdate.Value.ToString("dd")<br /><small>@EventData.EventStartdate.Value.ToString("MMMM")</small></a>
+
+                            @if (File.Exists(Server.MapPath(@EventData.BannerImage)))
+                            {
+                                <img alt="" src="@EventData.BannerImage" style="height:160px;" />
+                            }
+                            else
+                            {
+
+                                <img src="~/Content/DesignContent/css/images/no_image.jpg" style="height:160px;" />
+                            }
+
+                            <div class=" nicdark_textevidence nicdark_bg_greydark">
+                                <h4 class="white nicdark_margin20 event-name1">@EventData.EventName</h4>
+                            </div>
+
+                            <div class="nicdark_margin20">
+                                <h5 class="white event-venue1"><i class="icon-pin-outline"></i>@EventData.EventVenue</h5>
+                                <div class="nicdark_space10"></div>
+                                <h5 class="white"><i class="icon-clock-1"></i>@EventData.EventStartdate.Value.ToString("MMMM dd,yyyy")</h5>
+                                <div class="nicdark_space20"></div>
+                                <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                                <div class="nicdark_space20"></div>
+                                @if (@EventData.EventDescription != null)
+                                {
+                                    if (@EventData.EventDescription.ToString().Length >= 60)
+                                    {
+                                        <p class="white event-description1">@EventData.EventDescription.Substring(0, 60)...</p>
+                                    }
+                                    else
+                                    {
+                                        <p class="white event-description1">@EventData.EventDescription.ToString()...</p>
+                                    }
+                                }
+                                else
+                                {
+                                    <p class="white event-description1">No Description Available...</p>
+                                }
+                                <div class="nicdark_space20"></div>
+                                <a href="../AlumniEvents/SingleEvent?EventId=@EventData.EventId" class="nicdark_press nicdark_btn nicdark_bg_yellowdark white nicdark_radius nicdark_shadow medium">BOOK NOW</a>
+                            </div>
+
+                        </div>
+            <!--archive1-->
+                    }
+                    @if (i == 3)
+                    {
+                        <div class="nicdark_archive1 nicdark_bg_orange nicdark_radius nicdark_shadow">
+                            <a href="javascript:;" class="nicdark_btn nicdark_bg_greydark white medium nicdark_radius nicdark_absolute_left">@EventData.EventStartdate.Value.ToString("dd")<br /><small>@EventData.EventStartdate.Value.ToString("MMMM")</small></a>
+
+                            @if (File.Exists(Server.MapPath(@EventData.BannerImage)))
+                            {
+                                <img alt="" src="@EventData.BannerImage" style="height:160px;" />
+                            }
+                            else
+                            {
+
+                                <img src="~/Content/DesignContent/css/images/no_image.jpg" style="height:160px;" />
+                            }
+
+                            <div class=" nicdark_textevidence nicdark_bg_greydark">
+                                <h4 class="white nicdark_margin20 event-name1">@EventData.EventName</h4>
+                            </div>
+
+                            <div class="nicdark_margin20">
+                                <h5 class="white event-venue1"><i class="icon-pin-outline"></i>@EventData.EventVenue</h5>
+                                <div class="nicdark_space10"></div>
+                                <h5 class="white"><i class="icon-clock-1"></i>@EventData.EventStartdate.Value.ToString("MMMM dd,yyyy")</h5>
+                                <div class="nicdark_space20"></div>
+                                <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                                <div class="nicdark_space20"></div>
+                                @if (@EventData.EventDescription != null)
+                                {
+                                    if (@EventData.EventDescription.ToString().Length >= 60)
+                                    {
+                                        <p class="white event-description1">@EventData.EventDescription.Substring(0, 60)...</p>
+                                    }
+                                    else
+                                    {
+                                        <p class="white event-description1">@EventData.EventDescription.ToString()...</p>
+                                    }
+                                }
+                                else
+                                {
+                                    <p class="white event-description1">No Description Available...</p>
+                                }
+                                <div class="nicdark_space20"></div>
+                                <a href="../AlumniEvents/SingleEvent?EventId=@EventData.EventId" class="nicdark_press nicdark_btn nicdark_bg_orangedark white nicdark_radius nicdark_shadow medium">BOOK NOW</a>
+                            </div>
+
+                        </div>
+                        i = -1;
+            <!--archive1-->
+                    }
+                    @{
+                i++;
+                    }
+
+
+                </div>
+
+            }
+            <div class="nicdark_space50"></div>
+
+        </div>
+        <!--end nicdark_container-->
+
+</section>
+
+<!--New End-->
+<!--Old Desing-->
+@*<div>
+        <h3 class="center-text alumini_head"><span>Latest Events</span></h3>
+    </div>*@
+<!-- section -->
+<script src="~/Custom.js/jquery-1.10.2.min.js"></script>
+<script src="~/Custom.js/jquery.lazy.js"></script>
+<script src="~/Custom.js/jquery.lazy.min.js"></script>
+@*<div class="page-content container clear-fix padding-top-10">
+        <div class="grid-row clear-fix">
+            <h3> @TempData["DisplayMessage"]</h3>
+            <div class="grid-col-row">
+                <!-- course item -->
+                @foreach (var UserEvents in Model.UserPurchasedEvents)
+                {  <div class="grid-col grid-col-4">
+                    <div class="course-item">
+                        <div class="course-hover">
+                            <img src="@UserEvents.BannerImage" data-at2x="pic/370x280-img-1@2x.jpg" alt>
+                            <div class="hover-bg bg-color-1"></div>
+                            <a href="../AlumniEvents/SingleEvent?EventId=@UserEvents.EventId">Book Now</a>
+                        </div>
+                        <div class="course-name clear-fix">
+                            <h3><a href="#">@UserEvents.EventName</a></h3>
+                            @*<span class="price"><small>Bookings:</small> @UserEvents.TicketsPaidCount</span>
+                        </div>
+                        <div class="clear-fix eventData">
+                            <div class="banner-offer icon-right">
+                                <div class="banner-text"><p>Start</p><h2>@UserEvents.EventStartdate.Value.ToString("MMMM dd,yyyy") @UserEvents.StartTime</h2></div>
+                            </div>
+                            <div class="banner-offer icon-right">
+                                <div class="banner-text"><p>End</p><h2>@UserEvents.EndDate.Value.ToString("MMMM dd,yyyy") @UserEvents.EndTime</h2></div>
+                            </div>
+                            <div class="clear-fix"></div>
+                            <div style="min-height:80px;border-top:1px solid rgba(0,0,0,0.1);padding-top:10px;">
+                                Address: @UserEvents.EventVenue
+                            </div>
+                            <div align="right">
+                                <a href="../AlumniEvents/SingleEvent?EventId=@UserEvents.EventId" class="cws-button border-radius alt smaller">Book Now <i class="fa fa-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+                <!-- / course item -->
+            </div>
+        </div>
+    </div>*@
+
+<!-- / section -->
+<script type="text/javascript">
+    $(document).ready(function () {
+
+    });
+
+    $(function () {
+        $('.lazy').lazy();
+    });
+
+
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#JobTitle").autocomplete({
+            width: 320,
+            max: 4,
+            highlight: false,
+            multiple: true,
+            multipleSeparator: ",",
+            scroll: true,
+            scrollHeight: 300,
+            delay: 10,
+            source: function (request, response) {
+                var Auto = $("#JobTitle").val();
+                $.ajax({
+                    url: "../AlumniEvents/AuctocompleteEventsearch",
+                    data: ({ "EventTitle": Auto }),
+                    dataType: "json",
+                    type: "GET",
+                    contentType: "application/json; charset=utf-8",
+                    dataFilter: function (data) { return data; },
+                    success: function (data) {
+                        if (data == "") {
+                            alert("No Records FOund");
+                        }
+                        else {
+                            response($.map(data, function (item) {
+                                return {
+
+                                    value: item.EventName
+                                }
+                            }))
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert(textStatus);
+                    }
+                });
+            },
+            minLength: 2
+        });
+
+        $('#SerachEvents').click(function () {
+            var Eventname = $('#JobTitle').val();          
+            window.location.href = "../AlumniEvents/Events?EvenName=" + Eventname + "";
+        });
+    });
+
+</script>
+
+
+
+

@@ -1,0 +1,357 @@
+﻿@model AluminiWebApp.Areas.Alumini.Models.AlumniEventsModel
+
+@{
+    ViewBag.Title = "EventSelection";
+    Layout = "~/Areas/Faculty/Views/Shared/_SRKRLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true);
+                                 foreach (var events in ViewBag.EventsOnId)
+                                 {
+                                    <div class="page-content container clear-fix">
+
+                                        <div class="grid-col-row">
+
+                                            <div class="grid-col grid-col-9">
+                                                <main>
+                                                    <div class="blog-post">
+                                                        <article>
+                                                            <div class="post-info clear-fix">
+                                                                <div class="date-post"><div class="day">26</div><div class="month">Feb</div></div>
+                                                                <div class="post-info-main">
+                                                                    <div class="author-post">@events.EventName</div>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="blog-media picture">
+                                                                <div class="hover-effect"></div>
+                                                                <div class="link-cont">
+
+                                                                </div>
+                                                                <img src="@events.BannerImage" class="columns-col-12" alt>
+                                                            </div>
+                                                            <h2>Venue</h2><h5>@events.EventName</h5> <h5>@events.EventVenue</h5>
+                                                            <h2>Get your Tickets Now!</h2><h3 id="EventExpired">@TempData["ErrorMessage"]</h3>
+                                                            <h5 style="text-align:center"><a id="Going"><i class="fa fa-plus"></i> I will Join</a>&nbsp;<a id="MaybeGoing"><i class="fa fa-star"></i>&nbsp;May be</a>&nbsp;&nbsp;<a id="Decline"><i class="fa fa-ban"></i>&nbsp;Decline</a></h5>
+                                                            <div style="text-align:right;height:30px;">
+                                                                <span style="border:1px solid #d3d3d3;padding:5px;">
+                                                                    <span style="margin-right:5px;padding-right:5px;border-right:1px solid #d3d3d3;">May be: <strong id="Maybe" style="font-weight:600;"></strong></span>
+                                                                    <span style="margin-right:5px;padding-right:5px;border-right:1px solid #d3d3d3;">Decline: <strong id="Declinebyuser" style="font-weight:600;"></strong></span>
+                                                                    <span>I will join: <strong id="IllJoin" style="font-weight:600;"></strong></span>
+                                                                </span>
+                                                                <i id="DeclineGlf" class="fa fa-exclamation-triangle">&nbsp;<span id="ErrorMessage"></span></i>
+                                                            </div>
+                                                            <div style="border:1px solid #d3d3d3;padding:20px" id="TicketsDisplay">
+                                                                <table>
+                                                                    <tbody id="BindTickets"></tbody>
+                                                                    <tfoot>
+                                                                        <tr>
+
+                                                                            <td>Total Amount:</td>
+                                                                            <td style="text-align:left"> <label id="TotalAmount"></label></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td>
+                                                                                <br />
+                                                                                @if (events.EventExpired == 1)
+                                                                                {
+                                                                                    <script type="text/javascript">
+                                                                                        $(document).ready(function () {
+                                                                                            alert("This Event is expired....");
+                                                                                            $("#EventExpired").html("This Event is expired...");
+                                                                                        });
+                                                                                    </script>
+                                                                                }
+                                                                                else
+                                                                                {
+                                                                                    <script type="text/javascript">
+                                                                                        $(document).ready(function () {
+                                                                                            $("#EventExpired").html("");
+                                                                                        });
+                                                                                    </script>
+                                                                                    <input type="submit" id="BookTickets" class="cws-button bt-color-4 border-radius" value="BOOK NOW" />
+                                                                                }
+                                                                                @*<a id="BookTickets" class=" cws-button bt-color-4 border-radius">BOOK NOW</a>*@
+                                                                            </td>
+                                                                        </tr>
+                                                                </table>
+                                                            </div>
+
+                                                            <div>
+                                                                <br />
+                                                                <br />
+
+                                                                <table style="border:1px solid #d3d3d3;padding:20px">
+                                                                    <tr>
+                                                                        <td>
+                                                                            <br />
+                                                                            <u> <h3 style="text-align:center">Event Description</h3></u>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+
+                                                                            <br />
+                                                                            <h5 style="text-align:center">
+                                                                                "@events.EventDescription
+                                                                            </h5>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+
+                                                        </article>
+                                                    </div>
+                                                </main>
+                                            </div>
+                                            <div class="grid-col grid-col-3 sidebar">
+                                                <!-- widget event -->
+                                                <aside class="widget-event">
+                                                    <h2>Upcoming Events</h2>
+
+
+                                                    @foreach (var UpcomingEvents in ViewBag.EventsOnId)
+                                                    {
+                                                        foreach (var EventUsers in UpcomingEvents.EventIds)
+                                                        {
+
+
+                                                            <article class="clear-fix">
+                                                                <div class="date"><div class="day">@EventUsers.EventStartDate.ToString("dd")</div><div class="month">Feb</div></div>
+                                                                <div class="event-description"><span>@EventUsers.EventStartDate.ToString("dd-MM-yyyy")</span><p>@EventUsers.EventName</p></div>
+                                                                <a style="text-align:right" class="active" data-boxs-tab="1" href="../FacultyEvents/SingleEvent?EventId=@EventUsers.EventId">View More</a>
+                                                            </article>
+                                                        }
+                                                    }
+                                                </aside>
+                                                <!-- / widget event -->
+                                                <!-- widget archive -->
+                                                <aside class="widget-archives">
+                                                    <h2 style="text-align:center">Support</h2>
+                                                    <hr class="divider-big" />
+                                                    <ul>
+                                                        <li><h5>Event ID : @events.EventId</h5></li>
+                                                        <li><h5>@events.Email</h5></li>
+                                                        <li><h5>@events.MobileNumber</h5></li>
+                                                        <li><h5 id="EventStartDate">Start Date : @events.EventStartdate.ToString("dd-MM-yyyy")  --  @events.StartTime</h5></li>
+                                                        <li><h5 id="EventEndDate">End Date : @events.EndDate.ToString("dd-MM-yyyy") --  @events.EndTime</h5></li>
+
+                                                    </ul>
+                                                </aside>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <table>
+                                            <tr id="TicketTypesEventTypeId"></tr>
+                                            <tr id="TypeAmount"></tr>
+                                            <tr id="TicketQuantity"></tr>
+                                        </table>
+                                        <input type="hidden" value="@Model.EventId" id="EventId" />
+                                    </div>
+
+                                 }
+}
+
+
+<script type="text/javascript">
+    function getParameterByName(name) { name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]"); var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"), results = regex.exec(location.search); return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " ")); }
+    var EventId = getParameterByName('EventId');
+    $(document).ready(function () {
+        $.ajax({
+            type: "Get",
+            dataType: "json",
+            contenttype: "Application/json",
+            url: "../FacultyEvents/GetEventTypesOnId",
+            data: ({ "EventId": EventId }),
+            success: function (data) {
+                $.each(data, function (key, value) {
+                    var selectList = "<select class='selectAggregate'>";
+                    var TotalTicketsCount = value.Quantity;
+                    if (TotalTicketsCount == 0) {
+                        $("#BindTickets").append("<tr><td hidden='hidden'>" + value.TypeId + "</td><td><h3>" + value.Heading + "</h2>&nbsp;&nbsp;&nbsp;</td><td><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + value.Price + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3></td><td><h5>SOLD OUT<h5></td></tr>");
+                    }
+                    else {
+                        for (var i = 0; i <= TotalTicketsCount; i++) {
+                            selectList += "<option>" + i + "</option>";
+                        }
+                        $("#BindTickets").append("<tr><td hidden='hidden'>" + value.TypeId + "</td><td><h3>" + value.Heading + "</h2>&nbsp;&nbsp;&nbsp;</td><td><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + value.Price + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3></td><td>" + selectList + "</td></tr>");
+                    }
+                });
+            }
+        });
+        $(document).on('change', ".selectAggregate", function () {
+
+            $("#TicketTypesEventTypeId").empty();
+            $("#TypeAmount").empty();
+            $("#TicketQuantity").empty();
+
+            var list = new Array();
+            var EventTypeId = new Array();
+            var TicketAmounts = new Array();
+            var TicketsQuantity = new Array();
+            $('.selectAggregate').each(function () {
+                var HiddentTicketTypeId = $(this).closest('tr').children('td:first').text();
+                var QuantityValue = $("option:selected", this).text();
+                var TicketAmount = $(this).closest('tr').children(' td:nth-child(3)').text();
+                var TotalCalAmount = (QuantityValue * TicketAmount);
+                if (TotalCalAmount != 0) {
+                    list.push(TotalCalAmount);
+                    EventTypeId.push(HiddentTicketTypeId);
+                    TicketAmounts.push(TicketAmount);
+                    TicketsQuantity.push(QuantityValue);
+                }
+            });
+            var TotalPurchasedAmount = 0;
+            $.each(list, function (key, value) {
+                if (value != 0) {
+                    TotalPurchasedAmount += value;
+                }
+            });
+            $("#TotalAmount").html(TotalPurchasedAmount + ".00");
+
+            var TicketCost = 0;
+            $.each(EventTypeId, function (key, value) {
+
+                $("#TicketTypesEventTypeId").append("<tr><td><input type='hidden' id='HiddenEventTypeId'  name='EventTypeId' value=" + value + " /><td></tr>");
+            });
+
+            $.each(TicketAmounts, function (key, value) {
+
+                $("#TypeAmount").append("<tr><td><input type='hidden'  name='TicketAmount' value=" + value + " /><td></tr>");
+            });
+
+
+            $.each(TicketsQuantity, function (key, value) {
+
+                $("#TicketQuantity").append("<tr><td><input type='hidden'  name='TicketsQuantity' value=" + value + " /><td></tr>");
+            });
+
+        });
+        $("#BookTickets").click(function () {
+            var TotalAmount = $("#TotalAmount").html();
+            if (TotalAmount != "" && TotalAmount != null) {
+                alert("Are you sure you want to book now");
+                window.location.href = "../FacultyEvents/BookEvent";
+            }
+            else {
+                alert("Please select the Tickets")
+            }
+
+
+        });
+    });
+</script>
+<style>
+    Link.css {
+    }
+</style>
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+
+<script>
+
+
+    $(function () {
+        $("#EventSelectDate").datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+    });
+</script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#ErrorMessage").html("");
+        $("#DeclineGlf").hide();
+        $.ajax({
+            type: "Get",
+            dataType: "json",
+            contentType: "Application",
+            url: "../FacultyEvents/GetUserEventGoingCounts",
+            data: { "EventId": EventId },
+            success: function (data) {
+                $("#Maybe").html(data.MaybeCount);
+                $("#Declinebyuser").html(data.DeclineCount);
+                $("#IllJoin").html(data.IwillJoin);
+                if (data.UserDeclined == 1) {                  
+                    $("#TicketsDisplay").hide();
+                    $("#DeclineGlf").show();
+                    $("#ErrorMessage").html("Due to you decline the event the tickets are not available to you ? if you want to book the tickets please click on maybe ");
+                }
+                else {
+                    $("#TicketsDisplay").show();
+                    $("#ErrorMessage").html("");
+                    $("#DeclineGlf").hide();
+                }
+            }
+        });
+
+
+
+        $("#MaybeGoing").click(function () {
+            $("#TicketsDisplay").show();
+            $("#ErrorMessage").html("");
+            $("#DeclineGlf").hide();
+            $.ajax({
+                type: "Get",
+                dataType: "json",
+                contentType: "Application",
+                url: "../FacultyEvents/EventGoing",
+                data: { "Type": 1, "Status": "Maybe", "EventId": EventId },
+                success: function (data) {
+
+                    $("#Maybe").html(data.MaybeCount);
+                    $("#Declinebyuser").html(data.DeclineCount);
+                    $("#IllJoin").html(data.IwillJoin);
+                    if (data.UserDeclined == 1) {
+                        $("#TicketsDisplay").hide();
+                        $("#DeclineGlf").show();
+                        $("#ErrorMessage").html("Due to you decline the event the tickets are not available to you ? if you want to book the tickets please click on maybe ");
+                    }
+                    else {
+                        $("#TicketsDisplay").show();
+                        $("#ErrorMessage").html("");
+                    }
+
+                }
+            });
+        });
+        $("#Decline").click(function () {
+            $("#TicketsDisplay").hide();
+            $("#DeclineGlf").show();
+            alert("Due to you decline the event the tickets are not available to you ? if you want to book the tickets please click on maybe ");
+            $.ajax({
+                type: "Get",
+                dataType: "json",
+                contentType: "Application",
+                url: "../FacultyEvents/EventGoing",
+                data: { "Type": 2, "Status": "Decline", "EventId": EventId },
+                success: function (data) {
+                    $("#Maybe").html(data.MaybeCount);
+                    $("#Declinebyuser").html(data.DeclineCount);
+                    $("#Maybe").html(data.MaybeCount);
+                    $("#Declinebyuser").html(data.DeclineCount);
+                    $("#IllJoin").html(data.IwillJoin);
+                    if (data.UserDeclined == 1) {
+                        $("#TicketsDisplay").hide();
+                        $("#ErrorMessage").html("Due to you decline the event the tickets are not available to you ? if you want to book the tickets please click on maybe ");
+                    }
+                    else {
+                        $("#TicketsDisplay").show();
+                        $("#ErrorMessage").html("");
+                        $("#DeclineGlf").hide();
+                    }
+                }
+            });
+        });
+    });
+</script>

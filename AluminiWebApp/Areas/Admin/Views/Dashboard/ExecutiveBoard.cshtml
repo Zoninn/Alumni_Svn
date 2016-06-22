@@ -1,0 +1,129 @@
+﻿@model  AluminiWebApp.Areas.Admin.Models.ExecutiveBoard
+
+@{
+    ViewBag.Title = "ExecutiveBoard";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminMasterLayoutPage.cshtml";
+}
+@using (Html.BeginForm("ExecutiveBoard", "Dashboard", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card-box">
+                    <h4 class="m-t-0 header-title"><b>Input Types</b></h4>
+                    <p class="text-muted m-b-30 font-13">
+                    </p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div role="form" class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Full Name</label>
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(x => x.Name, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="example-email" class="col-md-2 control-label">Email</label>
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Mobile</label>
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(x => x.Mobile, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(x => x.Mobile, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Role</label>
+                                    <div class="col-md-10">
+                                        @Html.TextBoxFor(x => x.Role, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(x => x.Role, "", new { @class = "text-danger" })
+                                        @Html.HiddenFor(x => x.id)
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Image</label>
+                                    <div class="col-md-10">
+                                        <input type="file" name="Image" />
+                                    </div>
+                                </div>
+
+                                <input type="submit" class="btn btn-primary btn-rounded waves-effect waves-light" value="Save" />
+                                <h4>@TempData["Message"]</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card-box">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h4 class="m-t-0 header-title"><b>Executive Board</b></h4>
+                        <p class="text-muted font-13">
+
+                        </p>
+
+                        <div class="p-20">
+                            <div class="table-responsive">
+                                <table class="table m-0">
+                                    <thead>
+                                        <tr>
+                                            <th>id</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Role</th>
+                                            <th>Mobile</th>
+                                            <th>Image</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var Data in @Model.ExecutiveBoardDetail)
+                                        {
+                                            <tr>
+
+                                                <td>@Data.id</td>
+                                                <td>@Data.Name</td>
+                                                <td>@Data.Email</td>
+                                                <td>@Data.ROle</td>
+                                                <td>@Data.Mobile</td>
+                                                <td>
+                                                    <img class="img-responsive thumb-md" alt="image" src="@Data.Image">
+                                                </td>
+
+                                                <td>
+                                                    <a href="@Url.Action("ExecutiveBoard", "Dashboard", new { @area = "Admin", @id = @Data.id })" class="btn btn-primary btn-rounded waves-effect waves-light">Edit</a>
+                                                </td>
+                                                <td>
+                                                    <a href="@Url.Action("DeleteExecutiveBoard", "Dashboard", new { @area = "Admin", @id = @Data.id })" class="btn btn-primary btn-rounded waves-effect waves-light">Delete</a>
+                                                </td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

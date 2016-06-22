@@ -1,0 +1,86 @@
+﻿@model AluminiWebApp.Areas.Alumini.Models.JobsModel
+
+@{
+    Layout = "~/Areas/Alumini/Views/Shared/_SRKRDesignLayout.cshtml";
+}
+
+<div class="nicdark_site">
+    <div class="nicdark_site_fullwidth nicdark_clearfix">
+        <div class="nicdark_overlay"></div>
+        <section class="nicdark_section">
+            <div class="nicdark_space10"></div>
+            <!--start nicdark_container-->
+            <div class="nicdark_container nicdark_clearfix">
+                <div class="grid grid_12 fade-left animate1 animated fadeInLeft">
+                    <div class="nicdark_textevidence nicdark_bg_grey nicdark_shadow nicdark_radius">
+                        <div class="nicdark_margin20">
+                            <h4 class="">@Model.singleJobs.FirstOrDefault().JobTitle - <strong>@Model.singleJobs.FirstOrDefault().ComanyName</strong><small class="pull-right">(Exp: @Model.singleJobs.FirstOrDefault().ExperienceRequired)</small></h4>
+                            <input type="hidden" id="Value" value="@Session["UserId"].ToString()" />
+                            <div class="nicdark_space20"></div>
+                            <div class="nicdark_margin20 nicdark_height400 nicdark_nicescrool" tabindex="5001" style="overflow-y:scroll; outline: none; cursor: -webkit-grab;padding-right:10px;">
+                                <p>
+                                    <strong>Skills required:</strong>
+                                    @foreach (string skill in Model.singleJobs.FirstOrDefault().Skills.Split(','))
+                                    {
+                                        <a href="javascript:;" class="nicdark_btn nicdark_bg_grey2 small nicdark_shadow nicdark_radius grey subtitle nicdark_margin5">@skill</a>
+                                    }
+                                </p>
+                                <div class="nicdark_space10"></div>
+                                <p>
+                                    <strong>Salary: </strong> @Model.singleJobs.FirstOrDefault().Salary
+                                </p>
+                                <div class="nicdark_space10"></div>
+                                <p>
+                                    <strong>Functional Area: </strong> @Model.singleJobs.FirstOrDefault().FunactionalName
+                                </p>
+                                <div class="nicdark_space10"></div>
+                                <p>
+                                    <strong>Job Role: </strong> @Model.singleJobs.FirstOrDefault().Role
+                                </p>
+                                <div class="nicdark_space10"></div>
+                                <p>
+                                    <strong>Qualification: </strong> @Model.singleJobs.FirstOrDefault().Qualification
+                                </p>
+                                <div class="nicdark_space10"></div>
+                                <p>
+                                    <strong>Location: </strong> @Model.singleJobs.FirstOrDefault().Location
+                                </p>
+                                <div class="nicdark_space10"></div>
+                                @if (Model.singleJobs.FirstOrDefault().Description != null)
+                                {
+                                    <p class="">@Model.singleJobs.FirstOrDefault().Description</p>
+                                }
+                                else
+                                {
+                                    <p class="white">No Description Available...</p>
+                                }
+                                <div class="nicdark_space10"></div>
+                                <h4>Contact details</h4>
+                                <div class="nicdark_space10"></div>
+                                <p>
+                                    <strong>Person: </strong> @Model.singleJobs.FirstOrDefault().PostedBy
+                                </p>
+                                <div class="nicdark_space10"></div>
+                                <p>
+                                    <strong>Email: </strong> @Model.singleJobs.FirstOrDefault().Email
+                                </p>
+                                <div class="nicdark_space10"></div>
+                                <p>
+                                    <strong>Mobile: </strong> @Model.singleJobs.FirstOrDefault().Mobile
+                                </p>
+                                <div class="nicdark_space10"></div>
+                                <p>
+                                    <strong>Company Url: </strong> <a class="link-blue" target="_blank" href="@Model.singleJobs.FirstOrDefault().ComanyUrl">@Model.singleJobs.FirstOrDefault().ComanyUrl</a>
+                                </p>
+                                <div class="nicdark_space10"></div>
+                            </div>
+                            <div class="nicdark_space20"></div>
+                        </div>
+                        <i class="icon-graduation-cap nicdark_iconbg right big orange"></i>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+</div>

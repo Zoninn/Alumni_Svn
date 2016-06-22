@@ -1,0 +1,43 @@
+﻿@model AluminiWebApp.Areas.Alumini.Models.MyEventsModel
+
+
+@{
+    ViewBag.Title = "Events";
+    Layout = "~/Areas/Faculty/Views/Shared/_SRKRLayout.cshtml";
+}
+<!-- section -->
+<section class="padding-section eventsPage">
+    <div class="grid-row clear-fix">
+        <h3> @TempData["DisplayMessage"]</h3>
+        <h2 class="center-text alumini_head"><span>Latest Events</span></h2>
+        <div class="grid-col-row">
+
+            <!-- course item -->
+            @foreach (var UserEvents in @Model.UserPurchasedEvents)
+            {  <div class="grid-col grid-col-4">
+                <div class="course-item">
+                    <div class="course-hover">
+                        <img src="@UserEvents.BannerImage" data-at2x="pic/370x280-img-1@2x.jpg" alt>
+                        <div class="hover-bg bg-color-1"></div>
+                        <a href="../FacultyEvents/SingleEvent?EventId=@UserEvents.EventId">Book Now</a>
+                    </div>
+                    <div class="course-name clear-fix">
+                        <span class="price">@UserEvents.TicketsPaidCount</span>
+                        <h3><a href="#">@UserEvents.EventName</a></h3>
+                    </div>
+                    <div class="course-date bg-color-1 clear-fix">
+                        <div class="day"><i class="fa fa-calendar"></i>@UserEvents.EventStartdate.Value.ToString("MMMM dd,yyyy")</div><div class="time"><i class="fa fa-clock-o"></i>@UserEvents.StartTime</div>
+                        <div class="divider"></div>
+                        <div class="day"><i class="fa fa-calendar"></i>@UserEvents.EndDate.Value.ToString("MMMM dd,yyyy")</div><div class="time"><i class="fa fa-clock-o"></i>@UserEvents.EndTime</div>
+
+                        <div class="address"><i class="fa fa-map-marker"></i>Address: @UserEvents.EventVenue</div>
+                    </div>
+                </div>
+            </div>
+            }
+            <!-- / course item -->
+
+        </div>
+    </div>
+</section>
+<!-- / section -->

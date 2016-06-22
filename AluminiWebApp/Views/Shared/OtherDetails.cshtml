@@ -1,0 +1,25 @@
+﻿@model Alumini.Core.UserDetailsDTO
+
+<div>
+    <table>
+        <tr>
+            <td>
+                @Ajax.ActionLink("Register as Alumni", "StudentRegistration", null, new AjaxOptions { UpdateTargetId = "StudentDiv", InsertionMode = InsertionMode.Replace }, new { @class = "btn btn-primary" })
+
+            </td>
+            <td>
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                @Ajax.ActionLink("Register as Faculty", "FacultyRegistration", null, new AjaxOptions { UpdateTargetId = "StudentDiv", InsertionMode = InsertionMode.Replace }, new { @class = "btn btn-info" })
+            </td>
+        </tr>
+    </table>
+</div>
+<div id="StudentDiv">
+
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+
+

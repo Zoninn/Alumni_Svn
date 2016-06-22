@@ -1,0 +1,96 @@
+﻿@model AluminiWebApp.Areas.Alumini.Models.MyEventsModel
+@{
+    ViewBag.Title = "MyEvents";
+    Layout = "~/Areas/Alumini/Views/Shared/_SRKRDesignLayout.cshtml";
+}
+<section id="nicdark_parallax_title" class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img-single-teacher-1" style="background-position: 50% -60px;margin-top:-150px;">
+
+    <div class="nicdark_filter greydark">
+
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+
+            <div class="grid grid_12">
+                <div class="nicdark_space100"></div>
+                <div class="nicdark_space100"></div>
+                <h1 class="white subtitle">My Event Tickets</h1>
+                <div class="nicdark_space20"></div>
+                <div class="nicdark_divider left big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space40"></div>
+                <div class="nicdark_space50"></div>
+            </div>
+
+        </div>
+        <!--end nicdark_container-->
+
+    </div>
+
+</section>
+
+
+<!--start section-->
+<section class="nicdark_section">
+    <!--start nicdark_container-->
+    <div class="nicdark_container nicdark_clearfix">
+        <div class="nicdark_space20"></div>
+        <div class="grid grid_12">
+            <div class="nicdark_textevidence nicdark_bg_grey nicdark_shadow nicdark_radius left overflow_scroll">
+                <table class="nicdark_table extrabig nicdark_bg_green nicdark_radius ">
+                    <thead class="nicdark_border_green">
+                        <tr>
+                            <td><h4 class="white">Event Name</h4></td>
+                            <td><h4 class="white">Event Start Date</h4></td>
+                            <td><h4 class="white">Event End Date</h4></td>
+                            <td><h4 class="white">Event Date</h4></td>
+                            <td><h4 class="white">View Details</h4></td>
+                        </tr>
+                    </thead>
+                    <tbody class="nicdark_bg_grey nicdark_border_grey">
+                        @foreach (var Data in @Model.UserPurchasedEvents)
+                        {
+                            var Date = @DateTime.Now.ToString("dd MMM yyyy");
+                            var EventEnd = @Data.EventStartdate.Value.ToString("dd MMM yyyy");
+                            <tr>
+                                <td><p>@Data.EventName</p></td>
+                                <td><p>@Data.EventStartdate.Value.ToString("dd MMM yyyy")</p></td>
+                                <td><p>@Data.EndDate.Value.ToString("dd MMM yyyy")</p></td>
+                                @if (Data.EventGoingDate == null)
+                                {
+                                    <td><p>No Date</p></td>
+                                }
+                                else
+                                {
+                                    <td><p>@Data.EventGoingDate.Value.ToString("dd MMM yyyy")</p></td>
+                                }
+
+                                <td>
+                                    <p><a class="nicdark_btn nicdark_bg_green small nicdark_shadow nicdark_radius white nicdark_press" href="@Url.Action("MyTickets", "AlumniEvents", new { area = "Alumini", @id = @Data.EventSelectionId })">ViewTickets</a>
+@* <input class="cws-button border-radius alt smaller" type="button" value="View" id="MyTicketsEvents" onclick="MyTickets()" /><br /><br />*@</p>
+                                </td>
+                            </tr>
+                           
+                        }
+                    </tbody>
+                </table>
+            </div>
+            <div class="nicdark_space50"></div>
+        </div>
+    </div>
+</section>
+
+
+
+<script type="text/javascript">
+    function MyTickets(id) {
+        $.ajax({
+            type: "Get",
+            contentType: "application/json",
+            dataType: "json",
+            url: "../AlumniEvents/MyTickets",
+            data: { "SelectionId": id },
+            success: function (data) {
+
+            }
+        });
+    }
+</script>

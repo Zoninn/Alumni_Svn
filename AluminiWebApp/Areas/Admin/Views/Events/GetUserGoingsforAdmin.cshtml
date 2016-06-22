@@ -1,0 +1,204 @@
+﻿@{
+    ViewBag.Title = "GetUserGoingsforAdmin";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminMasterLayoutPage.cshtml";
+}
+@section styles{
+    <link href="~/Content/assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/dataTables.colVis.css" rel="stylesheet" type="text/css" />
+}
+<div class="content">
+    <div class="container">
+        <!-- Page-Title -->
+        <div class="row">
+            <div class="col-sm-12">
+                <h4 class="page-title">Form elements</h4>
+                <ol class="breadcrumb">
+                    @*<li>
+                            <a href="#">Ubold</a>
+                        </li>
+                        <li>
+                            <a href="#">Forms</a>
+                        </li>
+                        <li class="active">
+                            General elements
+                        </li>*@
+                </ol>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card-box">
+                    <h4 class="m-t-0 header-title"><b></b></h4>
+                    <p class="text-muted m-b-30 font-13">
+                    </p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <form role="form" class="form-horizontal">
+                                <div class="form-group">
+                                    <label class="col-md-2 control-label">Select</label>
+                                    <div class="col-md-10">
+                                        <select id="EventGoing" class="form-control">
+                                            <option value="0">Select</option>
+                                            <option value="1">Am Going</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card-box table-responsive">
+                    <h4 class="alert alert-warning"><b>Event Going Users</b></h4>
+                    <table class="gridtable table table-striped table-bordered" id="datatable">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                               @* <th>Contact</th>*@
+                                <th>Email</th>
+                                <th>EventName</th>
+                            </tr>
+                        </thead>
+                        <tbody id="Eventdetails"></tbody>
+                    </table>
+
+                </div>
+            </div>
+
+
+            <div>
+                <br />
+                <table>
+                    <tr id="Eventdetails"></tr>
+                    <tr id="EventTicketsTypes"></tr>
+
+                </table>
+
+            </div>
+        </div>
+    </div> <!-- container -->
+
+    <div id="domMessage" style="display:none;">
+        <h1>We are processing your request.  Please be patient.</h1>
+    </div>
+    @section scripts{
+
+        <script src="~/Content/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="~/Content/assets/plugins/datatables/dataTables.bootstrap.js"></script>
+        <script src="~/Content/assets/plugins/datatables/dataTables.buttons.min.js"></script>
+        <script src="~/Content/assets/plugins/datatables/buttons.bootstrap.min.js"></script>
+        <script src="~/Content/assets/plugins/datatables/jszip.min.js"></script>
+        <script src="~/Content/assets/plugins/datatables/pdfmake.min.js"></script>
+        <script src="~/Content/assets/plugins/datatables/vfs_fonts.js"></script>
+        <script src="~/Content/assets/plugins/datatables/buttons.html5.min.js"></script>
+        <script src="~/Content/assets/plugins/datatables/buttons.print.min.js"></script>
+
+        <script src="~/Content/assets/plugins/datatables/dataTables.fixedHeader.min.js"></script>
+        <script src="~/Content/assets/plugins/datatables/dataTables.keyTable.min.js"></script>
+        <script src="~/Content/assets/plugins/datatables/dataTables.responsive.min.js"></script>
+        <script src="~/Content/assets/plugins/datatables/responsive.bootstrap.min.js"></script>
+        <script src="~/Content/assets/plugins/datatables/dataTables.scroller.min.js"></script>
+        <script src="~/Content/assets/plugins/datatables/dataTables.colVis.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                //$('#datatable').dataTable();
+                $('#datatable-keytable').DataTable({ keys: true });
+                $('#datatable-responsive').DataTable();
+                $('#datatable-colvid').DataTable({
+                    "dom": 'C<"clear">lfrtip',
+                    "colVis": {
+                        "buttonText": "Change columns"
+                    }
+                });
+                //$('#datatable-scroller').DataTable({ ajax: "/Content/assets/plugins/datatables/json/scroller-demo.json", deferRender: true, scrollY: 380, scrollCollapse: true, scroller: true });
+                var table = $('#datatable-fixed-header').DataTable({ fixedHeader: true });
+            });
+            TableManageButtons.init();
+
+        </script>
+
+        <script type="text/javascript">
+            function test() {
+                $.ajax({ url: 'wait.php', cache: false });
+            }
+        </script>
+
+
+
+
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+        <script src="~/Scripts/jquery-ui-1.11.4.min.js"></script>
+        <script src="~/Scripts/jquery.timepicker.js"></script>
+        <script src="~/Scripts/jquery.timepicker.min.js"></script>
+        <link href="~/Scripts/jquery.timepicker.css" rel="stylesheet" />
+        <script src="~/Custom.js/jquery.blockUI.js"></script>
+        <script type="text/javascript"></script>
+
+
+
+        <script>
+            $(document).ready(function () {
+               // $("#EventGoing: option:selected").prop("selected", false);
+                $("#EventGoing").change(function () {
+                    var Value = $("#EventGoing option:selected").val();
+                
+                    var Selected = "";
+                    if (Value == 1) {
+                        Selected = "AmGoing";
+                    }
+                    else {
+                        Selected = "";
+                    }
+                    $.ajax({
+                        dataType: "json",
+                        type: 'Get',
+                        contentType: "Application/json",
+                        url: "/Events/GetdataforAdmins",
+                        data: { "Status": Selected },
+                        success: function (data) {
+                            $.each(data, function (key, value) {
+                                $("#Eventdetails").append("<tr><td>" + value.UserName + "</td><td>" + value.EMail + "</td><td>" + value.EventName + "</td></tr><br/>");
+                            });
+                            $('#datatable').dataTable();
+                        }
+
+                    });
+                });
+            });
+        </script>
+
+
+        <script>
+            $j = jQuery.noConflict();
+            //function to block the whole page
+            function blockPage() {
+                $j.blockUI({
+                    message: '<h3>Please wait....</h3>',
+                    css: {
+                        border: 'none',
+                        padding: '5px',
+                        'border-radius': '5px',
+                        margin: '0',
+                        opacity: .9
+                    }
+                });
+                return false;
+            }
+            //function to unblock the page
+            function unblockPage() {
+                $j.unblockUI();
+            }
+        </script>
+    }

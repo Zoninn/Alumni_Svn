@@ -1,0 +1,208 @@
+﻿@model AluminiWebApp.Areas.Admin.Models.GalleryModel
+@{
+    ViewBag.Title = "Gallery";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminMasterLayoutPage.cshtml";
+}
+}
+@using (Html.BeginForm("Gallery", "Gallery", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="content">
+        <div class="container">
+            <!-- Page-Title -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <h4 class="page-title"></h4>
+                    <ol class="breadcrumb">
+                        <li>
+                           @* <a href="#">Ubold</a>*@
+                        </li>
+                        <li>
+                            <a href="#">Forms</a>
+                        </li>
+                        <li class="active">
+                           @* General elements*@
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card-box">
+                        <h4 class="alert alert-warning"><b>ADD GALLERY</b></h4>
+                        <p class="text-muted m-b-30 font-13">
+                            
+                        </p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div role="form" class="form-horizontal">
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Album Name</label>
+                                        <div class="col-md-10">
+                                            @Html.TextBoxFor(x => x.Title, new { @class = "form-control", @placeholder = "Album Name" })
+                                            @Html.ValidationMessageFor(x => x.Title, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="example-email" class="col-md-2 control-label">Select Type</label>
+                                        <div class="col-md-10">
+                                            <select class="form-control" id="SelectUploads" name="selectionType" required="required">
+                                                <option value="">Select</option>
+                                                <option value="1">Image</option>
+                                                <option value="2">Videos</option>
+                                            </select>
+                                            @Html.ValidationMessageFor(x => x.selectionType, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group" id="AddImage">
+                                        <label class="col-md-2 control-label">Upload File</label>
+                                        <div class="col-md-10">
+                                            <input type="file" name="Images" multiple />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group" id="AddVideo">
+                                        <label class="col-md-2 control-label">Upload File</label>
+                                        <div class="col-md-10">
+                                            <input type="file" name="Videos" multiple />
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Gallery Date</label>
+                                        <div class="col-md-10">
+                                            @Html.TextBoxFor(x => x.GalleryDate, new { @class = "form-control", @placeholder = "Album Date" })
+                                            @Html.ValidationMessageFor(x => x.GalleryDate, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-2 control-label">Description</label>
+                                        <div class="col-md-10">
+                                            @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @placeholder = "Description", @rows = "5" })
+                                            @Html.ValidationMessageFor(x => x.Description, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <input type="submit" class="btn btn-success btn-rounded waves-effect waves-light" value="Save" />
+                        <h3 class="text-custom">@TempData["Message"]</h3>
+                    </div>
+                </div>
+            </div>
+        <div class="row">
+            <table class="gridtable table table-striped table-bordered">
+                <thead>
+                    <tr>
+
+                        <th>Album Name</th>
+                        <th>Description</th>
+                        <th>Album Date</th>
+                        <th>Album Type</th>
+                        <th>View</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var Images in @Model.Albums)
+                    {
+                        <tr>
+                            <td>@Images.AlbumHeading</td>
+                            <td>@Images.Description</td>
+                            <td>@Images.Type</td>
+                            <td>@Images.AldumDate.Value.ToString("MMMM,dd,yyyy")</td>
+                            <td><a class="btn btn-info" href="../Gallery/Images/@Images.galleryid">View</a></td>
+                            <td><a class="btn btn-info" href="../Gallery/DeleteAlbum/@Images.galleryid">Delete</a></td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+        </div> <!-- container -->
+
+    </div>
+ 
+    @section styles{
+    <link href="~/Content/assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/dataTables.colVis.css" rel="stylesheet" type="text/css" />
+    }
+    @section scripts{
+
+        <script src="~/Content/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+        <script src="~/Content/assets/plugins/datatables/dataTables.bootstrap.js"></script>
+        <script src="~/Content/assets/plugins/datatables/dataTables.buttons.min.js"></script>
+        <script src="~/Content/assets/plugins/datatables/buttons.bootstrap.min.js"></script>
+        <script src="~/Content/assets/plugins/datatables/jszip.min.js"></script>
+        <script src="~/Content/assets/plugins/datatables/pdfmake.min.js"></script>
+        <script src="~/Content/assets/plugins/datatables/vfs_fonts.js"></script>
+        <script src="~/Content/assets/plugins/datatables/buttons.html5.min.js"></script>
+        <script src="~/Content/assets/plugins/datatables/buttons.print.min.js"></script>
+
+        <script src="~/Content/assets/plugins/datatables/dataTables.fixedHeader.min.js"></script>
+        <script src="~/Content/assets/plugins/datatables/dataTables.keyTable.min.js"></script>
+        <script src="~/Content/assets/plugins/datatables/dataTables.responsive.min.js"></script>
+        <script src="~/Content/assets/plugins/datatables/responsive.bootstrap.min.js"></script>
+        <script src="~/Content/assets/plugins/datatables/dataTables.scroller.min.js"></script>
+        <script src="~/Content/assets/plugins/datatables/dataTables.colVis.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                //$('#datatable').dataTable();
+                $('#datatable-keytable').DataTable({ keys: true });
+                $('#datatable-responsive').DataTable();
+                $('#datatable-colvid').DataTable({
+                    "dom": 'C<"clear">lfrtip',
+                    "colVis": {
+                        "buttonText": "Change columns"
+                    }
+                });
+                //$('#datatable-scroller').DataTable({ ajax: "/Content/assets/plugins/datatables/json/scroller-demo.json", deferRender: true, scrollY: 380, scrollCollapse: true, scroller: true });
+                var table = $('#datatable-fixed-header').DataTable({ fixedHeader: true });
+            });
+            TableManageButtons.init();
+
+        </script>
+        <!-- Table goes in the document BODY -->
+        
+}
+}
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#AddImage").hide();
+        $("#AddVideo").hide();
+        $("#SelectUploads").change(function () {
+            var Selected = $("#SelectUploads option:selected").val();
+            if (Selected == 1) {
+                $("#AddImage").show();
+                $("#AddVideo").hide();
+                $("#Image").show();
+                $("#video").hide();
+            }
+            else if (Selected == 2) {
+                $("#AddImage").hide();
+                $("#AddVideo").show();
+
+                $("#Image").hide();
+                $("#video").show();
+            }
+            else {
+                $("#AddImage").hide();
+                $("#AddVideo").hide();
+                $("#Image").hide();
+                $("#video").hide();
+            }
+        });
+    });
+</script>
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

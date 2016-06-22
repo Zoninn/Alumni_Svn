@@ -1,0 +1,160 @@
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiRepository\bin\Debug\AluminiRepository.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiRepository\bin\Debug\AluminiRepository.pdb
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiRepository\obj\Debug\AluminiRepository.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiRepository\obj\Debug\AluminiRepository.pdb
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiRepository\bin\Debug\AluminiRepository.dll.config
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiRepository\bin\Debug\EntityFramework.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiRepository\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiRepository\bin\Debug\EntityFramework.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiRepository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiRepository\bin\Debug\Alumini.Core.dll
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiRepository\bin\Debug\Alumini.Logger.dll
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiRepository\bin\Debug\NLog.dll
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiRepository\bin\Debug\Alumini.Core.pdb
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiRepository\bin\Debug\Alumini.Logger.pdb
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiRepository\bin\Debug\NLog.xml
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiRepository\obj\Debug\AluminiRepository.csprojResolveAssemblyReference.cache
+C:\Users\tulasiram\Documents\collegealumini\AluminiRepository\bin\Debug\AluminiRepository.dll.config
+C:\Users\tulasiram\Documents\collegealumini\AluminiRepository\bin\Debug\AluminiRepository.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiRepository\bin\Debug\AluminiRepository.pdb
+C:\Users\tulasiram\Documents\collegealumini\AluminiRepository\bin\Debug\Alumini.Core.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiRepository\bin\Debug\Alumini.Logger.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiRepository\bin\Debug\EntityFramework.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiRepository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiRepository\bin\Debug\NLog.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiRepository\bin\Debug\Alumini.Core.pdb
+C:\Users\tulasiram\Documents\collegealumini\AluminiRepository\bin\Debug\Alumini.Logger.pdb
+C:\Users\tulasiram\Documents\collegealumini\AluminiRepository\bin\Debug\EntityFramework.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiRepository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiRepository\bin\Debug\NLog.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiRepository\obj\Debug\AluminiRepository.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiRepository\obj\Debug\AluminiRepository.pdb
+D:\FRESHCOPY ALUMNI\AluminiRepository\bin\Debug\AluminiRepository.dll.config
+D:\FRESHCOPY ALUMNI\AluminiRepository\bin\Debug\AluminiRepository.dll
+D:\FRESHCOPY ALUMNI\AluminiRepository\bin\Debug\AluminiRepository.pdb
+D:\FRESHCOPY ALUMNI\AluminiRepository\bin\Debug\Alumini.Core.dll
+D:\FRESHCOPY ALUMNI\AluminiRepository\bin\Debug\Alumini.Logger.dll
+D:\FRESHCOPY ALUMNI\AluminiRepository\bin\Debug\EntityFramework.dll
+D:\FRESHCOPY ALUMNI\AluminiRepository\bin\Debug\EntityFramework.SqlServer.dll
+D:\FRESHCOPY ALUMNI\AluminiRepository\bin\Debug\NLog.dll
+D:\FRESHCOPY ALUMNI\AluminiRepository\bin\Debug\Alumini.Core.pdb
+D:\FRESHCOPY ALUMNI\AluminiRepository\bin\Debug\Alumini.Logger.pdb
+D:\FRESHCOPY ALUMNI\AluminiRepository\bin\Debug\EntityFramework.xml
+D:\FRESHCOPY ALUMNI\AluminiRepository\bin\Debug\EntityFramework.SqlServer.xml
+D:\FRESHCOPY ALUMNI\AluminiRepository\bin\Debug\NLog.xml
+D:\FRESHCOPY ALUMNI\AluminiRepository\obj\Debug\AluminiRepository.dll
+D:\FRESHCOPY ALUMNI\AluminiRepository\obj\Debug\AluminiRepository.pdb
+C:\Alumni Copy\AluminiRepository\bin\Debug\AluminiRepository.dll.config
+C:\Alumni Copy\AluminiRepository\bin\Debug\AluminiRepository.dll
+C:\Alumni Copy\AluminiRepository\bin\Debug\AluminiRepository.pdb
+C:\Alumni Copy\AluminiRepository\bin\Debug\Alumini.Core.dll
+C:\Alumni Copy\AluminiRepository\bin\Debug\Alumini.Logger.dll
+C:\Alumni Copy\AluminiRepository\bin\Debug\EntityFramework.dll
+C:\Alumni Copy\AluminiRepository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Alumni Copy\AluminiRepository\bin\Debug\Alumini.Core.pdb
+C:\Alumni Copy\AluminiRepository\bin\Debug\Alumini.Logger.pdb
+C:\Alumni Copy\AluminiRepository\bin\Debug\EntityFramework.xml
+C:\Alumni Copy\AluminiRepository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Alumni Copy\AluminiRepository\obj\Debug\AluminiRepository.csprojResolveAssemblyReference.cache
+C:\Alumni Copy\AluminiRepository\obj\Debug\AluminiRepository.dll
+C:\Alumni Copy\AluminiRepository\obj\Debug\AluminiRepository.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiRepository\bin\Debug\AluminiRepository.dll.config
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiRepository\bin\Debug\AluminiRepository.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiRepository\bin\Debug\AluminiRepository.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiRepository\bin\Debug\Alumini.Core.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiRepository\bin\Debug\Alumini.Logger.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiRepository\bin\Debug\EntityFramework.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiRepository\bin\Debug\EntityFramework.SqlServer.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiRepository\bin\Debug\Alumini.Core.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiRepository\bin\Debug\Alumini.Logger.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiRepository\bin\Debug\EntityFramework.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiRepository\bin\Debug\EntityFramework.SqlServer.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiRepository\obj\Debug\AluminiRepository.csprojResolveAssemblyReference.cache
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiRepository\obj\Debug\AluminiRepository.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiRepository\obj\Debug\AluminiRepository.pdb
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiRepository\bin\Debug\AluminiRepository.dll.config
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiRepository\bin\Debug\AluminiRepository.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiRepository\bin\Debug\AluminiRepository.pdb
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiRepository\bin\Debug\Alumini.Core.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiRepository\bin\Debug\Alumini.Logger.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiRepository\bin\Debug\EntityFramework.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiRepository\bin\Debug\EntityFramework.SqlServer.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiRepository\bin\Debug\Alumini.Core.pdb
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiRepository\bin\Debug\Alumini.Logger.pdb
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiRepository\bin\Debug\EntityFramework.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiRepository\bin\Debug\EntityFramework.SqlServer.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiRepository\obj\Debug\AluminiRepository.csprojResolveAssemblyReference.cache
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiRepository\obj\Debug\AluminiRepository.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiRepository\obj\Debug\AluminiRepository.pdb
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiRepository\obj\Debug\AluminiRepository.csprojResolveAssemblyReference.cache
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiRepository\obj\Debug\AluminiRepository.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiRepository\obj\Debug\AluminiRepository.pdb
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiRepository\bin\Debug\AluminiRepository.dll.config
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiRepository\bin\Debug\AluminiRepository.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiRepository\bin\Debug\AluminiRepository.pdb
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiRepository\bin\Debug\Alumini.Core.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiRepository\bin\Debug\Alumini.Logger.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiRepository\bin\Debug\EntityFramework.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiRepository\bin\Debug\EntityFramework.SqlServer.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiRepository\bin\Debug\Alumini.Core.pdb
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiRepository\bin\Debug\Alumini.Logger.pdb
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiRepository\bin\Debug\EntityFramework.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiRepository\bin\Debug\EntityFramework.SqlServer.xml
+D:\RepoAlumni\AluminiRepository\bin\Debug\AluminiRepository.dll.config
+D:\RepoAlumni\AluminiRepository\bin\Debug\AluminiRepository.dll
+D:\RepoAlumni\AluminiRepository\bin\Debug\AluminiRepository.pdb
+D:\RepoAlumni\AluminiRepository\bin\Debug\Alumini.Core.dll
+D:\RepoAlumni\AluminiRepository\bin\Debug\Alumini.Logger.dll
+D:\RepoAlumni\AluminiRepository\bin\Debug\EntityFramework.dll
+D:\RepoAlumni\AluminiRepository\bin\Debug\EntityFramework.SqlServer.dll
+D:\RepoAlumni\AluminiRepository\bin\Debug\Alumini.Core.pdb
+D:\RepoAlumni\AluminiRepository\bin\Debug\Alumini.Logger.pdb
+D:\RepoAlumni\AluminiRepository\bin\Debug\EntityFramework.xml
+D:\RepoAlumni\AluminiRepository\bin\Debug\EntityFramework.SqlServer.xml
+D:\RepoAlumni\AluminiRepository\obj\Debug\AluminiRepository.csprojResolveAssemblyReference.cache
+D:\RepoAlumni\AluminiRepository\obj\Debug\AluminiRepository.dll
+D:\RepoAlumni\AluminiRepository\obj\Debug\AluminiRepository.pdb
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiRepository\bin\Debug\AluminiRepository.dll.config
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiRepository\bin\Debug\AluminiRepository.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiRepository\bin\Debug\AluminiRepository.pdb
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiRepository\bin\Debug\Alumini.Core.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiRepository\bin\Debug\Alumini.Logger.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiRepository\bin\Debug\EntityFramework.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiRepository\bin\Debug\EntityFramework.SqlServer.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiRepository\bin\Debug\NLog.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiRepository\bin\Debug\Alumini.Core.pdb
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiRepository\bin\Debug\Alumini.Logger.pdb
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiRepository\bin\Debug\EntityFramework.xml
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiRepository\bin\Debug\EntityFramework.SqlServer.xml
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiRepository\bin\Debug\NLog.xml
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiRepository\obj\Debug\AluminiRepository.csprojResolveAssemblyReference.cache
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiRepository\obj\Debug\AluminiRepository.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiRepository\obj\Debug\AluminiRepository.pdb
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiRepository\obj\Debug\AluminiRepository.dll
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiRepository\bin\Debug\AluminiRepository.dll.config
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiRepository\bin\Debug\AluminiRepository.dll
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiRepository\bin\Debug\AluminiRepository.pdb
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiRepository\bin\Debug\Alumini.Core.dll
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiRepository\bin\Debug\Alumini.Logger.dll
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiRepository\bin\Debug\EntityFramework.dll
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiRepository\bin\Debug\EntityFramework.SqlServer.dll
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiRepository\bin\Debug\Alumini.Core.pdb
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiRepository\bin\Debug\Alumini.Logger.pdb
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiRepository\bin\Debug\EntityFramework.xml
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiRepository\bin\Debug\EntityFramework.SqlServer.xml
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiRepository\obj\Debug\AluminiRepository.pdb
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiRepository\obj\Debug\AluminiRepository.csprojResolveAssemblyReference.cache
+D:\MYAlumniNewDesignCopyRepo\AluminiRepository\bin\Debug\AluminiRepository.dll.config
+D:\MYAlumniNewDesignCopyRepo\AluminiRepository\bin\Debug\AluminiRepository.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiRepository\bin\Debug\AluminiRepository.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiRepository\bin\Debug\Alumini.Core.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiRepository\bin\Debug\Alumini.Logger.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiRepository\bin\Debug\EntityFramework.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiRepository\bin\Debug\EntityFramework.SqlServer.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiRepository\bin\Debug\Alumini.Core.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiRepository\bin\Debug\Alumini.Logger.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiRepository\bin\Debug\EntityFramework.xml
+D:\MYAlumniNewDesignCopyRepo\AluminiRepository\bin\Debug\EntityFramework.SqlServer.xml
+D:\MYAlumniNewDesignCopyRepo\AluminiRepository\obj\Debug\AluminiRepository.csprojResolveAssemblyReference.cache
+D:\MYAlumniNewDesignCopyRepo\AluminiRepository\obj\Debug\AluminiRepository.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiRepository\obj\Debug\AluminiRepository.pdb

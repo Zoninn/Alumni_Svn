@@ -1,0 +1,206 @@
+﻿@model AluminiWebApp.Areas.Alumini.Models.JobPosting
+@{
+    ViewBag.Title = "JobPosting";
+    Layout = "~/Areas/Alumini/Views/Shared/_SRKRDesignLayout.cshtml";
+}
+
+
+
+<section class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img5" id="nicdark_parallax_title" style="background-position: 50% -68px;">
+    <div class="nicdark_filter greydark">
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+            <div class="grid grid_12">
+                <div class="nicdark_space100"></div>
+                <div class="nicdark_space100"></div>
+                <h1 class="white subtitle">Post A Job</h1>
+                <div class="nicdark_space10"></div>
+                <h3 class="subtitle white"></h3>
+                <div class="nicdark_space20"></div>
+                <div class="nicdark_divider left big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space40"></div>
+                <div class="nicdark_space50"></div>
+            </div>
+        </div>
+        <!--end nicdark_container-->
+    </div>
+
+</section>
+
+<section class="nicdark_section">
+    <!--start nicdark_container-->
+    <div class="nicdark_container nicdark_clearfix">
+        <div class="nicdark_space40"></div>
+        @using (Html.BeginForm("JobPosting", "Jobs", new { enctype = "multipart/form-data" }))
+        {
+        <div class="grid grid_12 job-form">
+            @Html.ValidationSummary(true)
+            <div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow">
+                <div class="nicdark_textevidence nicdark_bg_orange nicdark_radius_top">
+                    <h4 class="white nicdark_margin20">Add Memories</h4>
+                    <i class="icon-mail nicdark_iconbg right medium orange"></i>
+                </div>
+                <div class="nicdark_margin20">
+                    <div class="grid grid_6">
+                        @Html.TextBoxFor(x => x.JobTitle, new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle", @placeholder = "Job Title" })
+                        <div class="nicdark_space20">
+                            @Html.ValidationMessageFor(x => x.JobTitle, "", new { @class = "text-danger" })
+                        </div>
+                        @Html.TextBoxFor(x => x.ComanyName, new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle", @placeholder = "Company Name" })
+                        <div class="nicdark_space20">
+                            @Html.ValidationMessageFor(x => x.ComanyName, "", new { @class = "text-danger" })
+                        </div>
+                        @Html.TextBoxFor(x => x.ComanyUrl, new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle", @placeholder = "Company URL" })
+                        <div class="nicdark_space20">
+                            @Html.ValidationMessageFor(x => x.ComanyUrl, "", new { @class = "text-danger" })
+                        </div>
+                        @Html.TextBoxFor(x => x.Skills, new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle", @placeholder = "Skills" })
+                        <div class="nicdark_space20">
+                            @Html.ValidationMessageFor(x => x.Skills, "", new { @class = "text-danger" })
+                        </div>
+                        @Html.TextBoxFor(x => x.Qualification, new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle", @placeholder = "Qualification" })
+                        <div class="nicdark_space20">
+                            @Html.ValidationMessageFor(x => x.Qualification, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="grid grid_6">
+                        @Html.TextBoxFor(x => x.ExperienceRequired, new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle", @placeholder = "Experience" })
+                        <div class="nicdark_space20">
+                            @Html.ValidationMessageFor(x => x.ExperienceRequired, "", new { @class = "text-danger" })
+                        </div>
+
+                        @*<div><i class="icon-asterisk" style="font-size:6px;margin-top:5px;color:red;"></i><em style="margin-left:8px;">contact person mobile</em></div>*@
+                        @Html.TextBoxFor(x => x.Mobile, new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle", @placeholder = "Mobile" })
+                        <div class="nicdark_space20">
+                            @Html.ValidationMessageFor(x => x.Mobile, "", new { @class = "text-danger" })
+                        </div>
+
+                        @*<div><i class="icon-asterisk" style="font-size:6px;margin-top:5px;color:red;"></i><em style="margin-left:8px;">contact person email</em></div>*@
+                        @Html.TextBoxFor(x => x.Email, new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle", @placeholder = "Email" })
+                        <div class="nicdark_space20">
+                            @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
+                        </div>
+
+                        @Html.TextBoxFor(x => x.Salary, new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle", @placeholder = "Salary" })
+                        <div class="nicdark_space20">
+                            @Html.ValidationMessageFor(x => x.Salary, "", new { @class = "text-danger" })
+                        </div>
+
+                        @Html.TextBoxFor(x => x.Location, new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle", @placeholder = "Location" })
+                        <div class="nicdark_space20">
+                            @Html.ValidationMessageFor(x => x.Location, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="grid grid_12">
+                        @Html.TextAreaFor(x => x.Description, new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle", @placeholder = "Enter multiple locations seperated by comma", @rows = "5" })
+                        <div class="nicdark_space20">
+                            @Html.ValidationMessageFor(x => x.Description, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="grid grid_6">
+                        <select class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle" id="FunactionalAreas" name="FunctionalId">
+                            <option value="0">Select</option>
+                        </select>
+                    </div>
+                    <div class="grid grid_6">
+                        @Html.TextBoxFor(x => x.Role, new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle", @placeholder = "Role" })
+                        <div class="nicdark_space20">
+                            @Html.ValidationMessageFor(x => x.Role, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    
+                    <div class="nicdark_space20"></div>
+                    <div class="grid ">
+                        <input class="nicdark_btn nicdark_bg_orange medium nicdark_shadow nicdark_radius white pull-right" type="submit" value="Save">
+                        <h4> @TempData["Message"]</h4>
+                        <input type="hidden" id="Jobid" name="Jobid" />
+                    </div>
+                    @*<a class="nicdark_mpopup_ajax nicdark_btn nicdark_bg_orange medium nicdark_shadow nicdark_radius white nicdark_press" href="submit-message.php">SEND</a>*@
+                </div>
+            </div>
+        </div>
+        }
+        <div class="nicdark_space50"></div>
+
+    </div>
+    <!--end nicdark_container-->
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var getQueryString = function (field, url) {
+            var href = url ? url : window.location.href;
+            var reg = new RegExp('[?&]' + field + '=([^&#]*)', 'i');
+            var string = reg.exec(href);
+            return string ? string[1] : null;
+        };
+        var JobId = getQueryString('Jobid')
+      
+        $.ajax({
+            type: "Get",
+            dataType: "json",
+            contentType: "Application/json",
+            url: "../Jobs/FunctionalAreas",
+            data: {},
+            success: function (data) {
+                $.each(data, function (key, value) {
+                    $("#FunactionalAreas").append($("<option></option>").val(value.FunactionalId).html(value.Name));
+                });
+
+                if (JobId != null) {
+                    $.ajax({
+                        type: "Get",
+                        dataType: "json",
+                        contentType: "Application/json",
+                        url: "../Jobs/GetJobsonid",
+                        data: { "id": JobId },
+                        success: function (data) {
+                            $.each(data, function (key, value) {
+                                $("#JobTitle").val(value.JobTitle);
+                                $("#ExperienceRequired").val(value.ExperienceRequired);
+                                $("#Location").val(value.Location);
+                                $("#ComanyName").val(value.ComanyName);
+                                $("#Mobile").val(value.Mobile);
+                                $("#Description").val(value.Description);
+                                $("#ComanyUrl").val(value.ComanyUrl);
+                                $("#Email").val(value.Email);
+                                $("#Qualification").val(value.Qualification);
+                                $("#Salary").val(value.Salary);
+                                $("#Role").val(value.Role);
+                                $("#FunactionalAreas").val(value.FunctionalId);
+                                $("#Skills").val(value.Skills);
+                                $("#Jobid").val(value.Jobid);
+                            });
+                        }
+                    });
+                }
+            }
+        });
+
+       
+
+    });
+</script>

@@ -1,0 +1,158 @@
+﻿@using AluminiWebApp.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+    Layout = "~/Views/Shared/_SRKRDesignLayout.cshtml";
+}
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<section class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img5" id="nicdark_parallax_title" style="background-position: 50% -68px;">
+    <div class="nicdark_filter greydark">
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+            <div class="grid grid_12">
+                <div class="nicdark_space100"></div>
+                <div class="nicdark_space100"></div>
+                <h1 class="white subtitle">Alumni Login</h1>
+                <div class="nicdark_space10"></div>
+                <h3 class="subtitle white"></h3>
+                <div class="nicdark_space20"></div>
+                <div class="nicdark_divider left big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space40"></div>
+                <div class="nicdark_space50"></div>
+            </div>
+        </div>
+        <!--end nicdark_container-->
+    </div>
+
+</section>
+
+<section class="nicdark_section login-form">
+    <!--start nicdark_container-->
+    <div class="nicdark_container nicdark_clearfix">
+        <div class="nicdark_space40"></div>
+        @if (TempData["Success"] != null)
+        {
+            <div class="nicdark_alerts nicdark_bg_green nicdark_radius nicdark_shadow">
+                <p class="white nicdark_size_medium"><i class="icon-cancel-circled-outline iconclose"></i>&nbsp;&nbsp;&nbsp;<strong>WELL DONE:</strong>&nbsp;&nbsp;&nbsp;@TempData["Success"].</p>
+                <i class="icon-ok-outline nicdark_iconbg right medium green"></i>
+            </div>
+        }
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary(true)
+            <div class="grid grid_6">
+
+                <div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow">
+                    <div class="nicdark_textevidence nicdark_bg_orange nicdark_radius_top">
+                        <h4 class="white nicdark_margin20">Login</h4>
+                        <i class="icon-mail nicdark_iconbg right medium orange"></i>
+                    </div>
+                    <div class="nicdark_margin20">
+
+                        @Html.TextBoxFor(m => m.Email, new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle", @placeholder = "Email" })
+                        <div class="nicdark_space20">
+                            @Html.ValidationMessageFor(x => x.Email, null, new { @class = "text-danger" })
+                        </div>
+                        @*<input type="text" placeholder="NAME" value="" class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle">*@
+                        <div class="nicdark_space20"></div>
+                        @Html.PasswordFor(m => m.Password, new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle", @placeholder = "Password" })
+                        <div class="nicdark_space20">
+                            @Html.ValidationMessageFor(x => x.Password)
+                        </div>
+                        <div class="nicdark_space20"></div>
+                        <div>
+                            <input class="nicdark_btn nicdark_bg_orange medium nicdark_shadow nicdark_radius white" type="submit" value="LOGIN">
+                            <a class="nicdark_btn nicdark_bg_red medium nicdark_shadow nicdark_radius white" href="@Url.Action("Register", "Account", new {Area="" })">Register</a>
+                        </div>
+                        <br />
+
+                        <h4>  <a href="javascript:;" class="link-blue" data-toggle="modal" data-target="#myModal">Reset Password</a></h4>
+                        @*<a class="nicdark_mpopup_ajax nicdark_btn nicdark_bg_orange medium nicdark_shadow nicdark_radius white nicdark_press" href="submit-message.php">SEND</a>*@
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="grid grid_6">
+
+            <div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow">
+                <div class="nicdark_textevidence nicdark_bg_orange nicdark_radius_top text-center">
+                    <h4 class="white nicdark_margin20">Facebook Login</h4>
+                    <i class="icon-mail nicdark_iconbg right medium orange"></i>
+                </div>
+                <div class="nicdark_margin10"></div>
+                <div class="full-width-external-login">
+                    @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+                </div>
+            </div>
+        </div>
+        <div class="nicdark_space50"></div>
+
+    </div>
+    <!--end nicdark_container-->
+
+
+    <div class="container">
+        <h3>Reset password</h3>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" id="Closeclick" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="bg-color-1">Reset Password</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" id="UserEmail" placeholder="Enter ur email" class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle" />
+                        <br />
+                        <br />
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="resetpassword" class="nicdark_btn nicdark_bg_red medium nicdark_shadow nicdark_radius white">Reset</button>
+
+                        <h4 id="Message"></h4>
+
+                        @*<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</section>
+@section Scripts{
+    @Scripts.Render("~/Scripts/jquery.validate.min.js")
+    @Scripts.Render("~/Scripts/jquery.validate.unobtrusive.min.js")
+    <script src="~/Custom.js/Registration.js"></script>
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#resetpassword').click(function () {
+            $('#Message').html('Please wait we are processing');
+            var Email = $('#UserEmail').val();
+            $.ajax({
+                type: "Get",
+                dataType: "json",
+                contentType: "application/json",
+                url: '../Account/ResetuserPassword',
+                data: { "Email": Email },
+                success: function (data) {
+                  
+                    if (data == "success") {
+                        alert("please check your email for credentials");
+                    }
+                    else {
+                        alert(data);
+                    }
+                    $('#Message').html('');
+                    $('#UserEmail').val('');
+                    $('#Closeclick').click();
+                }
+
+            });
+        });
+    });
+</script>

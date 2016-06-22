@@ -1,0 +1,119 @@
+﻿@model AluminiWebApp.Areas.Alumini.Models.JobPosting
+@{
+    ViewBag.Title = "JobPosting";
+    Layout = "~/Areas/Faculty/Views/Shared/_SRKRLayout.cshtml";
+}
+@using (Html.BeginForm("JobPosting", "Jobs", FormMethod.Post, new { enctype = "multipart/form-data", @class = "postJob" }))
+{
+    @Html.ValidationSummary(true);
+    <div class="page-content grid-row">
+        <h2 class="center-text alumini_head"><span>Post A Job</span></h2>
+        <div>
+            <div class="grid-col-row clear-fix">
+                <div class="grid-col grid-col-4">
+                    @Html.TextBoxFor(x => x.JobTitle, new { @class = "form-control", @placeholder = "Job Title" })
+                    @Html.ValidationMessageFor(x => x.JobTitle, "", new { @class = "text-danger" })
+                    @Html.TextBoxFor(x => x.ComanyName, new { @class = "form-control", @placeholder = "Company Name" })
+                    @Html.ValidationMessageFor(x => x.ComanyName, "", new { @class = "text-danger" })
+                    @Html.TextBoxFor(x => x.ComanyUrl, new { @class = "form-control", @placeholder = "Company URL" })
+                    @Html.ValidationMessageFor(x => x.ComanyUrl, "", new { @class = "text-danger" })
+                    @Html.TextBoxFor(x => x.Skills, new { @class = "form-control", @placeholder = "Skills" })
+                    @Html.ValidationMessageFor(x => x.Skills, "", new { @class = "text-danger" })
+                    @Html.TextBoxFor(x => x.Qualification, new { @class = "form-control", @placeholder = "Qualification" })
+                    @Html.ValidationMessageFor(x => x.Qualification, "", new { @class = "text-danger" })
+                </div>
+                <div class="grid-col grid-col-4">
+                    @Html.TextBoxFor(x => x.ExperienceRequired, new { @class = "form-control", @placeholder = "Experience" })
+                    @Html.ValidationMessageFor(x => x.ExperienceRequired, "", new { @class = "text-danger" })
+                    @Html.TextBoxFor(x => x.Mobile, new { @class = "form-control", @placeholder = "Mobile" })
+                    @Html.ValidationMessageFor(x => x.Mobile, "", new { @class = "text-danger" })
+                    <i class="fa fa-asterisk"><em>contact person mobile</em></i>
+                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control", @placeholder = "Email" })
+                    @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
+                    <i class="fa fa-asterisk"><em>contact person email</em></i>
+                    @Html.TextBoxFor(x => x.Salary, new { @class = "form-control", @placeholder = "Salary" })
+                    @Html.ValidationMessageFor(x => x.Salary, "", new { @class = "text-danger" })
+                </div>
+                <div class="grid-col grid-col-4">
+                    @Html.TextBoxFor(x => x.Location, new { @class = "form-control", @placeholder = "Location" })
+                    @Html.ValidationMessageFor(x => x.Location, "", new { @class = "text-danger" })
+                    <i class="fa fa-asterisk"><em>enter multiple locations seperated by comma</em></i>
+                    @Html.TextAreaFor(x => x.Description, new { @class = "form-control", @placeholder = "Description" })
+                    @Html.ValidationMessageFor(x => x.Description, "", new { @class = "text-danger" })
+                    <select class="form-control" id="FunactionalAreas" name="FunctionalId">
+                        <option value="0">Select</option>
+                    </select>
+                    @Html.TextBoxFor(x => x.Role, new { @class = "form-control", @placeholder = "Role" })
+                    @Html.ValidationMessageFor(x => x.Role, "", new { @class = "text-danger" })
+
+                  
+                </div>
+            </div>
+            <input type="submit" class="cws-button bt-color-4 border-radius" value="Save" />
+            <input type="hidden" id="Jobid" name="Jobid" />
+            <h4> @TempData["Message"]</h4>
+        </div>
+    </div>
+}
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        var getQueryString = function (field, url) {
+            var href = url ? url : window.location.href;
+            var reg = new RegExp('[?&]' + field + '=([^&#]*)', 'i');
+            var string = reg.exec(href);
+            return string ? string[1] : null;
+        };
+        var JobId = getQueryString('Jobid')
+       
+        $.ajax({
+            type: "Get",
+            dataType: "json",
+            contentType: "Application/json",
+            url: "../Jobs/FunctionalAreas",
+            data: {},
+            success: function (data) {
+                $.each(data, function (key, value) {
+                    $("#FunactionalAreas").append($("<option></option>").val(value.FunactionalId).html(value.Name));
+                });
+
+                if (JobId != null) {
+                    $.ajax({
+                        type: "Get",
+                        dataType: "json",
+                        contentType: "Application/json",
+                        url: "../Jobs/GetJobsonid",
+                        data: { "id": JobId },
+                        success: function (data) {
+                            $.each(data, function (key, value) {
+                                $("#JobTitle").val(value.JobTitle);
+                                $("#ExperienceRequired").val(value.ExperienceRequired);
+                                $("#Location").val(value.Location);
+                                $("#ComanyName").val(value.ComanyName);
+                                $("#Mobile").val(value.Mobile);
+                                $("#Description").val(value.Description);
+                                $("#ComanyUrl").val(value.ComanyUrl);
+                                $("#Email").val(value.Email);
+                                $("#Qualification").val(value.Qualification);
+                                $("#Salary").val(value.Salary);
+                                $("#Role").val(value.Role);
+                                $("#FunactionalAreas").val(value.FunctionalId);
+                                $("#Skills").val(value.Skills);
+                                $("#Jobid").val(value.Jobid);
+                            });
+                        }
+                    });
+                }
+            }
+        });
+
+
+
+    });
+</script>

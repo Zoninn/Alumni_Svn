@@ -1,0 +1,15 @@
+﻿<table>
+    <tr>
+        <td>
+            @Ajax.ActionLink("Register as Alumni", "StudentRegistration", null, new AjaxOptions { UpdateTargetId = "StudentorFaculty", InsertionMode = InsertionMode.Replace }, new { @class = "btn btn-primary" })
+
+        </td>
+        <td>
+            @Ajax.ActionLink("Register as Faculty", "FacultyRegistration", null, new AjaxOptions { UpdateTargetId = "StudentorFaculty", InsertionMode = InsertionMode.Replace }, new { @class = "btn btn-info" })
+        </td>
+    </tr>
+</table>
+
+<div id="StudentorFaculty">
+
+</div>

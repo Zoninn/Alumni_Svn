@@ -1,0 +1,227 @@
+﻿@model AluminiWebApp.Models.EventsModel
+
+@{
+    Layout = "~/Views/Shared/_SRKRDesignLayout.cshtml";
+}
+
+
+<section class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img-single-event" id="nicdark_parallax_title"
+         style="background-position: 100% 0;background: rgba(0, 0, 0, 0) url('@Model.Bannerimage') repeat fixed 50% 190px ;">
+    <div class="nicdark_filter greydark">
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+            <div class="grid grid_12">
+                <div class="nicdark_space100"></div>
+                <div class="nicdark_space100"></div>
+                <h1 class="white subtitle">EVENT: @Model.EventHeading</h1>
+                <div class="nicdark_space10"></div>
+                <h3 class="subtitle white">DON'T MISS THE EVENT</h3>
+                <div class="nicdark_space20"></div>
+                <div class="nicdark_divider left big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space40"></div>
+                <div class="nicdark_space50"></div>
+            </div>
+        </div>
+        <!--end nicdark_container-->
+    </div>
+
+</section>
+
+
+
+<section class="nicdark_section event-details">
+    <!--start nicdark_container-->
+    <div class="nicdark_container nicdark_clearfix">
+        <div class="nicdark_space10"></div>
+        <div class="grid grid_12 nicdark_bg_grey nicdark_shadow nicdark_radius">
+            <div class="nicdark_margin10">
+                <div class="grid grid_3 percentage">
+                    <div class="nicdark_margin10 nicdark_relative">
+                        <a class="nicdark_btn_icon nicdark_bg_green nicdark_shadow extrabig nicdark_radius_circle white nicdark_absolute nicdark_displaynone_ipadpotr"><i class="icon-location-outline"></i></a>
+
+                        <div class="nicdark_activity nicdark_marginleft100 nicdark_disable_marginleft_ipadpotr">
+                            <h4>EVENT VENUE</h4>
+                            <div class="nicdark_space20"></div>
+                            <p>@Model.EventAddress</p>
+                        </div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="grid grid_3 percentage">
+                    <div class="nicdark_margin10 nicdark_relative">
+                        <a class="nicdark_btn_icon nicdark_bg_red extrabig nicdark_shadow nicdark_radius_circle white nicdark_absolute nicdark_displaynone_ipadpotr"><i class="icon-calendar"></i></a>
+
+                        <div class="nicdark_activity nicdark_marginleft100 nicdark_disable_marginleft_ipadpotr">
+                            <h4>EVENT STARTS ON</h4>
+                            <div class="nicdark_space20"></div>
+                            <h5>@Model.StartDate.Value.ToString("dd-MMMM-yyyy")</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid_3 percentage">
+                    <div class="nicdark_margin10 nicdark_relative">
+                        <a class="nicdark_btn_icon nicdark_bg_yellow extrabig nicdark_shadow nicdark_radius_circle white nicdark_absolute nicdark_displaynone_ipadpotr"><i class="icon-calendar"></i></a>
+
+                        <div class="nicdark_activity nicdark_marginleft100 nicdark_disable_marginleft_ipadpotr">
+                            <h4>EVENT ENDS ON</h4>
+                            <div class="nicdark_space20"></div>
+                            <h5>@Model.EndDate.Value.ToString("dd-MMMM-yyyy")</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid_3 percentage">
+                    <div class="nicdark_margin10 nicdark_relative">
+                        <a class="nicdark_btn_icon nicdark_bg_orange extrabig nicdark_shadow nicdark_radius_circle white nicdark_absolute nicdark_displaynone_ipadpotr"><i class="icon-wristwatch"></i></a>
+
+                        <div class="nicdark_activity nicdark_marginleft100 nicdark_disable_marginleft_ipadpotr">
+                            <h4>TIMING</h4>
+                            <div class="nicdark_space20"></div>
+                            <p>@Model.StartTime - @Model.EndTime</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="nicdark_section">
+        <div class="nicdark_container nicdark_clearfix">
+            <div class="nicdark_space20"></div>
+            <div class="grid grid_12">
+                <div class="nicdark_textevidence">
+                    @*<a href="javascript:;" class="btn btn-block" onclick="publishOnFacebook()">
+                        <i class="icon-facebook-squared"></i>Share
+                    </a>*@
+                      <div class="fb-like" data-href="http://alumni.zoninnovative.com/@Model.Bannerimage.Substring(1)" data-width=" 1000" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+                    <div class="nicdark_space20"></div>
+                    <p><span class="white nicdark_dropcap nicdark_bg_red nicdark_radius nicdark_shadow">@Model.EventDesc.Substring(0, 1)</span>@Model.EventDesc.Substring(1).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--end nicdark_container-->
+</section>
+
+<section class="nicdark_section executive-board">
+    <div class="nicdark_container nicdark_clearfix">
+        <div class="nicdark_space50"></div>
+        <div class="grid grid_12">
+            <h3 class="subtitle greydark">Members going</h3>
+            <div class="nicdark_space20"></div>
+            <h3 class="subtitle grey"></h3>
+            <div class="nicdark_space20"></div>
+            <div class="nicdark_divider left big"><span class="nicdark_bg_blue nicdark_radius"></span></div>
+            <div class="nicdark_space10"></div>
+        </div>
+        @foreach (var EventGoing in Model.EventsGoing)
+        {
+            <div class="grid grid_3">
+                <div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow center">
+                    @if (@EventGoing.UserImage != null)
+                    {
+                        if (File.Exists(Server.MapPath(@EventGoing.UserImage)))
+                        {
+                            <img src="@EventGoing.UserImage" alt="" class="nicdark_opacity" style="height:180px;">
+                        }
+                        else
+                        {
+                            <img src="~/UserProfilePictures/avatar.png" alt="" class="nicdark_radius nicdark_opacity" style="height:150px;" />
+                        }
+                    }
+                    else
+                    {
+                        <img src="~/UserProfilePictures/avatar.png" alt="" class="nicdark_opacity" style="height:180px;" />
+                    }
+                    <div class="nicdark_textevidence nicdark_bg_blue">
+                        <h5 class="white nicdark_margin20">@EventGoing.UserName &nbsp;&nbsp;@EventGoing.LName</h5>
+                        <i class="icon-brush nicdark_iconbg right medium blue"></i>
+                    </div>
+
+                    <div class="nicdark_textevidence">
+                        <div class="nicdark_margin10">
+                            <p>@EventGoing.Branch</p>
+                            <p>@EventGoing.Course</p>
+                            <p>Working from : @EventGoing.Batch</p>
+                            @if (EventGoing.WorkingTO != null)
+                            {
+                                <p>Working to : @EventGoing.WorkingTO</p>
+                            }
+                            else
+                            {
+                                <p>@EventGoing.Batch</p>
+                            }
+                            <div class="nicdark_space20 nicdark_displaynone_ipadpotr"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        }
+        <div class="nicdark_space20"></div>
+    </div>
+</section>
+<div align="center">
+    <a class="nicdark_zoom nicdark_btn nicdark_bg_green medium nicdark_shadow nicdark_radius white" href="@Url.Action("Login", "Account", new { area="",id="1"},null)"><i></i><em>BOOK NOW</em></a>
+</div>
+
+
+<div class="nicdark_space50"></div>
+
+
+
+<div id="fb-root"></div>
+<script>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.5";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+
+@*<script type="text/javascript">
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '881522805296858',
+                channelUrl: 'http://alumni.zoninnovative.com/',
+                status: true,
+                xfbml: true
+            });
+        };
+
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/all.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+
+    <script type="text/javascript">
+        function publishOnFacebook() {
+            FB.ui(
+              {
+                  method: 'feed',
+                  name: '@Model.EventHeading',
+                  link: 'http://alumni.zoninnovative.com/',
+                  picture: 'http://alumni.zoninnovative.com/@Model.Bannerimage',
+                  // caption: 'Reference Documentation',
+                  description: 'Dialogs provide a simple, consistent interface for applications to interface with users.'
+              },
+              function (response) {
+                  if (response && response.post_id) {
+                      alert('Post was published.');
+                  } else {
+                      alert('Post was not published.');
+                  }
+              }
+            );
+        }
+    </script>*@

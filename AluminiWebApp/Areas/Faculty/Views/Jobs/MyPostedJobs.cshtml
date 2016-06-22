@@ -1,0 +1,80 @@
+﻿@{
+    Layout = "~/Areas/Faculty/Views/Shared/_SRKRLayout.cshtml";
+}
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<h4>@TempData["Message"] </h4>
+<div class="woocommerce">
+    <table class="shop_table cart">
+        <thead>
+            <tr>
+
+                <th>Job Title</th>
+                <th>Company</th>
+                <th>Exp.</th>
+                <th>Phone</th>
+                <th>Email</th>              
+                <th>View</th>
+            </tr>
+        </thead>
+        <tbody id="Jobs"></tbody>
+    </table>
+    <input type="hidden" id="Value" value="@Session["UserId"].ToString()" />
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            type: "Get",
+            dataType: "json",
+            contentType: "Application/json",
+            url: "../Jobs/Jobs",
+            data: {},
+            success: function (data) {
+                var Hidden = $("#Value").val();
+
+                $.each(data, function (key, value) {
+                    if (Hidden == value.Userid) {
+                        $("#Jobs").append("<tr class='cart_item'><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.JobTitle + "&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.ComanyName + "</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.ExperienceRequired + "</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.Mobile + "</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.Email + "</td><td><a href='../Jobs/SingleJob/" + value.Jobid + "' value='View' class='cws-button border-radius alt smaller'>view</a></td><td><a href='../Jobs/JobPosting?Jobid=" + value.Jobid + "' value='View' class='cws-button border-radius alt smaller'>Edit</a></td><td><input type='button' value='Delete' class='cws-button border-radius alt smaller' onclick='DeletJob(" + value.Jobid + ")' /></td></tr>");
+                    }
+
+                });
+            }
+        });
+    });
+    function DeletJob(id) {
+        if (confirm("Are you sure you want to delete?")) {        
+            $.ajax({
+                type: "Get",
+                dataType: "json",
+                contentType: "Application/json",
+                url: "../Jobs/DeleteMyJob",
+                data: { "Jobid": id },
+                success: function (data) {
+                    $.ajax({
+                        type: "Get",
+                        dataType: "json",
+                        contentType: "Application/json",
+                        url: "../Jobs/Jobs",
+                        data: {},
+                        success: function (data) {
+                            $("#Jobs").empty();
+                            var Hidden = $("#Value").val();
+                            alert("Job deleted successfully..");
+                            $.each(data, function (key, value) {
+                                if (Hidden == value.Userid) {
+                                    $("#Jobs").append("<tr class='cart_item'><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.JobTitle + "&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.ComanyName + "</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.ExperienceRequired + "</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.Mobile + "</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.Email + "</td><td><a href='../Jobs/SingleJob/" + value.Jobid + "' value='View' class='cws-button border-radius alt smaller'>view</a></td><td><a href='../Jobs/JobPosting?Jobid=" + value.Jobid + "' value='View' class='cws-button border-radius alt smaller'>Edit</a></td><td><input type='button' value='Delete' class='cws-button border-radius alt smaller' onclick='DeletJob(" + value.Jobid + ")' /></td></tr>");
+                                }
+
+                            });
+                        }
+                    });
+                }
+            });
+        }
+        else {
+            return false;
+        }
+    }
+
+</script>

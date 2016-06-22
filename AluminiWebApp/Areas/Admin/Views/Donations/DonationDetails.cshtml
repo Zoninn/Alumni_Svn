@@ -1,0 +1,37 @@
+﻿@model List<AluminiRepository.Donations>
+
+@{
+    ViewBag.Title = "Donation Details";
+    Layout = "~/Areas/Alumini/Views/Shared/_layout.cshtml";
+}
+
+<div style="margin-left:90px; width:50%">
+    <h2>Donations Details</h2>
+
+    <div style="align:center">
+        
+            <table border="1">
+                <tr>
+                    <td>Donation Title</td>
+                    <td>Donor Name</td>
+                    <td>Donation Amount</td>
+                    <td>Status</td>
+                    <td>Date</td>
+                </tr>
+                @foreach (AluminiRepository.Donations item in Model)
+                {
+                    <tr>
+                        <td>@item.DonationTitle</td>
+                        <td><a href="~/Admin/Donations/DonorDonations?DonorId=@item.DonorID"> @item.DonorName</a></td>
+                        <td>@item.DonationAmount</td>
+                        <td>@item.DonationStatus</td>
+                        <td>@item.DonationDate</td>
+                    </tr>
+                }
+            </table>    
+        <br />
+        <div style="text-align:right; font-weight:bold; margin-right:100px">Total Donation: @Model.Sum(x=>x.DonationAmount)</div>     
+        <br />
+    </div>
+
+</div>

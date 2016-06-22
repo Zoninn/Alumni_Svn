@@ -1,0 +1,395 @@
+﻿@model AluminiWebApp.Areas.Admin.Models.NewsRoomModel
+@{
+    Layout = "~/Areas/Admin/Views/Shared/_AdminMasterLayoutPage.cshtml";
+}
+
+@using (Html.BeginForm("PostNews", "NewsRoom", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true);
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h4 class="page-title">Form elements</h4>
+            <ol class="breadcrumb">
+                <li>
+                    <a href="#">Ubold</a>
+                </li>
+                <li>
+                    <a href="#">Forms</a>
+                </li>
+                <li class="active">
+                    General elements
+                </li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card-box">
+                <h4 class="m-t-0 header-title"><b>Input Types</b></h4>
+                <p class="text-muted m-b-30 font-13">
+                    <div class="alert alert-warning">
+                        <strong>ADD NEWS HERE!</strong>
+                    </div>
+                </p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div role="form" class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Heading</label>
+                                <div class="col-md-10">
+                                    @Html.TextBoxFor(x => x.Title, null, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.Title, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="example-email" class="col-md-2 control-label">Description</label>
+                                <div class="col-md-10">
+                                    @Html.TextAreaFor(x => x.Description, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(x => x.Description, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">Image</label>
+                                <div class="col-md-10">
+                                    <input type="file" class="form-control glyphicon-file" name="Image" />
+                                    <input type="hidden" id="NewRoomId" name="NewRoomId" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <input type="submit" class="btn btn-success btn-rounded waves-effect waves-light" value="Save" />
+                <h4 class="text-custom">@TempData["SuccessMessage"]</h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div>
+        <br />
+        <table>
+            <tr>
+                <td>Select : &nbsp;</td>
+                <td>
+                    <select id="GetNews" class="form-control">
+                        <option value="0">Select</option>
+                        <option value="1">Active</option>
+                        <option value="2">InActive</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    <div>
+        <br />
+        <table class="gridtable">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Posted on</th>
+                    <th>Image</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody id="NewsRoom"></tbody>
+        </table>
+        <h4 class="text-danger" id="errormessage"></h4>
+
+    </div>
+
+
+    <script type="text/javascript">
+        function test() {
+            $.ajax({ url: 'wait.php', cache: false });
+        }
+    </script>
+    <div id="domMessage" style="display:none;">
+        <h1>We are processing your request.  Please be patient.</h1>
+    </div>
+}
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/Custom.js/jquery.blockUI.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#GetNews option:selected").prop("selected", false)
+        $("#errormessage").html("");
+        $("#GetNews").change(function () {
+            var Select = $("#GetNews option:selected").val();
+            if (Select == 1) {
+                $("#NewsRoom").empty();
+                blockPage();
+                test();
+                $.ajax({
+                    type: "Get",
+                    dataType: "JSON",
+                    contentType: "Application/json",
+                    url: "../NewsRoom/GetNews",
+                    data: { "Status": 1 },
+                    success: function (data) {
+                        unblockPage();
+                        if (data == "") {
+                            $("#errormessage").html("No Records found");
+                        }
+                        else {
+                            $("#errormessage").html("");
+                            var Imagefile = "";
+                            $.each(data, function (key, value) {
+                                var dateString = value.PostedOn.substr(6);
+                                var currentTime = new Date(parseInt(dateString));
+                                var month = currentTime.getMonth() + 1;
+                                var day = currentTime.getDate();
+                                var year = currentTime.getFullYear();
+                                var date = day + "/" + month + "/" + year;
+                                if (value.Image == null) {
+                                    Imagefile = "/UserProfilePictures/avatar.png";
+                                }
+                                else {
+                                    Imagefile = value.Image;
+                                }
+
+
+                                $("#NewsRoom").append("<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.NewsId + "&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.Title + "&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.Description + "</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + date + "</td><td><img src='" + Imagefile + "' width=100></td><td>&nbsp;&nbsp;&nbsp;&nbsp; <input type=button value='Edit' class='btn btn-primary' onclick=Edit('" + value.NewsId + "')></td><td>&nbsp;&nbsp;&nbsp;&nbsp; <input type=button value='Delete' class='btn btn-primary' onclick=Delete('" + value.NewsId + "')></td></tr>");
+                            });
+                        }
+                    }
+                });
+            }
+            else if (Select == 2) {
+                $("#NewsRoom").empty();
+                blockPage();
+                test();
+                $.ajax({
+                    type: "Get",
+                    dataType: "JSON",
+                    contentType: "Application/json",
+                    url: "../NewsRoom/GetNews",
+                    data: { "Status": 0 },
+                    success: function (data) {
+                        unblockPage();
+                        if (data == "") {
+                            $("#errormessage").html("No Records found");
+                        }
+                        else {
+                            $("#errormessage").html("");
+                            var Imagefile = "";
+                            $.each(data, function (key, value) {
+
+                                var dateString = value.PostedOn.substr(6);
+                                var currentTime = new Date(parseInt(dateString));
+                                var month = currentTime.getMonth() + 1;
+                                var day = currentTime.getDate();
+                                var year = currentTime.getFullYear();
+                                var date = day + "/" + month + "/" + year;
+                                if (value.Image == null) {
+                                    Imagefile = "/UserProfilePictures/avatar.png";
+                                }
+                                else {
+                                    Imagefile = value.Image;
+                                }
+
+
+                                $("#NewsRoom").append("<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.NewsId + "&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.Title + "&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.Description + "</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + date + "</td><td><img src='" + Imagefile + "' width=100></td><td>&nbsp;&nbsp;&nbsp;&nbsp; <input type=button value='Active' class='btn btn-primary' onclick=Active('" + value.NewsId + "')></td></tr>");
+                            });
+                        }
+                    }
+                });
+
+            }
+            else {
+                $("#NewsRoom").empty();
+                $("#errormessage").html("");
+            }
+        });
+
+        blockPage();
+        test();
+        $.ajax({
+            type: "Get",
+            dataType: "JSON",
+            contentType: "Application/json",
+            url: "../NewsRoom/GetNews",
+            data: { "Status": 1 },
+            success: function (data) {
+                unblockPage();
+                var Imagefile = "";
+                $.each(data, function (key, value) {
+                    var dateString = value.PostedOn.substr(6);
+                    var currentTime = new Date(parseInt(dateString));
+                    var month = currentTime.getMonth() + 1;
+                    var day = currentTime.getDate();
+                    var year = currentTime.getFullYear();
+                    var date = day + "/" + month + "/" + year;
+                    if (value.Image == null) {
+                        Imagefile = "/UserProfilePictures/avatar.png";
+                    }
+                    else {
+                        Imagefile = value.Image;
+                    }
+                    $("#NewsRoom").append("<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.NewsId + "&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.Title + "&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.Description + "</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + date + "</td><td><img src='" + Imagefile + "' width=100></td><td>&nbsp;&nbsp;&nbsp;&nbsp; <input type=button value='Edit' class='btn btn-primary' onclick=Edit('" + value.NewsId + "')></td><td>&nbsp;&nbsp;&nbsp;&nbsp; <input type=button value='Delete' class='btn btn-primary' onclick=Delete('" + value.NewsId + "')></td></tr>");
+                });
+            }
+        });
+    });
+</script>
+
+<script>
+    $j = jQuery.noConflict();
+    //function to block the whole page
+    function blockPage() {
+        $j.blockUI({
+            message: '<h3>Please wait....</h3>',
+            css: {
+                border: 'none',
+                padding: '5px',
+                'border-radius': '5px',
+                margin: '0',
+                opacity: .9
+            }
+        });
+        return false;
+    }
+    //function to unblock the page
+    function unblockPage() {
+        $j.unblockUI();
+    }
+</script>
+
+<div class="datagrid">
+
+    <!-- CSS goes in the document HEAD or added to your external stylesheet -->
+    <style type="text/css">
+        table.gridtable {
+            font-family: verdana,arial,sans-serif;
+            font-size: 11px;
+            color: #333333;
+            border-width: 1px;
+            border-color: #666666;
+            border-collapse: collapse;
+        }
+
+            table.gridtable th {
+                border-width: 1px;
+                padding: 8px;
+                border-style: solid;
+                border-color: #666666;
+                background-color: #dedede;
+            }
+
+            table.gridtable td {
+                border-width: 1px;
+                padding: 8px;
+                border-style: solid;
+                border-color: #666666;
+                background-color: #ffffff;
+            }
+    </style>
+</div>
+<!-- Table goes in the document BODY -->
+<script type="text/javascript">
+    function Edit(id) {
+        blockPage();
+        test();
+        $.ajax({
+            type: "Get",
+            dataType: "JSON",
+            contentType: "Application/json",
+            url: "../NewsRoom/Edit",
+            data: { "Id": id },
+            success: function (data) {
+                unblockPage();
+                $("#Title").val(data.Title);
+                $("#Description").val(data.Description);
+                $("#NewRoomId").val(data.NewsId);
+            }
+        });
+    }
+    function Delete(id) {
+
+        if (confirm("Are you sure you want to delete?")) {
+
+            blockPage();
+            test();
+            $.ajax({
+                type: "Get",
+                dataType: "JSON",
+                contentType: "Application/json",
+                url: "../NewsRoom/DeleteNews",
+                data: { "Id": id },
+                success: function (data) {
+                    alert("News deleted successfully");
+                    $("#GetNews option:selected").prop("selected", false)
+                    $("#NewsRoom").empty();
+                    unblockPage();
+                    var Imagefile = "";
+                    $.each(data, function (key, value) {
+                        var dateString = value.PostedOn.substr(6);
+                        var currentTime = new Date(parseInt(dateString));
+                        var month = currentTime.getMonth() + 1;
+                        var day = currentTime.getDate();
+                        var year = currentTime.getFullYear();
+                        var date = day + "/" + month + "/" + year;
+                        if (value.Image == null) {
+                            Imagefile = "/UserProfilePictures/avatar.png";
+                        }
+                        else {
+                            Imagefile = value.Image;
+                        }
+
+                        $("#NewsRoom").append("<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.NewsId + "&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.Title + "&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.Description + "</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + date + "</td><td><img src='" + Imagefile + "' width=100></td><td>&nbsp;&nbsp;&nbsp;&nbsp; <input type=button value='Edit' class='btn btn-primary' onclick=Edit('" + value.NewsId + "')></td><td>&nbsp;&nbsp;&nbsp;&nbsp; <input type=button value='Delete' class='btn btn-primary' onclick=Delete('" + value.NewsId + "')></td></tr>");
+                    });
+                }
+            });
+        }
+        return false;
+
+    }
+
+
+    function Active(id) {
+        blockPage();
+        test();
+        $.ajax({
+            type: "Get",
+            dataType: "JSON",
+            contentType: "Application/json",
+            url: "../NewsRoom/UpdateNews",
+            data: { "Id": id },
+            success: function (data) {
+                $("#GetNews option:selected").prop("selected", false)
+                $("#NewsRoom").empty();
+                unblockPage();
+                alert("News Activated successfully");
+                var Imagefile = "";
+                $.each(data, function (key, value) {
+                    var dateString = value.PostedOn.substr(6);
+                    var currentTime = new Date(parseInt(dateString));
+                    var month = currentTime.getMonth() + 1;
+                    var day = currentTime.getDate();
+                    var year = currentTime.getFullYear();
+                    var date = day + "/" + month + "/" + year;
+
+                    if (value.Image == null) {
+                        Imagefile = "/UserProfilePictures/avatar.png";
+                    }
+                    else {
+                        Imagefile = value.Image;
+                    }
+
+                    $("#NewsRoom").append("<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.NewsId + "&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.Title + "&nbsp;&nbsp;&nbsp;&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + value.Description + "</td><td>&nbsp;&nbsp;&nbsp;&nbsp;" + date + "</td><td><img src='" + Imagefile + "' width=100></td><td>&nbsp;&nbsp;&nbsp;&nbsp; <input type=button value='Edit' class='btn btn-primary' onclick=Edit('" + value.NewsId + "')></td><td>&nbsp;&nbsp;&nbsp;&nbsp; <input type=button value='Delete' class='btn btn-primary' onclick=Delete('" + value.NewsId + "')></td></tr>");
+                });
+            }
+        });
+    }
+
+</script>

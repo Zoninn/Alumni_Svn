@@ -1,0 +1,42 @@
+﻿@model AluminiWebApp.Models.StudentRegistrationModel
+
+<div class="nicdark_space30"></div>
+@using (Ajax.BeginForm("StudentRegistration", "Account", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "StudentorFaculty", OnSuccess = "Success", LoadingElementId = "SteudentDivelent" }))
+{
+    @Html.ValidationSummary(true)
+    <h5>Please select the course/program you pursured</h5>
+    <div class="nicdark_space20"></div>
+    <div class="nicdark_focus nicdark_width_percentage25">
+        <div class="nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+            @Html.DropDownListFor(x => x.CourseCategoryId, new SelectList(Model.Coursecategorys, "Id", "CourseCategoryName"), "Select Degree", new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle", required = "required" })
+            @Html.ValidationMessageFor(x => x.CourseCategoryId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="nicdark_focus nicdark_width_percentage25">
+        <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+            <select id="ddlCourses" class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle" name="CourseId" required="required">
+                <option value="">Select Course</option>
+            </select>
+            @Html.ValidationMessageFor(x => x.CourseId, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="nicdark_focus nicdark_width_percentage25">
+        <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+            <select id="ddlGraduationYear" class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle" name="Batch" required="required">
+                <option value="">Select Joining year</option>
+            </select>
+            @Html.ValidationMessageFor(x => x.Batch, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="nicdark_focus nicdark_width_percentage25">
+        <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+            <input class="nicdark_btn fullwidth nicdark_bg_orange medium nicdark_shadow nicdark_radius white nicdark_press" type="submit" value="Save">
+        </div>
+    </div>
+}
+<script type="text/javascript">
+    function Success(data) {
+        // var CourseCategory = $("#CourseCategoryId option:selected").val();
+        window.location.href = "../Account/contactinformation";
+    }
+</script>

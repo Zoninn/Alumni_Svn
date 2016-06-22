@@ -1,0 +1,73 @@
+﻿@model AluminiWebApp.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Register";
+}
+@if (@ViewBag.Profilestatus == 2)
+{
+    @Html.Partial("_RegistrationStep3");
+}
+<section id="nicdark_parallax_title" class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img8" style="background-position: 50% 0px;">
+
+    <div class="nicdark_filter greydark">
+     
+
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+
+            <div class="grid grid_12">
+                <div class="nicdark_space100"></div>
+                <div class="nicdark_space100"></div>
+                <h1 class="white subtitle">Registration</h1>
+                <div class="nicdark_space10"></div>
+                <div class="nicdark_divider left big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space40"></div>
+                <div class="nicdark_space50"></div>
+            </div>
+
+        </div>
+        <!--end nicdark_container-->
+
+    </div>
+
+</section>
+<div id="RegistrationStep1">
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "subscribe" }))
+    {
+        <section class="nicdark_section">
+            <div class="nicdark_container nicdark_clearfix">
+                <div class="nicdark_space20"></div>
+
+                <div class="grid grid_12">
+                    <div class="nicdark_space40"></div>
+                    <h3 class="subtitle greydark">STEP ONE</h3>
+                    <div class="nicdark_space20"></div>
+                    <div class="nicdark_divider left small"><span class="nicdark_bg_blue nicdark_radius"></span></div>
+                </div><h3 class="text-danger">@TempData["ErrorMessage"]</h3>
+
+                <div class="grid grid_12 nicdark_bg_grey nicdark_shadow nicdark_radius nicdark_relative">
+                    <a href="#" class="nicdark_displaynone_iphoneland nicdark_displaynone_iphonepotr nicdark_btn_icon nicdark_bg_blue extrabig nicdark_radius_left white nicdark_absolute"><i class="icon-at"></i></a>
+                    <div class="nicdark_textevidence" style="padding-bottom: 20px;">
+                        <div class="nicdark_margin1820 nicdark_marginleft100 nicdark_marginleft20_iphoneland nicdark_marginleft20_iphonepotr">
+                            <div class="nicdark_focus nicdark_width_percentage80">
+                                @Html.TextBoxFor(m => m.Email, new { placeholder = "ENTER YOUR MAIL", @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle" })
+                            </div>
+                            <div class="nicdark_focus nicdark_width_percentage20">
+                                <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                    <input class="nicdark_btn fullwidth nicdark_bg_blue medium nicdark_shadow nicdark_radius white" type="submit" value="SUBMIT">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                @Html.ValidationSummary("", new { @class = "text-danger" })
+                <div class="nicdark_space60"></div>
+
+            </div>
+        </section>
+    }
+</div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

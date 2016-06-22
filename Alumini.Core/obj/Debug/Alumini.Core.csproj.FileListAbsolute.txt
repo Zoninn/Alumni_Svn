@@ -1,0 +1,48 @@
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\Alumini.Core\bin\Debug\Alumini.Core.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\Alumini.Core\bin\Debug\Alumini.Core.pdb
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\Alumini.Core\obj\Debug\Alumini.Core.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\Alumini.Core\obj\Debug\Alumini.Core.pdb
+C:\Users\tulasiram\Documents\collegealumini\Alumini.Core\bin\Debug\Alumini.Core.dll
+C:\Users\tulasiram\Documents\collegealumini\Alumini.Core\bin\Debug\Alumini.Core.pdb
+C:\Users\tulasiram\Documents\collegealumini\Alumini.Core\obj\Debug\Alumini.Core.dll
+C:\Users\tulasiram\Documents\collegealumini\Alumini.Core\obj\Debug\Alumini.Core.pdb
+C:\Users\tulasiram\Documents\collegealumini\Alumini.Core\obj\Debug\Alumini.Core.csprojResolveAssemblyReference.cache
+D:\FRESHCOPY ALUMNI\Alumini.Core\bin\Debug\Alumini.Core.dll
+D:\FRESHCOPY ALUMNI\Alumini.Core\bin\Debug\Alumini.Core.pdb
+D:\FRESHCOPY ALUMNI\Alumini.Core\obj\Debug\Alumini.Core.dll
+D:\FRESHCOPY ALUMNI\Alumini.Core\obj\Debug\Alumini.Core.pdb
+D:\FRESHCOPY ALUMNI\Alumini.Core\obj\Debug\Alumini.Core.csprojResolveAssemblyReference.cache
+C:\Alumni Copy\Alumini.Core\bin\Debug\Alumini.Core.dll
+C:\Alumni Copy\Alumini.Core\bin\Debug\Alumini.Core.pdb
+C:\Alumni Copy\Alumini.Core\obj\Debug\Alumini.Core.dll
+C:\Alumni Copy\Alumini.Core\obj\Debug\Alumini.Core.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\Alumini.Core\bin\Debug\Alumini.Core.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\Alumini.Core\bin\Debug\Alumini.Core.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\Alumini.Core\obj\Debug\Alumini.Core.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\Alumini.Core\obj\Debug\Alumini.Core.pdb
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\Alumini.Core\bin\Debug\Alumini.Core.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\Alumini.Core\bin\Debug\Alumini.Core.pdb
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\Alumini.Core\obj\Debug\Alumini.Core.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\Alumini.Core\obj\Debug\Alumini.Core.pdb
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\Alumini.Core\bin\Debug\Alumini.Core.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\Alumini.Core\bin\Debug\Alumini.Core.pdb
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\Alumini.Core\obj\Debug\Alumini.Core.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\Alumini.Core\obj\Debug\Alumini.Core.pdb
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\Alumini.Core\obj\Debug\Alumini.Core.csprojResolveAssemblyReference.cache
+D:\RepoAlumni\Alumini.Core\bin\Debug\Alumini.Core.dll
+D:\RepoAlumni\Alumini.Core\bin\Debug\Alumini.Core.pdb
+D:\RepoAlumni\Alumini.Core\obj\Debug\Alumini.Core.dll
+D:\RepoAlumni\Alumini.Core\obj\Debug\Alumini.Core.pdb
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\Alumini.Core\bin\Debug\Alumini.Core.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\Alumini.Core\bin\Debug\Alumini.Core.pdb
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\Alumini.Core\obj\Debug\Alumini.Core.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\Alumini.Core\obj\Debug\Alumini.Core.pdb
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\Alumini.Core\obj\Debug\Alumini.Core.csprojResolveAssemblyReference.cache
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\Alumini.Core\bin\Debug\Alumini.Core.dll
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\Alumini.Core\bin\Debug\Alumini.Core.pdb
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\Alumini.Core\obj\Debug\Alumini.Core.dll
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\Alumini.Core\obj\Debug\Alumini.Core.pdb
+D:\MYAlumniNewDesignCopyRepo\Alumini.Core\bin\Debug\Alumini.Core.dll
+D:\MYAlumniNewDesignCopyRepo\Alumini.Core\bin\Debug\Alumini.Core.pdb
+D:\MYAlumniNewDesignCopyRepo\Alumini.Core\obj\Debug\Alumini.Core.dll
+D:\MYAlumniNewDesignCopyRepo\Alumini.Core\obj\Debug\Alumini.Core.pdb

@@ -1,0 +1,1574 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_Alumni_TestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Country1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CountryCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="UserDetails" Relationship="db_Alumni_TestModel.FK_UserDetails_UserDetails" FromRole="Country" ToRole="UserDetail" />
+    <NavigationProperty Name="States" Relationship="db_Alumni_TestModel.FK_States_Country" FromRole="Country" ToRole="State" />
+  </EntityType>
+  <EntityType Name="GraduationYear">
+    <Key>
+      <PropertyRef Name="GraduationYearId" />
+    </Key>
+    <Property Name="GraduationYearId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Year" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="CourseId" Type="Int32" />
+    <NavigationProperty Name="Cours" Relationship="Self.FK_GraduationYears_Courses" FromRole="GraduationYears" ToRole="Courses" />
+  </EntityType>
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContextKey" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Model" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+    <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetRole">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUsers" Relationship="Self.AspNetUserRoles" FromRole="AspNetRoles" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUserClaims" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogin">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProviderKey" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUser" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUserLogins" ToRole="AspNetUsers" />
+  </EntityType>
+  <EntityType Name="AspNetUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="AspNetUserClaims" Relationship="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserClaims" />
+    <NavigationProperty Name="AspNetUserLogins" Relationship="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" FromRole="AspNetUsers" ToRole="AspNetUserLogins" />
+    <NavigationProperty Name="AspNetRoles" Relationship="Self.AspNetUserRoles" FromRole="AspNetUsers" ToRole="AspNetRoles" />
+  </EntityType>
+  <EntityType Name="CourseCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseCategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="Courses" Relationship="Self.FK_Courses_CourseCategories" FromRole="CourseCategories" ToRole="Courses" />
+    <Property Name="Years" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Cours">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CourseCategoryId" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="GraduationYears" Relationship="Self.FK_GraduationYears_Courses" FromRole="Courses" ToRole="GraduationYears" />
+    <NavigationProperty Name="CourseCategory" Relationship="Self.FK_Courses_CourseCategories" FromRole="Courses" ToRole="CourseCategories" />
+    <NavigationProperty Name="EducationalDetails" Relationship="Self.FK_EducationalDetails_Courses" FromRole="Courses" ToRole="EducationalDetails" />
+  </EntityType>
+  <EntityType Name="EducationalDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int64" />
+    <Property Name="CollegeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CourseId" Type="Int32" />
+    <Property Name="Batch" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="Cours" Relationship="Self.FK_EducationalDetails_Courses" FromRole="EducationalDetails" ToRole="Courses" />
+    <NavigationProperty Name="UserDetail" Relationship="db_Alumni_TestModel.FK_EducationalDetails_Users" FromRole="EducationalDetail" ToRole="UserDetail" />
+  </EntityType>
+  <EntityType Name="FacultyWorkInfo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FacultyUserId" Type="Int64" Nullable="false" />
+    <Property Name="DesignationName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DepartmentName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="WorkingFrom" Type="Int32" />
+    <Property Name="WorkingTo" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="UserDetail" Relationship="db_Alumni_TestModel.FK_FacultyWorkInfo_UserDetails" FromRole="FacultyWorkInfo" ToRole="UserDetail" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GenderName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="UserDetails" Relationship="db_Alumni_TestModel.FK_UserDetails_Gender" FromRole="Gender" ToRole="UserDetail" />
+  </EntityType>
+  <EntityType Name="ProfessionalDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int64" Nullable="false" />
+    <Property Name="Company" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Designation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="WorkedFrom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="WorkedTill" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="UserDetail" Relationship="db_Alumni_TestModel.FK_ProfessionalDetails_Users" FromRole="ProfessionalDetail" ToRole="UserDetail" />
+  </EntityType>
+  <EntityType Name="RelationshipStatu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RelationshipStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Salutation">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Salutation1" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="UserDetails" Relationship="db_Alumni_TestModel.FK_UserDetails_Salutations" FromRole="Salutation" ToRole="UserDetail" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="View_UserDetails">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="LoginName" />
+      <PropertyRef Name="RoleId" />
+      <PropertyRef Name="Role" />
+    </Key>
+    <Property Name="UserId" Type="Int64" Nullable="false" />
+    <Property Name="AspnetUsersId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="HomeVillegeOrAreaName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HomeCityName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LivesInCityName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="UserStatus" Type="Int32" />
+    <Property Name="ProfileInfoPercentage" Type="Int32" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AlternateEmailId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HomePhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PortalPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Salutation" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+    <Property Name="GenderName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="DOB" Type="DateTime" Precision="3" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LoginName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RoleId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Role" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CollegeName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CourseId" Type="Int32" />
+    <Property Name="CourseName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Batch" Type="Int32" />
+    <Property Name="DesignationName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DepartmentName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="WorkingFrom" Type="Int32" />
+    <Property Name="WorkingTo" Type="Int32" />
+    <Property Name="CourseCategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Years" Type="Int32" />
+    <Property Name="ProfilePicture" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Company" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Designation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="WorkedFrom" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="WorkedTill" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CityName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_GraduationYears_Courses">
+    <End Role="Courses" Type="Self.Cours" Multiplicity="0..1" />
+    <End Role="GraduationYears" Type="Self.GraduationYear" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="GraduationYears">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUsers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Courses_CourseCategories">
+    <End Role="CourseCategories" Type="Self.CourseCategory" Multiplicity="0..1" />
+    <End Role="Courses" Type="Self.Cours" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CourseCategories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Courses">
+        <PropertyRef Name="CourseCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EducationalDetails_Courses">
+    <End Role="Courses" Type="Self.Cours" Multiplicity="0..1" />
+    <End Role="EducationalDetails" Type="Self.EducationalDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EducationalDetails">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AspNetUserRoles">
+    <End Role="AspNetRoles" Type="Self.AspNetRole" Multiplicity="*" />
+    <End Role="AspNetUsers" Type="Self.AspNetUser" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="db_Alumni_TestEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Countries" EntityType="Self.Country" />
+    <EntitySet Name="GraduationYears" EntityType="Self.GraduationYear" />
+    <EntitySet Name="C__MigrationHistory" EntityType="Self.C__MigrationHistory" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRole" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaim" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogin" />
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUser" />
+    <EntitySet Name="CourseCategories" EntityType="Self.CourseCategory" />
+    <EntitySet Name="Courses" EntityType="Self.Cours" />
+    <EntitySet Name="EducationalDetails" EntityType="Self.EducationalDetail" />
+    <EntitySet Name="FacultyWorkInfoes" EntityType="Self.FacultyWorkInfo" />
+    <EntitySet Name="Genders" EntityType="Self.Gender" />
+    <EntitySet Name="ProfessionalDetails" EntityType="Self.ProfessionalDetail" />
+    <EntitySet Name="RelationshipStatus" EntityType="Self.RelationshipStatu" />
+    <EntitySet Name="Salutations" EntityType="Self.Salutation" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="View_UserDetails" EntityType="Self.View_UserDetails" />
+    <AssociationSet Name="FK_GraduationYears_Courses" Association="Self.FK_GraduationYears_Courses">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="GraduationYears" EntitySet="GraduationYears" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Courses_CourseCategories" Association="Self.FK_Courses_CourseCategories">
+      <End Role="CourseCategories" EntitySet="CourseCategories" />
+      <End Role="Courses" EntitySet="Courses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EducationalDetails_Courses" Association="Self.FK_EducationalDetails_Courses">
+      <End Role="Courses" EntitySet="Courses" />
+      <End Role="EducationalDetails" EntitySet="EducationalDetails" />
+    </AssociationSet>
+    <AssociationSet Name="AspNetUserRoles" Association="Self.AspNetUserRoles">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUsers" EntitySet="AspNetUsers" />
+    </AssociationSet>
+    <EntitySet Name="UserDetails" EntityType="db_Alumni_TestModel.UserDetail" />
+    <AssociationSet Name="FK_UserDetails_UserDetails" Association="db_Alumni_TestModel.FK_UserDetails_UserDetails">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="UserDetail" EntitySet="UserDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EducationalDetails_Users" Association="db_Alumni_TestModel.FK_EducationalDetails_Users">
+      <End Role="UserDetail" EntitySet="UserDetails" />
+      <End Role="EducationalDetail" EntitySet="EducationalDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FacultyWorkInfo_UserDetails" Association="db_Alumni_TestModel.FK_FacultyWorkInfo_UserDetails">
+      <End Role="UserDetail" EntitySet="UserDetails" />
+      <End Role="FacultyWorkInfo" EntitySet="FacultyWorkInfoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDetails_Gender" Association="db_Alumni_TestModel.FK_UserDetails_Gender">
+      <End Role="Gender" EntitySet="Genders" />
+      <End Role="UserDetail" EntitySet="UserDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProfessionalDetails_Users" Association="db_Alumni_TestModel.FK_ProfessionalDetails_Users">
+      <End Role="UserDetail" EntitySet="UserDetails" />
+      <End Role="ProfessionalDetail" EntitySet="ProfessionalDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDetails_Salutations" Association="db_Alumni_TestModel.FK_UserDetails_Salutations">
+      <End Role="Salutation" EntitySet="Salutations" />
+      <End Role="UserDetail" EntitySet="UserDetails" />
+    </AssociationSet>
+    <EntitySet Name="EventCategorys" EntityType="db_Alumni_TestModel.EventCategory" />
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(db_Alumni_TestModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(db_Alumni_TestModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <EntitySet Name="UserPost_Comments" EntityType="db_Alumni_TestModel.UserPost_Comments" />
+    <EntitySet Name="UserPost_Files" EntityType="db_Alumni_TestModel.UserPost_Files" />
+    <EntitySet Name="UserPost_Images" EntityType="db_Alumni_TestModel.UserPost_Images" />
+    <EntitySet Name="UserPost_Likes" EntityType="db_Alumni_TestModel.UserPost_Likes" />
+    <EntitySet Name="UserPosts" EntityType="db_Alumni_TestModel.UserPost" />
+    <AssociationSet Name="FK_UserPosts_EventCategorys" Association="db_Alumni_TestModel.FK_UserPosts_EventCategorys">
+      <End Role="EventCategory" EntitySet="EventCategorys" />
+      <End Role="UserPost" EntitySet="UserPosts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPost_Comments_UserDetails" Association="db_Alumni_TestModel.FK_UserPost_Comments_UserDetails">
+      <End Role="UserDetail" EntitySet="UserDetails" />
+      <End Role="UserPost_Comments" EntitySet="UserPost_Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPost_Comments_UserPost_Comments" Association="db_Alumni_TestModel.FK_UserPost_Comments_UserPost_Comments">
+      <End Role="UserPost_Comments" EntitySet="UserPost_Comments" />
+      <End Role="UserPost_Comments1" EntitySet="UserPost_Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPost_Files_UserPosts" Association="db_Alumni_TestModel.FK_UserPost_Files_UserPosts">
+      <End Role="UserPost" EntitySet="UserPosts" />
+      <End Role="UserPost_Files" EntitySet="UserPost_Files" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPost_Images_UserPosts" Association="db_Alumni_TestModel.FK_UserPost_Images_UserPosts">
+      <End Role="UserPost" EntitySet="UserPosts" />
+      <End Role="UserPost_Images" EntitySet="UserPost_Images" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPost_Likes_UserDetails" Association="db_Alumni_TestModel.FK_UserPost_Likes_UserDetails">
+      <End Role="UserDetail" EntitySet="UserDetails" />
+      <End Role="UserPost_Likes" EntitySet="UserPost_Likes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPost_Likes_UserPosts" Association="db_Alumni_TestModel.FK_UserPost_Likes_UserPosts">
+      <End Role="UserPost" EntitySet="UserPosts" />
+      <End Role="UserPost_Likes" EntitySet="UserPost_Likes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPosts_UserDetails" Association="db_Alumni_TestModel.FK_UserPosts_UserDetails">
+      <End Role="UserDetail" EntitySet="UserDetails" />
+      <End Role="UserPost" EntitySet="UserPosts" />
+    </AssociationSet>
+    <EntitySet Name="UserPosts_Visisble" EntityType="db_Alumni_TestModel.UserPosts_Visisble" />
+    <AssociationSet Name="FK_UserPosts_Visisble_UserPosts" Association="db_Alumni_TestModel.FK_UserPosts_Visisble_UserPosts">
+      <End Role="UserPost" EntitySet="UserPosts" />
+      <End Role="UserPosts_Visisble" EntitySet="UserPosts_Visisble" />
+    </AssociationSet>
+    <EntitySet Name="Def_Events" EntityType="db_Alumni_TestModel.Def_Events" />
+    <EntitySet Name="Event_Faqs" EntityType="db_Alumni_TestModel.Event_Faqs" />
+    <EntitySet Name="Event_Gallery" EntityType="db_Alumni_TestModel.Event_Gallery" />
+    <EntitySet Name="Event_TicketTypes" EntityType="db_Alumni_TestModel.Event_TicketTypes" />
+    <AssociationSet Name="FK_Event_Faqs_Def_Events" Association="db_Alumni_TestModel.FK_Event_Faqs_Def_Events">
+      <End Role="Def_Events" EntitySet="Def_Events" />
+      <End Role="Event_Faqs" EntitySet="Event_Faqs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_Gallery_Def_Events" Association="db_Alumni_TestModel.FK_Event_Gallery_Def_Events">
+      <End Role="Def_Events" EntitySet="Def_Events" />
+      <End Role="Event_Gallery" EntitySet="Event_Gallery" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_TicketTypes_Def_Events" Association="db_Alumni_TestModel.FK_Event_TicketTypes_Def_Events">
+      <End Role="Def_Events" EntitySet="Def_Events" />
+      <End Role="Event_TicketTypes" EntitySet="Event_TicketTypes" />
+    </AssociationSet>
+    <EntitySet Name="Event_UserSelections" EntityType="db_Alumni_TestModel.Event_UserSelections" />
+    <EntitySet Name="Events_UserBookings" EntityType="db_Alumni_TestModel.Events_UserBookings" />
+    <AssociationSet Name="FK_Event_UserSelections_Def_Events" Association="db_Alumni_TestModel.FK_Event_UserSelections_Def_Events">
+      <End Role="Def_Events" EntitySet="Def_Events" />
+      <End Role="Event_UserSelections" EntitySet="Event_UserSelections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Events_UserBookings_Event_TicketTypes" Association="db_Alumni_TestModel.FK_Events_UserBookings_Event_TicketTypes">
+      <End Role="Event_TicketTypes" EntitySet="Event_TicketTypes" />
+      <End Role="Events_UserBookings" EntitySet="Events_UserBookings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_UserSelections_UserDetails" Association="db_Alumni_TestModel.FK_Event_UserSelections_UserDetails">
+      <End Role="UserDetail" EntitySet="UserDetails" />
+      <End Role="Event_UserSelections" EntitySet="Event_UserSelections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Events_UserBookings_Event_UserSelections" Association="db_Alumni_TestModel.FK_Events_UserBookings_Event_UserSelections">
+      <End Role="Event_UserSelections" EntitySet="Event_UserSelections" />
+      <End Role="Events_UserBookings" EntitySet="Events_UserBookings" />
+    </AssociationSet>
+    <EntitySet Name="Event_UserPayments" EntityType="db_Alumni_TestModel.Event_UserPayments" />
+    <AssociationSet Name="FK_Event_UserPayments_Event_UserSelections" Association="db_Alumni_TestModel.FK_Event_UserPayments_Event_UserSelections">
+      <End Role="Event_UserSelections" EntitySet="Event_UserSelections" />
+      <End Role="Event_UserPayments" EntitySet="Event_UserPayments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_UserPayments_UserDetails" Association="db_Alumni_TestModel.FK_Event_UserPayments_UserDetails">
+      <End Role="UserDetail" EntitySet="UserDetails" />
+      <End Role="Event_UserPayments" EntitySet="Event_UserPayments" />
+    </AssociationSet>
+    <EntitySet Name="Event_AttendingStatus" EntityType="db_Alumni_TestModel.Event_AttendingStatus" />
+    <AssociationSet Name="FK_Event_AttendingStatus_Def_Events" Association="db_Alumni_TestModel.FK_Event_AttendingStatus_Def_Events">
+      <End Role="Def_Events" EntitySet="Def_Events" />
+      <End Role="Event_AttendingStatus" EntitySet="Event_AttendingStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Event_AttendingStatus_UserDetails" Association="db_Alumni_TestModel.FK_Event_AttendingStatus_UserDetails">
+      <End Role="UserDetail" EntitySet="UserDetails" />
+      <End Role="Event_AttendingStatus" EntitySet="Event_AttendingStatus" />
+    </AssociationSet>
+    <EntitySet Name="Job_FunctionalArea" EntityType="db_Alumni_TestModel.Job_FunctionalArea" />
+    <EntitySet Name="UserPosting_Jobs" EntityType="db_Alumni_TestModel.UserPosting_Jobs" />
+    <AssociationSet Name="FK_UserPosting_Jobs_Job_FunctionalArea" Association="db_Alumni_TestModel.FK_UserPosting_Jobs_Job_FunctionalArea">
+      <End Role="Job_FunctionalArea" EntitySet="Job_FunctionalArea" />
+      <End Role="UserPosting_Jobs" EntitySet="UserPosting_Jobs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPosting_Jobs_UserDetails" Association="db_Alumni_TestModel.FK_UserPosting_Jobs_UserDetails">
+      <End Role="UserDetail" EntitySet="UserDetails" />
+      <End Role="UserPosting_Jobs" EntitySet="UserPosting_Jobs" />
+    </AssociationSet>
+    <EntitySet Name="db_NewsRooms" EntityType="db_Alumni_TestModel.db_NewsRooms" />
+    <EntitySet Name="db_Memories_images" EntityType="db_Alumni_TestModel.db_Memories_images" />
+    <EntitySet Name="db_Memories_Info" EntityType="db_Alumni_TestModel.db_Memories_Info" />
+    <AssociationSet Name="FK_db_Memories_images_db_Memories_Info" Association="db_Alumni_TestModel.FK_db_Memories_images_db_Memories_Info">
+      <End Role="db_Memories_Info" EntitySet="db_Memories_Info" />
+      <End Role="db_Memories_images" EntitySet="db_Memories_images" />
+    </AssociationSet>
+    <EntitySet Name="Donation_Details" EntityType="db_Alumni_TestModel.Donation_Details" />
+    <EntitySet Name="Donor_Details" EntityType="db_Alumni_TestModel.Donor_Details" />
+    <EntitySet Name="Transaction_Details" EntityType="db_Alumni_TestModel.Transaction_Details" />
+    <AssociationSet Name="FK_Donor_Details_Donation_Details" Association="db_Alumni_TestModel.FK_Donor_Details_Donation_Details">
+      <End Role="Donation_Details" EntitySet="Donation_Details" />
+      <End Role="Donor_Details" EntitySet="Donor_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Donor_Details_Transaction_Details" Association="db_Alumni_TestModel.FK_Donor_Details_Transaction_Details">
+      <End Role="Transaction_Details" EntitySet="Transaction_Details" />
+      <End Role="Donor_Details" EntitySet="Donor_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Donor_Details_UserDetails" Association="db_Alumni_TestModel.FK_Donor_Details_UserDetails">
+      <End Role="UserDetail" EntitySet="UserDetails" />
+      <End Role="Donor_Details" EntitySet="Donor_Details" />
+    </AssociationSet>
+    <EntitySet Name="Album_Gallery" EntityType="db_Alumni_TestModel.Album_Gallery" />
+    <EntitySet Name="Album_Gallery_Images" EntityType="db_Alumni_TestModel.Album_Gallery_Images" />
+    <AssociationSet Name="FK_Album_Gallery_Images_Album_Gallery" Association="db_Alumni_TestModel.FK_Album_Gallery_Images_Album_Gallery">
+      <End Role="Album_Gallery" EntitySet="Album_Gallery" />
+      <End Role="Album_Gallery_Images" EntitySet="Album_Gallery_Images" />
+    </AssociationSet>
+    <EntitySet Name="Alumni_Gallery" EntityType="db_Alumni_TestModel.Alumni_Gallery" />
+    <EntitySet Name="Alumni_ContactUs" EntityType="db_Alumni_TestModel.Alumni_ContactUs" />
+    <EntitySet Name="Cities" EntityType="db_Alumni_TestModel.City" />
+    <EntitySet Name="Districts" EntityType="db_Alumni_TestModel.District" />
+    <EntitySet Name="States" EntityType="db_Alumni_TestModel.State" />
+    <AssociationSet Name="FK_States_Country" Association="db_Alumni_TestModel.FK_States_Country">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="State" EntitySet="States" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cities_Districts" Association="db_Alumni_TestModel.FK_Cities_Districts">
+      <End Role="District" EntitySet="Districts" />
+      <End Role="City" EntitySet="Cities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cities_States" Association="db_Alumni_TestModel.FK_Cities_States">
+      <End Role="State" EntitySet="States" />
+      <End Role="City" EntitySet="Cities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDetails_Cities" Association="db_Alumni_TestModel.FK_UserDetails_Cities">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="UserDetail" EntitySet="UserDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserDetails_Cities1" Association="db_Alumni_TestModel.FK_UserDetails_Cities1">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="UserDetail" EntitySet="UserDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Districts_States" Association="db_Alumni_TestModel.FK_Districts_States">
+      <End Role="State" EntitySet="States" />
+      <End Role="District" EntitySet="Districts" />
+    </AssociationSet>
+    <EntitySet Name="Custome_Templates" EntityType="db_Alumni_TestModel.Custome_Templates" />
+    <EntitySet Name="Executive_board" EntityType="db_Alumni_TestModel.Executive_board" />
+    <EntitySet Name="Banner_Imags" EntityType="db_Alumni_TestModel.Banner_Imags" />
+  </EntityContainer>
+  <EntityType Name="UserDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AspnetUsersId" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="HomeCityId" Type="Int32" Nullable="false" />
+    <Property Name="HomeVillegeOrAreaName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="LivesInCityId" Type="Int32" Nullable="false" />
+    <Property Name="LivesInVillegeOrAreaName" Type="Int32" />
+    <Property Name="SalutationId" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="GenderId" Type="Int32" />
+    <Property Name="DOB" Type="DateTime" Precision="3" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="IsActive" Type="Int32" Nullable="false" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ProfilePicture" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="UserStatus" Type="Int32" />
+    <Property Name="ProfileInfoPercentage" Type="Int32" />
+    <Property Name="AlternateEmailId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CountryCode" Type="Int32" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HomePhoneNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PortalPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PermanentAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Country" Relationship="db_Alumni_TestModel.FK_UserDetails_UserDetails" FromRole="UserDetail" ToRole="Country" />
+    <NavigationProperty Name="EducationalDetails" Relationship="db_Alumni_TestModel.FK_EducationalDetails_Users" FromRole="UserDetail" ToRole="EducationalDetail" />
+    <NavigationProperty Name="FacultyWorkInfoes" Relationship="db_Alumni_TestModel.FK_FacultyWorkInfo_UserDetails" FromRole="UserDetail" ToRole="FacultyWorkInfo" />
+    <NavigationProperty Name="Gender" Relationship="db_Alumni_TestModel.FK_UserDetails_Gender" FromRole="UserDetail" ToRole="Gender" />
+    <NavigationProperty Name="ProfessionalDetails" Relationship="db_Alumni_TestModel.FK_ProfessionalDetails_Users" FromRole="UserDetail" ToRole="ProfessionalDetail" />
+    <NavigationProperty Name="Salutation" Relationship="db_Alumni_TestModel.FK_UserDetails_Salutations" FromRole="UserDetail" ToRole="Salutation" />
+    <NavigationProperty Name="UserPost_Comments" Relationship="db_Alumni_TestModel.FK_UserPost_Comments_UserDetails" FromRole="UserDetail" ToRole="UserPost_Comments" />
+    <NavigationProperty Name="UserPost_Likes" Relationship="db_Alumni_TestModel.FK_UserPost_Likes_UserDetails" FromRole="UserDetail" ToRole="UserPost_Likes" />
+    <NavigationProperty Name="UserPosts" Relationship="db_Alumni_TestModel.FK_UserPosts_UserDetails" FromRole="UserDetail" ToRole="UserPost" />
+    <NavigationProperty Name="Event_UserSelections" Relationship="db_Alumni_TestModel.FK_Event_UserSelections_UserDetails" FromRole="UserDetail" ToRole="Event_UserSelections" />
+    <NavigationProperty Name="Event_UserPayments" Relationship="db_Alumni_TestModel.FK_Event_UserPayments_UserDetails" FromRole="UserDetail" ToRole="Event_UserPayments" />
+    <NavigationProperty Name="Event_AttendingStatus" Relationship="db_Alumni_TestModel.FK_Event_AttendingStatus_UserDetails" FromRole="UserDetail" ToRole="Event_AttendingStatus" />
+    <NavigationProperty Name="UserPosting_Jobs" Relationship="db_Alumni_TestModel.FK_UserPosting_Jobs_UserDetails" FromRole="UserDetail" ToRole="UserPosting_Jobs" />
+    <NavigationProperty Name="Donor_Details" Relationship="db_Alumni_TestModel.FK_Donor_Details_UserDetails" FromRole="UserDetail" ToRole="Donor_Details" />
+    <NavigationProperty Name="City" Relationship="db_Alumni_TestModel.FK_UserDetails_Cities" FromRole="UserDetail" ToRole="City" />
+    <NavigationProperty Name="City1" Relationship="db_Alumni_TestModel.FK_UserDetails_Cities1" FromRole="UserDetail" ToRole="City" />
+    <Property Name="PresentCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PermanentCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PresentDistid" Type="Int32" />
+    <Property Name="PermanentDistid" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_UserDetails_UserDetails">
+    <End Type="db_Alumni_TestModel.Country" Role="Country" Multiplicity="0..1" />
+    <End Type="db_Alumni_TestModel.UserDetail" Role="UserDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDetail">
+        <PropertyRef Name="CountryCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EducationalDetails_Users">
+    <End Type="db_Alumni_TestModel.UserDetail" Role="UserDetail" Multiplicity="0..1" />
+    <End Type="db_Alumni_TestModel.EducationalDetail" Role="EducationalDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetail">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EducationalDetail">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FacultyWorkInfo_UserDetails">
+    <End Type="db_Alumni_TestModel.UserDetail" Role="UserDetail" Multiplicity="1" />
+    <End Type="db_Alumni_TestModel.FacultyWorkInfo" Role="FacultyWorkInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetail">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FacultyWorkInfo">
+        <PropertyRef Name="FacultyUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDetails_Gender">
+    <End Type="db_Alumni_TestModel.Gender" Role="Gender" Multiplicity="0..1" />
+    <End Type="db_Alumni_TestModel.UserDetail" Role="UserDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDetail">
+        <PropertyRef Name="GenderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProfessionalDetails_Users">
+    <End Type="db_Alumni_TestModel.UserDetail" Role="UserDetail" Multiplicity="1" />
+    <End Type="db_Alumni_TestModel.ProfessionalDetail" Role="ProfessionalDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetail">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProfessionalDetail">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDetails_Salutations">
+    <End Type="db_Alumni_TestModel.Salutation" Role="Salutation" Multiplicity="0..1" />
+    <End Type="db_Alumni_TestModel.UserDetail" Role="UserDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Salutation">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDetail">
+        <PropertyRef Name="SalutationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="EventCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="UserPosts" Relationship="db_Alumni_TestModel.FK_UserPosts_EventCategorys" FromRole="EventCategory" ToRole="UserPost" />
+  </EntityType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="UserPost_Comments">
+    <Key>
+      <PropertyRef Name="CommentId" />
+    </Key>
+    <Property Name="CommentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PostId" Type="Int32" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Files" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="Int64" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="UserDetail" Relationship="db_Alumni_TestModel.FK_UserPost_Comments_UserDetails" FromRole="UserPost_Comments" ToRole="UserDetail" />
+    <NavigationProperty Name="UserPost_Comments1" Relationship="db_Alumni_TestModel.FK_UserPost_Comments_UserPost_Comments" FromRole="UserPost_Comments" ToRole="UserPost_Comments1" />
+    <NavigationProperty Name="UserPost_Comments2" Relationship="db_Alumni_TestModel.FK_UserPost_Comments_UserPost_Comments" FromRole="UserPost_Comments1" ToRole="UserPost_Comments" />
+  </EntityType>
+  <EntityType Name="UserPost_Files">
+    <Key>
+      <PropertyRef Name="FileId" />
+    </Key>
+    <Property Name="FileId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PostId" Type="Int32" />
+    <Property Name="FilePath" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="UserPost" Relationship="db_Alumni_TestModel.FK_UserPost_Files_UserPosts" FromRole="UserPost_Files" ToRole="UserPost" />
+  </EntityType>
+  <EntityType Name="UserPost_Images">
+    <Key>
+      <PropertyRef Name="PictureId" />
+    </Key>
+    <Property Name="PictureId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PostId" Type="Int32" />
+    <Property Name="ImagePath" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="UserPost" Relationship="db_Alumni_TestModel.FK_UserPost_Images_UserPosts" FromRole="UserPost_Images" ToRole="UserPost" />
+  </EntityType>
+  <EntityType Name="UserPost_Likes">
+    <Key>
+      <PropertyRef Name="LikeId" />
+    </Key>
+    <Property Name="LikeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int64" />
+    <Property Name="PostId" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="UserDetail" Relationship="db_Alumni_TestModel.FK_UserPost_Likes_UserDetails" FromRole="UserPost_Likes" ToRole="UserDetail" />
+    <NavigationProperty Name="UserPost" Relationship="db_Alumni_TestModel.FK_UserPost_Likes_UserPosts" FromRole="UserPost_Likes" ToRole="UserPost" />
+  </EntityType>
+  <EntityType Name="UserPost">
+    <Key>
+      <PropertyRef Name="PostId" />
+    </Key>
+    <Property Name="PostId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EventId" Type="Int32" />
+    <Property Name="UserId" Type="Int64" />
+    <Property Name="UserMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Likes" Type="Int32" />
+    <Property Name="Unlike" Type="Int32" />
+    <Property Name="ViewBy" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="EventCategory" Relationship="db_Alumni_TestModel.FK_UserPosts_EventCategorys" FromRole="UserPost" ToRole="EventCategory" />
+    <NavigationProperty Name="UserPost_Files" Relationship="db_Alumni_TestModel.FK_UserPost_Files_UserPosts" FromRole="UserPost" ToRole="UserPost_Files" />
+    <NavigationProperty Name="UserPost_Images" Relationship="db_Alumni_TestModel.FK_UserPost_Images_UserPosts" FromRole="UserPost" ToRole="UserPost_Images" />
+    <NavigationProperty Name="UserPost_Likes" Relationship="db_Alumni_TestModel.FK_UserPost_Likes_UserPosts" FromRole="UserPost" ToRole="UserPost_Likes" />
+    <NavigationProperty Name="UserDetail" Relationship="db_Alumni_TestModel.FK_UserPosts_UserDetails" FromRole="UserPost" ToRole="UserDetail" />
+    <NavigationProperty Name="UserPosts_Visisble" Relationship="db_Alumni_TestModel.FK_UserPosts_Visisble_UserPosts" FromRole="UserPost" ToRole="UserPosts_Visisble" />
+  </EntityType>
+  <Association Name="FK_UserPosts_EventCategorys">
+    <End Type="db_Alumni_TestModel.EventCategory" Role="EventCategory" Multiplicity="0..1" />
+    <End Type="db_Alumni_TestModel.UserPost" Role="UserPost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EventCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserPost">
+        <PropertyRef Name="EventId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPost_Comments_UserDetails">
+    <End Type="db_Alumni_TestModel.UserDetail" Role="UserDetail" Multiplicity="0..1" />
+    <End Type="db_Alumni_TestModel.UserPost_Comments" Role="UserPost_Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetail">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserPost_Comments">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPost_Comments_UserPost_Comments">
+    <End Type="db_Alumni_TestModel.UserPost_Comments" Role="UserPost_Comments" Multiplicity="1" />
+    <End Type="db_Alumni_TestModel.UserPost_Comments" Role="UserPost_Comments1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="UserPost_Comments">
+        <PropertyRef Name="CommentId" />
+      </Principal>
+      <Dependent Role="UserPost_Comments1">
+        <PropertyRef Name="CommentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPost_Files_UserPosts">
+    <End Type="db_Alumni_TestModel.UserPost" Role="UserPost" Multiplicity="0..1" />
+    <End Type="db_Alumni_TestModel.UserPost_Files" Role="UserPost_Files" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserPost">
+        <PropertyRef Name="PostId" />
+      </Principal>
+      <Dependent Role="UserPost_Files">
+        <PropertyRef Name="PostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPost_Images_UserPosts">
+    <End Type="db_Alumni_TestModel.UserPost" Role="UserPost" Multiplicity="0..1" />
+    <End Type="db_Alumni_TestModel.UserPost_Images" Role="UserPost_Images" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserPost">
+        <PropertyRef Name="PostId" />
+      </Principal>
+      <Dependent Role="UserPost_Images">
+        <PropertyRef Name="PostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPost_Likes_UserDetails">
+    <End Type="db_Alumni_TestModel.UserDetail" Role="UserDetail" Multiplicity="0..1" />
+    <End Type="db_Alumni_TestModel.UserPost_Likes" Role="UserPost_Likes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetail">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserPost_Likes">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPost_Likes_UserPosts">
+    <End Type="db_Alumni_TestModel.UserPost" Role="UserPost" Multiplicity="0..1" />
+    <End Type="db_Alumni_TestModel.UserPost_Likes" Role="UserPost_Likes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserPost">
+        <PropertyRef Name="PostId" />
+      </Principal>
+      <Dependent Role="UserPost_Likes">
+        <PropertyRef Name="PostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPosts_UserDetails">
+    <End Type="db_Alumni_TestModel.UserDetail" Role="UserDetail" Multiplicity="0..1" />
+    <End Type="db_Alumni_TestModel.UserPost" Role="UserPost" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetail">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserPost">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="UserPosts_Visisble">
+    <Key>
+      <PropertyRef Name="VisibleId" />
+    </Key>
+    <Property Name="VisibleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PostId" Type="Int32" />
+    <Property Name="Batch" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Branch" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Degreee" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="UserPost" Relationship="db_Alumni_TestModel.FK_UserPosts_Visisble_UserPosts" FromRole="UserPosts_Visisble" ToRole="UserPost" />
+    <Property Name="BatchTo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK_UserPosts_Visisble_UserPosts">
+    <End Type="db_Alumni_TestModel.UserPost" Role="UserPost" Multiplicity="0..1" />
+    <End Type="db_Alumni_TestModel.UserPosts_Visisble" Role="UserPosts_Visisble" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserPost">
+        <PropertyRef Name="PostId" />
+      </Principal>
+      <Dependent Role="UserPosts_Visisble">
+        <PropertyRef Name="PostId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Def_Events">
+    <Key>
+      <PropertyRef Name="EventId" />
+    </Key>
+    <Property Name="EventId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EventName" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="BannerImage" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="EventStartdate" Type="DateTime" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="MobileNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Landline" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EventVenue" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="EventDescription" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="VisitorsCount" Type="Int32" />
+    <Property Name="TotalNoOfTickets" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Event_Faqs" Relationship="db_Alumni_TestModel.FK_Event_Faqs_Def_Events" FromRole="Def_Events" ToRole="Event_Faqs" />
+    <NavigationProperty Name="Event_Gallery" Relationship="db_Alumni_TestModel.FK_Event_Gallery_Def_Events" FromRole="Def_Events" ToRole="Event_Gallery" />
+    <NavigationProperty Name="Event_TicketTypes" Relationship="db_Alumni_TestModel.FK_Event_TicketTypes_Def_Events" FromRole="Def_Events" ToRole="Event_TicketTypes" />
+    <NavigationProperty Name="Event_UserSelections" Relationship="db_Alumni_TestModel.FK_Event_UserSelections_Def_Events" FromRole="Def_Events" ToRole="Event_UserSelections" />
+    <NavigationProperty Name="Event_AttendingStatus" Relationship="db_Alumni_TestModel.FK_Event_AttendingStatus_Def_Events" FromRole="Def_Events" ToRole="Event_AttendingStatus" />
+    <Property Name="StartTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EndTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Event_Faqs">
+    <Key>
+      <PropertyRef Name="FaqId" />
+    </Key>
+    <Property Name="FaqId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Eventid" Type="Int32" Nullable="false" />
+    <Property Name="Faqs" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Def_Events" Relationship="db_Alumni_TestModel.FK_Event_Faqs_Def_Events" FromRole="Event_Faqs" ToRole="Def_Events" />
+  </EntityType>
+  <EntityType Name="Event_Gallery">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EventId" Type="Int32" Nullable="false" />
+    <Property Name="EventImage" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Def_Events" Relationship="db_Alumni_TestModel.FK_Event_Gallery_Def_Events" FromRole="Event_Gallery" ToRole="Def_Events" />
+  </EntityType>
+  <EntityType Name="Event_TicketTypes">
+    <Key>
+      <PropertyRef Name="TypeId" />
+    </Key>
+    <Property Name="TypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Heading" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="EventId" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Def_Events" Relationship="db_Alumni_TestModel.FK_Event_TicketTypes_Def_Events" FromRole="Event_TicketTypes" ToRole="Def_Events" />
+    <NavigationProperty Name="Events_UserBookings" Relationship="db_Alumni_TestModel.FK_Events_UserBookings_Event_TicketTypes" FromRole="Event_TicketTypes" ToRole="Events_UserBookings" />
+  </EntityType>
+  <Association Name="FK_Event_Faqs_Def_Events">
+    <End Type="db_Alumni_TestModel.Def_Events" Role="Def_Events" Multiplicity="1" />
+    <End Type="db_Alumni_TestModel.Event_Faqs" Role="Event_Faqs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Def_Events">
+        <PropertyRef Name="EventId" />
+      </Principal>
+      <Dependent Role="Event_Faqs">
+        <PropertyRef Name="Eventid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_Gallery_Def_Events">
+    <End Type="db_Alumni_TestModel.Def_Events" Role="Def_Events" Multiplicity="1" />
+    <End Type="db_Alumni_TestModel.Event_Gallery" Role="Event_Gallery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Def_Events">
+        <PropertyRef Name="EventId" />
+      </Principal>
+      <Dependent Role="Event_Gallery">
+        <PropertyRef Name="EventId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_TicketTypes_Def_Events">
+    <End Type="db_Alumni_TestModel.Def_Events" Role="Def_Events" Multiplicity="1" />
+    <End Type="db_Alumni_TestModel.Event_TicketTypes" Role="Event_TicketTypes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Def_Events">
+        <PropertyRef Name="EventId" />
+      </Principal>
+      <Dependent Role="Event_TicketTypes">
+        <PropertyRef Name="EventId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Event_UserSelections">
+    <Key>
+      <PropertyRef Name="EventSelectionId" />
+    </Key>
+    <Property Name="EventSelectionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EventId" Type="Int32" />
+    <Property Name="UserId" Type="Int64" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="UpdatedBy" Type="Int32" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="Def_Events" Relationship="db_Alumni_TestModel.FK_Event_UserSelections_Def_Events" FromRole="Event_UserSelections" ToRole="Def_Events" />
+    <NavigationProperty Name="UserDetail" Relationship="db_Alumni_TestModel.FK_Event_UserSelections_UserDetails" FromRole="Event_UserSelections" ToRole="UserDetail" />
+    <NavigationProperty Name="Events_UserBookings" Relationship="db_Alumni_TestModel.FK_Events_UserBookings_Event_UserSelections" FromRole="Event_UserSelections" ToRole="Events_UserBookings" />
+    <NavigationProperty Name="Event_UserPayments" Relationship="db_Alumni_TestModel.FK_Event_UserPayments_Event_UserSelections" FromRole="Event_UserSelections" ToRole="Event_UserPayments" />
+    <Property Name="UserBookingDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Events_UserBookings">
+    <Key>
+      <PropertyRef Name="BookId" />
+    </Key>
+    <Property Name="BookId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TicketTypeId" Type="Int32" />
+    <Property Name="EventSelectionId" Type="Int32" Nullable="false" />
+    <Property Name="TotalAmount" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="TotalTickets" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="Event_TicketTypes" Relationship="db_Alumni_TestModel.FK_Events_UserBookings_Event_TicketTypes" FromRole="Events_UserBookings" ToRole="Event_TicketTypes" />
+    <NavigationProperty Name="Event_UserSelections" Relationship="db_Alumni_TestModel.FK_Events_UserBookings_Event_UserSelections" FromRole="Events_UserBookings" ToRole="Event_UserSelections" />
+  </EntityType>
+  <Association Name="FK_Event_UserSelections_Def_Events">
+    <End Type="db_Alumni_TestModel.Def_Events" Role="Def_Events" Multiplicity="0..1" />
+    <End Type="db_Alumni_TestModel.Event_UserSelections" Role="Event_UserSelections" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Def_Events">
+        <PropertyRef Name="EventId" />
+      </Principal>
+      <Dependent Role="Event_UserSelections">
+        <PropertyRef Name="EventId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Events_UserBookings_Event_TicketTypes">
+    <End Type="db_Alumni_TestModel.Event_TicketTypes" Role="Event_TicketTypes" Multiplicity="0..1" />
+    <End Type="db_Alumni_TestModel.Events_UserBookings" Role="Events_UserBookings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event_TicketTypes">
+        <PropertyRef Name="TypeId" />
+      </Principal>
+      <Dependent Role="Events_UserBookings">
+        <PropertyRef Name="TicketTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_UserSelections_UserDetails">
+    <End Type="db_Alumni_TestModel.UserDetail" Role="UserDetail" Multiplicity="0..1" />
+    <End Type="db_Alumni_TestModel.Event_UserSelections" Role="Event_UserSelections" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetail">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Event_UserSelections">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Events_UserBookings_Event_UserSelections">
+    <End Type="db_Alumni_TestModel.Event_UserSelections" Role="Event_UserSelections" Multiplicity="1" />
+    <End Type="db_Alumni_TestModel.Events_UserBookings" Role="Events_UserBookings" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event_UserSelections">
+        <PropertyRef Name="EventSelectionId" />
+      </Principal>
+      <Dependent Role="Events_UserBookings">
+        <PropertyRef Name="EventSelectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Event_UserPayments">
+    <Key>
+      <PropertyRef Name="PaymentId" />
+    </Key>
+    <Property Name="PaymentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int64" Nullable="false" />
+    <Property Name="UserSelectionId" Type="Int32" Nullable="false" />
+    <Property Name="ConfirmationDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="PaymentStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Event_UserSelections" Relationship="db_Alumni_TestModel.FK_Event_UserPayments_Event_UserSelections" FromRole="Event_UserPayments" ToRole="Event_UserSelections" />
+    <NavigationProperty Name="UserDetail" Relationship="db_Alumni_TestModel.FK_Event_UserPayments_UserDetails" FromRole="Event_UserPayments" ToRole="UserDetail" />
+    <Property Name="BookingDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <Association Name="FK_Event_UserPayments_Event_UserSelections">
+    <End Type="db_Alumni_TestModel.Event_UserSelections" Role="Event_UserSelections" Multiplicity="1" />
+    <End Type="db_Alumni_TestModel.Event_UserPayments" Role="Event_UserPayments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Event_UserSelections">
+        <PropertyRef Name="EventSelectionId" />
+      </Principal>
+      <Dependent Role="Event_UserPayments">
+        <PropertyRef Name="UserSelectionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_UserPayments_UserDetails">
+    <End Type="db_Alumni_TestModel.UserDetail" Role="UserDetail" Multiplicity="1" />
+    <End Type="db_Alumni_TestModel.Event_UserPayments" Role="Event_UserPayments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetail">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Event_UserPayments">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Event_AttendingStatus">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EventId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int64" Nullable="false" />
+    <Property Name="UserGoingStatus" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Def_Events" Relationship="db_Alumni_TestModel.FK_Event_AttendingStatus_Def_Events" FromRole="Event_AttendingStatus" ToRole="Def_Events" />
+    <NavigationProperty Name="UserDetail" Relationship="db_Alumni_TestModel.FK_Event_AttendingStatus_UserDetails" FromRole="Event_AttendingStatus" ToRole="UserDetail" />
+  </EntityType>
+  <Association Name="FK_Event_AttendingStatus_Def_Events">
+    <End Type="db_Alumni_TestModel.Def_Events" Role="Def_Events" Multiplicity="1" />
+    <End Type="db_Alumni_TestModel.Event_AttendingStatus" Role="Event_AttendingStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Def_Events">
+        <PropertyRef Name="EventId" />
+      </Principal>
+      <Dependent Role="Event_AttendingStatus">
+        <PropertyRef Name="EventId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Event_AttendingStatus_UserDetails">
+    <End Type="db_Alumni_TestModel.UserDetail" Role="UserDetail" Multiplicity="1" />
+    <End Type="db_Alumni_TestModel.Event_AttendingStatus" Role="Event_AttendingStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetail">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Event_AttendingStatus">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Job_FunctionalArea">
+    <Key>
+      <PropertyRef Name="FunctionalId" />
+    </Key>
+    <Property Name="FunctionalId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="UserPosting_Jobs" Relationship="db_Alumni_TestModel.FK_UserPosting_Jobs_Job_FunctionalArea" FromRole="Job_FunctionalArea" ToRole="UserPosting_Jobs" />
+  </EntityType>
+  <EntityType Name="UserPosting_Jobs">
+    <Key>
+      <PropertyRef Name="Jobid" />
+    </Key>
+    <Property Name="Jobid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Userid" Type="Int64" />
+    <Property Name="JobTitle" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="ComanyName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ComanyUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ExperienceRequired" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Skills" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Salary" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="FunctionalId" Type="Int32" />
+    <Property Name="Role" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Qualification" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Filepath" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="ExpiryDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Int32" />
+    <NavigationProperty Name="Job_FunctionalArea" Relationship="db_Alumni_TestModel.FK_UserPosting_Jobs_Job_FunctionalArea" FromRole="UserPosting_Jobs" ToRole="Job_FunctionalArea" />
+    <NavigationProperty Name="UserDetail" Relationship="db_Alumni_TestModel.FK_UserPosting_Jobs_UserDetails" FromRole="UserPosting_Jobs" ToRole="UserDetail" />
+  </EntityType>
+  <Association Name="FK_UserPosting_Jobs_Job_FunctionalArea">
+    <End Type="db_Alumni_TestModel.Job_FunctionalArea" Role="Job_FunctionalArea" Multiplicity="0..1" />
+    <End Type="db_Alumni_TestModel.UserPosting_Jobs" Role="UserPosting_Jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Job_FunctionalArea">
+        <PropertyRef Name="FunctionalId" />
+      </Principal>
+      <Dependent Role="UserPosting_Jobs">
+        <PropertyRef Name="FunctionalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPosting_Jobs_UserDetails">
+    <End Type="db_Alumni_TestModel.UserDetail" Role="UserDetail" Multiplicity="0..1" />
+    <End Type="db_Alumni_TestModel.UserPosting_Jobs" Role="UserPosting_Jobs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetail">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserPosting_Jobs">
+        <PropertyRef Name="Userid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="db_NewsRooms">
+    <Key>
+      <PropertyRef Name="NewRoomId" />
+    </Key>
+    <Property Name="NewRoomId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="db_Memories_images">
+    <Key>
+      <PropertyRef Name="Imageid" />
+    </Key>
+    <Property Name="Imageid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MemoriesId" Type="Int32" Nullable="false" />
+    <Property Name="Image" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="db_Memories_Info" Relationship="db_Alumni_TestModel.FK_db_Memories_images_db_Memories_Info" FromRole="db_Memories_images" ToRole="db_Memories_Info" />
+  </EntityType>
+  <EntityType Name="db_Memories_Info">
+    <Key>
+      <PropertyRef Name="MemoriesId" />
+    </Key>
+    <Property Name="MemoriesId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Userid" Type="Int64" />
+    <Property Name="Heading" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="MemoryDate" Type="DateTime" Precision="3" />
+    <Property Name="VisibleTo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int32" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="db_Memories_images" Relationship="db_Alumni_TestModel.FK_db_Memories_images_db_Memories_Info" FromRole="db_Memories_Info" ToRole="db_Memories_images" />
+    <Property Name="VisibleBatchfrom" Type="Int32" />
+    <Property Name="VisibleBatchTo" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_db_Memories_images_db_Memories_Info">
+    <End Type="db_Alumni_TestModel.db_Memories_Info" Role="db_Memories_Info" Multiplicity="1" />
+    <End Type="db_Alumni_TestModel.db_Memories_images" Role="db_Memories_images" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="db_Memories_Info">
+        <PropertyRef Name="MemoriesId" />
+      </Principal>
+      <Dependent Role="db_Memories_images">
+        <PropertyRef Name="MemoriesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Donation_Details">
+    <Key>
+      <PropertyRef Name="Donation_ID" />
+    </Key>
+    <Property Name="Donation_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Donation_Title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Donation_Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Donation_Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Donation_Banner" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="Int64" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="Donor_Details" Relationship="db_Alumni_TestModel.FK_Donor_Details_Donation_Details" FromRole="Donation_Details" ToRole="Donor_Details" />
+  </EntityType>
+  <EntityType Name="Donor_Details">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="Donation_ID" Type="Int64" />
+    <Property Name="Donor_ID" Type="Int64" />
+    <Property Name="Donation_Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Donation_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Transaction_ID" Type="Int64" />
+    <Property Name="Comments" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="Donation_Details" Relationship="db_Alumni_TestModel.FK_Donor_Details_Donation_Details" FromRole="Donor_Details" ToRole="Donation_Details" />
+    <NavigationProperty Name="Transaction_Details" Relationship="db_Alumni_TestModel.FK_Donor_Details_Transaction_Details" FromRole="Donor_Details" ToRole="Transaction_Details" />
+    <NavigationProperty Name="UserDetail" Relationship="db_Alumni_TestModel.FK_Donor_Details_UserDetails" FromRole="Donor_Details" ToRole="UserDetail" />
+  </EntityType>
+  <EntityType Name="Transaction_Details">
+    <Key>
+      <PropertyRef Name="Transaction_ID" />
+    </Key>
+    <Property Name="Transaction_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Txn_Ref_No" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PG_Txn_ID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Txn_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Txn_Message" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Txn_Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Service_Tax" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Currency_Code" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Comments" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Payment_Mode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Card_Info" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="Int64" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="Int64" />
+    <Property Name="UpdatedOn" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="Donor_Details" Relationship="db_Alumni_TestModel.FK_Donor_Details_Transaction_Details" FromRole="Transaction_Details" ToRole="Donor_Details" />
+  </EntityType>
+  <Association Name="FK_Donor_Details_Donation_Details">
+    <End Type="db_Alumni_TestModel.Donation_Details" Role="Donation_Details" Multiplicity="0..1" />
+    <End Type="db_Alumni_TestModel.Donor_Details" Role="Donor_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Donation_Details">
+        <PropertyRef Name="Donation_ID" />
+      </Principal>
+      <Dependent Role="Donor_Details">
+        <PropertyRef Name="Donation_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Donor_Details_Transaction_Details">
+    <End Type="db_Alumni_TestModel.Transaction_Details" Role="Transaction_Details" Multiplicity="0..1" />
+    <End Type="db_Alumni_TestModel.Donor_Details" Role="Donor_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Transaction_Details">
+        <PropertyRef Name="Transaction_ID" />
+      </Principal>
+      <Dependent Role="Donor_Details">
+        <PropertyRef Name="Transaction_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Donor_Details_UserDetails">
+    <End Type="db_Alumni_TestModel.UserDetail" Role="UserDetail" Multiplicity="0..1" />
+    <End Type="db_Alumni_TestModel.Donor_Details" Role="Donor_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserDetail">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Donor_Details">
+        <PropertyRef Name="Donor_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Album_Gallery">
+    <Key>
+      <PropertyRef Name="Galleryid" />
+    </Key>
+    <Property Name="Galleryid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AlbumName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="GalleryDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateOn" Type="DateTime" Precision="3" />
+    <Property Name="AlbumType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="Album_Gallery_Images" Relationship="db_Alumni_TestModel.FK_Album_Gallery_Images_Album_Gallery" FromRole="Album_Gallery" ToRole="Album_Gallery_Images" />
+  </EntityType>
+  <EntityType Name="Album_Gallery_Images">
+    <Key>
+      <PropertyRef Name="Imagesid" />
+    </Key>
+    <Property Name="Imagesid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Image" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="AlbumId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="AlbumType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="Album_Gallery" Relationship="db_Alumni_TestModel.FK_Album_Gallery_Images_Album_Gallery" FromRole="Album_Gallery_Images" ToRole="Album_Gallery" />
+  </EntityType>
+  <Association Name="FK_Album_Gallery_Images_Album_Gallery">
+    <End Type="db_Alumni_TestModel.Album_Gallery" Role="Album_Gallery" Multiplicity="1" />
+    <End Type="db_Alumni_TestModel.Album_Gallery_Images" Role="Album_Gallery_Images" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Album_Gallery">
+        <PropertyRef Name="Galleryid" />
+      </Principal>
+      <Dependent Role="Album_Gallery_Images">
+        <PropertyRef Name="AlbumId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Alumni_Gallery">
+    <Key>
+      <PropertyRef Name="Galleryid" />
+      <PropertyRef Name="AlbumName" />
+      <PropertyRef Name="Image" />
+      <PropertyRef Name="AlbumId" />
+    </Key>
+    <Property Name="Galleryid" Type="Int32" Nullable="false" />
+    <Property Name="AlbumName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="GalleryDate" Type="DateTime" Precision="3" />
+    <Property Name="CreateOn" Type="DateTime" Precision="3" />
+    <Property Name="AlbumType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="AlbumId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Alumni_ContactUs">
+    <Key>
+      <PropertyRef Name="conatctId" />
+    </Key>
+    <Property Name="conatctId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Message" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CityName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Stateid" Type="Int32" />
+    <Property Name="DisctirctId" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="District" Relationship="db_Alumni_TestModel.FK_Cities_Districts" FromRole="City" ToRole="District" />
+    <NavigationProperty Name="State" Relationship="db_Alumni_TestModel.FK_Cities_States" FromRole="City" ToRole="State" />
+    <NavigationProperty Name="UserDetails" Relationship="db_Alumni_TestModel.FK_UserDetails_Cities" FromRole="City" ToRole="UserDetail" />
+    <NavigationProperty Name="UserDetails1" Relationship="db_Alumni_TestModel.FK_UserDetails_Cities1" FromRole="City" ToRole="UserDetail" />
+  </EntityType>
+  <EntityType Name="District">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DistrictName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="StateId" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="Cities" Relationship="db_Alumni_TestModel.FK_Cities_Districts" FromRole="District" ToRole="City" />
+    <NavigationProperty Name="State" Relationship="db_Alumni_TestModel.FK_Districts_States" FromRole="District" ToRole="State" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StateName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CountryId" Type="Int32" />
+    <Property Name="Status" Type="Boolean" />
+    <NavigationProperty Name="Country" Relationship="db_Alumni_TestModel.FK_States_Country" FromRole="State" ToRole="Country" />
+    <NavigationProperty Name="Cities" Relationship="db_Alumni_TestModel.FK_Cities_States" FromRole="State" ToRole="City" />
+    <NavigationProperty Name="Districts" Relationship="db_Alumni_TestModel.FK_Districts_States" FromRole="State" ToRole="District" />
+  </EntityType>
+  <Association Name="FK_States_Country">
+    <End Type="db_Alumni_TestModel.Country" Role="Country" Multiplicity="0..1" />
+    <End Type="db_Alumni_TestModel.State" Role="State" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="State">
+        <PropertyRef Name="CountryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cities_Districts">
+    <End Type="db_Alumni_TestModel.District" Role="District" Multiplicity="0..1" />
+    <End Type="db_Alumni_TestModel.City" Role="City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="District">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="DisctirctId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cities_States">
+    <End Type="db_Alumni_TestModel.State" Role="State" Multiplicity="0..1" />
+    <End Type="db_Alumni_TestModel.City" Role="City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="Stateid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDetails_Cities">
+    <End Type="db_Alumni_TestModel.City" Role="City" Multiplicity="1" />
+    <End Type="db_Alumni_TestModel.UserDetail" Role="UserDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDetail">
+        <PropertyRef Name="HomeCityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserDetails_Cities1">
+    <End Type="db_Alumni_TestModel.City" Role="City" Multiplicity="1" />
+    <End Type="db_Alumni_TestModel.UserDetail" Role="UserDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserDetail">
+        <PropertyRef Name="LivesInCityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Districts_States">
+    <End Type="db_Alumni_TestModel.State" Role="State" Multiplicity="0..1" />
+    <End Type="db_Alumni_TestModel.District" Role="District" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="District">
+        <PropertyRef Name="StateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Custome_Templates">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Heading" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Subject" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Images" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="createdOn" Type="DateTime" Precision="3" />
+    <Property Name="UpdateOn" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Executive_board">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Image" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="ROle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Banner_Imags">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Image" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Text" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="Tages" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

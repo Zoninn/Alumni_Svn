@@ -1,0 +1,229 @@
+﻿@model Alumini.Core.UserInfo
+@{
+    ViewBag.Title = "Registration1";
+}
+
+
+@using (Html.BeginForm())
+{
+
+    <div id="createAccount">
+        &nbsp;
+        <table>    
+                <tr>
+                    <td>
+                        <input type="hidden" id="HiddenId" />
+                    </td>
+                </tr>    
+            <tr>
+                <td>
+                  
+                    Saluation :
+                </td>
+                <td>
+                    @Html.RadioButtonFor(x => x.Saluation, "None") None.
+                </td>
+                <td>
+                    @Html.RadioButtonFor(x => x.Saluation, "MR") MR.
+                </td>
+                <td>
+                    @Html.RadioButtonFor(x => x.Saluation, "MS") MS.
+                </td>
+                <td>
+                    @Html.RadioButtonFor(x => x.Saluation, "None") DR.
+                </td>
+                <td>
+                    @Html.RadioButtonFor(x => x.Saluation, "None") Prof
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    First name :
+                </td>
+                <td>
+                    @Html.TextBoxFor(x => x.FirstName, null, new { @class = "form-control" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Last name:
+                </td>
+                <td>
+                    @Html.TextBoxFor(x => x.LastName, null, new { @class = "form-control" })
+                </td>
+            </tr>
+            <tr>
+                <td>Gender :</td>
+                <td>
+                    @Html.RadioButtonFor(x => x.Gender, "Male") Male &nbsp;&nbsp; @Html.RadioButtonFor(x => x.Gender, "Female") Female
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Date of birth :
+                </td>
+                <td>
+                    @Html.TextBoxFor(x => x.DateOfBirth, null, new { @class = "form-control" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    State :
+                </td>
+                <td>
+                    @Html.DropDownListFor(x => x.StateId, new SelectList(Model.States, "Id", "StateName"), "Select", new { @class = "form-control" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    District:
+                </td>
+                <td>
+                    <select id="ddlDistricts" class="form-control">
+                        <option value="">Select</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    City :
+                </td>
+                <td>
+                    <select id="ddlCities" class="form-control">
+                        <option value="">Select</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Address :
+                </td>
+                <td>
+                    @Html.TextAreaFor(x => x.Address, new { @class = "form-control" })
+                </td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td>
+                    Image :
+                </td>
+                <td>
+                    <input type="file" name="UserImage" id="UserImage" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="Save" id="btnSavePersonal" class="btn btn-success" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="BatchAndFaculty">
+        <table>
+            <tr>
+                <td><input type="button" value="Register as Alumni" class="btn btn-primary" id="btnStudentDivOpen" />&nbsp;&nbsp;</td>
+                <td>
+                    <input type="button" value="Register as Faculty" class="btn btn-info" id="btnFacultyDivOpen" />
+                </td>
+            </tr>
+        </table>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+    </div>
+
+    <div id="Studentdiv">
+        <table>
+            <tr>
+                <td>
+                    Course / Degree :
+                </td>
+                <td>
+
+                    @Html.DropDownListFor(x => x.CourseCategoryId, new SelectList(Model.CorseCategory, "CoureseCategoryId", "CourseCategoryName"), "Select", new { @class = "form-control" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Stream :
+                </td>
+                <td>
+                    <select id="ddlCourses" class="form-control">
+                        <option value="">Select</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Graduation Year :
+                </td>
+                <td>
+                    @Html.DropDownListFor(x => x.GraduationYear, new SelectList(Model.GraduationYears, "GraduationYearId", "GraduationYear"), "Select Year", new { @class = "form-control" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="Submit" class="btn btn-success" id="btnStudentProfessiondetails" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="facultyDiv">
+        <table>
+            <tr>
+                <td>
+                    Role / Designation :
+                </td>
+                <td>
+                    @Html.TextBoxFor(x => x.Designation, null, new { @class = "form-control" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Department :
+                </td>
+                <td>
+                    @Html.TextBoxFor(x => x.Department, null, new { @class = "form-control" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Time period from
+                </td>
+                <td>
+                    @Html.DropDownListFor(x => x.TimePeriodFrom, new SelectList(Model.GraduationYears, "GraduationYearId", "GraduationYear"), "Select Year", new { @class = "form-control" })
+
+                </td>
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                <td>
+                    &nbsp;
+                    &nbsp;Time period To : &nbsp;
+                    &nbsp;
+                </td>
+                <td>
+
+                    @Html.DropDownListFor(x => x.TimePeriodTo, new SelectList(Model.GraduationYears, "GraduationYearId", "GraduationYear"), "Select Year", new { @class = "form-control" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" id="btnSaveFacultInformation" value="Submit" class="btn btn-success" />
+                </td>
+            </tr>
+        </table>
+    </div>
+}
+@Scripts.Render("~/Custom.js/jquery-1.10.2.min.js")
+@Scripts.Render("~/Custom.js/Registration.js")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+
+

@@ -1,0 +1,165 @@
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiService\bin\Debug\AluminiService.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiService\bin\Debug\AluminiService.pdb
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiService\obj\Debug\AluminiService.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiService\obj\Debug\AluminiService.pdb
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiService\obj\Debug\AluminiService.csprojResolveAssemblyReference.cache
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiService\bin\Debug\Alumini.Core.dll
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiService\bin\Debug\Alumini.Logger.dll
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiService\bin\Debug\AluminiRepository.dll
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiService\bin\Debug\NLog.dll
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiService\bin\Debug\EntityFramework.dll
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiService\bin\Debug\Alumini.Core.pdb
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiService\bin\Debug\Alumini.Logger.pdb
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiService\bin\Debug\AluminiRepository.pdb
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiService\bin\Debug\NLog.xml
+C:\Users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiService\bin\Debug\EntityFramework.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiService\bin\Debug\AluminiService.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiService\bin\Debug\AluminiService.pdb
+C:\Users\tulasiram\Documents\collegealumini\AluminiService\bin\Debug\Alumini.Core.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiService\bin\Debug\Alumini.Logger.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiService\bin\Debug\AluminiRepository.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiService\bin\Debug\NLog.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiService\bin\Debug\EntityFramework.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiService\bin\Debug\Alumini.Core.pdb
+C:\Users\tulasiram\Documents\collegealumini\AluminiService\bin\Debug\Alumini.Logger.pdb
+C:\Users\tulasiram\Documents\collegealumini\AluminiService\bin\Debug\AluminiRepository.pdb
+C:\Users\tulasiram\Documents\collegealumini\AluminiService\bin\Debug\NLog.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiService\bin\Debug\EntityFramework.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiService\obj\Debug\AluminiService.csprojResolveAssemblyReference.cache
+C:\Users\tulasiram\Documents\collegealumini\AluminiService\obj\Debug\AluminiService.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiService\obj\Debug\AluminiService.pdb
+D:\FRESHCOPY ALUMNI\AluminiService\obj\Debug\AluminiService.csprojResolveAssemblyReference.cache
+D:\FRESHCOPY ALUMNI\AluminiService\bin\Debug\AluminiService.dll
+D:\FRESHCOPY ALUMNI\AluminiService\bin\Debug\AluminiService.pdb
+D:\FRESHCOPY ALUMNI\AluminiService\bin\Debug\Alumini.Core.dll
+D:\FRESHCOPY ALUMNI\AluminiService\bin\Debug\Alumini.Logger.dll
+D:\FRESHCOPY ALUMNI\AluminiService\bin\Debug\AluminiRepository.dll
+D:\FRESHCOPY ALUMNI\AluminiService\bin\Debug\NLog.dll
+D:\FRESHCOPY ALUMNI\AluminiService\bin\Debug\EntityFramework.dll
+D:\FRESHCOPY ALUMNI\AluminiService\bin\Debug\Alumini.Core.pdb
+D:\FRESHCOPY ALUMNI\AluminiService\bin\Debug\Alumini.Logger.pdb
+D:\FRESHCOPY ALUMNI\AluminiService\bin\Debug\AluminiRepository.pdb
+D:\FRESHCOPY ALUMNI\AluminiService\bin\Debug\NLog.xml
+D:\FRESHCOPY ALUMNI\AluminiService\bin\Debug\EntityFramework.xml
+D:\FRESHCOPY ALUMNI\AluminiService\obj\Debug\AluminiService.dll
+D:\FRESHCOPY ALUMNI\AluminiService\obj\Debug\AluminiService.pdb
+C:\Alumni Copy\AluminiService\bin\Debug\AluminiService.dll
+C:\Alumni Copy\AluminiService\bin\Debug\AluminiService.pdb
+C:\Alumni Copy\AluminiService\bin\Debug\Alumini.Core.dll
+C:\Alumni Copy\AluminiService\bin\Debug\Alumini.Logger.dll
+C:\Alumni Copy\AluminiService\bin\Debug\AluminiRepository.dll
+C:\Alumni Copy\AluminiService\bin\Debug\NLog.dll
+C:\Alumni Copy\AluminiService\bin\Debug\EntityFramework.dll
+C:\Alumni Copy\AluminiService\bin\Debug\Alumini.Core.pdb
+C:\Alumni Copy\AluminiService\bin\Debug\Alumini.Logger.pdb
+C:\Alumni Copy\AluminiService\bin\Debug\AluminiRepository.pdb
+C:\Alumni Copy\AluminiService\bin\Debug\NLog.xml
+C:\Alumni Copy\AluminiService\bin\Debug\EntityFramework.xml
+C:\Alumni Copy\AluminiService\obj\Debug\AluminiService.csprojResolveAssemblyReference.cache
+C:\Alumni Copy\AluminiService\obj\Debug\AluminiService.dll
+C:\Alumni Copy\AluminiService\obj\Debug\AluminiService.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiService\bin\Debug\AluminiService.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiService\bin\Debug\AluminiService.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiService\bin\Debug\Alumini.Core.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiService\bin\Debug\Alumini.Logger.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiService\bin\Debug\AluminiRepository.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiService\bin\Debug\NLog.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiService\bin\Debug\EntityFramework.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiService\bin\Debug\Alumini.Core.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiService\bin\Debug\Alumini.Logger.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiService\bin\Debug\AluminiRepository.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiService\bin\Debug\NLog.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiService\bin\Debug\EntityFramework.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiService\obj\Debug\AluminiService.csprojResolveAssemblyReference.cache
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiService\obj\Debug\AluminiService.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiService\obj\Debug\AluminiService.pdb
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiService\bin\Debug\AluminiService.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiService\bin\Debug\AluminiService.pdb
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiService\bin\Debug\Alumini.Core.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiService\bin\Debug\Alumini.Logger.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiService\bin\Debug\AluminiRepository.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiService\bin\Debug\NLog.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiService\bin\Debug\EntityFramework.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiService\bin\Debug\Alumini.Core.pdb
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiService\bin\Debug\Alumini.Logger.pdb
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiService\bin\Debug\AluminiRepository.pdb
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiService\bin\Debug\NLog.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiService\bin\Debug\EntityFramework.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiService\obj\Debug\AluminiService.csprojResolveAssemblyReference.cache
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiService\obj\Debug\AluminiService.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiService\obj\Debug\AluminiService.pdb
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiService\bin\Debug\AluminiService.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiService\bin\Debug\AluminiService.pdb
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiService\bin\Debug\Alumini.Core.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiService\bin\Debug\Alumini.Logger.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiService\bin\Debug\AluminiRepository.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiService\bin\Debug\NLog.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiService\bin\Debug\EntityFramework.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiService\bin\Debug\Alumini.Core.pdb
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiService\bin\Debug\Alumini.Logger.pdb
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiService\bin\Debug\AluminiRepository.pdb
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiService\bin\Debug\NLog.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiService\bin\Debug\EntityFramework.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiService\obj\Debug\AluminiService.csprojResolveAssemblyReference.cache
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiService\obj\Debug\AluminiService.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiService\obj\Debug\AluminiService.pdb
+D:\RepoAlumni\AluminiService\bin\Debug\AluminiService.dll
+D:\RepoAlumni\AluminiService\bin\Debug\AluminiService.pdb
+D:\RepoAlumni\AluminiService\bin\Debug\Alumini.Core.dll
+D:\RepoAlumni\AluminiService\bin\Debug\Alumini.Logger.dll
+D:\RepoAlumni\AluminiService\bin\Debug\AluminiRepository.dll
+D:\RepoAlumni\AluminiService\bin\Debug\NLog.dll
+D:\RepoAlumni\AluminiService\bin\Debug\EntityFramework.dll
+D:\RepoAlumni\AluminiService\bin\Debug\Alumini.Core.pdb
+D:\RepoAlumni\AluminiService\bin\Debug\Alumini.Logger.pdb
+D:\RepoAlumni\AluminiService\bin\Debug\AluminiRepository.pdb
+D:\RepoAlumni\AluminiService\bin\Debug\NLog.xml
+D:\RepoAlumni\AluminiService\bin\Debug\EntityFramework.xml
+D:\RepoAlumni\AluminiService\obj\Debug\AluminiService.csprojResolveAssemblyReference.cache
+D:\RepoAlumni\AluminiService\obj\Debug\AluminiService.dll
+D:\RepoAlumni\AluminiService\obj\Debug\AluminiService.pdb
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiService\bin\Debug\AluminiService.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiService\bin\Debug\AluminiService.pdb
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiService\bin\Debug\Alumini.Core.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiService\bin\Debug\Alumini.Logger.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiService\bin\Debug\AluminiRepository.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiService\bin\Debug\NLog.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiService\bin\Debug\EntityFramework.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiService\bin\Debug\Alumini.Core.pdb
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiService\bin\Debug\Alumini.Logger.pdb
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiService\bin\Debug\AluminiRepository.pdb
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiService\bin\Debug\NLog.xml
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiService\bin\Debug\EntityFramework.xml
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiService\obj\Debug\AluminiService.csprojResolveAssemblyReference.cache
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiService\obj\Debug\AluminiService.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiService\obj\Debug\AluminiService.pdb
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiService\bin\Debug\AluminiService.dll
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiService\bin\Debug\AluminiService.pdb
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiService\bin\Debug\Alumini.Core.dll
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiService\bin\Debug\Alumini.Logger.dll
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiService\bin\Debug\AluminiRepository.dll
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiService\bin\Debug\NLog.dll
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiService\bin\Debug\EntityFramework.dll
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiService\bin\Debug\Alumini.Core.pdb
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiService\bin\Debug\Alumini.Logger.pdb
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiService\bin\Debug\AluminiRepository.pdb
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiService\bin\Debug\NLog.xml
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiService\bin\Debug\EntityFramework.xml
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiService\obj\Debug\AluminiService.csprojResolveAssemblyReference.cache
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiService\obj\Debug\AluminiService.dll
+E:\Sachin\ZonInnovative\Alumini\Alumni Project\AluminiService\obj\Debug\AluminiService.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiService\bin\Debug\AluminiService.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiService\bin\Debug\AluminiService.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiService\bin\Debug\Alumini.Core.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiService\bin\Debug\Alumini.Logger.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiService\bin\Debug\AluminiRepository.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiService\bin\Debug\NLog.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiService\bin\Debug\EntityFramework.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiService\bin\Debug\Alumini.Core.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiService\bin\Debug\Alumini.Logger.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiService\bin\Debug\AluminiRepository.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiService\bin\Debug\NLog.xml
+D:\MYAlumniNewDesignCopyRepo\AluminiService\bin\Debug\EntityFramework.xml
+D:\MYAlumniNewDesignCopyRepo\AluminiService\obj\Debug\AluminiService.csprojResolveAssemblyReference.cache
+D:\MYAlumniNewDesignCopyRepo\AluminiService\obj\Debug\AluminiService.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiService\obj\Debug\AluminiService.pdb

@@ -1,0 +1,57 @@
+﻿@model AluminiWebApp.Areas.Admin.Models.DonationModel
+
+@{
+    ViewBag.Title = "CreateDonation";
+    Layout = "~/Areas/Alumini/Views/Shared/_Layout.cshtml";
+}
+
+<h3 style="text-align: center">Create Donation</h3>
+@using (Html.BeginForm("CreateDonation", "Donations", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true);
+        
+    <div>
+        <table>
+            <tr>
+                <td>Donation Title :</td>
+                <td>
+                    @Html.TextBoxFor(x => x.DonationTitle, new { @class = "form-control", @placeholder = "Donation Title" })
+                    @Html.ValidationMessageFor(x => x.DonationTitle, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Donation Description :
+                </td>
+                <td>
+                    @Html.TextAreaFor(x => x.DonationDescription, new { @class = "form-control", @placeholder = "Donation Description" })
+                    @Html.ValidationMessageFor(x => x.DonationDescription, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>Donation Amount :</td>
+                <td>
+                    @Html.TextBoxFor(x => x.DonationAmount, new { @class = "form-control", @placeholder = "Donation Amount" })
+                    @Html.ValidationMessageFor(x => x.DonationAmount, "", new { @class = "text-danger" })
+                </td>
+            </tr>    
+            <tr>
+                <td>
+                    Banner Image :
+                </td>
+                <td>
+                    <input type="file" class="form-control" name="BannerImage" />
+                    @Html.ValidationMessageFor(x => x.BannerImage, "", new { @class = "text-danger" })
+                </td>
+            </tr>         
+        </table>
+
+        <div>
+
+            <input type="submit" value="Save" class="btn btn-primary btn-large" />
+            <h4>@TempData["SuccessMessage"]</h4>
+
+        </div>
+    </div>
+    
+}

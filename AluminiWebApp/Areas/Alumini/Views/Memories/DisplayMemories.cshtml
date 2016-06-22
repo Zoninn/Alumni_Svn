@@ -1,0 +1,75 @@
+﻿@model AluminiWebApp.Areas.Alumini.Models.MemoriesModel
+@{
+    Layout = "~/Areas/Alumini/Views/Shared/_SRKRDesignLayout.cshtml";
+}
+
+
+
+@try
+{
+    <div class="nicdark_site">
+        <div class="nicdark_site_fullwidth nicdark_clearfix">
+            <div class="nicdark_overlay"></div>
+            <section class="nicdark_section">
+
+                <div class="nicdark_space20"></div>
+                <!--start nicdark_container-->
+                <div class="nicdark_container nicdark_clearfix">
+                    <div class="grid grid_12">
+                        <div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow">
+
+                            <div class="nicdark_textevidence nicdark_bg_blue nicdark_radius nicdark_width_percentage30 center nicdark_width100_responsive">
+                                <img alt="" class="nicdark_radius_left nicdark_opacity" src="@Model.Memories[0].MemoriesImages[0].Image">
+                            </div>
+
+                            <div class="nicdark_textevidence nicdark_width_percentage70 nicdark_width100_responsive">
+                                <div style="margin:20px;">
+
+                                    <div class="nicdark_space20"></div>
+                                    <h4 class="grey">@Model.Memories[0].Title</h4>
+                                    <div class="nicdark_space20"></div>
+                                    <p style="min-height:130px;border:1px solid #d3d3d3;border-radius:3px;margin:5px 0;padding-left:20px;">
+                                        <i>Description:</i> @Model.Memories[0].Description
+                                    </p>
+                                    <div>
+                                        <p class="pull-right">
+                                            Posted on : @Model.Memories[0].PostedOn.Value.ToString("MMMM,dd,yyyy") &nbsp;&nbsp;&nbsp; Posted by: @Model.Memories[0].PostedBy
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nicdark_space20"></div>
+                    <div class="nicdark_mpopup_gallery">
+                        @foreach (var Images in @Model.Memories[0].MemoriesImages)
+                    {
+                    <div class="grid_2">
+                        @if (File.Exists(Server.MapPath(Images.Image)))
+                            {
+
+                            <a class="img-pop" href="@Images.Image" title="Posted by @Model.Memories[0].PostedBy on @Model.Memories[0].PostedOn.Value.ToString("MMMM,dd,yyyy")">
+                                <img alt="" class="nicdark_radius nicdark_opacity" src="@Images.Image" height="120" />
+                            </a>
+                            }
+                            else
+                            {
+                            <a class="img-pop" href="javascript:;" title="No Image">
+                                <img alt="" class="nicdark_radius nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" height="120" />
+                            </a>
+                            }
+                    </div>
+                    }
+                        @*<a href="#" class="nicdark_btn_icon small nicdark_bg_white nicdark_radius_circle nicdark_absolute_right nicdark_border_grey"></a>*@
+                    </div>
+                    <div class="nicdark_space50"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+}
+
+catch(SystemException ex)
+{
+   
+}

@@ -1,0 +1,102 @@
+﻿@model AluminiWebApp.Models.RegistrationStep2ViewModel
+@{
+
+    ViewBag.Title = "Basic Information";
+}
+
+<div id="home" class="page-content grid-row">
+
+    <ul class="registerSteps">
+        <li>
+            <a class="active"><i>1</i> Create Account</a>
+        </li>
+        <li>
+            <a><i>2</i> Batch/Faculty Details</a>
+        </li>
+    </ul>
+    <div class="clear-fix"></div>
+    @using (Html.BeginForm("BasicInformation", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.ValidationSummary(true);
+
+        <div class="grid-col-row clear-fix">
+            <div class="row clear-fix">
+                <div class="grid-col grid-col-3">
+                    <strong>Email</strong>
+                </div>
+                <div class="grid-col grid-col-4">
+                    <input type="text" readonly="" value="@Model.Email" name="Email" />
+                    (will be used to login)
+                </div>
+            </div>
+            <div class="row clear-fix">
+                <div class="grid-col grid-col-3">
+                    <strong>Salutation</strong>
+                </div>
+                <div class="grid-col grid-col-3">
+                   @* @Html.DropDownListFor(x => x.SalutationId, new SelectList(Model.Salutation, "Id", "Salutation1"), "Select", new { @class = "form-control", required = "true" })*@
+                    @Html.ValidationMessageFor(x => x.SalutationId, "", new { @class = "text-danger" })
+                </div>
+                <div class="grid-col grid-col-3">
+                    @Html.TextBoxFor(x => x.FirstName, null, new { @class = "form-control", @placeholder = "First name" })
+                    @Html.ValidationMessageFor(x => x.FirstName, "", new { @class = "text-danger" })
+                </div>
+                <div class="grid-col grid-col-3">
+                    @Html.TextBoxFor(x => x.LastName, null, new { @class = "form-control", @placeholder = "Last name" })
+                    @Html.ValidationMessageFor(x => x.LastName, "", new { @class = "text-danger" })
+
+                </div>
+            </div>
+            <div class="row clear-fix">
+                <div class="grid-col grid-col-3">
+                    <strong>Gender</strong>
+                </div>
+                <div class="grid-col grid-col-3">
+                    @Html.DropDownListFor(x => x.GenderId, new List<SelectListItem> {
+                        new SelectListItem { Text = "Male", Value = "1" },
+                        new SelectListItem { Text = "Female", Value = "2" }
+                    }, "Select")
+                    @Html.ValidationMessageFor(x => x.GenderId, "", new { @class = "text-danger" })
+                </div>
+                <div class="grid-col grid-col-6" style="position:absolute;right:0;">
+                    <input name="ProfilePicture" id="ProfilePicture" type="hidden" />
+                    @Html.ValidationMessageFor(x => x.ProfilePicture, "", new { @class = "text-danger" })
+                    <div style="width:auto;float:left;padding-right:10px;">
+                        <img style="border-radius:50%;border:1px solid #d3d3d3;float:left;width:150px;height:150px;" id="ImagePrivew" src="~/UserProfilePictures/avatar.png">
+                    </div>
+                    <strong>Select profile picture</strong>
+                    <input type="file" id="UserProfilePicyture" name="ProfilePicture" required='required'>
+                </div>
+            </div>
+            <div class="row clear-fix">
+                <div class="grid-col grid-col-3">
+                    <strong>Date of Birth</strong>
+                </div>
+                <div class="grid-col grid-col-3">
+                    @Html.TextBoxFor(x => x.DOB, null, new { @class = "form-control", @placeholder = "Date of Birth" })
+                    @Html.ValidationMessageFor(x => x.DOB, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row clear-fix">
+                <div class="grid-col grid-col-3">
+                    <strong>Password</strong>
+                </div>
+                <div class="grid-col grid-col-3">
+                    @Html.PasswordFor(x => x.Password, new { @class = "form-control", @placeholder = "Password" })
+                    @Html.ValidationMessageFor(x => x.Password, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="row clear-fix">
+                <div class="grid-col grid-col-3">
+                    <input type="submit" value="Create Account" class="cws-button bt-color-3 border-radius alt icon-right" />
+
+                </div>
+            </div>
+        </div>
+
+    }
+</div>
+@Scripts.Render("~/Custom.js/Registration.js")
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

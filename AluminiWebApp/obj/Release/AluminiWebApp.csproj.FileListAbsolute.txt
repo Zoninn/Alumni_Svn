@@ -1,0 +1,4 @@
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\obj\Release\AluminiWebApp.csproj.App.config
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiWebApp\obj\Release\AluminiWebApp.csprojResolveAssemblyReference.cache
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp\obj\Release\AluminiWebApp.csproj.App.config
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp\obj\Release\AluminiWebApp.csprojResolveAssemblyReference.cache

@@ -1,0 +1,503 @@
+﻿@model AluminiWebApp.Areas.Alumini.Models.AlumniEventsModel
+
+@{
+    ViewBag.Title = "EventSelection";
+    Layout = "~/Areas/Alumini/Views/Shared/_SRKRDesignLayout.cshtml";
+}
+
+@*New Design*@
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true);
+    <!--start-->
+    <!--start section-->
+    foreach (var Events in ViewBag.EventsOnId)
+    {
+        <section class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img-single-event" id="nicdark_parallax_title"
+                 style="background-position: 100% 0;background: rgba(0, 0, 0, 0) url('@Events.BannerImage') repeat fixed 50% 190px ;">
+            <div class="nicdark_filter greydark">
+                <!--start nicdark_container-->
+                <div class="nicdark_container nicdark_clearfix">
+                    <div class="grid grid_12">
+                        <div class="nicdark_space100"></div>
+                        <div class="nicdark_space100"></div>
+                        <h1 class="white subtitle">EVENT: @Events.EventName</h1>
+                        <div class="nicdark_space10"></div>
+                        <h3 class="subtitle white">DON'T MISS THE EVENT</h3>
+                        <div class="nicdark_space20"></div>
+                        <div class="nicdark_divider left big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                        <div class="nicdark_space40"></div>
+                        <div class="nicdark_space50"></div>
+                    </div>
+                </div>
+                <!--end nicdark_container-->
+            </div>
+
+        </section>
+
+        <!--end section-->
+        <!--start section-->
+        <section class="nicdark_section event-details">
+            <!--start nicdark_container-->
+            <div class="nicdark_container nicdark_clearfix">
+                <div class="nicdark_space10"></div>
+                <div class="grid grid_12 nicdark_bg_grey nicdark_shadow nicdark_radius">
+                    <div class="nicdark_margin10">
+                        <div class="grid grid_3 percentage">
+                            <div class="nicdark_margin10 nicdark_relative">
+                                <a class="nicdark_btn_icon nicdark_bg_green nicdark_shadow extrabig nicdark_radius_circle white nicdark_absolute nicdark_displaynone_ipadpotr"><i class="icon-location-outline"></i></a>
+
+                                <div class="nicdark_activity nicdark_marginleft100 nicdark_disable_marginleft_ipadpotr">
+                                    <h4>EVENT VENUE</h4>
+                                    <div class="nicdark_space20"></div>
+                                    <p>@Events.EventVenue</p>
+                                </div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="grid grid_3 percentage">
+                            <div class="nicdark_margin10 nicdark_relative">
+                                <a class="nicdark_btn_icon nicdark_bg_red extrabig nicdark_shadow nicdark_radius_circle white nicdark_absolute nicdark_displaynone_ipadpotr"><i class="icon-wristwatch"></i></a>
+
+                                <div class="nicdark_activity nicdark_marginleft100 nicdark_disable_marginleft_ipadpotr">
+                                    <h4>EVENT STARTS AT</h4>
+                                    <div class="nicdark_space20"></div>
+                                    <h5>@Events.EventStartdate.ToString("dd-MMMM-yyyy") .</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid grid_3 percentage">
+                            <div class="nicdark_margin10 nicdark_relative">
+                                <a class="nicdark_btn_icon nicdark_bg_yellow extrabig nicdark_shadow nicdark_radius_circle white nicdark_absolute nicdark_displaynone_ipadpotr"><i class="icon-phone-outline"></i></a>
+
+                                <div class="nicdark_activity nicdark_marginleft100 nicdark_disable_marginleft_ipadpotr">
+                                    <h4>CONTACT MOBILE</h4>
+                                    <div class="nicdark_space20"></div>
+                                    <h5>@Events.MobileNumber.</h5>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid_3 percentage">
+                            <div class="nicdark_margin10 nicdark_relative">
+                                <a class="nicdark_btn_icon nicdark_bg_orange extrabig nicdark_shadow nicdark_radius_circle white nicdark_absolute nicdark_displaynone_ipadpotr"><i class="icon-mail-alt"></i></a>
+
+                                <div class="nicdark_activity nicdark_marginleft100 nicdark_disable_marginleft_ipadpotr">
+                                    <h4>CONTACT EMAIL</h4>
+                                    <div class="nicdark_space20"></div>
+                                    <p>@Events.Email.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end nicdark_container-->
+
+        </section>
+        <!--end section-->
+        <!--start section-->
+        <section class="nicdark_section">
+            <!--start nicdark_container-->
+            <div class="nicdark_container nicdark_clearfix">
+                <div class="nicdark_space20"></div>
+                <div class="grid grid_12">
+                    <div class="nicdark_textevidence nicdark_bg_yellow nicdark_shadow nicdark_radius">
+                        <div class="nicdark_margin10">
+                            <h1 class="white nicdark_countdown_inline subtitle">Get your Tickets Now!</h1>
+                        </div>
+                        <span class="pull-right" id="EventExpired" style="padding-right:50px;padding-top:20px;font-size:18px;font-weight:300;">@TempData["ErrorMessage"]</span>
+                        <i class="icon-stopwatch nicdark_iconbg right big yellow"></i>
+                    </div>
+                    <div class="nicdark_space20"></div>
+                    @TempData["ErrorMessage"]
+                    <div align="right">
+                        <div class="nicdark_margin100">
+                            <a id="Going" href="javascript:;" class="nicdark_zoom nicdark_btn nicdark_bg_green medium nicdark_shadow nicdark_radius white">
+                                <i class="icon-plus" id="DisplayIwll"></i>&nbsp;&nbsp;&nbsp;
+                            </a>
+                        </div>
+                        &nbsp;&nbsp;&nbsp;
+                        <div class="nicdark_margin100">
+                            <a id="MaybeGoing" href="javascript:;" class="nicdark_zoom nicdark_btn nicdark_bg_blue medium nicdark_shadow nicdark_radius white">
+                                <i class="icon-star"></i>&nbsp;&nbsp;&nbsp;May be
+                            </a>
+                        </div>
+                        &nbsp;&nbsp;&nbsp;
+                        <div class="nicdark_margin100">
+                            <a id="Decline" href="javascript:;" class="nicdark_zoom nicdark_btn nicdark_bg_red medium nicdark_shadow nicdark_radius white">
+                                <i class="icon-star"></i>&nbsp;&nbsp;&nbsp;Decline
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="nicdark_space20"></div>
+                    <!-- sfsdfsdfsdfsdfsdf -->
+                    <div>
+                        <div style="text-align:right;height:30px;" class="hide">
+                            <span style="border:1px solid #d3d3d3;padding:5px;">
+                                <span style="margin-right:5px;padding-right:5px;border-right:1px solid #d3d3d3;">May be: <strong id="Maybe" style="font-weight:600;"></strong></span>
+                                <span style="margin-right:5px;padding-right:5px;border-right:1px solid #d3d3d3;">Decline: <strong id="Declinebyuser" style="font-weight:600;"></strong></span>
+                                <span>I will join: <strong id="IllJoin" style="font-weight:600;"></strong></span>
+                            </span>
+
+                            <i id="DeclineGlf" class="fa fa-exclamation-triangle">&nbsp;<span id="ErrorMessage"></span></i>
+
+                        </div>
+                        <div style="border:1px solid #d3d3d3;padding:20px;margin-top:10px;" id="TicketsDisplay">
+                            <table style="width:100%;">
+                                <tbody id="BindTickets"></tbody>
+                                <tfoot>
+                                    <tr>
+
+                                        <td></td>
+                                        <td>Total Amount:</td>
+                                        <td style="text-align:left"> <label id="TotalAmount"></label></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3">
+                                            <br />
+                                            @if (Events.EventExpired == 1)
+                                            {
+                                                <script type="text/javascript">
+                                                    $(document).ready(function () {
+                                                        alert("This Event is expired....");
+                                                        $("#EventExpired").css('color', '#000').html("This Event is expired...");
+                                                        $("#EventExpired").parents('.nicdark_textevidence').removeClass("nicdark_bg_yellow").addClass('nicdark_bg_grey');
+                                                        $("#EventExpired").parents('.nicdark_textevidence').find('.white').removeClass('white');
+
+                                                    });
+                                                </script>
+                                            }
+                                            else
+                                            {
+                                                <script type="text/javascript">
+                                                    $(document).ready(function () {
+                                                        $("#EventExpired").html("");
+                                                    });
+                                                </script>
+                                                <input type="submit" id="BookTickets" class="nicdark_btn nicdark_bg_green medium nicdark_shadow nicdark_radius white pull-right" value="BOOK NOW" />
+                                            }
+                                            @*<a id="BookTickets" class=" cws-button bt-color-4 border-radius">BOOK NOW</a>*@
+                                        </td>
+                                    </tr>
+                            </table>
+                        </div>
+                        <div class="nicdark_space20"></div>
+                        <p><span class="white nicdark_dropcap nicdark_bg_red nicdark_radius nicdark_shadow">@Events.EventDescription.Substring(0, 1)</span>@Events.EventDescription.Substring(1).</p>
+                    </div>
+                    <!-- sfsdfsdfsdfsdfsdf -->
+                </div>
+                <div class="nicdark_space40"></div>
+            </div>
+            <!--end nicdark_container-->
+
+        </section>
+        <!--end section-->
+        <!--start section-->
+        <section class="nicdark_section">
+            <div class="nicdark_textevidence">
+                <iframe height="400" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDGGTwayf2F4g5d7LiT-Kf2oyGgr8O6OkQ&q=@Events.EventVenue" class="nicdark_iframe nicdark_margintop40_negative nicdark_marginbottom90_negative"></iframe>
+            </div>
+        </section>
+        <!--end section-->
+    }
+
+
+
+
+
+
+    <!----New Design-->
+    <section class="nicdark_section">
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+
+            <div class="nicdark_space50"></div>
+
+            <div class="grid grid_12">
+                <h1 class="subtitle greydark">OUR UPCOMING EVENTS</h1>
+                <div class="nicdark_space20"></div>
+                <div class="nicdark_divider left big"><span class="nicdark_bg_green nicdark_radius"></span></div>
+                <div class="nicdark_space10"></div>
+            </div>
+
+            <div class="nicdark_space10"></div>
+            @{int i = 0;}
+            @foreach (var Events in ViewBag.EventsOnId)
+            {
+                foreach (var UpcomingEvents in ViewBag.EventsOnId)
+                {
+                    foreach (var EventUsers in UpcomingEvents.EventIds)
+                    {
+                        if (i == 0)
+                        {
+                            <div class="grid grid_3 event-list upcoming-events">
+                                <div class="nicdark_archive1 nicdark_bg_green nicdark_radius nicdark_shadow">
+                                    <a href="javascript:;" class="nicdark_btn nicdark_bg_greydark white medium nicdark_radius nicdark_absolute_left">@EventUsers.EventStartDate.ToString("dd")<br /><small>@EventUsers.EventStartDate.ToString("MMM")</small></a>
+                                    @if (File.Exists(Server.MapPath(@EventUsers.img)))
+                                    {
+                                        <img alt="" src="@EventUsers.img" style="height:160px;" />
+                                    }
+                                    else
+                                    {
+                                        <img src="~/Content/DesignContent/css/images/no_image.jpg" style="height:160px;" />
+                                    }
+                                    <div class=" nicdark_textevidence nicdark_bg_greydark">
+                                        <h4 class="white nicdark_margin20 event-name1">@EventUsers.EventName</h4>
+                                    </div>
+                                    <div class="nicdark_space10"></div>
+                                    <div align="center">
+                                        <a href="../AlumniEvents/SingleEvent?EventId=@EventUsers.EventId" class="nicdark_press nicdark_btn nicdark_bg_greendark white nicdark_radius nicdark_shadow medium">BOOK NOW</a>
+                                    </div>
+                                    <div class="nicdark_space10"></div>
+                                </div>
+                            </div>
+                        }
+
+                    }
+                }
+                <div>
+                    <input type="hidden" value="@Model.EventId" id="EventId" />
+                </div>
+            }
+            <table>
+                <tr id="TicketTypesEventTypeId"></tr>
+                <tr id="TypeAmount"></tr>
+                <tr id="TicketQuantity"></tr>
+            </table>
+            <div class="nicdark_space50"></div>
+
+            <!--end nicdark_container-->
+
+    </section>
+}
+@section Scripts{
+    <script type="text/javascript">
+        function getParameterByName(name) { name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]"); var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"), results = regex.exec(location.search); return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " ")); }
+        var EventId = getParameterByName('EventId');
+        $(document).ready(function () {
+            $("#EventSelectDate").change(function () {
+                var SelectedDate = $("#EventSelectDate").val();
+                var EventStartDate = $("#EventStartDate").html();
+                var EventEndDate = $("#EventEndDate").html();
+
+            });
+
+            $.ajax({
+                type: "Get",
+                dataType: "json",
+                contenttype: "Application/json",
+                url: "../AlumniEvents/GetEventTypesOnId",
+                data: ({ "EventId": EventId }),
+                success: function (data) {
+                    $.each(data, function (key, value) {
+                        var selectList = "<select class='selectAggregate nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle'>";
+                        var TotalTicketsCount = value.Quantity;
+                        if (TotalTicketsCount == 0) {
+                            $("#BindTickets").append("<tr><td hidden='hidden'>" + value.TypeId + "</td><td><h3>" + value.Heading + "</h2>&nbsp;&nbsp;&nbsp;</td><td><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + value.Price + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3></td><td><h5>SOLD OUT<h5></td></tr><tr><td>" + value.Description + "</td></tr>");
+                        }
+                        else {
+                            for (var i = 0; i <= TotalTicketsCount; i++) {
+                                selectList += "<option>" + i + "</option>";
+                            }
+                            $("#BindTickets").append("<tr><td hidden='hidden'>" + value.TypeId + "</td><td><h3>" + value.Heading + "</h2>&nbsp;&nbsp;&nbsp;</td><td><h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + value.Price + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h3></td><td>" + selectList + "</td></tr><tr><td>" + value.Description + "</td></tr>");
+                        }
+                    });
+                }
+            });
+            $(document).on('change', ".selectAggregate", function () {
+
+                $("#TicketTypesEventTypeId").empty();
+                $("#TypeAmount").empty();
+                $("#TicketQuantity").empty();
+
+                var list = new Array();
+                var EventTypeId = new Array();
+                var TicketAmounts = new Array();
+                var TicketsQuantity = new Array();
+                $('.selectAggregate').each(function () {
+                    var HiddentTicketTypeId = $(this).closest('tr').children('td:first').text();
+                    var QuantityValue = $("option:selected", this).text();
+                    var TicketAmount = $(this).closest('tr').children(' td:nth-child(3)').text();
+                    var TotalCalAmount = (QuantityValue * TicketAmount);
+                    if (TotalCalAmount != 0) {
+                        list.push(TotalCalAmount);
+                        EventTypeId.push(HiddentTicketTypeId);
+                        TicketAmounts.push(TicketAmount);
+                        TicketsQuantity.push(QuantityValue);
+                    }
+                });
+                var TotalPurchasedAmount = 0;
+                $.each(list, function (key, value) {
+                    if (value != 0) {
+                        TotalPurchasedAmount += value;
+                    }
+                });
+                $("#TotalAmount").html(TotalPurchasedAmount + ".00");
+
+                var TicketCost = 0;
+                $.each(EventTypeId, function (key, value) {
+
+                    $("#TicketTypesEventTypeId").append("<tr><td><input type='hidden' id='HiddenEventTypeId'  name='EventTypeId' value=" + value + " /><td></tr>");
+                });
+
+                $.each(TicketAmounts, function (key, value) {
+
+                    $("#TypeAmount").append("<tr><td><input type='hidden'  name='TicketAmount' value=" + value + " /><td></tr>");
+                });
+
+
+                $.each(TicketsQuantity, function (key, value) {
+
+                    $("#TicketQuantity").append("<tr><td><input type='hidden'  name='TicketsQuantity' value=" + value + " /><td></tr>");
+                });
+
+            });
+            $("#BookTickets").click(function () {
+                var TotalAmount = $("#TotalAmount").html();
+                if (TotalAmount != "" && TotalAmount != null) {
+                    var x = confirm("Are you sure you want to Pay?");
+                    if (x)
+                        return true;
+                    else
+                        return false;                 
+                }
+                else {
+                    alert("Please select the Tickets")
+                    return false;
+                }
+
+
+            });
+        });
+    </script>
+
+
+
+
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+
+    <script>
+        $(function () {
+            $("#EventSelectDate").datepicker({
+                changeMonth: true,
+                changeYear: true
+            });
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#ErrorMessage").html("");
+            $("#DeclineGlf").hide();
+            $("#DisplayIwll").html("");
+            $.ajax({
+                type: "Get",
+                dataType: "json",
+                contentType: "Application",
+                url: "../AlumniEvents/GetUserEventGoingCounts",
+                data: { "EventId": EventId },
+                success: function (data) {
+                    $("#Maybe").html(data.MaybeCount);
+                    $("#Declinebyuser").html(data.DeclineCount);
+                    $("#IllJoin").html(data.IwillJoin);
+
+                    if (data.AmGoing != 0) {
+                        $("#DisplayIwll").html("Am Going");
+                    }
+                    else
+                    {
+                        $("#DisplayIwll").html("I Will Join");
+                    }
+                    if (data.UserDeclined == 1) {
+                        $("#TicketsDisplay").hide();
+                        $("#DeclineGlf").show();
+                        $("#ErrorMessage").html("Due to you decline the event the tickets are not available to you ? if you want to book the tickets please click on maybe ");
+                    }
+                    else {
+                        $("#TicketsDisplay").show();
+                        $("#ErrorMessage").html("");
+                        $("#DeclineGlf").hide();
+                    }
+                }
+            });
+
+            $("#Going").click(function () {
+                $("#DisplayIwll").html('');
+                $("#DisplayIwll").html("Am Going");
+
+                $.ajax({
+                    type: "Get",
+                    dataType: "json",
+                    contentType: "Application",
+                    url: "../AlumniEvents/EventGoing",
+                    data: { "Type": 3, "Status": "AmGoing", "EventId": EventId },
+                    success: function (data) {
+                    }
+                });
+            });
+
+            $("#MaybeGoing").click(function () {
+                $("#TicketsDisplay").show();
+                $("#ErrorMessage").html("");
+                $("#DeclineGlf").hide();
+                $.ajax({
+                    type: "Get",
+                    dataType: "json",
+                    contentType: "Application",
+                    url: "../AlumniEvents/EventGoing",
+                    data: { "Type": 1, "Status": "Maybe", "EventId": EventId },
+                    success: function (data) {
+
+                        $("#Maybe").html(data.MaybeCount);
+                        $("#Declinebyuser").html(data.DeclineCount);
+                        $("#IllJoin").html(data.IwillJoin);
+                        if (data.UserDeclined == 1) {
+                            $("#TicketsDisplay").hide();
+                            $("#DeclineGlf").show();
+                            $("#ErrorMessage").html("Due to you decline the event the tickets are not available to you ? if you want to book the tickets please click on maybe ");
+                        }
+                        else {
+                            $("#TicketsDisplay").show();
+                            $("#ErrorMessage").html("");
+                        }
+                    }
+                });
+            });
+            $("#Decline").click(function () {
+                $("#TicketsDisplay").hide();
+                $("#DeclineGlf").show();
+                alert("Due to you decline the event the tickets are not available to you ? if you want to book the tickets please click on maybe ");
+                $.ajax({
+                    type: "Get",
+                    dataType: "json",
+                    contentType: "Application",
+                    url: "../AlumniEvents/EventGoing",
+                    data: { "Type": 2, "Status": "Decline", "EventId": EventId },
+                    success: function (data) {
+                        $("#Maybe").html(data.MaybeCount);
+                        $("#Declinebyuser").html(data.DeclineCount);
+                        $("#Maybe").html(data.MaybeCount);
+                        $("#Declinebyuser").html(data.DeclineCount);
+                        $("#IllJoin").html(data.IwillJoin);
+                        if (data.UserDeclined == 1) {
+                            $("#TicketsDisplay").hide();
+                            $("#ErrorMessage").html("Due to you decline the event the tickets are not available to you ? if you want to book the tickets please click on maybe ");
+                        }
+                        else {
+                            $("#TicketsDisplay").show();
+                            $("#ErrorMessage").html("");
+                            $("#DeclineGlf").hide();
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+}

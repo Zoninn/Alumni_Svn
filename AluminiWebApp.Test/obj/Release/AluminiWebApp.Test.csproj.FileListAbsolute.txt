@@ -1,0 +1,5 @@
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp.Test\bin\Release\AluminiWebApp.Test.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp.Test\bin\Release\AluminiWebApp.Test.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp.Test\obj\Release\AluminiWebApp.Test.csprojResolveAssemblyReference.cache
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp.Test\obj\Release\AluminiWebApp.Test.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiWebApp.Test\obj\Release\AluminiWebApp.Test.pdb

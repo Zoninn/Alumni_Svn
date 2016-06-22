@@ -1,0 +1,53 @@
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiRepository.Test\bin\Debug\AluminiRepository.Test.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiRepository.Test\bin\Debug\AluminiRepository.Test.pdb
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiRepository.Test\obj\Debug\AluminiRepository.Test.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiRepository.Test\obj\Debug\AluminiRepository.Test.pdb
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiRepository.Test\bin\Debug\FluentAssertions.Core.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiRepository.Test\bin\Debug\FluentAssertions.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiRepository.Test\bin\Debug\Moq.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiRepository.Test\bin\Debug\FluentAssertions.pdb
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiRepository.Test\bin\Debug\FluentAssertions.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiRepository.Test\bin\Debug\FluentAssertions.Core.pdb
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiRepository.Test\bin\Debug\FluentAssertions.Core.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiRepository.Test\bin\Debug\Moq.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiRepository.Test\bin\Debug\AluminiRepository.Test.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiRepository.Test\bin\Debug\AluminiRepository.Test.pdb
+C:\Users\tulasiram\Documents\collegealumini\AluminiRepository.Test\obj\Debug\AluminiRepository.Test.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiRepository.Test\obj\Debug\AluminiRepository.Test.pdb
+C:\Users\tulasiram\Documents\collegealumini\AluminiRepository.Test\obj\Debug\AluminiRepository.Test.csprojResolveAssemblyReference.cache
+D:\FRESHCOPY ALUMNI\AluminiRepository.Test\bin\Debug\AluminiRepository.Test.dll
+D:\FRESHCOPY ALUMNI\AluminiRepository.Test\bin\Debug\AluminiRepository.Test.pdb
+D:\FRESHCOPY ALUMNI\AluminiRepository.Test\obj\Debug\AluminiRepository.Test.csprojResolveAssemblyReference.cache
+D:\FRESHCOPY ALUMNI\AluminiRepository.Test\obj\Debug\AluminiRepository.Test.dll
+D:\FRESHCOPY ALUMNI\AluminiRepository.Test\obj\Debug\AluminiRepository.Test.pdb
+C:\Alumni Copy\AluminiRepository.Test\bin\Debug\AluminiRepository.Test.dll
+C:\Alumni Copy\AluminiRepository.Test\bin\Debug\AluminiRepository.Test.pdb
+C:\Alumni Copy\AluminiRepository.Test\obj\Debug\AluminiRepository.Test.dll
+C:\Alumni Copy\AluminiRepository.Test\obj\Debug\AluminiRepository.Test.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiRepository.Test\bin\Debug\AluminiRepository.Test.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiRepository.Test\bin\Debug\AluminiRepository.Test.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiRepository.Test\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiRepository.Test\obj\Debug\AluminiRepository.Test.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiRepository.Test\obj\Debug\AluminiRepository.Test.pdb
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiRepository.Test\bin\Debug\AluminiRepository.Test.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiRepository.Test\bin\Debug\AluminiRepository.Test.pdb
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiRepository.Test\obj\Debug\AluminiRepository.Test.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiRepository.Test\obj\Debug\AluminiRepository.Test.pdb
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiRepository.Test\bin\Debug\AluminiRepository.Test.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiRepository.Test\bin\Debug\AluminiRepository.Test.pdb
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiRepository.Test\obj\Debug\AluminiRepository.Test.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiRepository.Test\obj\Debug\AluminiRepository.Test.pdb
+D:\RepoAlumni\AluminiRepository.Test\bin\Debug\AluminiRepository.Test.dll
+D:\RepoAlumni\AluminiRepository.Test\bin\Debug\AluminiRepository.Test.pdb
+D:\RepoAlumni\AluminiRepository.Test\obj\Debug\AluminiRepository.Test.dll
+D:\RepoAlumni\AluminiRepository.Test\obj\Debug\AluminiRepository.Test.pdb
+D:\RepoAlumni\AluminiRepository.Test\obj\Debug\AluminiRepository.Test.csprojResolveAssemblyReference.cache
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiRepository.Test\bin\Debug\AluminiRepository.Test.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiRepository.Test\bin\Debug\AluminiRepository.Test.pdb
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiRepository.Test\obj\Debug\AluminiRepository.Test.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiRepository.Test\obj\Debug\AluminiRepository.Test.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiRepository.Test\bin\Debug\AluminiRepository.Test.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiRepository.Test\bin\Debug\AluminiRepository.Test.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiRepository.Test\obj\Debug\AluminiRepository.Test.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiRepository.Test\obj\Debug\AluminiRepository.Test.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiRepository.Test\obj\Debug\AluminiRepository.Test.csprojResolveAssemblyReference.cache

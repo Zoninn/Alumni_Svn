@@ -1,0 +1,88 @@
+﻿@model AluminiWebApp.Areas.Admin.Models.NewsRoomModel
+@{
+    Layout = "~/Areas/Alumini/Views/Shared/_SRKRLayout.cshtml";
+}
+
+<div class="page-content">
+    <div class="container clear-fix">
+        <div class="grid-col-row">
+            <div class="grid-col grid-col-9">
+                <!-- main content -->
+                <main>
+                    <!-- search -->
+                    <!-- / search -->
+                    <!-- item -->
+                    <br />
+
+
+                    <div class="category-item list clear-fix">
+                        <div class="picture">
+                            <div class="hover-effect"></div>
+
+                            @if (@Model.Image != null)
+                            {
+                                <img src="@Model.Image" data-at2x="pic/270x200-img-17@2x.jpg" alt="">
+                            }
+                            else
+                            {
+
+                                @*<img src="~/UserProfilePictures/avatar.png" data-at2x="pic/270x200-img-17@2x.jpg" alt="" />*@
+                            }
+                        </div>
+                        <h3>@Model.Title</h3>
+                        <div>
+                            <div class="star-rating" title="Rated 4.00 out of 5">
+                                <span style="width:100%"></span>
+                            </div>
+                            <div class="count-reviews">( reviews 10 )&nbsp;&nbsp;</div>
+                            <div class="fa fa-calendar">&nbsp;&nbsp; @Model.PostedOn.Value.ToString("MMMM.dd.yyyy")</div>
+                        </div>
+                        <p>@Model.Description</p>
+                        <p></p>
+                    </div>
+
+                </main>
+                <!-- / main content -->
+                <!-- pagination -->
+                <div class="page-pagination clear-fix">
+                    <a href="#"><i class="fa fa-angle-double-left"></i></a>
+                    <!--
+                    -->
+                    <a href="#">1</a>
+                    <!--
+                    -->
+                    <a href="#">2</a>
+                    <!--
+                    -->
+                    <a href="#" class="active">3</a>
+                    <!--
+                    -->
+                    <a href="#"><i class="fa fa-angle-double-right"></i></a>
+                </div>
+                <!-- / pagination -->
+            </div>
+            <!-- side bar -->
+            <div class="grid-col grid-col-3 sidebar">
+                <!-- widget instructor -->
+                <aside class="widget-instructor">
+
+                    <!-- carousel navigation -->
+                    <!-- / carousel navigation -->
+
+
+                </aside>
+                <!-- / widget instructor -->
+                <!-- widget popular courses -->
+                <aside class="widget-popular"></aside>
+                <!-- widget popular courses -->
+                <!-- widget recent comments -->
+                <aside class="widget-comments"></aside>
+                <!--/ widget recent comments -->
+                <!-- widget tag cloud -->
+                <aside class="widget-tag"></aside>
+                <!-- / widget tag cloud -->
+            </div>
+            <!-- / side bar -->
+        </div>
+    </div>
+</div>

@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BC0CADD2-ED18-4841-A404-38C932AA6540}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AluminiService</RootNamespace>
+    <AssemblyName>AluminiService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NLog">
+      <HintPath>..\Alumini.Logger\bin\Debug\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AlbumGalleryService.cs" />
+    <Compile Include="CourseCategoriesService.cs" />
+    <Compile Include="CoursesService.cs" />
+    <Compile Include="Delegates.cs" />
+    <Compile Include="DonationService.cs" />
+    <Compile Include="EducationalDetailService.cs" />
+    <Compile Include="EventCategoryService.cs" />
+    <Compile Include="EventService.cs" />
+    <Compile Include="EventTicketTypesServices.cs" />
+    <Compile Include="FacultyWorkInfoService.cs" />
+    <Compile Include="GenericMethodsService.cs" />
+    <Compile Include="GraduationYearService.cs" />
+    <Compile Include="ImplementDelegate.cs" />
+    <Compile Include="Interfaces\IAlbumGalleryService.cs" />
+    <Compile Include="Interfaces\IDonationService.cs" />
+    <Compile Include="Interfaces\IEducationalDetailService.cs" />
+    <Compile Include="Interfaces\IEventCategoryService.cs" />
+    <Compile Include="Interfaces\IEventService.cs" />
+    <Compile Include="Interfaces\IEventTicketTypesServices.cs" />
+    <Compile Include="Interfaces\IFacultyWorkInfoService.cs" />
+    <Compile Include="Interfaces\ICourseCategoryService.cs" />
+    <Compile Include="Interfaces\ICourseService.cs" />
+    <Compile Include="Interfaces\IGenericMethodsService.cs" />
+    <Compile Include="Interfaces\IGraduationYearService.cs" />
+    <Compile Include="Interfaces\IMemoriesServices.cs" />
+    <Compile Include="Interfaces\INewsRoomService.cs" />
+    <Compile Include="Interfaces\Interfaces.cs" />
+    <Compile Include="Interfaces\IProfessionalDetailsService.cs" />
+    <Compile Include="Interfaces\ISaluationService.cs" />
+    <Compile Include="Interfaces\IStateDistrictCityService.cs" />
+    <Compile Include="Interfaces\IUserDetailsViewService.cs" />
+    <Compile Include="Interfaces\IUserInfoService.cs" />
+    <Compile Include="Interfaces\IUserPaymentService.cs" />
+    <Compile Include="Interfaces\IUserPostPicturesService.cs" />
+    <Compile Include="Interfaces\IUserPostService.cs" />
+    <Compile Include="Interfaces\IUserPostVisibleService.cs" />
+    <Compile Include="Interfaces\IUserselectionBookingsService.cs" />
+    <Compile Include="Interfaces\IUserSelectionEventsService.cs" />
+    <Compile Include="Interfaces\IUser_JobPostingService.cs" />
+    <Compile Include="MemoriesServices.cs" />
+    <Compile Include="NewsRoomService.cs" />
+    <Compile Include="ProfessionalDetailsService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaluationService.cs" />
+    <Compile Include="StateDistrictCityService.cs" />
+    <Compile Include="SubscriberClasses.cs" />
+    <Compile Include="UserDetailsViewService.cs" />
+    <Compile Include="UserInfoService.cs" />
+    <Compile Include="UserPaymentsService.cs" />
+    <Compile Include="UserPostPicturesService.cs" />
+    <Compile Include="UserPostService.cs" />
+    <Compile Include="UserPostVisibleServices.cs" />
+    <Compile Include="UserSelectionBookingsService.cs" />
+    <Compile Include="UserselectionEventsService.cs" />
+    <Compile Include="User_jobPostingServices.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Alumini.Core\Alumini.Core.csproj">
+      <Project>{85c45122-4565-4200-89cf-c19c0226ba4f}</Project>
+      <Name>Alumini.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Alumini.Logger\Alumini.Logger.csproj">
+      <Project>{8d3914ec-1024-45a0-a948-dbd323f6af55}</Project>
+      <Name>Alumini.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AluminiRepository\AluminiRepository.csproj">
+      <Project>{b636d1c9-a4a8-4e7e-b737-5a16b82697d4}</Project>
+      <Name>AluminiRepository</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

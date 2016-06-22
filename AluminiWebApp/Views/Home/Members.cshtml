@@ -1,0 +1,477 @@
+﻿@model AluminiWebApp.Models.UserMembersModel
+@{
+    ViewBag.Title = "Alumni Members";
+    Layout = "~/Views/Shared/_SRKRDesignLayout.cshtml";
+}
+
+
+
+<section id="nicdark_parallax_title" class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img-single-teacher-1" style="background-position: 50% -60px;margin-top:-150px;">
+
+    <div class="nicdark_filter greydark">
+
+
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+
+            <div class="grid grid_12">
+                <div class="nicdark_space100"></div>
+                <div class="nicdark_space100"></div>
+                <h1 class=" subtitle">Alumni Members <span></span> </h1>
+                <div class="nicdark_space20">Alumni Members</div>
+                <div class="nicdark_divider left big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space40"></div>
+                <div class="nicdark_space50"></div>
+            </div>
+
+        </div>
+        <!--end nicdark_container-->
+
+    </div>
+
+</section>
+
+<section class="nicdark_section">
+    <!--start nicdark_container-->
+    <div class="nicdark_container nicdark_clearfix">
+
+        <div class="nicdark_space50"></div>
+
+        <div class="grid grid_12">
+            <h1 class="subtitle greydark">ALUMNI MEMBERS (@Model.GetUsers.Count()) &nbsp;</h1>
+            <h3 class="nicdark_space20"></h3>
+            <h3 class="subtitle grey"></h3>
+            <div class="nicdark_space20"></div>
+            <div class="nicdark_divider left big"><span class="nicdark_bg_orange nicdark_radius"></span></div>
+            <div class="nicdark_space10"></div>
+        </div>
+        @{
+            var i = 0;
+        }
+        @foreach (var Memories in @Model.GetUsers)
+        {
+            switch (i)
+            {
+                case 0:
+                    <div class="grid grid_6">
+                        <div class="nicdark_archive1 nicdark_bg_violet nicdark_radius nicdark_shadow">
+                            <div class="nicdark_textevidence nicdark_width_percentage40 nicdark_width100_responsive">
+                                @if (File.Exists(Server.MapPath(@Memories.ProfilePicture)))
+                                {
+                                    <img src="@Memories.ProfilePicture" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />
+                                }
+                                else
+                                {
+                                    <img alt="" class="nicdark_radiu nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" style="height:200px" />
+                                }
+                            </div>
+
+                            <div class="nicdark_textevidence nicdark_width_percentage50 nicdark_width100_responsive">
+                                <div class="nicdark_margin20">
+
+                                    <h4 class="white"><a href="single-teacher.php" class="white">@Memories.FirstName &nbsp;&nbsp; @Memories.LastName</a></h4>
+                                    <div class="nicdark_space20"></div>
+                                    <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                                    <div class="nicdark_space20"></div>
+                                    @if (@Memories.CourseCategoryName != null)
+                                    {
+                                        <p class="white">@Memories.CourseCategoryName</p>
+                                    }
+                                    else
+                                    {
+                                        <p class="white">@Memories.DesignationName</p>
+                                        <p class="white">@Memories.DepartmentName</p>
+                                        <p class="white">@Memories.WorkingFrom - @Memories.WorkingTo</p>
+                                    }
+                                    <p class="white">@Memories.CourseName</p>
+                                    <p class="white">@Memories.Batch</p>
+                                    <div class="nicdark_space20"></div>
+                                    @**@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                                    break;
+
+                case 1:
+                <div class="grid grid_6">
+                    <div class="nicdark_archive1 nicdark_bg_orange nicdark_radius nicdark_shadow">
+                        <div class="nicdark_textevidence nicdark_width_percentage40 nicdark_width100_responsive">
+                            @if (File.Exists(Server.MapPath(@Memories.ProfilePicture)))
+                            {
+                                <img src="@Memories.ProfilePicture" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />
+                            }
+                            else
+                            {
+                                <img alt="" class="nicdark_radiu nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" style="height:200px" />
+                            }
+                        </div>
+
+                        <div class="nicdark_textevidence nicdark_width_percentage50 nicdark_width100_responsive">
+                            <div class="nicdark_margin20">
+
+                                <h4 class="white"><a href="single-teacher.php" class="white">@Memories.FirstName &nbsp;&nbsp; @Memories.LastName</a></h4>
+                                <div class="nicdark_space20"></div>
+                                <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                                <div class="nicdark_space20"></div>
+                                @if (@Memories.CourseCategoryName != null)
+                                {
+                                    <p class="white">@Memories.CourseCategoryName</p>
+                                }
+                                else
+                                {
+                                    <p class="white">@Memories.DesignationName</p>
+                                    <p class="white">@Memories.DepartmentName</p>
+                                    <p class="white">@Memories.WorkingFrom - @Memories.WorkingTo</p>
+                                }
+                                <p class="white">@Memories.CourseName</p>
+                                <p class="white">@Memories.Batch</p>
+                                <div class="nicdark_space20"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                                break;
+                case 2:
+                <div class="grid grid_6">
+                    <div class="nicdark_archive1 nicdark_bg_green nicdark_radius nicdark_shadow">
+                        <div class="nicdark_textevidence nicdark_width_percentage40 nicdark_width100_responsive">
+                            @if (File.Exists(Server.MapPath(@Memories.ProfilePicture)))
+                            {
+                                <img src="@Memories.ProfilePicture" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />
+                            }
+                            else
+                            {
+                                <img alt="" class="nicdark_radiu nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" style="height:200px" />
+                            }
+                        </div>
+
+                        <div class="nicdark_textevidence nicdark_width_percentage50 nicdark_width100_responsive">
+                            <div class="nicdark_margin20">
+
+                                <h4 class="white"><a href="single-teacher.php" class="white">@Memories.FirstName &nbsp;&nbsp; @Memories.LastName</a></h4>
+                                <div class="nicdark_space20"></div>
+                                <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                                <div class="nicdark_space20"></div>
+                                @if (@Memories.CourseCategoryName != null)
+                                {
+                                    <p class="white">@Memories.CourseCategoryName</p>
+                                }
+                                else
+                                {
+                                    <p class="white">@Memories.DesignationName</p>
+                                    <p class="white">@Memories.DepartmentName</p>
+                                    <p class="white">@Memories.WorkingFrom - @Memories.WorkingTo</p>
+                                }
+                                <p class="white">@Memories.CourseName</p>
+                                <p class="white">@Memories.Batch</p>
+                                <div class="nicdark_space20"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                                break;
+                case 3:
+                <div class="grid grid_6">
+                    <div class="nicdark_archive1 nicdark_bg_blue nicdark_radius nicdark_shadow">
+                        <div class="nicdark_textevidence nicdark_width_percentage40 nicdark_width100_responsive">
+                            @if (File.Exists(Server.MapPath(@Memories.ProfilePicture)))
+                            {
+                                <img src="@Memories.ProfilePicture" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />
+                            }
+                            else
+                            {
+                                <img alt="" class="nicdark_radiu nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" style="height:200px" />
+                            }
+                        </div>
+
+                        <div class="nicdark_textevidence nicdark_width_percentage50 nicdark_width100_responsive">
+                            <div class="nicdark_margin20">
+
+                                <h4 class="white"><a href="single-teacher.php" class="white">@Memories.FirstName &nbsp;&nbsp; @Memories.LastName</a></h4>
+                                <div class="nicdark_space20"></div>
+                                <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                                <div class="nicdark_space20"></div>
+                                @if (@Memories.CourseCategoryName != null)
+                                {
+                                    <p class="white">@Memories.CourseCategoryName</p>
+                                }
+                                else
+                                {
+                                    <p class="white">@Memories.DesignationName</p>
+                                    <p class="white">@Memories.DepartmentName</p>
+                                    <p class="white">@Memories.WorkingFrom - @Memories.WorkingTo</p>
+                                }
+                                <p class="white">@Memories.CourseName</p>
+                                <p class="white">@Memories.Batch</p>
+                                <div class="nicdark_space20"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                                break;
+                case 4:
+                <div class="grid grid_6">
+                    <div class="nicdark_archive1 nicdark_bg_yellow nicdark_radius nicdark_shadow">
+                        <div class="nicdark_textevidence nicdark_width_percentage40 nicdark_width100_responsive">
+                            @if (File.Exists(Server.MapPath(@Memories.ProfilePicture)))
+                            {
+                                <img src="@Memories.ProfilePicture" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />
+                            }
+                            else
+                            {
+                                <img alt="" class="nicdark_radiu nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" style="height:200px" />
+                            }
+                        </div>
+
+                        <div class="nicdark_textevidence nicdark_width_percentage50 nicdark_width100_responsive">
+                            <div class="nicdark_margin20">
+
+                                <h4 class="white"><a href="single-teacher.php" class="white">@Memories.FirstName &nbsp;&nbsp; @Memories.LastName</a></h4>
+                                <div class="nicdark_space20"></div>
+                                <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                                <div class="nicdark_space20"></div>
+                                @if (@Memories.CourseCategoryName != null)
+                                {
+                                    <p class="white">@Memories.CourseCategoryName</p>
+                                }
+                                else
+                                {
+                                    <p class="white">@Memories.DesignationName</p>
+                                    <p class="white">@Memories.DepartmentName</p>
+                                    <p class="white">@Memories.WorkingFrom - @Memories.WorkingTo</p>
+                                }
+                                <p class="white">@Memories.CourseName</p>
+                                <p class="white">@Memories.Batch</p>
+                                <div class="nicdark_space20"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                                break;
+                case 5:
+                <div class="grid grid_6">
+                    <div class="nicdark_archive1 nicdark_bg_green nicdark_radius nicdark_shadow">
+                        <div class="nicdark_textevidence nicdark_width_percentage40 nicdark_width100_responsive">
+                            @if (File.Exists(Server.MapPath(@Memories.ProfilePicture)))
+                            {
+                                <img src="@Memories.ProfilePicture" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />
+                            }
+                            else
+                            {
+                                <img alt="" class="nicdark_radiu nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" style="height:200px" />
+                            }
+                        </div>
+
+                        <div class="nicdark_textevidence nicdark_width_percentage50 nicdark_width100_responsive">
+                            <div class="nicdark_margin20">
+
+                                <h4 class="white"><a href="single-teacher.php" class="white">@Memories.FirstName &nbsp;&nbsp; @Memories.LastName</a></h4>
+                                <div class="nicdark_space20"></div>
+                                <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                                <div class="nicdark_space20"></div>
+                                @if (@Memories.CourseCategoryName != null)
+                                {
+                                    <p class="white">@Memories.CourseCategoryName</p>
+                                }
+                                else
+                                {
+                                    <p class="white">@Memories.DesignationName</p>
+                                    <p class="white">@Memories.DepartmentName</p>
+                                    <p class="white">@Memories.WorkingFrom - @Memories.WorkingTo</p>
+                                }
+                                <p class="white">@Memories.CourseName</p>
+                                <p class="white">@Memories.Batch</p>
+                                <div class="nicdark_space20"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                                break;
+                case 6:
+                <div class="grid grid_6">
+                    <div class="nicdark_archive1 nicdark_bg_blue nicdark_radius nicdark_shadow">
+                        <div class="nicdark_textevidence nicdark_width_percentage40 nicdark_width100_responsive">
+                            @if (File.Exists(Server.MapPath(@Memories.ProfilePicture)))
+                            {
+                                <img src="@Memories.ProfilePicture" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />
+                            }
+                            else
+                            {
+                                <img alt="" class="nicdark_radiu nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" style="height:200px" />
+                            }
+                        </div>
+
+                        <div class="nicdark_textevidence nicdark_width_percentage50 nicdark_width100_responsive">
+                            <div class="nicdark_margin20">
+
+                                <h4 class="white"><a href="single-teacher.php" class="white">@Memories.FirstName &nbsp;&nbsp; @Memories.LastName</a></h4>
+                                <div class="nicdark_space20"></div>
+                                <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                                <div class="nicdark_space20"></div>
+                                @if (@Memories.CourseCategoryName != null)
+                                {
+                                    <p class="white">@Memories.CourseCategoryName</p>
+                                }
+                                else
+                                {
+                                    <p class="white">@Memories.DesignationName</p>
+                                    <p class="white">@Memories.DepartmentName</p>
+                                    <p class="white">@Memories.WorkingFrom - @Memories.WorkingTo</p>
+                                }
+                                <p class="white">@Memories.CourseName</p>
+                                <p class="white">@Memories.Batch</p>
+                                <div class="nicdark_space20"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                                break;
+                case 7:
+                <div class="grid grid_6">
+                    <div class="nicdark_archive1 nicdark_bg_yellow nicdark_radius nicdark_shadow">
+                        <div class="nicdark_textevidence nicdark_width_percentage40 nicdark_width100_responsive">
+                            @if (File.Exists(Server.MapPath(@Memories.ProfilePicture)))
+                            {
+                                <img src="@Memories.ProfilePicture" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />
+                            }
+                            else
+                            {
+                                <img alt="" class="nicdark_radiu nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" style="height:200px" />
+                            }
+                        </div>
+
+                        <div class="nicdark_textevidence nicdark_width_percentage50 nicdark_width100_responsive">
+                            <div class="nicdark_margin20">
+
+                                <h4 class="white"><a href="single-teacher.php" class="white">@Memories.FirstName &nbsp;&nbsp; @Memories.LastName</a></h4>
+                                <div class="nicdark_space20"></div>
+                                <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                                <div class="nicdark_space20"></div>
+                                @if (@Memories.CourseCategoryName != null)
+                                {
+                                    <p class="white">@Memories.CourseCategoryName</p>
+                                }
+                                else
+                                {
+                                    <p class="white">@Memories.DesignationName</p>
+                                    <p class="white">@Memories.DepartmentName</p>
+                                    <p class="white">@Memories.WorkingFrom - @Memories.WorkingTo</p>
+                                }
+                                <p class="white">@Memories.CourseName</p>
+                                <p class="white">@Memories.Batch</p>
+                                <div class="nicdark_space20"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                                break;
+                case 8:
+                <div class="grid grid_6">
+                    <div class="nicdark_archive1 nicdark_bg_violet nicdark_radius nicdark_shadow">
+                        <div class="nicdark_textevidence nicdark_width_percentage40 nicdark_width100_responsive">
+                            @if (File.Exists(Server.MapPath(@Memories.ProfilePicture)))
+                            {
+                                <img src="@Memories.ProfilePicture" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />
+                            }
+                            else
+                            {
+                                <img alt="" class="nicdark_radiu nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" style="height:200px" />
+                            }
+                        </div>
+
+                        <div class="nicdark_textevidence nicdark_width_percentage50 nicdark_width100_responsive">
+                            <div class="nicdark_margin20">
+
+                                <h4 class="white"><a href="single-teacher.php" class="white">@Memories.FirstName &nbsp;&nbsp; @Memories.LastName</a></h4>
+                                <div class="nicdark_space20"></div>
+                                <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                                <div class="nicdark_space20"></div>
+                                @if (@Memories.CourseCategoryName != null)
+                                {
+                                    <p class="white">@Memories.CourseCategoryName</p>
+                                }
+                                else
+                                {
+                                    <p class="white">@Memories.DesignationName</p>
+                                    <p class="white">@Memories.DepartmentName</p>
+                                    <p class="white">@Memories.WorkingFrom - @Memories.WorkingTo</p>
+                                }
+                                <p class="white">@Memories.CourseName</p>
+                                <p class="white">@Memories.Batch</p>
+                                <div class="nicdark_space20"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                                break;
+                case 9:
+                <div class="grid grid_6">
+                    <div class="nicdark_archive1 nicdark_bg_orange nicdark_radius nicdark_shadow">
+                        <div class="nicdark_textevidence nicdark_width_percentage40 nicdark_width100_responsive">
+                            @if (File.Exists(Server.MapPath(@Memories.ProfilePicture)))
+                            {
+                                <img src="@Memories.ProfilePicture" class="nicdark_radius_left nicdark_opacity" alt="" style="height:200px" />
+                            }
+                            else
+                            {
+                                <img alt="" class="nicdark_radiu nicdark_opacity" src="~/Content/DesignContent/css/images/no_image.jpg" style="height:200px" />
+                            }
+                        </div>
+
+                        <div class="nicdark_textevidence nicdark_width_percentage50 nicdark_width100_responsive">
+                            <div class="nicdark_margin20">
+
+                                <h4 class="white"><a href="single-teacher.php" class="white">@Memories.FirstName &nbsp;&nbsp; @Memories.LastName</a></h4>
+                                <div class="nicdark_space20"></div>
+                                <div class="nicdark_divider left small"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                                <div class="nicdark_space20"></div>
+                                @if (@Memories.CourseCategoryName != null)
+                                {
+                                    <p class="white">@Memories.CourseCategoryName</p>
+                                }
+                                else
+                                {
+                                    <p class="white">@Memories.DesignationName</p>
+                                    <p class="white">@Memories.DepartmentName</p>
+                                    <p class="white">@Memories.WorkingFrom - @Memories.WorkingTo</p>
+                                }
+                                <p class="white">@Memories.CourseName</p>
+                                <p class="white">@Memories.Batch</p>
+                                <div class="nicdark_space20"></div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                                break;
+            }
+            i++;
+        }
+        <div>
+            <div><a class="nicdark_zoom nicdark_btn nicdark_bg_green medium nicdark_shadow nicdark_radius white" href="@Url.Action("Login", "Account", new { area="",id="4" },null)"><i class="icon-info-circled"></i>&nbsp;&nbsp;&nbsp;view More</a></div>
+        </div>
+        <div class="nicdark_space50"></div>
+
+    </div>
+    <!--end nicdark_container-->
+
+</section>

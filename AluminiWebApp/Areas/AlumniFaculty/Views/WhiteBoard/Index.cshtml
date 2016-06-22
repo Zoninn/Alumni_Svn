@@ -1,0 +1,336 @@
+﻿@model AluminiWebApp.Areas.AlumniFaculty.Models.WhiteBoardModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/AlumniFaculty/Views/Shared/_SRKRLayout.cshtml";
+}
+
+<h2 style="text-align:center">WhiteBoard</h2>
+
+<div align="center">
+    <input type="radio" id="Alumni" value="Alumni" name="Posting" />Post as Alumni
+    <input type="radio" id="Faculty" value="Alumni" name="Posting" />Post as Faculty
+</div>
+@using (Html.BeginForm("Index", "WhiteBoard", FormMethod.Post,
+                                                                new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true);
+    <div class="page-content container clear-fix">
+        <div class="grid-col-row">
+            <div class="grid-col grid-col-3 sidebar">
+                <aside class="widget-categories">
+                    <h2>Categories</h2>
+                    <hr class="divider-big">
+                    <ul>
+                        <li class="cat-item cat-item-1 current-cat"><a href="#">All Posts<span> (2) </span></a></li>
+                        <li class="cat-item cat-item-1 current-cat"><a href="#">In News<span> (6) </span></a></li>
+                        <li class="cat-item cat-item-1 current-cat"><a href="#">Q & A <span> (12) </span></a></li>
+                        <li class="cat-item cat-item-1 current-cat"><a href="#">Knowledge Base<span> (14) </span></a></li>
+                        <li class="cat-item cat-item-1 current-cat"><a href="#">Buy-Sell-Rent <span> (7) </span></a></li>
+                        <li class="cat-item cat-item-1 current-cat"><a href="#">Spread the world<span> (51) </span></a></li>
+                        <li class="cat-item cat-item-1 current-cat"><a href="#">Information Technology <span> (34) </span></a></li>
+                    </ul>
+                </aside>
+            </div>
+            <div id="PostByAlumni">
+                <section class="clear-fix">
+
+                    <div class="block-overflow">
+
+                        <div class="comment-form post-form">
+                            <p class="comment-form-comment">
+                                <label for="txtStartPostings">Start Posting here</label>
+                                @Html.TextAreaFor(x => x.Message)
+                                @Html.ValidationMessageFor(x => x.Message, "", new { @class = "text-danger" })
+                            </p>
+                            <p class="comment-form-fileupload">
+                                <label for="fileUpload" class="border-label">
+                                    Add picture <span class="required">*</span>
+                                    <input type="file" id="fileUpload" multiple="multiple" class="fileBtn hide" name="Images" />
+                                </label>
+                            </p>
+                            <p class="comment-form-fileupload">
+                                <label for="fileUpload" class="border-label">
+                                    Add file <span class="required">*</span>
+                                    <input type="file" id="fileUpload" multiple="multiple" class="fileBtn hide" name="Files" />
+                                </label>
+                            </p>
+                            <p class="comment-form-fileupload">
+                                @Html.DropDownListFor(x => x.EventId, new SelectList(Model.Events, "Id", "Name"), "Select Event", new { @class = "form-control" })
+
+                            </p>
+                            <p class="comment-form-fileupload">
+                                @Html.DropDownListFor(x => x.Batchyear, new SelectList(Model.Viewdetails, "Batch", "BatchName"), new { @class = "form-control" })
+                                @Html.ValidationMessageFor(x => x.Batchyear, "", new { @class = "text-danger" })
+                            </p>
+                            <p class="form-submit">
+                                <label for="btnPost" class="btn-post-label pull-right">
+                                    Post
+                                    <input type="submit" id="btnPost" value="Post" class="cws-button border-radius small hide" />
+                                </label>
+                            </p>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+}
+@using (Html.BeginForm("PostasFaculty", "WhiteBoard", FormMethod.Post,
+                                                                new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true);
+    <div id="PostByFaculty">
+        <section class="clear-fix">
+            <div class="block-overflow">
+                @*<textarea id="txtStartPostings" placeholder="Start posting here" required="required" name="Message"></textarea>*@
+                @Html.TextAreaFor(x => x.Message)
+                @Html.ValidationMessageFor(x => x.Message, "", new { @class = "text-danger" })
+                <br />
+
+                Add picture <input type="file" id="fileUpload" class="cws-button bt-color-4 border-radius small" multiple="multiple" name="Images" />
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                Add file <input type="file" id="fileUpload" class="cws-button bt-color-4 border-radius small" multiple="multiple" name="Files" />
+                <br />
+                <br />
+                @Html.DropDownListFor(x => x.EventId, new SelectList(Model.Events, "Id", "Name"), "Select Event", new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.EventId, "", new { @class = "text-danger" })
+                <br />
+
+                @Html.DropDownListFor(x => x.Degree, new SelectList(Model.Coursecategorys, "CourseCategoryName", "CourseCategoryName"), "Select Degree", new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.Degree, "", new { @class = "text-danger" })
+                <br />
+                Work from
+                @Html.DropDownListFor(x => x.WorkFromYear, new SelectList(Model.yearsList, "Year", "Year"), "Select", new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.WorkFromYear, "", new { @class = "text-danger" })
+                <br />
+                Work To
+                @Html.DropDownListFor(x => x.WorkFromTo, new SelectList(Model.yearsList, "Year", "Year"), "Select", new { @class = "form-control" })
+                @Html.ValidationMessageFor(x => x.WorkFromYear, "", new { @class = "text-danger" })
+                <br />
+                <select id="ddlSelections" name="selections">
+                    <option value="">Select</option>
+                </select>
+                @Html.ValidationMessageFor(x => x.selections, "", new { @class = "text-danger" })
+            </div>
+            <div>
+                <br />
+                <input type="submit" value="Post" class="cws-button bt-color-3 border-radius" />
+            </div>
+        </section>
+    </div>
+
+
+    <div>
+        <hr class="divider-color">
+        <div class="comments">
+            @if (ViewBag.Userdata != null)
+            {
+                <ol class="commentlist">
+                    @{ int UserId = Convert.ToInt32(Session["UserId"].ToString()); }
+                    @foreach (var post in ViewBag.Userdata)
+                    {
+                        <li class="comment">
+                            <div class="comment_container clear">
+                                <img src="@post.UserImage" alt="" class="avatar">
+                                <div class="comment-text">
+                                    <div class="pull-right">
+                                        @if (post.UserLikecheck == null)
+                                        {
+
+                                            <span style="width:80%"><a id="LikePost" style="text-decoration:underline;color:blue" onclick="UserPostLikes(@post.PostId,this)">Like</a> <span class="day" id="lblLikes">Likes: @post.UserPostsCount</span> </span>
+                                        }
+                                        else
+                                        {
+                                            <span style="width:80%"><a id="UserUnLikePost" style="text-decoration:underline;color:blue" onclick="UserUnLikePost(@post.PostId,this)">UnLike</a> <span class="day" id="UserLikes">Likes: @post.UserPostsCount</span> </span>
+                                        }
+                                        @Html.ActionLink("| View", "EventDetails", "WhiteBoard", new { Area = "Alumini", @Id = @post.PostId }, new { target = "_blank" })
+
+                                        @if (post.UserId != null)
+                                        {
+                                            if (post.UserId == UserId)
+                                            {
+                                                @Html.ActionLink("| Delete", "DeleteUserPost", "WhiteBoard", new { Area = "Alumini", @Id = @post.PostId }, null)
+                                            }
+                                        }
+                                        <a id="displayComment" onclick="CommentsFunction(@post.PostId,this)"> | Comments</a> &nbsp;<span class="day" id="lblComments">@post.UserCommentCount</span>
+                                    </div>
+                                    <p class="meta">
+                                        <strong>@post.UserName @post.LastName</strong>
+                                        @if (@post.EventName == "CasualPost")
+                                        {
+                                            <time itemprop="datePublished"></time>
+                                        }
+                                        else
+                                        {
+                                            <time itemprop="datePublished"> : @post.EventName</time>
+                                        }
+                                    </p>
+                                    <div class="description">
+                                        <p>
+                                            @post.UserPostMessage
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="displayUserComments">
+                                <div class="commentsBox" id="commentLine">
+                                    comment :
+                                    <div>
+                                        <input id="txtComment" class="commentTextInput" type="text" name="Comment" />
+                                        <input type="button" id="btnSubmit" value="Submit" onclick="UserComments(@post.PostId,this)" class="cws-button border-radius alt smaller border-radius pull-right commentPostBtn" />
+                                        <br />
+                                        <div class="comments comments-small">
+                                            <ol id="lblCommentmesage" class="commentlist">
+                                                @foreach (var UserComments in @post.UserComments)
+                                                {
+                                                    <li class="comment">
+                                                        <div class="comment_container clear">
+                                                            <img src="@UserComments.ProfilePic" alt="" class="avatar">
+                                                            <div class="comment-text">
+                                                                <p class="meta">
+                                                                    <strong>@UserComments.CommentedByFirstName</strong>
+                                                                </p>
+                                                                <div class="description">
+                                                                    <p>@UserComments.Comment</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                }
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </li>
+
+
+                    }
+                </ol>
+            }
+        </div>
+
+    </div>
+}
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".commentsBox").hide();
+    });
+    function CommentsFunction(PostId, dis) {
+        $(dis).parents(".comment").find(".commentsBox").show();
+    };
+
+    function UserPostLikes(PostId, dis) {
+        $.ajax({
+            type: "post",
+            contentType: "application/json",
+            dataType: "Json",
+            url: "../Faculty/WhiteBoard/UserLikesfoPosts",
+            data: JSON.stringify({ "PostId": PostId }),
+            success: function (data) {
+                $(dis).next().html("Likes :" + data);
+                $(dis).replaceWith('<a id="UserUnLikePost" style="text-decoration:underline;color:blue" onclick="UserUnLikePost(' + PostId + ',this)">UnLike</a>');
+            }
+        });
+    }
+
+    function UserUnLikePost(PostId, dis) {
+        $.ajax({
+            type: "post",
+            contentType: "application/json",
+            dataType: "Json",
+            url: "../Faculty/WhiteBoard/UserUnLikesfoPosts",
+            data: JSON.stringify({ "PostId": PostId }),
+            success: function (data) {
+                $(dis).next().html("Likes :" + data);
+                $(dis).replaceWith('<a id="LikePost" style="text-decoration:underline;color:blue" onclick="UserPostLikes(' + PostId + ',this)">Like</a>');
+            }
+        });
+    }
+
+
+    function UserComments(PostId, dis) {
+        var UserCommentcommentonPost = $(dis).prev().val();
+        if (UserCommentcommentonPost == "") {
+            alert("Please write the comment");
+        }
+        else {
+            $.ajax({
+                type: "post",
+                contentType: "application/json",
+                dataType: "Json",
+                url: "../Faculty/WhiteBoard/UserPostComments",
+                data: JSON.stringify({ "PostId": PostId, "comment": UserCommentcommentonPost }),
+                success: function (data) {
+                    $(dis).prev().val('');
+                    var Count = 0
+
+                    $(dis).next().next().find('#lblCommentmesage').empty();
+                    $.each(data, function (mess, val) {
+                        Count = Count + 1;
+                        var comment = '<li class="comment">'
+                        comment += '<div class="comment_container clear">'
+                        comment += '<img src="' + val.UserPic + '" alt="" class="avatar">'
+                        comment += '<div class="comment-text">'
+                        comment += '<p class="meta">'
+                        comment += '<strong>' + val.UserName + "&nbsp;" + val.LastName + '</strong>'
+                        comment += '</p>'
+                        comment += '<div class="description">'
+                        comment += '<p>' + val.UserMessage + '</p>'
+                        comment += '</div>'
+                        comment += '</div>'
+                        comment += '</div>'
+                        comment += '</li>'
+                        $(dis).next().next().find('#lblCommentmesage').append(comment);
+
+                    });
+                    $(dis).parents('.comment').find('#lblComments').html(Count);
+                    // $(dis).parents(".comment").find(".commentsBox").hide();
+
+                }
+            });
+        }
+    }
+</script>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#Alumni").attr('checked', false)
+        $("#Faculty").attr('checked', false)
+        $("#PostByAlumni").hide();
+        $("#PostByFaculty").hide();
+        $("#Alumni").click(function () {
+            $("#PostByAlumni").show();
+            $("#PostByFaculty").hide();
+        });
+        $("#Faculty").click(function () {
+            $("#PostByAlumni").hide();
+            $("#PostByFaculty").show();
+        });
+
+        $("#WorkFromTo").change(function () {
+
+            $("#ddlSelections").empty();
+            var WorkFrom = $("#WorkFromYear option:selected").val();
+            var WorkTo = $("#WorkFromTo option:selected").val();
+            if (WorkFrom > WorkTo) {
+                alert("Please select correct Acedemic years");
+            }
+            $("#ddlSelections").append($("<option></option>").val("").html("Please select"));
+            $("#ddlSelections").append($("<option></option>").val("Visible To All").html("Visible To All"));
+            $("#ddlSelections").append($("<option></option>").val(WorkFrom + " ---- " + WorkTo).html(WorkFrom + " ---- " + WorkTo));
+        });
+    });
+</script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>

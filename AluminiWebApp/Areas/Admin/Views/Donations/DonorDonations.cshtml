@@ -1,0 +1,37 @@
+﻿@model List<Alumini.Core.Donor_Details>
+
+@{
+    ViewBag.Title = "DonationReport";
+    Layout = "~/Areas/Alumini/Views/Shared/_layout.cshtml";
+}
+
+<div style="margin-left:90px; width:50%">
+    <h2>Donor Donations</h2>
+
+    <div style="align:center">
+        @if (Model.Count > 0)
+        {
+            <table border="1">
+                <tr>
+                    <td>Donation Title</td>
+                    <td>Donation Amount</td>
+                    <td>Status</td>
+                    <td>Date</td>
+                </tr>
+                @foreach (Alumini.Core.Donor_Details item in Model)
+                {
+                    <tr>
+                        <td>@item.Comments</td>
+                        <td>@item.Donation_Amount</td>
+                        <td>@item.Donation_Status</td>
+                        <td>@item.CreatedOn</td>
+                    </tr>
+                }
+            </table>
+        }
+        <br />
+        <div style="text-align:right; font-weight:bold; margin-right:100px">Your Total Donation: @Model.Sum(x => x.Donation_Amount)</div>
+        <br />
+    </div>
+
+</div>

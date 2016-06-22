@@ -1,0 +1,78 @@
+﻿@model AluminiWebApp.Models.FacultyRegistrationModel
+
+@{
+    ViewBag.Title = "UpdateFaculty";
+    Layout = "~/Views/Shared/_SRKRLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <h5>Please select the Role/Designation</h5>
+    <div class="grid-col-row clear-fix">
+        <div class="row clear-fix">
+            <div class="grid-col grid-col-3">
+                <strong>Role/Designation </strong>
+            </div>
+            <div class="grid-col grid-col-4">
+                @Html.TextBoxFor(x => x.DesignationName, null, new { @class = "form-control", required = "required" })
+                @Html.ValidationMessageFor(x => x.DesignationName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="grid-col-row clear-fix">
+        <div class="row clear-fix">
+            <div class="grid-col grid-col-3">
+                <strong>  Department :</strong>
+            </div>
+            <div class="grid-col grid-col-4">
+                @Html.TextBoxFor(x => x.DepartmentName, null, new { @class = "form-control", required = "required" })
+                @Html.ValidationMessageFor(x => x.DepartmentName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-col-row clear-fix">
+        <div class="row clear-fix">
+            <div class="grid-col grid-col-3">
+                <strong>  Time period from :</strong>
+            </div>
+            <div class="grid-col grid-col-4">
+                @Html.DropDownListFor(x => x.WorkingFrom, new SelectList(Model.GraduationYears, "GraduationYearId", "Year"), "Select", new { @class = "form-control", required = "required" })
+                @Html.ValidationMessageFor(x => x.WorkingFrom, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-col-row clear-fix">
+        <div class="row clear-fix">
+            <div class="grid-col grid-col-3">
+                <strong>  Time period To :</strong>
+            </div>
+            <div class="grid-col grid-col-4">
+                @Html.DropDownListFor(x => x.WorkingTo, new SelectList(Model.GraduationYears, "GraduationYearId", "Year"), "Select", new { @class = "form-control", required = "required" })
+                @Html.ValidationMessageFor(x => x.WorkingTo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="row clear-fix">
+        <div class="grid-col grid-col-3">
+            <input type="submit" value="Update" class="cws-button bt-color-3 border-radius alt icon-right" />
+
+        </div>
+    </div>
+}
+
+<input type="button" id="btnRegisterAlumni" value="Register as Alumni" class="cws-button bt-color-4 border-radius" />
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btnRegisterAlumni").click(function () {
+            window.location.href = "../profile/RegisterAsAlumni";
+        });
+    });
+</script>

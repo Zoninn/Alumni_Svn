@@ -1,0 +1,351 @@
+﻿@model AluminiWebApp.Models.ContactInformation
+
+@{
+    ViewBag.Title = "ContactInformation";
+}
+
+<section id="nicdark_parallax_title" class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img8" style="background-position: 50% 0px;">
+
+    <div class="nicdark_filter greydark">
+
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+
+            <div class="grid grid_12">
+                <div class="nicdark_space100"></div>
+                <div class="nicdark_space100"></div>
+                <h1 class="white subtitle">Contact Information</h1>
+                <div class="nicdark_space10"></div>
+                <div class="nicdark_divider left big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space40"></div>
+                <div class="nicdark_space50"></div>
+            </div>
+
+        </div>
+        <!--end nicdark_container-->
+
+    </div>
+
+</section>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true);
+    @Html.AntiForgeryToken()
+    <section class="nicdark_section">
+        <div class="nicdark_container nicdark_clearfix">
+            <div class="nicdark_space50"></div>
+            <div class="grid grid_12">
+                <h3 class="subtitle greydark">Contact Information</h3>
+                <div class="nicdark_space20"></div>
+                <div class="nicdark_divider left small"><span class="nicdark_bg_yellow nicdark_radius"></span></div>
+            </div>
+            <div class="grid grid_12">
+
+                <!--start nicdark_tabs-->
+                <div class="nicdark_tab ui-tabs ui-widget ui-widget-content ui-corner-all">
+
+                    <ul class="nicdark_tabslist ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+                        <li class="ui-state-default ui-corner-top"><a class="nicdark_tooltip nicdark_btn nicdark_bg_yellow medium nicdark_radius_top white ui-tabs-anchor" role="presentation" tabindex="-1"><i class=" nicdark_displaynone_iphoneland nicdark_displaynone_iphonepotr nicdark_marginright10">1</i> Create Account</a></li>
+                        <li class="ui-state-default ui-corner-top"><a class="nicdark_tooltip nicdark_btn nicdark_bg_orange medium nicdark_radius_top white ui-tabs-anchor" role="presentation" tabindex="-1"><i class=" nicdark_displaynone_iphoneland nicdark_displaynone_iphonepotr nicdark_marginright10">2</i> Batch Details</a></li>
+                        <li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active ui-state-hover" role="tab" tabindex="0" aria-controls="tabs-7" aria-labelledby="ui-id-4" aria-selected="true"><a href="#tabs-7" class="nicdark_tooltip nicdark_btn nicdark_bg_yellow medium nicdark_radius_top white ui-tabs-anchor" role="presentation" tabindex="-1"><i class=" nicdark_displaynone_iphoneland nicdark_displaynone_iphonepotr nicdark_marginright10">3</i> Contact Information</a></li>
+                        <li class="ui-state-default ui-corner-top"><a class="nicdark_tooltip nicdark_btn nicdark_bg_violet medium nicdark_radius_top white ui-tabs-anchor" role="presentation" tabindex="-1"><i class=" nicdark_displaynone_iphoneland nicdark_displaynone_iphonepotr nicdark_marginright10">4</i> Work Experience</a></li>
+                    </ul>
+
+                    <div class="nicdark_tabs nicdark_bg_grey nicdark_radius nicdark_shadow">
+
+                        <div class="nicdark_margin20 ui-tabs-panel ui-widget-content ui-corner-bottom" id="tabs-7" aria-labelledby="ui-id-4" role="tabpanel" aria-expanded="true" aria-hidden="false" style="display: block;">
+                            <div class="nicdark_space10"></div>
+                            <div class="nicdark_clearfix">
+
+                                <div class="nicdark_focus nicdark_width_percentage25" hidden="hidden">
+                                    <div class="nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        @Html.DropDownListFor(x => x.CountryCodes, new SelectList(Model.Countrys, "Id", "CountryCode"), "Select Country Code", new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle", required = "required" })
+                                        @Html.ValidationMessageFor(model => model.CountryCodes, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        @Html.EditorFor(model => model.Mobile, new { htmlAttributes = new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle", required = "required", placeholder = "Mobile number" } })
+                                        @Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        @Html.EditorFor(model => model.AlternateEmail, new { htmlAttributes = new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle", placeholder = "Alternate email" } })
+
+                                    </div>
+                                </div>
+
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        @Html.EditorFor(model => model.AlternameMobile, new { htmlAttributes = new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle", placeholder = "Alternate Mobile" } })
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="nicdark_space20"></div>
+                            <div class="nicdark_clearfix">
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        @Html.DropDownListFor(x => x.CountryId, new SelectList(Model.Countrys, "Id", "Country1"), "Select Country", new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle", required = "required" })
+                                        @Html.ValidationMessageFor(model => model.CountryId, "", new { @class = "text-danger" })
+
+
+                                    </div>
+                                </div>
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        <select id="StateId" class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle">
+                                            @*<option value="0">Select State</option>*@
+                                        </select>
+
+                                        @*@Html.DropDownListFor(x => x.StateId, new SelectList(Model.States, "Id", "StateName"), "Select State", new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle" })
+                                            @Html.ValidationMessageFor(model => model.StateId, "", new { @class = "text-danger" })*@
+                                    </div>
+                                </div>
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        <select id="ddlDistrict" class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle" name="Districtid" required="required">
+                                            <option value="">Select District</option>
+                                        </select>
+                                        @Html.ValidationMessageFor(model => model.Districtid, "", new { @class = "text-danger" })
+
+                                    </div>
+                                </div>
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                        <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                            @Html.TextBoxFor(x => x.cityName, new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle", required = "required", placeholder = "City Name" } )
+
+                                            @Html.ValidationMessageFor(model => model.cityName, "", new { @class = "text-danger" })
+                                        </div>
+                                        
+                                    </div>
+                            </div>
+                            <div class="nicdark_space40"></div>
+                            <div class="nicdark_clearfix">
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr" style="margin-top:-20px;">
+                                        @Html.TextAreaFor(x => x.PresentAddress, new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle" })
+                                        @Html.ValidationMessageFor(model => model.PresentAddress, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="nicdark_space20"></div>
+                                <input type="checkbox" id="chkAddress" /> Same as Present Address
+                                <div class="nicdark_space20"></div>
+
+                            </div>
+                            <div class="nicdark_space20"></div>
+                            <div class="nicdark_clearfix">
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        @Html.DropDownListFor(x => x.PermanentCountryid, new SelectList(Model.Countrys, "Id", "Country1"), "Select Country", new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle", required = "required" })
+                                        @Html.ValidationMessageFor(model => model.PermanentCountryid, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        <select id="PermanentStateId" class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle" name="PermanentStateId" required="required"></select>
+                                        @Html.ValidationMessageFor(model => model.PermanentStateId, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        <select id="ddlPermanentDistrict" class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle" name="PermenantDistrictId" required="required">
+                                            <option value="">Select District</option>
+                                        </select>
+                                        @Html.ValidationMessageFor(model => model.PermenantDistrictId, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        @Html.TextBoxFor(x => x.AlternatecityName, new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle", required = "required", placeholder = "City Name" })
+
+                                        @Html.ValidationMessageFor(model => model.AlternatecityName, "", new { @class = "text-danger" })
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="nicdark_space40"></div>
+                            <div class="nicdark_clearfix">
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr" style="margin-top:-20px;">
+                                        @Html.TextAreaFor(x => x.PermanentAddress, new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle" })
+                                        @Html.ValidationMessageFor(model => model.PermanentAddress, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nicdark_space20"></div>
+                            <div class="nicdark_clearfix">
+                                <div class="nicdark_focus">
+                                    <div class="nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        <input class="nicdark_btn nicdark_bg_yellow medium nicdark_shadow nicdark_radius white nicdark_press right" type="submit" value="Save">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <!--end nicdark_tabs-->
+                <div class="nicdark_space50"></div>
+
+            </div>
+        </div>
+    </section>
+}
+@section Scripts{
+    @Scripts.Render("~/Scripts/jquery.validate.min.js")
+    @Scripts.Render("~/Scripts/jquery.validate.unobtrusive.min.js")
+    <script src="~/Custom.js/Registration.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#StateId").append($("<option></option>").val("").html("Selet State"));
+            $("#PermanentStateId").append($("<option></option>").val("").html("Selet State"));
+            $("#chkAddress").click(function () {
+
+                if ($('#chkAddress').is(':checked')) {
+                    $("#PermanentAddress").val($("#PresentAddress").val());
+                    $("#PermanentCountryid").val($("#CountryId").val());
+                    $('#AlternatecityName').val($('#cityName').val());
+
+                    $.ajax({
+                        type: "Get",
+                        dataType: "json",
+                        contentType: "Application/json",
+                        url: "../Account/GetStates?Countryid=" + $("#CountryId").val(),
+                        data: ({}),
+                        success: function (data) {
+                            $("#PermanentStateId").append($("<option></option>").val("").html("Selet State"));
+                            $.each(data, function (key, value) {
+                                $("#PermanentStateId").append($("<option></option>").val(value.StateId).html(value.StateName));
+                            });
+                            $("#PermanentStateId").val($("#StateId").val());
+
+                            $.ajax({
+                                type: "Get",
+                                dataType: "json",
+                                url: "../Account/GetDistricts?StateId=" + $("#StateId").val(),
+                                contentType: "Application/json",
+                                data: {},
+                                success: function (data) {
+                                    //$("#ddlPermanentDistrict").append($("<option></option>").val("").html("Select City"));
+                                    $.each(data, function (key, value) {
+                                        $("#ddlPermanentDistrict").append($("<option></option>").val(value.Id).html(value.DistrictName));
+                                    });
+                                    $("#ddlPermanentDistrict").val($('#ddlDistrict').val());
+                                }
+                            });
+
+                        }
+
+                    });
+
+                }
+                else if ($('#chkAddress').prop('checked', false)) {
+                    $("#PermanentAddress").val("");
+                    $("#PermanentStateId").val("");
+                    $("#PermanentCountryid").val("");
+                    $("#ddlPermanentCitys").val("");
+                    $("#PermanentStateId").empty();
+                    $("#PermanentStateId").append($("<option></option>").val("").html("Selet State"));
+
+                    $("#ddlPermanentCitys").empty();
+                    $("#ddlPermanentCitys").append($("<option></option>").val("").html("Selet City"));
+                }
+            });
+            $("#CountryId").change(function () {
+                var Countryid = $("#CountryId option:selected").val();
+                $('#StateId').empty();
+                $.ajax({
+                    type: "Get",
+                    dataType: "json",
+                    contentType: "Application/json",
+                    url: "../Account/GetStates?Countryid=" + Countryid,
+                    data: ({}),
+                    success: function (data) {
+                        $("#StateId").append($("<option></option>").val("").html("Selet State"));
+                        $.each(data, function (key, value) {
+                            $("#StateId").append($("<option></option>").val(value.StateId).html(value.StateName));
+                        });
+                    }
+                });
+
+            });
+        });
+
+        $("#PermanentCountryid").change(function () {
+            var Countryid = $("#PermanentCountryid option:selected").val();
+            $('#PermanentStateId').empty();
+            $.ajax({
+                type: "Get",
+                dataType: "json",
+                contentType: "Application/json",
+                url: "../Account/GetStates?Countryid=" + Countryid,
+                data: ({}),
+                success: function (data) {
+                    $("#PermanentStateId").append($("<option></option>").val("").html("Selet State"));
+                    $.each(data, function (key, value) {
+                        $("#PermanentStateId").append($("<option></option>").val(value.StateId).html(value.StateName));
+                    });
+                }
+            });
+
+        });
+        $("#PermanentStateId").change(function () {
+            $("#ddlPermanentCitys").empty();
+            var StateId = $("#PermanentStateId option:selected").val();
+            $.ajax({
+                type: "Get",
+                dataType: "json",
+                url: "../Account/GetDistricts?StateId=" + StateId,
+                contentType: "Application/json",
+                data: {},
+                success: function (data) {
+                    $("#ddlPermanentCitys").append($("<option></option>").val("").html("Select City"));
+                    $.each(data, function (key, value) {
+                        $("#ddlPermanentCitys").append($("<option></option>").val(value.Id).html(value.CityName));
+                    });
+                }
+            });
+        });
+
+        $("#StateId").change(function () {
+            $("#ddlCitys").empty();
+            var StateId = $("#PermanentStateId option:selected").val();
+            $.ajax({
+                type: "Get",
+                dataType: "json",
+                url: "../Account/GetDistricts?StateId=" + StateId,
+                contentType: "Application/json",
+                data: {},
+                success: function (data) {
+                    $("#ddlCitys").append($("<option></option>").val("").html("Select City"));
+                    $.each(data, function (key, value) {
+                        $("#ddlCitys").append($("<option></option>").val(value.Id).html(value.CityName));
+                    });
+                }
+            });
+        });
+        $('#StateId').change(function () {
+            var StateId = $('#StateId option:selected').val();
+            $.ajax({
+                type: "Get",
+                dataType: "json",
+                url: "../Account/GetDistricts?StateId=" + StateId,
+                contentType: "Application/json",
+                data: {},
+                success: function (data) {
+                    //$("#ddlDistrict").append($("<option></option>").val("").html("Selet District"));
+                    $.each(data, function (key, value) {
+                        $("#ddlDistrict").append($("<option></option>").val(value.Id).html(value.DistrictName));
+                    });
+                }
+            });
+        });
+
+    </script>
+
+}

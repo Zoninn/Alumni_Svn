@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Alumini.Core.Donation_Details>
+
+@{
+    ViewBag.Title = "Donations";
+    Layout = "~/Views/Shared/_SRKRDesignLayout.cshtml";
+}
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/Scripts/jquery-ui-1.11.4.min.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<style>
+    .ui-progressbar .ui-progressbar-value.ui-widget-header {
+        background-color: orange;
+        background-image: none;
+    }
+</style>
+<h2>Donations</h2>
+
+<div style="margin-left:30px;width:50%">
+    <dl class="dl-horizontal">
+        @foreach (var item in Model)
+        {
+            <dd>
+                <h3> @Html.DisplayFor(modelitem => item.Donation_Title)</h3>
+            </dd>
+            <dd>
+                <b>
+                    @item.Donor_Details.Count
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @item.Donor_Details.Sum(x => x.Donation_Amount)
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @(((item.Donor_Details.Sum(x => x.Donation_Amount)) / item.Donation_Amount) * 100) %
+            </b><br />
+            Donors&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Raised&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Funded
+
+            <div style="width: 30%;">
+                <div id="progressbar_@item.Donation_ID" style="width: 300px; height: 15px"></div>
+                <br />
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    // initialize progress bar
+                    $("#progressbar_@item.Donation_ID").progressbar({ value: @(((item.Donor_Details.Sum(x => x.Donation_Amount)) / item.Donation_Amount) * 100) });
+                });
+            </script>
+        </dd>
+            <dd>
+                <img width="200" height="100" src="@Url.Content(item.Donation_Banner)" />
+            </dd>
+
+            <dd>
+                @Html.DisplayFor(modelitem => item.Donation_Description)
+            </dd>
+
+            <dd style="font-size:smaller">
+                Posted On :  @Html.DisplayFor(modelitem => item.CreatedOn)
+            </dd>
+            <dd>
+                <input type="button" value="Contribute >>" style="background-color:green;width:100px" onclick="location.href='@Url.Action("DonationDetails", "Donations", new { Area = "Alumini", Id =  item.Donation_ID }, null)'" />
+            </dd>
+        }
+    </dl>
+</div>

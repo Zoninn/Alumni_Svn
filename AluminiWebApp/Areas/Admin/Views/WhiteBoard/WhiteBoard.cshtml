@@ -1,0 +1,191 @@
+﻿@model AluminiWebApp.Areas.Admin.Models.WhiteBoard
+
+@{
+    ViewBag.Title = "";
+
+    Layout = "~/Areas/Admin/Views/Shared/_AdminMasterLayoutPage.cshtml";
+
+}
+
+@section styles{
+    <link href="~/Content/assets/plugins/datatables/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/buttons.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/fixedHeader.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/responsive.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/scroller.bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/assets/plugins/datatables/dataTables.colVis.css" rel="stylesheet" type="text/css" />
+}
+
+
+<div class="content">
+    <div class="container">
+
+        <!-- Page-Title -->
+        <div class="row">
+
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card-box table-responsive">
+                    <h4 class="alert alert-warning"><b>White board Posts</b></h4>
+                    <table class="gridtable table table-striped table-bordered" id="datatable">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Post</th>                              
+                                <th>Visible From</th>
+                                <th>Visible To</th>
+                                <th>Branch</th>
+                                <th>Delete</th>
+                                <th>View</th>
+                            </tr>
+                        </thead>
+                        <tbody id="UserPosts"></tbody>
+                    </table>
+
+                </div>
+            </div>
+       
+        </div>
+    </div>
+</div>
+
+@section scripts{
+
+    <script src="~/Content/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.bootstrap.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.buttons.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/buttons.bootstrap.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/jszip.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/pdfmake.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/vfs_fonts.js"></script>
+    <script src="~/Content/assets/plugins/datatables/buttons.html5.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/buttons.print.min.js"></script>
+
+    <script src="~/Content/assets/plugins/datatables/dataTables.fixedHeader.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.keyTable.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.responsive.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/responsive.bootstrap.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.scroller.min.js"></script>
+    <script src="~/Content/assets/plugins/datatables/dataTables.colVis.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //$('#datatable').dataTable();
+            $('#datatable-keytable').DataTable({ keys: true });
+            $('#datatable-responsive').DataTable();
+            $('#datatable-colvid').DataTable({
+                "dom": 'C<"clear">lfrtip',
+                "colVis": {
+                    "buttonText": "Change columns"
+                }
+            });
+            //$('#datatable-scroller').DataTable({ ajax: "/Content/assets/plugins/datatables/json/scroller-demo.json", deferRender: true, scrollY: 380, scrollCollapse: true, scroller: true });
+            var table = $('#datatable-fixed-header').DataTable({ fixedHeader: true });
+        });
+        TableManageButtons.init();
+
+    </script>
+
+
+
+    <script type="text/javascript">
+        function test() {
+            $.ajax({ url: 'wait.php', cache: false });
+        }
+    </script>
+    <div id="domMessage" style="display:none;">
+        <h1>We are processing your request.  Please be patient.</h1>
+    </div>
+
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Custom.js/jquery.blockUI.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            blockPage();
+            test();
+            $.ajax({
+                type: "Get",
+                dataType: "json",
+                contentType: "Application/json",
+                url: "../WhiteBoard/GetUserPosts",
+                data: {},
+                success: function (data) {
+                    unblockPage();
+                    var Batch = "";
+                    $.each(data, function (key, value) {
+                        if (value.BatchTo == null) {
+                            Batch = "N/A";
+                        }
+                        else {
+                            Batch = value.BatchTo;
+                        }
+                        $("#UserPosts").append("<tr><td>" + value.UserName + "</td> <td>" + value.UserPostMessage + "</td><td>" + value.BatchFrom + "</td><td>" + Batch + "</td><td>" + value.Branch + "</td><td> <input type='button' id='btnDelete' class='btn btn-primary' value='Delete' onclick='DeletePosts(" + value.PostId + ")'/> </td><td><input type='button' id='btnDelete' class='btn btn-primary' value='View' onclick='View(" + value.PostId + ")'/> </td></tr>");
+                    });
+                    $('#datatable').dataTable();
+                }
+            });
+        });
+
+        function DeletePosts(id) {
+            var r = confirm("Are you sure you want to delete");
+            if (r == true) {
+                blockPage();
+                $.ajax({
+                    type: "Get",
+                    dataType: "json",
+                    contentType: "Application/json",
+                    url: "../WhiteBoard/deletePosts",
+                    data: { "Id": id },
+                    success: function (data) {
+                        alert("Deleted successfully...");
+                        unblockPage();
+                        var Batch = "";
+                        $("#UserPosts").empty();
+                        $.each(data, function (key, value) {
+                            if (value.BatchTo == null) {
+                                Batch = "N/A";
+                            }
+                            else {
+                                Batch = value.BatchTo;
+                            }
+                            $("#UserPosts").append("<tr><td>" + value.PostId + "</td><td>&nbsp;&nbsp;" + value.UserName + "</td> <td>&nbsp;&nbsp;" + value.LastName + "</td><td>&nbsp;&nbsp;" + value.UserPostMessage + "</td><td>&nbsp;&nbsp;" + value.EventName + "</td><td>&nbsp;&nbsp;" + value.BatchFrom + "</td><td>&nbsp;&nbsp;" + Batch + "&nbsp;&nbsp</td><td>&nbsp;&nbsp;" + value.Branch + "</td><td>&nbsp;&nbsp; <input type='button' id='btnDelete' class='btn btn-primary' value='Delete' onclick='DeletePosts(" + value.PostId + ")'/> </td><td>&nbsp;&nbsp; <input type='button' id='btnDelete' class='btn btn-primary' value='View' onclick='View(" + value.PostId + ")'/> </td></tr>");
+                        });
+                        $('#datatable').dataTable();
+                    }
+                });
+            }
+            else {
+
+            }
+        }
+
+        function View(id) {
+            window.location.href = "../WhiteBoard/EventDetails/" + id + ""
+        }
+    </script>
+
+    <script>
+        $j = jQuery.noConflict();
+        //function to block the whole page
+        function blockPage() {
+            $j.blockUI({
+                message: '<h3>Please wait....</h3>',
+                css: {
+                    border: 'none',
+                    padding: '5px',
+                    'border-radius': '5px',
+                    margin: '0',
+                    opacity: .9
+                }
+            });
+            return false;
+        }
+        //function to unblock the page
+        function unblockPage() {
+            $j.unblockUI();
+        }
+    </script>
+}

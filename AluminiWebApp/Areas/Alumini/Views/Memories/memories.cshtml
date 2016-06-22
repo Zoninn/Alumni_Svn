@@ -1,0 +1,191 @@
+﻿@model AluminiWebApp.Areas.Alumini.Models.MemoriesModel
+
+@{
+    Layout = "~/Areas/Alumini/Views/Shared/_SRKRDesignLayout.cshtml";
+}
+
+
+<section class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img5" id="nicdark_parallax_title" style="background-position: 50% -68px;">
+    <div class="nicdark_filter greydark">
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+            <div class="grid grid_12">
+                <div class="nicdark_space100"></div>
+                <div class="nicdark_space100"></div>
+                <h1 class="white subtitle">Memories</h1>
+                <div class="nicdark_space10"></div>
+                <h3 class="subtitle white"></h3>
+                <div class="nicdark_space20"></div>
+                <div class="nicdark_divider left big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space40"></div>
+                <div class="nicdark_space50"></div>
+            </div>
+        </div>
+        <!--end nicdark_container-->
+    </div>
+
+</section>
+
+<section class="nicdark_section memories-form">
+    <!--start nicdark_container-->
+    <div class="nicdark_container nicdark_clearfix">
+        <div class="nicdark_space40"></div>
+        @using (Html.BeginForm("memories", "Memories", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            <div class="grid grid_12">
+                @Html.ValidationSummary(true)
+                <div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow">
+                    <div class="nicdark_textevidence nicdark_bg_orange nicdark_radius_top">
+                        <h4 class="white nicdark_margin20">Add Memories</h4>
+                        <i class="icon-mail nicdark_iconbg right medium orange"></i>
+                    </div>
+                    <div class="nicdark_margin20">
+                        <div class="grid_6">
+                            @Html.TextBoxFor(x => x.Heading, new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle", @placeholder = "Heading" })
+                            <div class="nicdark_space20">
+                                @Html.ValidationMessageFor(x => x.Heading, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="grid_6">
+                            @Html.TextBoxFor(x => x.date, new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle", @placeholder = "Memories date" })
+                            <div class="nicdark_space20">
+                                @Html.ValidationMessageFor(x => x.date, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="nicdark_space20"></div>
+                        @Html.TextAreaFor(x => x.Description, new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle", @placeholder = "Description", @rows = "5" })
+                        <div class="nicdark_space20">
+                            @Html.ValidationMessageFor(x => x.Description, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="nicdark_space20"></div>
+                        <div class="grid_6">
+                            @Html.DropDownListFor(x => x.visible, new SelectList(Model.Visibleto, "visibleTo", "visibleTo"), "Select", new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle" })
+                            <div class="nicdark_space20">
+                                @Html.ValidationMessageFor(model => model.visible, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="grid_6">
+                            <input type="file" name="Image" class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle" multiple="multiple" id="Imagefile" />
+                            <label id="AppendImagefile"></label>
+                            <div class="nicdark_space20">
+                                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div>
+                            <input class="nicdark_btn nicdark_bg_orange medium nicdark_shadow nicdark_radius white pull-right" type="submit" value="Save">
+                            <h4> @TempData["Message"]</h4>
+                            <input type="hidden" id="Jobid" name="Jobid" />
+                            <input type="hidden" id="memoriesId" name="memoriesId" value="0" />
+                        </div>
+                        @*<a class="nicdark_mpopup_ajax nicdark_btn nicdark_bg_orange medium nicdark_shadow nicdark_radius white nicdark_press" href="submit-message.php">SEND</a>*@
+                    </div>
+                    <div class="nicdark_mpopup_gallery" id="Imagedisplay">
+
+                    </div>
+                </div>
+            </div>
+        }
+        <div class="nicdark_space50"></div>
+
+    </div>
+    <!--end nicdark_container-->
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script type="text/javascript">
+    function getParameterByName(name) { name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]"); var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"), results = regex.exec(location.search); return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " ")); }
+    var EventId = getParameterByName('MemoriesId');
+    $(document).ready(function () {
+        var Srting = "";
+        $.ajax({
+            type: "Get",
+            dataType: "json",
+            contenttype: "Application/json",
+            url: "../Memories/GetMemoriesforEdit",
+            data: ({ "Memoriesid": EventId }),
+            success: function (data) {
+                $.each(data, function (key, value) {
+                    $("#Heading").val(value.Title);
+                    $("#Description").val(value.Description);
+
+                    var dateString = value.Memoiesdate.substr(6);
+                    var currentTime = new Date(parseInt(dateString));
+                    var month = currentTime.getMonth() + 1;
+                    var day = currentTime.getDate();
+                    var year = currentTime.getFullYear();
+                    var date = month + "/" + day + "/" + year;
+                    $("#date").val(date);
+                    $("#visible").val(value.visibleTo);
+                    $("#memoriesId").val(value.Memoriesid);
+                    $.each(value.MemoriesImages, function (key, value) {
+                        Srting += '<div class="grid_2">'
+                        Srting += '<a title="IMAGE EXAMPLE">'
+                        Srting += '<a title="Delete" href="javascript:;" onclick="DeleteImage(' + value.Imageid + ',' + EventId + ')"><i class="icon-cancel"></i></a>'
+                        Srting += '<img width="100" height="100" src=' + value.Image + ' class="nicdark_radius nicdark_opacity" alt=""> </a>'
+                        Srting += '&nbsp;&nbsp;&nbsp;&nbsp;'
+                        Srting += '</div>'
+                    });
+                    $("#Imagedisplay").append(Srting);
+                });
+
+            }
+        });
+
+    });
+</script>
+
+
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script>
+    $(function () {
+        $("#date").datepicker({
+            changeMonth: true,
+            changeYear: true
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    function DeleteImage(Imageid, memoriesid) {
+        var Srting = "";
+        $.ajax({
+            type: "Get",
+            dataType: "json",
+            contenttype: "Application/json",
+            url: "../Memories/DeleteImagesforMemories",
+            data: ({ "Imageid": Imageid, "Memoriesid": memoriesid }),
+            success: function (data) {
+                $("#Imagedisplay").empty('');
+                $.each(data, function (key, value) {
+                    Srting += '<div class="grid_2">'
+                    Srting += '<a title="IMAGE EXAMPLE">'
+                    Srting += '<a title="Delete" href="javascript:;" onclick="DeleteImage(' + value.Imageid + ',' + memoriesid + ')"><i class="icon-cancel"></i></a>'
+                    Srting += '<img width="100" height="100" src=' + value.Image + ' class="nicdark_radius nicdark_opacity" alt=""> </a>'
+                    Srting += '&nbsp;&nbsp;&nbsp;&nbsp;'
+                    Srting += '</div>'
+                });
+                $("#Imagedisplay").append(Srting);
+            }
+        });
+    }
+</script>

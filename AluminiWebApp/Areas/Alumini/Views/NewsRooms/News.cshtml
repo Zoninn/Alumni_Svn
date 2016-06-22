@@ -1,0 +1,102 @@
+﻿@model AluminiWebApp.Areas.Admin.Models.NewsRoomModel
+@{
+    Layout = "~/Areas/Alumini/Views/Shared/_SRKRLayout.cshtml";
+}
+
+
+
+
+<div class="page-content container clear-fix">
+
+    <div class="grid-col-row">
+
+        <div class="grid-col grid-col-9">
+            @foreach (var Data in @Model.GetNews)
+            {
+                <main>
+                    <div class="blog-post">
+                        <article>
+                            @if (Data.Image != null)
+                            {
+                            <div class="post-info clear-fix">
+                                <div class="date-post"><div class="day">26</div><div class="month"></div></div>
+                                <div class="post-info-main">
+                                    <div class="author-post">@Data.Title</div>
+
+                                </div>
+                            </div>
+
+                            <div class="blog-media picture">
+                                <div class="hover-effect"></div>
+                                <div class="link-cont">
+
+                                </div>
+                                <img src="@Data.Image" class="columns-col-12" alt="">
+                            </div>
+                            }
+                            else
+                            {
+
+                            @*<img src="~/UserProfilePictures/avatar.png" data-at2x="pic/270x200-img-17@2x.jpg" alt="" />*@
+                            }
+
+                            <h2>@Data.Title</h2>
+                            <div class="fa fa-calendar">&nbsp;&nbsp; @Data.PostedOn.Value.ToString("MMMM.dd.yyyy")</div>
+                            <h5>@Data.Description <a href="@Url.Action("SingleNews", "NewsRooms", new { area = "Alumini", @id = @Data.NewsId })">Read More</a></h5>
+                        </article>
+                    </div>
+                </main>
+            }
+        </div>
+        <div class="grid-col grid-col-3 sidebar">
+            <!-- widget event -->
+            <aside class="widget-event">
+                <h2>Upcoming Events</h2>
+
+                <article class="clear-fix">
+                    <div class="date"><div class="day">04</div><div class="month">May</div></div>
+                    <div class="event-description"><span>04-05-2016</span><p>HYDERABAD HELICOPTER JOY RIDES</p></div>
+                    <a style="text-align:right" class="active" data-boxs-tab="1" href="../AlumniEvents/SingleEvent?EventId=35">View More</a>
+                </article>
+                <article class="clear-fix">
+                    <div class="date"><div class="day">04</div><div class="month">May</div></div>
+                    <div class="event-description"><span>04-05-2016</span><p>10 K RUN</p></div>
+                    <a style="text-align:right" class="active" data-boxs-tab="1" href="../AlumniEvents/SingleEvent?EventId=35">View More</a>
+                </article>
+
+                @{
+                        int date = 0;
+                }
+                @if (ViewBag.EventsOnId != null) {
+                    foreach (var UpcomingEvents in ViewBag.EventsOnId)
+                    {
+                        foreach (var EventUsers in UpcomingEvents.EventIds)
+                        {
+
+
+                    <article class="clear-fix">
+                        <div class="date"><div class="day">@EventUsers.EventStartDate.ToString("dd")</div><div class="month">@EventUsers.EventStartDate.ToString("MMM")</div></div>
+                        <div class="event-description"><span>@EventUsers.EventStartDate.ToString("dd-MM-yyyy")</span><p>@EventUsers.EventName</p></div>
+                        <a style="text-align:right" class="active" data-boxs-tab="1" href="../AlumniEvents/SingleEvent?EventId=@EventUsers.EventId">View More</a>
+                    </article>
+                        }
+                    }
+                    }
+            </aside>
+            <!-- / widget event -->
+            <!-- widget archive -->
+            <aside class="widget-archives">
+                <h2 style="text-align:center">Support</h2>
+                <hr class="divider-big" />
+                <ul>
+                    <li><h5>Event ID : 36</h5></li>
+                    <li><h5>alumnibtech@gmail.com</h5></li>
+                    <li><h5>9949123963</h5></li>
+                    <li><h5 id="EventStartDate">Start Date : 05-04-2016 -- 6AM</h5></li>
+                    <li><h5 id="EventEndDate">End Date : 06-04-2016 -- 10PM</h5></li>
+
+                </ul>
+            </aside>
+        </div>
+    </div>
+</div>

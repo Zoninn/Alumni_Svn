@@ -1,0 +1,167 @@
+﻿
+@{
+    ViewBag.Title = "AlumniProfile";
+    Layout = "~/Areas/Alumini/Views/Shared/_SRKRDesignLayout.cshtml";
+}
+
+<section id="nicdark_parallax_title" class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img-single-teacher-1" style="background-position: 50% -60px;margin-top:-150px;">
+
+    <div class="nicdark_filter greydark">
+
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+
+            <div class="grid grid_12">
+                <div class="nicdark_space100"></div>
+                <div class="nicdark_space100"></div>
+                <h1 class="white subtitle">@Model.FirstName @Model.LastName</h1>
+                <div class="nicdark_space10"></div>
+                <h3 class="subtitle white">@Model.Designation - @Model.Company</h3>
+                <div class="nicdark_space20"></div>
+                <div class="nicdark_divider left big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space40"></div>
+                <div class="nicdark_space50"></div>
+            </div>
+
+        </div>
+        <!--end nicdark_container-->
+
+    </div>
+
+</section>
+<section class="nicdark_section">
+
+    <!--start nicdark_container-->
+    <div class="nicdark_container nicdark_clearfix">
+
+        <div class="nicdark_space50"></div>
+
+        <div class="grid grid_4">
+            <img alt="" class="nicdark_radius nicdark_opacity" style="float:left;width:100%;" src="@Model.ProfilePicture">
+        </div>
+       @* <a href="@Url.Action("BasicInformation", "Profile", new { area = "Alumini" }) " class="nicdark_zoom nicdark_btn nicdark_bg_blue medium nicdark_shadow nicdark_radius white nicdark_margin10">Edit Profile</a>*@
+
+        <div class="grid grid_4">
+            @if (@TempData["Success"] != null)
+            {
+                <div class="nicdark_alerts nicdark_bg_green nicdark_radius nicdark_shadow">
+                    <p class="white nicdark_size_medium"><i class="icon-cancel-circled-outline iconclose"></i>&nbsp;&nbsp;&nbsp;<strong></strong>&nbsp;&nbsp;&nbsp; @TempData["Success"]</p>
+                    <i class="icon-ok-outline nicdark_iconbg right medium green"></i>
+
+                </div>
+
+            }
+            else
+            {
+
+            }
+            <div>
+                <br />
+                <br />
+            </div>
+            <h3 class="subtitle greydark">ABOUT ME</h3>
+            <div class="nicdark_space20"></div>
+            <div class="nicdark_divider left small"><span class="nicdark_bg_blue nicdark_radius"></span></div>
+            <div class="nicdark_space20"></div>
+            <p>Batch of &nbsp; @Model.Batch</p>
+            <p>@Model.CourseName | @Model.CourseCategoryName</p>
+            <p>Working from &nbsp; @Model.WorkedFrom &nbsp; To : @Model.WorkedTill</p>
+            <div class="nicdark_space20"></div>
+            <p>Profile Completion</p>
+            @if (Model.ProfileInfoPercentage == 5)
+            {
+                <div class="nicdark_progressbar nicdark_bg_grey nicdark_radius nicdark_shadow">
+                    <h5 class="nicdark_progressbar_title nicdark_bg_green nicdark_bg_yellowdark_hover nicdark_radius nicdark_shadow fade-left animate1 animated fadeInLeft" style="width:100%">
+                        <span class="white nicdark_size_big"><i class="icon-spin6"></i>&nbsp;&nbsp;100%</span>
+                    </h5>
+                </div>
+            }
+            @if (Model.ProfileInfoPercentage == 4)
+            {
+                <div class="nicdark_progressbar nicdark_bg_grey nicdark_radius nicdark_shadow">
+                    <h5 class="nicdark_progressbar_title nicdark_bg_blue nicdark_bg_yellowdark_hover nicdark_radius nicdark_shadow fade-left animate1 animated fadeInLeft" style="width:80%">
+                        <span class="white nicdark_size_big"><i class="icon-spin6"></i>&nbsp;&nbsp;80%</span>
+                    </h5>
+                </div>
+            }
+            @if (Model.ProfileInfoPercentage == 3)
+            {
+                <div class="nicdark_progressbar nicdark_bg_grey nicdark_radius nicdark_shadow">
+                    <h5 class="nicdark_progressbar_title nicdark_bg_yellow nicdark_bg_yellowdark_hover nicdark_radius nicdark_shadow fade-left animate1 animated fadeInLeft" style="width:40%">
+                        <span class="white nicdark_size_big"><i class="icon-spin6"></i>&nbsp;&nbsp;40%</span>
+                    </h5>
+                </div>
+            }
+            @if (Model.ProfileInfoPercentage == 2)
+            {
+                <div class="nicdark_progressbar nicdark_bg_grey nicdark_radius nicdark_shadow">
+                    <h5 class="nicdark_progressbar_title nicdark_bg_orange nicdark_bg_yellowdark_hover nicdark_radius nicdark_shadow fade-left animate1 animated fadeInLeft" style="width:20%">
+                        <span class="white nicdark_size_big"><i class="icon-spin6"></i>&nbsp;&nbsp;20%</span>
+                    </h5>
+                </div>
+            }
+
+            @if (Model.ProfileInfoPercentage == 1)
+            {
+                <div class="nicdark_progressbar nicdark_bg_grey nicdark_radius nicdark_shadow">
+                    <h5 class="nicdark_progressbar_title nicdark_bg_red nicdark_bg_yellowdark_hover nicdark_radius nicdark_shadow fade-left animate1 animated fadeInLeft" style="width:10%">
+                        <span class="white nicdark_size_big"><i class="icon-spin6"></i>&nbsp;&nbsp;10%</span>
+                    </h5>
+                </div>
+            }
+            <div class="nicdark_space20"></div>
+
+        </div>
+
+
+        <div class="grid grid_4">
+            <h3 class="subtitle greydark">Professional Details</h3>
+            <div class="nicdark_space20"></div>
+            <div class="nicdark_divider left small"><span class="nicdark_bg_yellow nicdark_radius"></span></div>
+            <div class="nicdark_space20"></div>
+            <p><i class="icon-direction"></i> @Model.Company</p>
+            <div class="nicdark_space20"></div>
+
+            <h3 class="subtitle greydark">Educational Details</h3>
+            <div class="nicdark_space20"></div>
+            <div class="nicdark_divider left small"><span class="nicdark_bg_yellow nicdark_radius"></span></div>
+            <div class="nicdark_space20"></div>
+            <p><i class="icon-direction"></i> @Model.Batch Batch</p>
+            <p><i class="icon-direction"></i> @Model.CourseCategoryName</p>
+            <p><i class="icon-direction"></i> @Model.CourseName</p>
+            <div class="nicdark_space20"></div>
+
+            <h3 class="subtitle greydark">Contact Info</h3>
+            <div class="nicdark_space20"></div>
+            <div class="nicdark_divider left small"><span class="nicdark_bg_yellow nicdark_radius"></span></div>
+            <div class="nicdark_space20"></div>
+            <p><i class="icon-direction"></i> Lives In : @Model.HomeCityName</p>
+            <p><i class="icon-direction"></i> Address : &nbsp;@Model.Address</p>
+            <p><i class="icon-direction"></i> Email : @Model.Email</p>
+            <p><i class="icon-direction"></i> Mobile : @Model.PhoneNumber</p>
+
+        </div>
+
+        
+
+        <div class="nicdark_space50"></div>
+
+    </div>
+    <!--end nicdark_container-->
+
+    <div>
+        <div class="container">
+            @*<h2>Modal Example</h2>*@
+            <!-- Trigger the modal with a button -->
+            @*<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>*@
+
+            <!-- Modal -->
+            
+
+        </div>
+    </div>
+
+
+
+</section>
+

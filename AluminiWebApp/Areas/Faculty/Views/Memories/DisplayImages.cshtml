@@ -1,0 +1,207 @@
+﻿@model AluminiWebApp.Areas.Alumini.Models.MemoriesModel
+@{
+    Layout = "~/Areas/Faculty/Views/Shared/_SRKRLayout.cshtml";
+}
+<h4>@TempData["Message"] </h4>
+<p>&nbsp;&nbsp;<a href="@Url.Action("DisplayImages", "Memories", new { area = "Faculty", @id = 2 })">All Pictures</a></p>
+<div class="page-content grid-row">
+    <main>
+        <div class="grid-col-row clear-fix">
+            <div class="grid-col grid-col-3">
+                @foreach (var Memories in @Model.Memories)
+                {
+                    <div class="portfolio-item">
+                        <div class="picture">
+                            <div class="hover-effect"></div>
+                            <div class="link-cont">
+
+                            </div>
+                            <img src="@Memories.MemroyImage" data-at2x="pic/270x200-img-5@2x.jpg" alt="">
+
+                        </div>
+                        <h3></h3>
+                        <p><img src="@Memories.PostedbyImages" data-at2x="pic/270x200-img-5@2x.jpg" alt="" width="50">@Memories.PostedBy &nbsp;&nbsp; @Memories.PostedOn.Value.ToString("MMMM,dd,yyyy") &nbsp; <a href="@Url.Action("DisplayMemories", "Memories", new { area = "Faculty", @id = @Memories.Memoriesid })">View</a></p>
+                        @if (Memories.Userid == Convert.ToInt64(Session["UserId"]))
+                        {
+                            <p> <a href="@Url.Action("memories", "Memories", new { area = "Faculty", MemoriesId = @Memories.Memoriesid })">Edit</a></p>
+                            <p> <a href="javascript:;" id="Delete" onclick='Delete(@Memories.Memoriesid)'>Delete</a></p>
+                        }
+                    </div>
+                }
+
+
+            </div>
+            <div class="grid-col grid-col-3">
+
+            </div>
+            <div class="grid-col grid-col-3">
+
+            </div>
+            <div class="grid-col grid-col-3">
+
+            </div>
+        </div>
+        <div class="page-pagination clear-fix">
+            <a href="#"><i class="fa fa-angle-double-left"></i></a>
+            <!--
+            -->
+            <a href="#">1</a>
+            <!--
+            -->
+            <a href="#">2</a>
+            <!--
+            -->
+            <a href="#" class="active">3</a>
+            <!--
+            -->
+            <a href="#"><i class="fa fa-angle-double-right"></i></a>
+        </div>
+    </main>
+</div>
+<footer>
+    <div class="grid-row">
+        <div class="grid-col-row clear-fix">
+            <section class="grid-col grid-col-4 footer-about">
+                <h2 class="corner-radius">About Us</h2>
+                <div>
+                    <h3>Sed aliquet dui auctor blandit ipsum tincidunt</h3>
+                    <p>Quis rhoncus lorem dolor eu sem. Aenean enim risus, convallis id ultrices eget.</p>
+                </div>
+                <address>
+                    <p></p>
+                    <a href="tel:123-123456789" class="phone-number">123-123456789</a>
+                    <br>
+                    <a href="mailto:uni@domain.com" class="email">uni@domain.com</a>
+                    <br>
+                    <a href="www.sample.com" class="site">www.sample.com</a>
+                    <br>
+                    <a href="www.sample.com" class="address">250 Biscayne Blvd. (North) 11st Floor<br>New World Tower Miami, 33148</a>
+                </address>
+                <div class="footer-social">
+                    <a href="" class="fa fa-twitter"></a>
+                    <a href="" class="fa fa-skype"></a>
+                    <a href="" class="fa fa-google-plus"></a>
+                    <a href="" class="fa fa-rss"></a>
+                    <a href="" class="fa fa-youtube"></a>
+                </div>
+            </section>
+            <section class="grid-col grid-col-4 footer-latest">
+                <h2 class="corner-radius">Latest courses</h2>
+                <article>
+                    <img src="pic/83x83-img-2.jpg" data-at2x="pic/83x83-img-2@2x.jpg" alt="">
+                    <h3>Sed aliquet dui at auctor blandit</h3>
+                    <div class="course-date">
+                        <div>10<sup>00</sup></div>
+                        <div>23.02.15</div>
+                    </div>
+                    <p>
+                        Sed pharetra lorem ut dolor dignissim,
+                        sit amet pretium tortor mattis.
+                    </p>
+                </article>
+                <article>
+                    <img src="pic/83x83-img-1.jpg" data-at2x="pic/83x83-img-1@2x.jpg" alt="">
+                    <h3>Sed aliquet dui at auctor blandit</h3>
+                    <div class="course-date">
+                        <div>10<sup>00</sup></div>
+                        <div>23.02.15</div>
+                    </div>
+                    <p>
+                        Sed pharetra lorem ut dolor dignissim,
+                        sit amet pretium tortor mattis.
+                    </p>
+                </article>
+            </section>
+            <section class="grid-col grid-col-4 footer-contact-form">
+                <h2 class="corner-radius">apply for instructor</h2>
+                <div class="email_server_responce"></div>
+                <form action="php/contacts-process.php" class="contact-form" method="post" novalidate="novalidate">
+                    <p>
+                        <span class="your-name"><input aria-required="true" name="name" value="" size="40" placeholder="Name" aria-invalid="false" required="" type="text"></span>
+                    </p>
+                    <p><span class="your-email"><input aria-required="true" name="phone" value="" size="40" placeholder="Phone" aria-invalid="false" required="" type="text"></span> </p>
+                    <p><span class="your-message"><textarea aria-required="true" name="message" placeholder="Comments" cols="40" rows="5" aria-invalid="false" required=""></textarea></span> </p>
+                    <button type="submit" class="cws-button bt-color-3 border-radius alt icon-right">Submit <i class="fa fa-angle-right"></i></button>
+                </form>
+            </section>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="grid-row clear-fix">
+            <div class="copyright">uniLearn<span></span> 2015 . All Rights Reserved</div>
+            <nav class="footer-nav">
+                <ul class="clear-fix">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="courses-grid.html">Courses</a>
+                    </li>
+                    <li>
+                        <a href="content-elements.html">Plans</a>
+                    </li>
+                    <li>
+                        <a href="blog-default.html">News</a>
+                    </li>
+                    <li>
+                        <a href="page-about-us.html">Pages</a>
+                    </li>
+                    <li>
+                        <a href="contact-us.html">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</footer>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+<script src="js/jquery.form.min.js"></script>
+<script src="js/TweenMax.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/jquery.isotope.min.js"></script>
+
+<script src="js/owl.carousel.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jflickrfeed.min.js"></script>
+<script src="js/jquery.tweet.js"></script>
+<script type="text/javascript" src="tuner/js/colorpicker.js"></script>
+<script type="text/javascript" src="tuner/js/scripts.js"></script>
+<script src="js/jquery.fancybox.pack.js"></script>
+<script src="js/jquery.fancybox-media.js"></script>
+<script src="js/retina.min.js"></script>
+<div style="display: none;" id="scroll-top"><i class="fa fa-angle-up"></i></div><div id="tuner" class="tuner"><div class="layout-style"><p>Layout Style</p><div class="page-style wide active">Wide</div><div class="page-style boxed">Boxed</div></div> <div class="colors"> <p>Color Skin</p> <div id="color-1" class="color-picker" data-color="#f27c66" style="background-color:#f27c66;"></div><div id="color-2" class="color-picker" data-color="#18bb7c" style="background-color:#18bb7c;"></div><div id="color-3" class="color-picker" data-color="#f9cb8f" style="background-color:#f9cb8f;"></div> </div>  <ul class="patterns"><p>Patterns</p> <li data-pattern="1" class="color-blue active"></li><li data-pattern="2" class="color-blue" style="background-position: -132px -44px;"></li><li data-pattern="3" class="color-blue" style="background-position: -88px 0;"></li><li data-pattern="4" class="color-blue" style="background-position: -88px -44px;"></li><li data-pattern="5" class="color-blue" style="background-position: -44px 0;"></li><li data-pattern="6" class="color-blue" style="background-position: -132px 0;"></li><li data-pattern="7" class="color-blue" style="background-position: -176px 0;"></li><li data-pattern="8" class="color-blue" style="background-position: 0 -44px;"></li></ul> <i id="tuner-switcher" class="fa fa-cogs"></i> </div> <div id="tuner-style-1" class="tuner-style" style="display: none;"> /* Colors for: main color */ .header-top-panel form input { background: rgb(<span class="darknest">cws_theme_color#</span>); } .action:last-child .action-block:before { border-right-color: #<span>cws_theme_color#</span>; } .price_slider .ui-slider-handle:before, .community.color-1, .main-nav ul ul { border-top-color: #<span>cws_theme_color#</span>; } hr.divider-color:before, .divider-mini, .twitter-1 .divider-mini, .blog-post .tags-post a + a, .action .action-block:before, .cat-courses-item .info-block.bg-color-1:before { border-left-color: #<span>cws_theme_color#</span>; } p.paragraph-border:first-letter, p.paragraph-color:first-letter, p a, ol li, ul li:before, q h3, q:before, q p:after, .widget-tag, .widget-tag a[rel="tag"], .cws-button.white:hover, .page-title h1, .megamenu&gt;ul a:before, .main-nav&gt;ul&gt;li&gt;ul a:before, .info-boxes.error-message .info-box-icon i, .has-error input, .caption .sl-title, .owl-controls .owl-buttons .owl-prev:hover, .owl-controls .owl-buttons .owl-next:hover, .blog-post .tags-post, .quote-avatar-author .author-info span, .page-pagination a:last-child, .page-pagination a:first-child, .widget-contact-form label span, .widget-post .course-date, .widget-instructor .course-date, .widget-course .course-date, .widget-event .event-description span, .widget-comments .header-comments .date, .widget-pages ul a:hover, .widget-navigation&gt;ul&gt;li&gt;ul&gt;li.hover:before, .widget-navigation&gt;ul&gt;li&gt;ul&gt;li:hover:before, .widget-navigation&gt;ul&gt;li&gt;ul&gt;li.active:before, .widget-navigation&gt;ul&gt;li&gt;ul&gt;li.hover&gt;a, .widget-navigation&gt;ul&gt;li&gt;ul&gt;li:hover&gt;a, .widget-navigation&gt;ul&gt;li&gt;ul&gt;li.active, .widget-navigation&gt;ul&gt;li&gt;ul&gt;li&gt;ul&gt;li.hover&gt;a, .twitter .fa-twitter, .widget-subscribe a, .widget_shopping_cart_content ul li a, .widget-selers h4, .course-description .teacher, .price .amount, .banner-offer.bg-color-1 .banner-icon i, .category-item .category-info h4, .widget-course-details .category-info h4, .category-item.list .category-info .count-users i, .category-search&gt;i, .pricing-table.color-1 .price-pt, .pricing-table.color-1 p, .pricing-table.color-1 ul li:before, .comments .button.reply, .comment-title span, .comment .meta strong, .comment-form-rating .stars .stars-active, .community.color-1:hover .community-logo i, .community.color-1 h3, .action .action-block i, .item-instructor.bg-color-1:hover .info-box .social-link, .tabs-box a.active, .sitemap a:hover, .container-404 p span, .social-icon, .main-features .minus, .woocommerce .product_meta .tagged_as a:before, .woocommerce table thead, .woocommerce table tbody .product-remove .remove:hover:before, .woocommerce .cart-collaterals .cart_totals tr td, .event-container-wrap tbody tr td .details, nav a.active, nav a:hover , .cart_totals tr td , .col2-set h3 , .tp-caption .sl-title { color: #<span>cws_theme_color#</span>; } p.paragraph-border:first-letter, .cws-button, .footer-social a, .info-boxes.alt.error-message,.info-boxes.alt.error-message .info-box-icon, .has-error input, .caption .cws-button, .scroll-down, .twitter .fa-twitter, .twitter.alt .fa-twitter, .widget-subscribe a, .community.color-1 .community-logo, .testimonial .owl-pagination .owl-page, .action .action-block, .line-element .level:before, .portfolio-item:hover, .social-icon, .woocommerce table tbody .product-remove .remove:before , .tp-caption .cws-button , .page-pagination a.active , .page-pagination a:hover { border-color: #<span>cws_theme_color#</span>; } p.paragraph-background:first-letter, ins, ins.color, .cws-button, .cws-button.alt:hover, .bg-color-1 , .page-header-top address .phone-number i, .page-header-top address .email i, .main-nav .mobile_menu_switcher, .create-account , footer h2, .footer-social a:hover, .project-details .title-details, .info-boxes.error-message, .info-boxes.alt.error-message .close-button:before, .info-boxes.alt.error-message .close-button:after, .accordions .content-title.active:after, .caption .cws-button, .blog-post .post-info, .page-pagination a.active, .page-pagination a:hover, .widget-event .date .day, .widget-comments .header-comments:before, .widget-navigation&gt;ul&gt;li.hover&gt;a, .widget-navigation&gt;ul&gt;li:hover&gt;a, .widget-navigation&gt;ul&gt;li.active, .widget-navigation&gt;ul&gt;li&gt;ul, .widget-subscribe a:hover, .course-description .course-date, .banner-offer.bg-color-1, .pricing-table.color-1 .header-pt, .ribbon .banner::after, .ribbon .banner::before, .ribbon .text::before, .ribbon .text::after, .community.color-1 .info-block:before, .community.color-1 .community-logo, .testimonial .owl-pagination .owl-page.active, .action .action-block .text, .line-element .level-block, .item-instructor.bg-color-1:hover .info-box .divider, .tabs-box a:before, .head-sitemap, .container-404 .number span, .social-icon:hover, #list-or-grid&gt;div.active, .woocommerce table tbody .product-remove .remove:before, .calendar-header .buttons-calendar-view&gt;div.active, .picture&gt;.hover-effect , .header-top-panel .search-open , .tp-caption .cws-button { background-color: #<span>cws_theme_color#</span>; } </div> <div id="tuner-style-2" class="tuner-style" style="display: none;"> /* Colors for: middle content (the sand color) */ .color-3 .action .action-block:before, .cat-courses-item .info-block.bg-color-3:before { border-left-color: #<span>cws_theme_color_middle#</span>; } .tabs-btn.active, .community.color-2 { border-top-color: #<span>cws_theme_color_middle#</span>; } hr.divider-color:before, .divider-mini, .color-3 .action:last-child .action-block:before, .woocommerce table thead th { border-right-color: #<span>cws_theme_color_middle#</span>; } .cws-button.bt-color-3, .info-boxes.alt.confirmation-message, .info-boxes.alt.confirmation-message .info-box-icon, .has-success input, .accordions .content-title:after, .toggles .content-title:after, .accordions .content-title.active, .ui-datepicker-calendar thead th, .widget-search form .search-submit, .widget-rss .subscribe-form form .button-send, .category-button, .service-icon, .community.color-2 .community-logo, .line-element.color-3 .level:before, .color-3 .action .action-block, .checkbox label:hover, .radio label:hover, .checkbox input[type=checkbox]:checked + label, .radio input[type=radio]:checked + label, .woocommerce table thead tr { border-color: #<span>cws_theme_color_middle#</span>; } .cws-button.alt.bt-color-3:hover, .cws-button.bt-color-3, .bg-color-3, .header-top-panel a.fa-shopping-cart , td.ui-datepicker-today , .tabs-box a:nth-child(3n):before , .footer-contact-form h2, .info-boxes.alt.confirmation-message .close-button:before, .info-boxes.alt.confirmation-message .close-button:after, .accordions .content-title.active:after, .toggles .content-title.active:after, .accordions .content-title.active, td.ui-datepicker-today:before, form.subscribe input[type="submit"], .widget-search form .search-submit, .widget-meta li a:hover, .widget-archives li a:hover, .widget-categories li a:hover, .widget-rss .subscribe-form form .button-send, .price_slider .ui-slider-range, .category-button:hover, .banner-offer.bg-color-2, .pricing-table.color-3 .header-pt, .service-icon:hover, .community.color-2 .info-block:before, .community.color-2 .community-logo, .line-element.color-3 .level-block, .color-3 .action .action-block .text.line-element.color-3 .level-block, .color-3 .action .action-block .text, .item-instructor.bg-color-3:hover .info-box .divider, .select2-container.select2-container--default .select2-results__option--highlighted[aria-selected], .radio label:before, .calendar-header, .event-container-wrap tbody tr td:before, .event-container-wrap tbody tr td .popup { background-color: #<span>cws_theme_color_middle#</span>; } .footer-contact-form form button[type="submit"].cws-button, .has-success input, .accordions .content-title:after, .toggles .content-title:after, .toggles .content-title:hover, .toggles .content-title.active, .ui-datepicker-calendar thead th, .widget-search form .search-submit:hover, .widget-meta li a:before, .widget-archives li a:before, .widget-categories li a:before, .category-button, .banner-offer .banner-icon i, .banner-offer.bg-color-2 .banner-icon i, .pricing-table.color-3 .price-pt, .pricing-table.color-3 p, .pricing-table.color-3 ul li:before, .community.color-2:hover .community-logo i, .community.color-2 h3, .color-3 .action .action-block i, .item-instructor.bg-color-3:hover .info-box .social-link, .checkbox label:before, .carousel-list i , .tabs-box a:nth-child(3n).active { color: #<span>cws_theme_color_middle#</span>; } .service-icon i { color: #<span>cws_theme_color_middle#</span>; }  /* sand color */  { border-color: #<span>cws_theme_color_middle_helper#</span>; } </div> <div id="tuner-style-3" class="tuner-style" style="display: none;"> /* Colors for middle content helper */ .color-2 .action:last-child .action-block:before { border-right-color: #<span>cws_theme_color_middle_helper#</span>; } .color-2 .action .action-block:before, .cat-courses-item .info-block.bg-color-2:before { border-left-color: #<span>cws_theme_color_middle_helper#</span>; } .community { border-top-color: #<span>cws_theme_color_middle_helper#</span>; } .cws-button.bt-color-2, .info-boxes.alt.warning-message, .info-boxes.alt.warning-message .info-box-icon, .has-warning input, .community .community-logo, .line-element.color-2 .level:before, .color-2 .action .action-block { border-color: #<span>cws_theme_color_middle_helper#</span>; } hr.divider-color:before, .twitter-1 .divider-mini, .cws-button.alt.bt-color-2:hover, .cws-button.bt-color-2, .bg-color-2, .header-top-panel a.fa-share-alt , .tabs-box a:nth-child(2n):before , #top_social_links_wrapper , .footer-latest h2, .info-boxes.alt.warning-message .close-button:before, .info-boxes.alt.warning-message .close-button:after, .post-info .comments-post, .banner-offer.bg-color-3, .community .community-logo, .community .info-block:before, .line-element.color-2 .level-block, .color-2 .action .action-block .text, .item-instructor.bg-color-2:hover .info-box .divider { background-color: #<span>cws_theme_color_middle_helper#</span>; } .has-warning input, form.subscribe input[type="submit"]:hover, .banner-offer.bg-color-3 .banner-icon i, .category-item .star-rating&gt;span:before, .comments .star-rating&gt;span:before, .widget-course-details .star-rating&gt;span:before, .pricing-table.color-2 .header-pt, .pricing-table.color-2 .price-pt, .pricing-table.color-2 p, .pricing-table.color-2 ul li:before, .community h3, .community:hover .community-logo i, .color-2 .action .action-block i, .item-instructor.bg-color-2:hover .info-box .social-link, .product .star-rating&gt;span:before, .footer-latest .course-date&gt;* , .tabs-box a:nth-child(2n).active { color: #<span>cws_theme_color_middle_helper#</span>; } </div>
+<style id="cws-cp-1"></style>
+<style id="cws-cp-2"></style>
+<style id="cws-cp-3"></style><div id="collorpicker_128" class="colorpicker"><div style="background-color: rgb(255, 38, 0);" class="colorpicker_color"><div><div style="left: 86px; top: 7px;"></div></div></div><div class="colorpicker_hue"><div style="top: 146px;"></div></div><div style="background-color: rgb(242, 123, 102);" class="colorpicker_new_color"></div><div style="background-color: rgb(242, 123, 102);" class="colorpicker_current_color"></div><div class="colorpicker_hex"><input maxlength="6" size="6" type="text"></div><div class="colorpicker_rgb_r colorpicker_field"><input maxlength="3" size="3" type="text"><span></span></div><div class="colorpicker_rgb_g colorpicker_field"><input maxlength="3" size="3" type="text"><span></span></div><div class="colorpicker_rgb_b colorpicker_field"><input maxlength="3" size="3" type="text"><span></span></div><div class="colorpicker_hsb_h colorpicker_field"><input maxlength="3" size="3" type="text"><span></span></div><div class="colorpicker_hsb_s colorpicker_field"><input maxlength="3" size="3" type="text"><span></span></div><div class="colorpicker_hsb_b colorpicker_field"><input maxlength="3" size="3" type="text"><span></span></div><div class="colorpicker_submit"></div></div><div id="collorpicker_47" class="colorpicker"><div style="background-color: rgb(0, 255, 157);" class="colorpicker_color"><div><div style="left: 130px; top: 40px;"></div></div></div><div class="colorpicker_hue"><div style="top: 84px;"></div></div><div style="background-color: rgb(24, 187, 125);" class="colorpicker_new_color"></div><div style="background-color: rgb(24, 187, 125);" class="colorpicker_current_color"></div><div class="colorpicker_hex"><input maxlength="6" size="6" type="text"></div><div class="colorpicker_rgb_r colorpicker_field"><input maxlength="3" size="3" type="text"><span></span></div><div class="colorpicker_rgb_g colorpicker_field"><input maxlength="3" size="3" type="text"><span></span></div><div class="colorpicker_rgb_b colorpicker_field"><input maxlength="3" size="3" type="text"><span></span></div><div class="colorpicker_hsb_h colorpicker_field"><input maxlength="3" size="3" type="text"><span></span></div><div class="colorpicker_hsb_s colorpicker_field"><input maxlength="3" size="3" type="text"><span></span></div><div class="colorpicker_hsb_b colorpicker_field"><input maxlength="3" size="3" type="text"><span></span></div><div class="colorpicker_submit"></div></div><div id="collorpicker_656" class="colorpicker"><div style="background-color: rgb(255, 145, 0);" class="colorpicker_color"><div><div style="left: 63px; top: 3px;"></div></div></div><div class="colorpicker_hue"><div style="top: 135px;"></div></div><div style="background-color: rgb(249, 203, 143);" class="colorpicker_new_color"></div><div style="background-color: rgb(249, 203, 143);" class="colorpicker_current_color"></div><div class="colorpicker_hex"><input maxlength="6" size="6" type="text"></div><div class="colorpicker_rgb_r colorpicker_field"><input maxlength="3" size="3" type="text"><span></span></div><div class="colorpicker_rgb_g colorpicker_field"><input maxlength="3" size="3" type="text"><span></span></div><div class="colorpicker_rgb_b colorpicker_field"><input maxlength="3" size="3" type="text"><span></span></div><div class="colorpicker_hsb_h colorpicker_field"><input maxlength="3" size="3" type="text"><span></span></div><div class="colorpicker_hsb_s colorpicker_field"><input maxlength="3" size="3" type="text"><span></span></div><div class="colorpicker_hsb_b colorpicker_field"><input maxlength="3" size="3" type="text"><span></span></div><div class="colorpicker_submit"></div></div>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+    });
+
+
+    function Delete(id) {
+        if (confirm("Are you sure you want to delete?")) {
+
+            $.ajax({
+                type: "Get",
+                dataType: "json",
+                contenttype: "Application/json",
+                url: "../Memories/DeleteMemories",
+                data: { "id": id },
+                success: function (data) {
+                    $.each(data, function (key, value) {
+                        if (value.visibleTo == "To My Batch Mates") {
+                            window.location.href = "../DisplayImages/1";
+                        }
+                        else {
+                            window.location.href = "../Memories/DisplayImages/2";
+                        }
+                    });
+                }
+            });
+        }
+        return false;
+    }
+
+</script>

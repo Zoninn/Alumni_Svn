@@ -1,0 +1,158 @@
+﻿@model AluminiWebApp.Models.ProfileBasicInformation
+
+@{
+    ViewBag.Title = "BasicInformation";
+    Layout = "~/Areas/Alumini/Views/Shared/_SRKRDesignLayout.cshtml";
+}
+
+
+<section id="nicdark_parallax_title" class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img8" style="background-position: 50% 0px;">
+
+    <div class="nicdark_filter greydark">
+
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+
+            <div class="grid grid_12">
+                <div class="nicdark_space100"></div>
+                <div class="nicdark_space100"></div>
+                <h1 class="white subtitle">Update Account</h1>
+                <div class="nicdark_space10"></div>
+                <div class="nicdark_divider left big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space40"></div>
+                <div class="nicdark_space50"></div>
+            </div>
+
+        </div>
+        <!--end nicdark_container-->
+
+    </div>
+
+</section>
+@using (Html.BeginForm("BasicInformation", "Profile", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true);
+    <section class="nicdark_section">
+        <div class="nicdark_container nicdark_clearfix">
+            <div class="nicdark_space50"></div>
+            <div class="grid grid_12">
+                <h3 class="subtitle greydark">Basic Information</h3>
+                <div class="nicdark_space20"></div>
+                <div class="nicdark_divider left small"><span class="nicdark_bg_yellow nicdark_radius"></span></div>
+            </div>
+            <div class="grid grid_12">
+
+                <!--start nicdark_tabs-->
+                <div class="nicdark_tab ui-tabs ui-widget ui-widget-content ui-corner-all">
+
+                    <ul class="nicdark_tabslist ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+                        <a href="@Url.Action("BasicInformation", "Profile", new { area = "Alumini" })" class="nicdark_btn nicdark_bg_green medium nicdark_shadow nicdark_radius white nicdark_margin10" style="background-color:rgb(19, 192, 85)"><i class="icon-pencil-1"></i>&nbsp;&nbsp;&nbsp;Basic Information</a>
+                        <a href="@Url.Action("UpdateAlumni", "Profile", new { area = "Alumini" })" class="nicdark_btn nicdark_bg_blue medium nicdark_shadow nicdark_radius white nicdark_margin10" style="background-color:#b9e4ef"><i class="icon-pencil-1"></i>&nbsp;&nbsp;&nbsp;Batch Details</a>
+                          <a href="@Url.Action("UpdateContactDetails", "Profile", new { area = "Alumini" })" class="nicdark_btn nicdark_bg_orange medium nicdark_shadow nicdark_radius white nicdark_margin10" style="background-color:#ecc2b2"><i class="icon-pencil-1"></i>&nbsp;&nbsp;&nbsp;Location/Contact Information</a>
+                        <a href="@Url.Action("ProfessionalDetails", "Profile", new { area = "Alumini" })" class="nicdark_btn nicdark_bg_red medium nicdark_shadow nicdark_radius white nicdark_margin10" style="background-color:#eab1b1"><i class="icon-pencil-1"></i>&nbsp;&nbsp;&nbsp;Professional Details</a>
+                      
+                    </ul>
+
+                    <div class="nicdark_tabs nicdark_bg_grey nicdark_radius nicdark_shadow">
+
+                        <div class="nicdark_margin20 ui-tabs-panel ui-widget-content ui-corner-bottom" id="tabs-7" aria-labelledby="ui-id-4" role="tabpanel" aria-expanded="true" aria-hidden="false" style="display: inline-block;">
+                            <div class="nicdark_clearfix">
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        @Html.DropDownListFor(x => x.SalutationId, new SelectList(Model.Salutation, "Id", "Salutation1"), "Select Salutation", new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle", @required = "true" })
+                                        @Html.ValidationMessageFor(x => x.SalutationId, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        @Html.TextBoxFor(x => x.FirstName, null, new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle nicdark_calendar hasDatepicker", @placeholder = "First name", size = "200", @required = "true" })
+                                        @Html.ValidationMessageFor(x => x.FirstName, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        @Html.TextBoxFor(x => x.LastName, null, new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle nicdark_calendar hasDatepicker", @placeholder = "Last name", @required = "true" })
+                                        @Html.ValidationMessageFor(x => x.LastName, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        @Html.TextBoxFor(x => x.DOB, "{0:MM/dd/yyyy}", new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle nicdark_calendar", @placeholder = "Date of Birth", @required = "true" })
+                                        @Html.ValidationMessageFor(x => x.DOB, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nicdark_space10"></div>
+                            <div class="nicdark_clearfix">
+
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        @Html.DropDownListFor(x => x.GenderId, new List<SelectListItem> {
+                        new SelectListItem { Text = "Male", Value = "1" },
+                        new SelectListItem { Text = "Female", Value = "2" }
+                    }, "Select Gender", new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle", @required = "true" })
+                                        @Html.ValidationMessageFor(x => x.GenderId, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="nicdark_focus nicdark_width_percentage25 text-center">
+                                    <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        @if (Model.ProfilePicture != null)
+                                        {
+                                            <input type="file" id="UserProfilePicyture" name="ProfilePicture" class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle">
+                                            <input name="ProfilePicture" id="ProfilePicture" type="hidden" />
+                                            @Html.ValidationMessageFor(x => x.ProfilePicture, "", new { @class = "text-danger" })
+                                            <img style="border-radius:50%;border:1px solid #d3d3d3;width:150px;height:150px;margin-top:20px;margin-bottom:20px;" id="ImagePrivew" src="@Model.ProfilePicture">
+                                        }
+                                        else
+                                        {
+                                            <input type="file" id="UserProfilePicyture" name="ProfilePicture" required='required' class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle">
+                                            <input name="ProfilePicture" id="ProfilePicture" type="hidden" />
+                                            @Html.ValidationMessageFor(x => x.ProfilePicture, "", new { @class = "text-danger" })
+                                            <img style="border-radius:50%;border:1px solid #d3d3d3;width:150px;height:150px;margin-top:20px;margin-bottom:20px;" id="ImagePrivew" src="~/UserProfilePictures/avatar.png">
+                                        }
+                                    </div>
+                                </div>
+                                <div class="nicdark_focus">
+                                    <div class="nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        <input class="nicdark_btn nicdark_bg_yellow medium nicdark_shadow nicdark_radius white nicdark_press right" type="submit" value="Update">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <input type="hidden" id="Dateofbirth" name="DateofBirth" />
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <!--end nicdark_tabs-->
+
+            </div>
+        </div>
+    </section>
+}
+@section Scripts{
+    @Scripts.Render("~/Custom.js/Registration.js")
+}
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+    $(function () {
+        $("#DOB").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            dateFormat: 'dd/mm/yy'
+        });
+    });
+
+
+    $(document).ready(function () {
+        $('#DOB').change(function () {
+            $('#DOB').datepicker("option", "dateFormat", "dd/mm/yy");
+            var DOB = $('#DOB').datepicker("option", "dateFormat", "dd/mm/yy");
+            $('#DOB').val($('#DOB').val());
+            $('#Dateofbirth').val($('#DOB').val());
+        });
+    });
+    </script>

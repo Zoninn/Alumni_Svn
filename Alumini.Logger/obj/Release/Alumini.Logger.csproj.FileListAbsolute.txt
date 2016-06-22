@@ -1,0 +1,12 @@
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\Alumini.Logger\bin\Release\Alumini.Logger.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\Alumini.Logger\bin\Release\Alumini.Logger.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\Alumini.Logger\bin\Release\NLog.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\Alumini.Logger\bin\Release\NLog.xml
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\Alumini.Logger\obj\Release\Alumini.Logger.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\Alumini.Logger\obj\Release\Alumini.Logger.pdb
+D:\MYAlumniNewDesignCopyRepo\Alumini.Logger\bin\Release\Alumini.Logger.dll
+D:\MYAlumniNewDesignCopyRepo\Alumini.Logger\bin\Release\Alumini.Logger.pdb
+D:\MYAlumniNewDesignCopyRepo\Alumini.Logger\bin\Release\NLog.dll
+D:\MYAlumniNewDesignCopyRepo\Alumini.Logger\bin\Release\NLog.xml
+D:\MYAlumniNewDesignCopyRepo\Alumini.Logger\obj\Release\Alumini.Logger.dll
+D:\MYAlumniNewDesignCopyRepo\Alumini.Logger\obj\Release\Alumini.Logger.pdb

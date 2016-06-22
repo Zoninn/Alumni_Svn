@@ -1,0 +1,43 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+
+        <img class="lazy" src="~/NewFolder1/img/bmw_m1_hood.jpg" width="765" height="574" />
+        <img class="lazy" src="~/NewFolder1/img/bmw_m1_side.jpg" width="765" height="574" />
+        <img class="lazy" src="~/NewFolder1/img/bmw_m3_gt.jpg" width="765" height="574" />
+        <img class="lazy" src="~/NewFolder1/img/transparent.gif" />
+
+        <img class="lazy" src="~/NewFolder1/img/viper_1.jpg" />
+    </div>
+</body>
+</html>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/NewFolder1/jquery.lazyload.js"></script>
+<script src="~/NewFolder1/jquery.lazyload.min.js"></script>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(window).on("scroll", function () {     
+            var $document = $(document);
+            var $window = $(this);
+            if ($document.scrollTop() >= $document.height() - $window.height() - 400) {
+               
+            }
+
+        });
+    });
+    $(function Load() {
+        $("img.lazy").lazyload();
+    });
+</script>

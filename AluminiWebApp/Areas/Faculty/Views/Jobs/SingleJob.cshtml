@@ -1,0 +1,77 @@
+﻿@model AluminiWebApp.Areas.Alumini.Models.JobsModel
+
+@{
+    Layout = "~/Areas/Faculty/Views/Shared/_SRKRLayout.cshtml";
+}
+
+<div style="text-align:center">
+    @foreach (var Jobs in @Model.singleJobs)
+    {
+        <h3><b>@Jobs.JobTitle</b></h3>
+        <table>
+            <tr>
+                <td>Comapny name</td>
+                <td> @Jobs.ComanyName</td>
+            </tr>
+            <tr>
+                <td>Experience</td>
+                <td> @Jobs.ExperienceRequired</td>
+            </tr>
+            <tr>
+                <td>Salary</td>
+                <td> @Jobs.Salary</td>
+            </tr>
+            <tr>
+                <td>Location</td>
+                <td> @Jobs.Location</td>
+            </tr>
+            <tr>
+                <td>Key skills</td>
+                <td> @Jobs.Skills</td>
+            </tr>
+            <tr>
+                <td>Functional Area</td>
+                <td> @Jobs.FunactionalName</td>
+            </tr>
+            <tr>
+                <td>Job Role</td>
+                <td> @Jobs.Role</td>
+            </tr>
+            <tr>
+                <td>Qualification</td>
+                <td> @Jobs.Qualification</td>
+            </tr>
+            <tr>
+                <td>Description</td>
+                <td> @Jobs.Description</td>
+            </tr>
+            <tr>
+                <td>Contact Person</td>
+                <td> @Jobs.PostedBy</td>
+            </tr>
+            <tr>
+                <td>Contact Email</td>
+                <td> @Jobs.Email</td>
+            </tr>
+            <tr>
+                <td>Contact Mobile</td>
+                <td> @Jobs.Mobile</td>
+            </tr>
+            <tr>
+                <td><h3>Comapany Details</h3></td>
+            </tr>
+            <tr>
+                <td>
+                    Comapny name:
+                </td>
+                <td><h5>@Jobs.ComanyName</h5></td>
+            </tr>
+            <tr>
+                <td>
+                    Comapny url:
+                </td>
+                <td><h5><a class="fa fa-link" target="_blank" href="@Jobs.ComanyUrl">@Jobs.ComanyUrl</a></h5></td>
+            </tr>
+        </table>
+    }
+</div>

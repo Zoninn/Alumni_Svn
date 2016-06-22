@@ -1,0 +1,144 @@
+﻿@model AluminiWebApp.Areas.Admin.Models.DonationModel
+
+@{
+    ViewBag.Title = "GetDonations";
+    Layout = "~/Areas/Alumini/Views/Shared/_layout.cshtml";
+}
+
+<h2>Get Donations</h2>
+
+<div class="datagrid">
+
+    <!-- CSS goes in the document HEAD or added to your external stylesheet -->
+    <style type="text/css">
+        table.gridtable {
+            font-family: verdana,arial,sans-serif;
+            font-size: 11px;
+            color: #333333;
+            border-width: 1px;
+            border-color: #666666;
+            border-collapse: collapse;
+        }
+
+            table.gridtable th {
+                border-width: 1px;
+                padding: 8px;
+                border-style: solid;
+                border-color: #666666;
+                background-color: #dedede;
+            }
+
+            table.gridtable td {
+                border-width: 1px;
+                padding: 8px;
+                border-style: solid;
+                border-color: #666666;
+                background-color: #ffffff;
+            }
+    </style>
+    <!-- Table goes in the document BODY -->
+    <table class="gridtable">
+        <thead>
+            <tr>
+                <th> Donation ID</th>
+                <th>Donation Title</th>
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Banner</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody id="Donationdetails"></tbody>
+    </table>
+
+</div>
+<div>
+    <br />
+    <table>
+        <tr id="Donationdetails"></tr>
+    </table>
+
+</div>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/Scripts/jquery-ui-1.11.4.min.js"></script>
+<script src="~/Custom.js/jquery.blockUI.js"></script>
+<script type="text/javascript">
+
+
+    $(document).ready(function () {
+       
+        blockPage();
+        test();
+        $.ajax({
+            type: "Get",
+            dataType: "JSON",
+            contentType: "Application/json",
+            url: "../Donations/GetDonationDetails",
+            data: JSON.stringify(),
+            success: function (data) {
+                unblockPage();
+                $.each(data, function (key, value) {
+                    $("#Donationdetails").append("<tr><td>" + value.Donation_ID + "</td><td><a href='#' onclick='DonationDetails(" + value.Donation_ID + ")'>" + value.Donation_Title + "</a></td><td>" + value.Donation_Description + "</td><td>" + value.Donation_Amount + "</td><td><img width=200 height=80 src=" + value.Donation_Banner + ">&nbsp;&nbsp;</td>&nbsp;&nbsp;<td><a href='#' onclick='EditDonations(" + value.Donation_ID + ")'>Edit</a></td><td><a href='' onclick='DeleteDonation(" + value.Donation_ID + ")'>Delete</a></td></tr><br/>");
+                });
+            }
+
+        });
+    })
+    
+    function DeleteDonation(Id) {
+        $.ajax({
+            type: "Get",
+            dataType: "JSON",
+            contentType: "Application/json",
+            url: "../Donations/DeleteDonations",
+            data: ({ "DonationId": Id }),
+            success: function (data) {
+                alert(data);
+                $("#Donationdetails").empty();
+                $.each(data, function (key, value) {
+                    $("#Donationdetails").append("<tr><td>" + value.Donation_ID + "</td><td><a href='#' onclick='DonationDetails(" + value.Donation_ID + ")'>" + value.Donation_Title + "</a></td><td>" + value.Donation_Description + "</td><td>" + value.Donation_Amount + "</td><td><img width=200 height=80 src=" + value.Donation_Banner + ">&nbsp;&nbsp;</td>&nbsp;&nbsp;<td><a href='#' onclick='EditDonations(" + value.Donation_ID + ")'>Edit</a></td><td><a href='' onclick='DeleteDonation(" + value.Donation_ID + ")'>Delete</a></td></tr><br/>");
+                });
+            }
+        });
+    }
+
+    function EditDonations(id) {
+        window.location.href = "../Donations/UpdateDonation?DonationId=" + id;
+    }
+
+    function DonationDetails(id)
+    {
+        window.location.href = "../Donations/DonationDetails?DonationId=" + id;
+    }
+</script>
+
+<script type="text/javascript">
+    function test() {
+        $.ajax({ url: 'wait.php', cache: false });
+    }
+</script>
+
+<script>
+    $j = jQuery.noConflict();
+    //function to block the whole page
+    function blockPage() {
+        $j.blockUI({
+            message: '<h3>Please wait....</h3>',
+            css: {
+                border: 'none',
+                padding: '5px',
+                'border-radius': '5px',
+                margin: '0',
+                opacity: .9
+            }
+        });
+        return false;
+    }
+    //function to unblock the page
+    function unblockPage() {
+        $j.unblockUI();
+    }
+</script>

@@ -1,0 +1,53 @@
+﻿@model AluminiWebApp.Areas.Alumini.Models.MyEventsModel
+@{
+    ViewBag.Title = "MyEvents";
+    Layout = "~/Areas/AlumniFaculty/Views/Shared/_SRKRLayout.cshtml";
+}
+<div>
+    <table>
+        <tbody>
+            <tr>
+                <th>Event Name</th>
+                <th>Event Start Date</th>
+                <td>Event End Date</td>
+                <td>View Details</td>
+               
+            </tr>
+
+
+        </tbody>
+        @foreach (var Data in @Model.UserPurchasedEvents)
+        {
+            var Date = @DateTime.Now.ToString("dd MMM yyyy");
+            var EventEnd = @Data.EventStartdate.Value.ToString("dd MMM yyyy");
+
+            <tr>
+
+                <td>@Data.EventName</td>
+                <td>@Data.EventStartdate.Value.ToString("dd MMM yyyy")</td>
+                <td>@Data.EndDate.Value.ToString("dd MMM yyyy")</td>
+                <td>
+                    <a class="cws-button border-radius alt smaller" href="@Url.Action("MyTickets", "AlumniFacultyEvents", new { area = "AlumniFaculty", @id = @Data.EventSelectionId })">ViewTickets</a><br /><br />
+                    @* <input class="cws-button border-radius alt smaller" type="button" value="View" id="MyTicketsEvents" onclick="MyTickets()" /><br /><br />*@
+                </td>
+            </tr>
+
+        }
+
+    </table>
+</div>
+
+<script type="text/javascript">
+    function MyTickets(id) {
+        $.ajax({
+            type: "Get",
+            contentType: "application/json",
+            dataType: "json",
+            url: "../AlumniEvents/MyTickets",
+            data: { "SelectionId": id },
+            success: function (data) {
+
+            }
+        });
+    }
+</script>

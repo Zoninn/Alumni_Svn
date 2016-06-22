@@ -1,0 +1,343 @@
+﻿@model IEnumerable<AluminiRepository.UserJobPostings>
+@{
+    Layout = "~/Areas/Alumini/Views/Shared/_SRKRDesignLayout.cshtml";
+}
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js"></script>
+
+<section id="nicdark_parallax_title" class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img-single-teacher-1" style="background-position: 50% -60px;margin-top:-150px;">
+
+    <div class="nicdark_filter greydark">
+
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+
+            <div class="grid grid_12">
+                <div class="nicdark_space100"></div>
+                <div class="nicdark_space100"></div>
+                <h1 class="white subtitle">JOBS</h1>
+                <div class="nicdark_space20"></div>
+                <div class="nicdark_divider left big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space40"></div>
+                <div class="nicdark_space50"></div>
+            </div>
+
+        </div>
+        <!--end nicdark_container-->
+
+    </div>
+
+</section>
+
+<div class="nicdark_site">
+
+    <div class="nicdark_site_fullwidth nicdark_clearfix">
+        <div class="nicdark_overlay"></div>
+        <section class="nicdark_section">
+            <div class="nicdark_space10"></div>
+            <!--start nicdark_container-->
+            <div class="nicdark_container nicdark_clearfix">
+                <div class="grid grid_12 nicdark_bg_grey nicdark_shadow nicdark_radius nicdark_relative">
+                    <a class="nicdark_displaynone_iphoneland nicdark_displaynone_iphonepotr nicdark_btn_icon nicdark_bg_green  extrabig nicdark_radius_left white nicdark_absolute" href="#"><i class="icon-search-2"></i></a>
+                    @using (Html.BeginForm())
+                    {
+                        <div class="nicdark_textevidence" style="padding-bottom:22px;">
+                            @*@model AluminiRepository.UserJobPostings*@
+                            <div class="nicdark_margin1820 nicdark_marginleft100 nicdark_marginleft20_iphoneland nicdark_marginleft20_iphonepotr">
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <input id="JobTitle" name="JobTitle" type="text" size="200" value="" placeholder="Serach by Job Title" class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle" autocomplete="on">
+                                </div>
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        <input id="ComapnyName" name="ComapnyName" type="text" value="" placeholder="Company" class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle">
+                                    </div>
+                                </div>
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        <input id="Skills" name="Skills" type="text" value="" placeholder="Search by skills" class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle">
+                                    </div>
+                                </div>
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        @*<a class="nicdark_btn fullwidth nicdark_bg_green medium nicdark_shadow nicdark_radius white nicdark_press" href="@Url.Action("ViewJobs", "Jobs", new { area = "Alumini" }) ">Search</a>*@
+                                        <input id="SerachJobs" type="submit" value="SEARCH" class="nicdark_btn fullwidth nicdark_bg_green medium nicdark_shadow nicdark_radius white nicdark_press">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+                <div class="grid grid_12">
+                    <div class="nicdark_margin100">
+                        <a href="@Url.Action("MyPostedJobs", new { area = "Alumini" })" class="nicdark_btn nicdark_bg_green medium nicdark_shadow nicdark_radius white memories_btn"><i class="icon-picture"></i>&nbsp;&nbsp;&nbsp;MY POSTED JOBS</a>
+                    </div>
+                    <div class="nicdark_margin100 pull-right">
+                        <a href="@Url.Action("JobPosting", new { area = "Alumini" })" class="nicdark_btn nicdark_bg_blue small nicdark_shadow nicdark_radius white"><i class="icon-plus"></i>&nbsp;&nbsp;&nbsp;POST A JOB</a>
+                    </div>
+                </div>
+                @{int i = 0;}
+                @foreach (var item in Model)
+                {
+                    switch (i)
+                    {
+                        case 0:
+                            <div class="grid grid_4 fade-left animate1 animated fadeInLeft">
+                                <div class="nicdark_textevidence nicdark_bg_blue nicdark_shadow nicdark_radius">
+                                    <div class="nicdark_margin20">
+                                        <h4 class="white">@item.JobTitle - <strong>@item.ComanyName</strong><small class="pull-right">(Exp: @item.ExperienceRequired)</small></h4>
+                                        <div class="nicdark_space20"></div>
+                                        @if (item.Description != null)
+                                        {
+                                            if (item.Description.ToString().Length >= 60)
+                                            {
+                                                <p class="white">@item.Description.Substring(0, 60)...</p>
+                                            }
+                                            else
+                                            {
+                                                <p class="white">@item.Description.ToString()...</p>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <p class="white">No Description Available...</p>
+                                        }
+                                        <div class="nicdark_space20"></div>
+                                        <a href="@Url.Action("SingleJob", new { id = item.Jobid, Area="Alumini" })" class="nicdark_btn nicdark_press nicdark_bg_bluedark white medium nicdark_shadow nicdark_radius fade-down animate2 animated fadeInDown">MORE</a>
+                                    </div>
+                                    <i class="icon-graduation-cap nicdark_iconbg right big blue"></i>
+                                </div>
+                            </div>
+                                        break;
+                        case 1:
+                        <div class="grid grid_4 fade-left animate1 animated fadeInLeft">
+                            <div class="nicdark_textevidence nicdark_bg_green nicdark_shadow nicdark_radius">
+                                <div class="nicdark_margin20">
+                                    <h4 class="white">@item.JobTitle - <strong>@item.ComanyName</strong><small class="pull-right">(Exp: @item.ExperienceRequired)</small></h4>
+                                    <div class="nicdark_space20"></div>
+                                    @if (item.Description != null)
+                                    {
+                                        if (item.Description.ToString().Length >= 60)
+                                        {
+                                            <p class="white">@item.Description.Substring(0, 60)...</p>
+                                        }
+                                        else
+                                        {
+                                            <p class="white">@item.Description.ToString()...</p>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <p class="white">No Description Available...</p>
+                                    }
+                                    <div class="nicdark_space20"></div>
+                                    <a href="@Url.Action("SingleJob", new { id = item.Jobid, Area="Alumini" })" class="nicdark_btn nicdark_press nicdark_bg_greendark white medium nicdark_shadow nicdark_radius fade-down animate2 animated fadeInDown">MORE</a>
+                                </div>
+                                <i class="icon-graduation-cap nicdark_iconbg right big green"></i>
+                            </div>
+                        </div>
+                                    break;
+                        case 2:
+                        <div class="grid grid_4 fade-left animate1 animated fadeInLeft">
+                            <div class="nicdark_textevidence nicdark_bg_orange nicdark_shadow nicdark_radius">
+                                <div class="nicdark_margin20">
+                                    <h4 class="white">@item.JobTitle - <strong>@item.ComanyName</strong><small class="pull-right">(Exp: @item.ExperienceRequired)</small></h4>
+                                    <div class="nicdark_space20"></div>
+                                    @if (item.Description != null)
+                                    {
+                                        if (item.Description.ToString().Length >= 60)
+                                        {
+                                            <p class="white">@item.Description.Substring(0, 60)...</p>
+                                        }
+                                        else
+                                        {
+                                            <p class="white">@item.Description.ToString()...</p>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <p class="white">No Description Available...</p>
+                                    }
+                                    <div class="nicdark_space20"></div>
+                                    <a href="@Url.Action("SingleJob", new { id = item.Jobid, Area="Alumini" })" class="nicdark_btn nicdark_press nicdark_bg_orangedark white medium nicdark_shadow nicdark_radius fade-down animate2 animated fadeInDown">MORE</a>
+                                </div>
+                                <i class="icon-graduation-cap nicdark_iconbg right big orange"></i>
+                            </div>
+                        </div>
+                                    break;
+                        case 3:
+                        <div class="grid grid_4 fade-left animate1 animated fadeInLeft">
+                            <div class="nicdark_textevidence nicdark_bg_yellow nicdark_shadow nicdark_radius">
+                                <div class="nicdark_margin20">
+                                    <h4 class="white">@item.JobTitle - <strong>@item.ComanyName</strong><small class="pull-right">(Exp: @item.ExperienceRequired)</small></h4>
+                                    <div class="nicdark_space20"></div>
+                                    @if (item.Description != null)
+                                    {
+                                        if (item.Description.ToString().Length >= 60)
+                                        {
+                                            <p class="white">@item.Description.Substring(0, 60)...</p>
+                                        }
+                                        else
+                                        {
+                                            <p class="white">@item.Description.ToString()...</p>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <p class="white">No Description Available...</p>
+                                    }
+                                    <div class="nicdark_space20"></div>
+                                    <a href="@Url.Action("SingleJob", new { id = item.Jobid, Area="Alumini" })" class="nicdark_btn nicdark_press nicdark_bg_yellowdark white medium nicdark_shadow nicdark_radius fade-down animate2 animated fadeInDown">MORE</a>
+                                </div>
+                                <i class="icon-graduation-cap nicdark_iconbg right big yellow"></i>
+                            </div>
+                        </div>
+                                    i = -1;
+                                    break;
+                    }
+                    i++;
+                }
+            </div>
+            <div class="nicdark_space50"></div>
+        </section>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#JobTitle").autocomplete({
+            width: 320,
+            max: 4,
+            highlight: false,
+            multiple: true,
+            multipleSeparator: ",",
+            scroll: true,
+            scrollHeight: 300,
+            delay: 10,
+            source: function (request, response) {
+                var Auto = $("#JobTitle").val();
+                $.ajax({
+                    url: "../Jobs/JobsAutosearch",
+                    data: ({ "JobTitle": Auto, "Status": 1 }),
+                    dataType: "json",
+                    type: "GET",
+                    contentType: "application/json; charset=utf-8",
+                    dataFilter: function (data) { return data; },
+                    success: function (data) {
+                        if (data == "") {
+                            alert("No Records FOund");
+                        }
+                        else {
+                            response($.map(data, function (item) {
+                                return {
+
+                                    value: item.JobTitle
+                                }
+                            }))
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert(textStatus);
+                    }
+                });
+            },
+            minLength: 2
+        });
+
+
+        $("#ComapnyName").autocomplete({
+            width: 320,
+            max: 4,
+            highlight: false,
+            multiple: true,
+            multipleSeparator: ",",
+            scroll: true,
+            scrollHeight: 300,
+            delay: 10,
+            source: function (request, response) {
+                var Auto = $("#ComapnyName").val();
+                $.ajax({
+                    url: "../Jobs/JobsAutosearch",
+                    data: ({ "JobTitle": Auto, "Status": 2 }),
+                    dataType: "json",
+                    type: "GET",
+                    contentType: "application/json; charset=utf-8",
+                    dataFilter: function (data) { return data; },
+                    success: function (data) {
+                        if (data == "") {
+                            alert("No Records FOund");
+                        }
+                        else {
+                            response($.map(data, function (item) {
+                                return {
+
+                                    value: item.ComanyName
+                                }
+                            }))
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert(textStatus);
+                    }
+                });
+            },
+            minLength: 2
+        });
+
+        $("#Skills").autocomplete({
+            width: 320,
+            max: 4,
+            highlight: false,
+            multiple: true,
+            multipleSeparator: ",",
+            scroll: true,
+            scrollHeight: 300,
+            delay: 10,
+            source: function (request, response) {
+                var Auto = $("#Skills").val();
+                $.ajax({
+                    url: "../Jobs/JobsAutosearch",
+                    data: ({ "JobTitle": Auto, "Status": 3 }),
+                    dataType: "json",
+                    type: "GET",
+                    contentType: "application/json; charset=utf-8",
+                    dataFilter: function (data) { return data; },
+                    success: function (data) {
+                        if (data == "") {
+                            alert("No Records FOund");
+                        }
+                        else {
+                            response($.map(data, function (item) {
+                                return {
+
+                                    value: item.Skills
+                                }
+                            }))
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+                        alert(textStatus);
+                    }
+                });
+            },
+            minLength: 2
+        });
+        $("#SerachJobs").click(function () {
+            var Title = $("#JobTitle").val();
+            var Company = $("#ComapnyName").val();
+            var Skills = $("#Skills").val();
+
+            $.ajax({
+                url: "../Jobs/ViewJobs",
+                data: JSON.stringify({ "JobTitle": Title, "Compnay": Company, "Skill": Skills }),
+                dataType: "json",
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                dataFilter: function (data) { return data; },
+                success: function (data) {
+                }
+            });
+        });
+
+    });
+</script>

@@ -1,0 +1,50 @@
+﻿@model AluminiRepository.UserPostsData
+@{
+    ViewBag.Title = "EventDetails";
+    Layout = "~/Areas/Faculty/Views/Shared/_SRKRLayout.cshtml";
+}
+<div style="text-align:center">
+
+</div>
+<div style="text-align:center">
+    <h2>
+
+        Event  : @Model.EventName<br>
+
+    </h2>
+</div>
+<div class="page-content grid-row">
+    <main>
+        <div class="grid-col-row clear-fix">
+            @{
+                foreach (var item in Model.imageUrls)
+                {
+                    <div class="grid-col grid-col-4">
+                        <div class="portfolio-item">
+                            <div class="picture">
+                                <div class="hover-effect"></div>
+                                <div class="link-cont">
+                                    <a class="cws-left fa fa-link" href="portfolio-single-item.html"></a>
+                                    <a class="fancy fa fa-search" href="@item"></a>
+                                    <a class="cws-right fa fa-heart" href="#"></a>
+                                </div>
+                                <img alt="" src="@item">
+                            </div>
+
+                        </div>
+
+                    </div>
+                }
+            }
+        </div>
+        <div style="text-align:center">
+            <h4><q>Post : @Model.UserPostMessage</q></h4>
+        </div>
+        <div style="text-align:center">
+            Posted by :   @Model.UserName @Model.LastName
+        </div>
+        <div>
+
+        </div>
+    </main>
+</div>

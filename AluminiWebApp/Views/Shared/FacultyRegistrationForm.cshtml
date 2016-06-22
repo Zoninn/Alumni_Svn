@@ -1,0 +1,44 @@
+﻿@model AluminiWebApp.Models.FacultyRegistrationModel
+
+<div class="nicdark_space30"></div>
+@using (Ajax.BeginForm("FacultyRegistration", "Account", new AjaxOptions { HttpMethod = "Post", UpdateTargetId = "StudentorFaculty", OnSuccess = "Success", LoadingElementId = "SteudentDivelent" }))
+{
+    @Html.ValidationSummary(true)
+    <h5>Please select the Role/Designation</h5>
+    <div class="nicdark_space20"></div>
+    <div class="nicdark_focus nicdark_width_percentage25">
+        @Html.TextBoxFor(x => x.DesignationName, null, new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle", required = "required", size = "200", placeholder = "Role/Designation" })
+        @Html.ValidationMessageFor(x => x.DesignationName, "", new { @class = "text-danger" })
+    </div>
+    <div class="nicdark_focus nicdark_width_percentage25">
+        <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+            @Html.TextBoxFor(x => x.DepartmentName, null, new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle", required = "required", size = "200", placeholder = "Department" })
+            @Html.ValidationMessageFor(x => x.DepartmentName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="nicdark_focus nicdark_width_percentage25">
+        <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+            @Html.DropDownListFor(x => x.WorkingFrom, new SelectList(Model.GraduationYears, "GraduationYearId", "Year"), "Select working from", new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle", required = "required" })
+            @Html.ValidationMessageFor(x => x.WorkingFrom, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="nicdark_focus nicdark_width_percentage25">
+        <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+            @Html.DropDownListFor(x => x.WorkingTo, new SelectList(Model.GraduationYears, "GraduationYearId", "Year"), "Select working to", new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle", required = "required" })
+            @Html.ValidationMessageFor(x => x.WorkingTo, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="nicdark_space20"></div>
+    <div class="nicdark_focus">
+        <div class="nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+            <input class="nicdark_btn nicdark_bg_yellow medium nicdark_shadow nicdark_radius white nicdark_press right" type="submit" value="Save">
+        </div>
+    </div>
+}
+
+<script type="text/javascript">
+    function Success(data) {
+        // var CourseCategory = $("#CourseCategoryId option:selected").val();
+        window.location.href = "../Account/contactinformation";
+    }
+</script>

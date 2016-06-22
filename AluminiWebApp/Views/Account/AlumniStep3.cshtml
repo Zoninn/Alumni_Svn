@@ -1,0 +1,129 @@
+﻿@model AluminiWebApp.Models.StudentRegistrationModel
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Custom.js/Registration.js"></script>
+@{
+    ViewBag.Title = "AlumniRegistration";
+    Layout = "~/Views/Shared/_SRKRDesignLayout.cshtml";
+}
+
+<div style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.3);z-index:999999999;" id="SteudentDivelent">
+    <img src="~/Content/img/loading_apple.gif" width="50" style="position:absolute;top:49%;left:49%;" />
+</div>
+<section id="nicdark_parallax_title" class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img8" style="background-position: 50% 0px;">
+
+    <div class="nicdark_filter greydark">
+
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+
+            <div class="grid grid_12">
+                <div class="nicdark_space100"></div>
+                <div class="nicdark_space100"></div>
+                <h1 class="white subtitle">Registration</h1>
+                <div class="nicdark_space10"></div>
+                <div class="nicdark_divider left big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space40"></div>
+                <div class="nicdark_space50"></div>
+            </div>
+
+        </div>
+        <!--end nicdark_container-->
+
+    </div>
+
+</section>
+
+@using (Html.BeginForm())
+{
+    <section class="nicdark_section">
+        <div class="nicdark_container nicdark_clearfix">
+            <div class="nicdark_space50"></div>
+            <div class="grid grid_12">
+                <h3 class="subtitle greydark">CREATE ACCOUNT</h3>
+                <div class="nicdark_space20"></div>
+                <div class="nicdark_divider left small"><span class="nicdark_bg_yellow nicdark_radius"></span></div>
+            </div>
+            <div class="grid grid_12">
+
+                <!--start nicdark_tabs-->
+                <div class="nicdark_tab ui-tabs ui-widget ui-widget-content ui-corner-all">
+
+                    <ul class="nicdark_tabslist ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+                        <li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active ui-state-hover" role="tab" tabindex="0" aria-controls="tabs-7" aria-labelledby="ui-id-4" aria-selected="true"><a title="" href="#tabs-7" class="nicdark_tooltip nicdark_btn nicdark_bg_yellow medium nicdark_radius_top white ui-tabs-anchor" role="presentation" tabindex="-1"><i class=" nicdark_displaynone_iphoneland nicdark_displaynone_iphonepotr nicdark_marginright10">1</i> Create Account</a></li>
+                        <li class="ui-state-default ui-corner-top" role="tab" tabindex="-1"><a class="nicdark_tooltip nicdark_btn nicdark_bg_orange medium nicdark_radius_top white ui-tabs-anchor" role="presentation" tabindex="-1"><i class=" nicdark_displaynone_iphoneland nicdark_displaynone_iphonepotr nicdark_marginright10">2</i>Batch Registration</a></li>
+                    </ul>
+
+                    <div class="nicdark_tabs nicdark_bg_grey nicdark_radius nicdark_shadow">
+
+                        <div class="nicdark_margin20 ui-tabs-panel ui-widget-content ui-corner-bottom" id="tabs-7" aria-labelledby="ui-id-4" role="tabpanel" aria-expanded="true" aria-hidden="false" style="display: inline-block;">
+                            <div class="nicdark_clearfix">
+
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        @Html.DropDownListFor(x => x.CourseCategoryId, new SelectList(Model.Coursecategorys, "Id", "CourseCategoryName"), "Select Degree", new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle", required = "required"})
+                                        @Html.ValidationMessageFor(x => x.CourseCategoryId, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        <select id="ddlCourses" class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle" name="CourseId" required="required" style="width:200px">
+                                            <option value="">Select Course</option>
+                                        </select>
+                                        @Html.ValidationMessageFor(x => x.CourseId, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_marginleft20 nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                        <select id="ddlGraduationYear" class="nicdark_bg_grey2 nicdark_radius nicdark_shadow grey medium subtitle" name="Batch" required="required" style="width:200px">
+                                            <option value="">Select joining year</option>
+                                        </select>
+                                        @Html.ValidationMessageFor(x => x.Batch, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="nicdark_focus nicdark_width_percentage25">
+                                    <div class="nicdark_focus">
+                                        <div class="nicdark_disable_marginleft_iphoneland nicdark_disable_marginleft_iphonepotr">
+                                            <input class="nicdark_btn nicdark_bg_yellow medium nicdark_shadow nicdark_radius white nicdark_press right" type="submit" value="Save">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nicdark_space10"></div>
+
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <!--end nicdark_tabs-->
+
+            </div>
+        </div>
+    </section>
+
+}
+
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $.ajax({
+            type: "Get",
+            dataType: "json",
+            url: "../Account/GetYears?CourseId=" + StateId,
+            contentType: "Application/json",
+            data: {},
+            success: function (data) {
+                $("#ddlGraduationYear").append($("<option></option>").val("").html("Select joining year"));
+                $.each(data, function (key, value) {
+                    $("#ddlGraduationYear").append($("<option></option>").val(value.Year).html(value.Year));
+                });
+            }
+        });
+    });
+</script>

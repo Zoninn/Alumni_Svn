@@ -1,0 +1,66 @@
+﻿@model AluminiWebApp.Areas.Alumini.Models.MyEventsModel
+@{
+    ViewBag.Title = "MyEvents";
+    Layout = "~/Areas/Faculty/Views/Shared/_SRKRLayout.cshtml";
+}
+<section class="padding-section">
+    <div class="grid-row clear-fix woocommerce">
+        <h2 class="center-text alumini_head"><span>My Event Tickets</span></h2>
+        <table class="shop_table cart">
+            <thead>
+                <tr>
+                    <th>Event Name</th>
+                    <th>Event Start Date</th>
+                    <th>Event End Date</th>
+                    <th>Event Date</th>
+                    <th>View Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var Data in @Model.UserPurchasedEvents)
+                {
+                    var Date = @DateTime.Now.ToString("dd MMM yyyy");
+                    var EventEnd = @Data.EventStartdate.Value.ToString("dd MMM yyyy");
+
+                    <tr class="cart_item">
+
+                        <td>@Data.EventName</td>
+                        <td>@Data.EventStartdate.Value.ToString("dd MMM yyyy")</td>
+                        <td>@Data.EndDate.Value.ToString("dd MMM yyyy")</td>
+                        @if (Data.EventGoingDate == null)
+                        {
+                            <td>No Date</td>
+                        }
+                        else
+                        {
+                            <td>@Data.EventGoingDate.Value.ToString("dd MMM yyyy")</td>
+                        }
+
+
+                        <td>
+                            <a class="cws-button border-radius alt smaller" href="@Url.Action("MyTickets", "FacultyEvents", new { area = "Faculty", @id = @Data.EventSelectionId })">ViewTickets</a><br /><br />
+                            @* <input class="cws-button border-radius alt smaller" type="button" value="View" id="MyTicketsEvents" onclick="MyTickets()" /><br /><br />*@
+                        </td>
+                    </tr>
+
+                }
+            </tbody>
+        </table>
+
+    </div>
+</section>
+
+    <script type="text/javascript">
+        function MyTickets(id) {
+            $.ajax({
+                type: "Get",
+                contentType: "application/json",
+                dataType: "json",
+                url: "../AlumniEvents/MyTickets",
+                data: { "SelectionId": id },
+                success: function (data) {
+
+                }
+            });
+        }
+    </script>

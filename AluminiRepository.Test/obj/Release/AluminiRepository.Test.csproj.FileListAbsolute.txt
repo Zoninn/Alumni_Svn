@@ -1,0 +1,4 @@
+D:\MYAlumniNewDesignCopyRepo\AluminiRepository.Test\bin\Release\AluminiRepository.Test.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiRepository.Test\bin\Release\AluminiRepository.Test.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiRepository.Test\obj\Release\AluminiRepository.Test.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiRepository.Test\obj\Release\AluminiRepository.Test.pdb

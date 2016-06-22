@@ -1,0 +1,132 @@
+﻿@model AluminiWebApp.Models.ContactUsModel
+@{
+    ViewBag.Title = "Conatctus";
+    Layout = "~/Views/Shared/_SRKRDesignLayout.cshtml";
+}
+
+
+<section class="nicdark_section nicdark_imgparallax nicdark_parallaxx_img6" id="nicdark_parallax_title" style="background-position: 50% 0px;">
+    <div class="nicdark_filter greydark">
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+            <div class="grid grid_12">
+                <div class="nicdark_space100"></div>
+                <div class="nicdark_space100"></div>
+                <h1 class="white subtitle">Contact Us</h1>
+                <div class="nicdark_space10"></div>
+                <h3 class="subtitle white"></h3>
+                <div class="nicdark_space20"></div>
+                <div class="nicdark_divider left big"><span class="nicdark_bg_white nicdark_radius"></span></div>
+                <div class="nicdark_space40"></div>
+                <div class="nicdark_space50"></div>
+            </div>
+        </div>
+        <!--end nicdark_container-->
+    </div>
+
+</section>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true);
+    <section class="nicdark_section">
+        <!--start nicdark_container-->
+        <div class="nicdark_container nicdark_clearfix">
+            <div class="nicdark_space40"></div>
+
+            <div class="grid grid_4">
+                <div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow">
+                    <div class="nicdark_margin20 nicdark_relative">
+                        <a class="nicdark_displaynone_ipadpotr nicdark_btn_icon nicdark_bg_yellow extrabig nicdark_radius_circle white nicdark_absolute nicdark_shadow" href="#"><i class="icon-location-outline nicdark_rotate"></i></a>
+                        <div class="nicdark_activity nicdark_marginleft100 nicdark_disable_marginleft_ipadpotr">
+                            <h4>College Address</h4>
+                            <div class="nicdark_space20"></div>
+                            <p style=" font-size: 13px; line-height: 25px; ">
+                                SRKR Engineering College,
+                                <br />
+                                1st floor, <br /> Z-Block(General Amenities Building)
+                                China Amiram, Bhimavaram,<br />
+                                West Godavari Dt.,<br />
+                                Andhra Pradesh-534204, India.<br>08816-223332,
+                                +91-9490782682
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="nicdark_space20"></div>
+
+                @*<div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow">
+                        <div class="nicdark_margin20 nicdark_relative">
+                            <a class="nicdark_displaynone_ipadpotr nicdark_btn_icon nicdark_bg_orange extrabig nicdark_radius_circle white nicdark_absolute nicdark_shadow" href="#"><i class="icon-address nicdark_rotate"></i></a>
+                            <div class="nicdark_activity nicdark_marginleft100 nicdark_disable_marginleft_ipadpotr">
+                                <h4>SECONDARY SCHOOL</h4>
+                                <div class="nicdark_space20"></div>
+                                <p>Brodway 358, New York<br>(00) 520 990 759</p>
+                            </div>
+                        </div>
+                    </div>*@
+                <div class="nicdark_space20"></div>
+
+                <div class="nicdark_archive1 nicdark_bg_greydark nicdark_radius nicdark_shadow">
+                    <div class="nicdark_margin20 nicdark_relative">
+                        <a class="nicdark_displaynone_ipadpotr nicdark_btn_icon nicdark_bg_red extrabig nicdark_radius_circle white nicdark_absolute nicdark_shadow" href="#"><i class="icon-paper-plane-empty nicdark_rotate"></i></a>
+                        <div class="nicdark_activity nicdark_marginleft100 nicdark_disable_marginleft_ipadpotr">
+                            <h4 class="white">M@IL US</h4>
+                            <div class="nicdark_space20"></div>
+                            <p class="white">coordinator@srkrecalumni.org</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="grid grid_8">
+
+                <div class="nicdark_archive1 nicdark_bg_grey nicdark_radius nicdark_shadow">
+                    <div class="nicdark_textevidence nicdark_bg_orange nicdark_radius_top">
+                        <h4 class="white nicdark_margin20">CONTACT US &nbsp;&nbsp;  @TempData["Message"] </h4>
+                        <i class="icon-mail nicdark_iconbg right medium orange"></i>
+                    </div>
+                    <div class="nicdark_margin20">
+                        @Html.TextBoxFor(x => x.Name, new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle", @placeholder = "NAME" })
+                        <div class="nicdark_space20">
+                            @Html.ValidationMessageFor(x => x.Name)
+                        </div>
+
+                        <div class="nicdark_space20"></div>
+                        @Html.TextBoxFor(x => x.Email, new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle", @placeholder = "EMail" })
+                        <div class="nicdark_space20">
+                            @Html.ValidationMessageFor(x => x.Email)
+                        </div>
+                        <div class="nicdark_space20"></div>
+                        @Html.TextBoxFor(x => x.Mobile, new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle", @placeholder = "MOBILE" })
+                        <div class="nicdark_space20">
+                            @Html.ValidationMessageFor(x => x.Mobile)
+                        </div>
+                        <div class="nicdark_space20"></div>
+                        @Html.TextAreaFor(x => x.Message, new { @class = "nicdark_bg_grey2 nicdark_radius nicdark_shadow grey small subtitle", @placeholder = "MESSAGE", @rows = "7" })
+                        <div class="nicdark_space20">
+                            @Html.ValidationMessageFor(x => x.Message)
+                        </div>
+
+                        <div class="nicdark_space20"></div>
+                        <!--<input class="nicdark_btn nicdark_bg_orange medium nicdark_shadow nicdark_radius white" type="submit" value="SEND">-->
+                    </div>
+
+                </div>
+                <input type="submit" class="nicdark_btn nicdark_bg_orange medium nicdark_shadow nicdark_radius white nicdark_press" value="SEND" />
+            </div>
+
+
+            <div class="nicdark_space50"></div>
+
+        </div>
+        <!--end nicdark_container-->
+
+    </section>
+}
+
+@section Scripts{
+    @Scripts.Render("~/Scripts/jquery.validate.min.js")
+    @Scripts.Render("~/Scripts/jquery.validate.unobtrusive.min.js")
+    <script src="~/Custom.js/Registration.js"></script>
+}

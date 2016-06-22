@@ -1,0 +1,97 @@
+﻿@model AluminiWebApp.Areas.Admin.Models.DonationModel
+
+@{
+    ViewBag.Title = "UpdateDonation";
+    Layout = "~/Areas/Alumini/Views/Shared/_layout.cshtml";
+}
+
+<h2>Update Donation Details</h2>
+
+@using (Html.BeginForm("UpdateDonation", "Donations", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true);
+
+    <div>
+        <table>
+            <tr>
+                <td>Donation Title :</td>
+                <td>
+                    @Html.TextBoxFor(x => x.DonationTitle, new { @class = "form-control", @placeholder = "Donation Title" })
+                    @Html.ValidationMessageFor(x => x.DonationTitle, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Donation Description :
+                </td>
+                <td>
+                    @Html.TextAreaFor(x => x.DonationDescription, new { @class = "form-control", @placeholder = "Donation Description" })
+                    @Html.ValidationMessageFor(x => x.DonationDescription, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>Donation Amount :</td>
+                <td>
+                    @Html.TextBoxFor(x => x.DonationAmount, new { @class = "form-control", @placeholder = "Donation Amount" })
+                    @Html.ValidationMessageFor(x => x.DonationAmount, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>Image :</td>
+                <td>
+                    <img width=270 height=80 id="imgBanner">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    Change Image :
+                </td>
+                <td>
+                    <input type="file" class="form-control" name="BannerImage" />
+                    @Html.ValidationMessageFor(x => x.BannerImage, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+        </table>
+
+        <div>
+
+            <input type="submit" value="Update" class="btn btn-success btn-large" />
+            <h4>@TempData["SuccessMessage"]</h4>
+            <input type="hidden" id="hiddenDonationid" name="DonationID" />
+        </div>
+    </div>
+
+}
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/Scripts/jquery-ui-1.11.4.min.js"></script>
+<script type="text/javascript">
+
+
+    function getParameterByName(name) { name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]"); var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"), results = regex.exec(location.search); return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " ")); }
+    var DonationId = getParameterByName('DonationId');
+      
+
+    $(document).ready(function () {
+
+        $("#hiddenDonationid").val(DonationId);
+        $.ajax({
+            type: "Get",
+            dataType: "JSON",
+            contentType: "Application/json",
+            url: "../Donations/GetDonationDetailsOnid",
+            data: ({ "DonationId": DonationId }),
+            success: function (data) {                
+                $("#hiddenDonationid").val(data.Donation_ID);
+                $("#DonationTitle").val(data.Donation_Title);
+                $("#DonationDescription").val(data.Donation_Description);
+                $("#DonationAmount").val(data.Donation_Amount);
+                $("#imgBanner").attr('src', data.Donation_Banner);
+            }
+
+        });
+    });
+</script>

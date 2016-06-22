@@ -1,0 +1,72 @@
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiDatabase\bin\Debug\AluminiDatabase.dacpac
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiDatabase\obj\Debug\Model.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiDatabase\obj\Debug\refactor.xml
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiDatabase\obj\Debug\postdeploy.sql
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiDatabase\obj\Debug\predeploy.sql
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiDatabase\obj\Debug\AluminiDatabase.dll
+c:\users\tulasi\documents\visual studio 2013\Projects\Alumini\AluminiDatabase\obj\Debug\AluminiDatabase.pdb
+C:\Users\tulasiram\Documents\collegealumini\AluminiDatabase\bin\Debug\AluminiDatabase.dacpac
+C:\Users\tulasiram\Documents\collegealumini\AluminiDatabase\obj\Debug\Model.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiDatabase\obj\Debug\refactor.xml
+C:\Users\tulasiram\Documents\collegealumini\AluminiDatabase\obj\Debug\postdeploy.sql
+C:\Users\tulasiram\Documents\collegealumini\AluminiDatabase\obj\Debug\predeploy.sql
+C:\Users\tulasiram\Documents\collegealumini\AluminiDatabase\obj\Debug\AluminiDatabase.dll
+C:\Users\tulasiram\Documents\collegealumini\AluminiDatabase\obj\Debug\AluminiDatabase.pdb
+D:\FRESHCOPY ALUMNI\AluminiDatabase\bin\Debug\AluminiDatabase.dacpac
+D:\FRESHCOPY ALUMNI\AluminiDatabase\obj\Debug\Model.xml
+D:\FRESHCOPY ALUMNI\AluminiDatabase\obj\Debug\refactor.xml
+D:\FRESHCOPY ALUMNI\AluminiDatabase\obj\Debug\postdeploy.sql
+D:\FRESHCOPY ALUMNI\AluminiDatabase\obj\Debug\predeploy.sql
+D:\FRESHCOPY ALUMNI\AluminiDatabase\obj\Debug\AluminiDatabase.dll
+D:\FRESHCOPY ALUMNI\AluminiDatabase\obj\Debug\AluminiDatabase.pdb
+C:\Alumni Copy\AluminiDatabase\bin\Debug\AluminiDatabase.dacpac
+C:\Alumni Copy\AluminiDatabase\obj\Debug\Model.xml
+C:\Alumni Copy\AluminiDatabase\obj\Debug\refactor.xml
+C:\Alumni Copy\AluminiDatabase\obj\Debug\postdeploy.sql
+C:\Alumni Copy\AluminiDatabase\obj\Debug\predeploy.sql
+C:\Alumni Copy\AluminiDatabase\obj\Debug\AluminiDatabase.dll
+C:\Alumni Copy\AluminiDatabase\obj\Debug\AluminiDatabase.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiDatabase\bin\Debug\AluminiDatabase.dacpac
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiDatabase\bin\Debug\AluminiDatabase.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiDatabase\bin\Debug\AluminiDatabase.pdb
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiDatabase\obj\Debug\AluminiDatabase.dll
+D:\ALUMNI PROJECT\ProjectSolution\AlumniFreshon6\AluminiDatabase\obj\Debug\AluminiDatabase.pdb
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiDatabase\bin\Debug\AluminiDatabase.dacpac
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiDatabase\bin\Debug\AluminiDatabase.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiDatabase\bin\Debug\AluminiDatabase.pdb
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiDatabase\obj\Debug\AluminiDatabase.dll
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiDatabase\obj\Debug\AluminiDatabase.pdb
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiDatabase\obj\Debug\Model.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiDatabase\obj\Debug\refactor.xml
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiDatabase\obj\Debug\postdeploy.sql
+D:\ALUMNI PROJECT\Final Copys of Alumni\Alumni Final on 18 Jan\AluminiDatabase\obj\Debug\predeploy.sql
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiDatabase\bin\Debug\AluminiDatabase.dacpac
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiDatabase\obj\Debug\Model.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiDatabase\obj\Debug\refactor.xml
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiDatabase\obj\Debug\postdeploy.sql
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiDatabase\obj\Debug\predeploy.sql
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiDatabase\obj\Debug\AluminiDatabase.dll
+D:\ALUMNI PROJECT\New folder (2)\Final on 8 feb\AluminiDatabase\obj\Debug\AluminiDatabase.pdb
+D:\RepoAlumni\AluminiDatabase\bin\Debug\AluminiDatabase.dacpac
+D:\RepoAlumni\AluminiDatabase\obj\Debug\Model.xml
+D:\RepoAlumni\AluminiDatabase\obj\Debug\refactor.xml
+D:\RepoAlumni\AluminiDatabase\obj\Debug\postdeploy.sql
+D:\RepoAlumni\AluminiDatabase\obj\Debug\predeploy.sql
+D:\RepoAlumni\AluminiDatabase\obj\Debug\AluminiDatabase.dll
+D:\RepoAlumni\AluminiDatabase\obj\Debug\AluminiDatabase.pdb
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiDatabase\bin\Debug\AluminiDatabase.dacpac
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiDatabase\obj\Debug\Model.xml
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiDatabase\obj\Debug\refactor.xml
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiDatabase\obj\Debug\postdeploy.sql
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiDatabase\obj\Debug\predeploy.sql
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiDatabase\obj\Debug\AluminiDatabase.dll
+D:\ALUMNI PROJECT\SVNFINALALLAlumni\AluminiDatabase\obj\Debug\AluminiDatabase.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiDatabase\bin\Debug\AluminiDatabase.dacpac
+D:\MYAlumniNewDesignCopyRepo\AluminiDatabase\obj\Debug\AluminiDatabase.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiDatabase\obj\Debug\AluminiDatabase.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiDatabase\bin\Debug\AluminiDatabase.dll
+D:\MYAlumniNewDesignCopyRepo\AluminiDatabase\bin\Debug\AluminiDatabase.pdb
+D:\MYAlumniNewDesignCopyRepo\AluminiDatabase\obj\Debug\Model.xml
+D:\MYAlumniNewDesignCopyRepo\AluminiDatabase\obj\Debug\refactor.xml
+D:\MYAlumniNewDesignCopyRepo\AluminiDatabase\obj\Debug\postdeploy.sql
+D:\MYAlumniNewDesignCopyRepo\AluminiDatabase\obj\Debug\predeploy.sql

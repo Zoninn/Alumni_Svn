@@ -1,0 +1,100 @@
+﻿@model Alumini.Core.Donation_Details
+
+@{
+    ViewBag.Title = "DonationDetails";
+    int UserId = 0;
+    if (Session["UserRole"] != null)
+    {
+        UserId = Convert.ToInt32(Session["UserId"]);
+        if (Session["UserRole"].ToString() == "Alumini")
+        {
+            Layout = "~/Areas/Alumini/Views/Shared/_SRKRDesignLayout.cshtml";
+        }
+        else if (Session["UserRole"].ToString() == "Faculty")
+        {
+            Layout = "~/Areas/Faculty/Views/Shared/_SRKRLayout.cshtml";
+        }
+    }
+    else
+    {
+        <script type="text/javascript">
+            window.location.href = "../../../Account/Login/3";
+        </script>
+    }
+
+}
+
+<h2>Donation Details</h2>
+
+<div style="width: 40%; margin-left: 30px">
+    <div>
+        <dl class="dl-horizontal">
+            <dd>
+                <h3> @Html.DisplayFor(model => model.Donation_Title)</h3>
+            </dd>
+
+            <dd>
+                <b>@ViewBag.DonorsCount &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @ViewBag.DonatedAmount &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; @ViewBag.DonatedPercentage % </b><br />
+                Donors&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Raised&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Funded
+
+                <div style="width: 30%;">
+                    <div id="progressbar" style="width: 300px; height: 15px"></div>
+                    <br />
+                </div>
+
+            </dd>
+            <dd>
+                <img width="200" height="100" src="@Url.Content(Model.Donation_Banner)" />
+            </dd>
+
+            <dd>
+                @Html.DisplayFor(model => model.Donation_Description)
+            </dd>
+
+            <dd style="font-size:smaller">
+                Posted On :  @Html.DisplayFor(model => model.CreatedOn)
+            </dd>
+            <dd>
+                Amount to Donate:  @Html.TextBox("txtAmount", null, new { @class = "form-control" })
+            </dd>
+            <dd>
+                Comments: @Html.TextArea("txtComments", null, new { @class = "form-control" })
+            </dd>
+            <br />
+            <dd>
+                <a id="lnk" href='javascript:;' onclick="myFunction()">
+                    @*
+                        @Url.Action("DonationStatus", "Donations", new { Area = "Alumini", @DonationId = Model.Donation_ID, @DonorId = UserId, @DonationStatus = "Success", @DonationAmount = "temp1", @Comments = "temp2" })
+                    *@
+                    <input type="button" value='Donate' style="background-color:green;width:100px" />
+                </a>
+
+            </dd>
+        </dl>
+    </div>
+</div>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/Scripts/jquery-ui-1.11.4.min.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<style>
+    .ui-progressbar .ui-progressbar-value.ui-widget-header {
+        background-color: orange;
+        background-image: none;
+    }
+</style>
+<script type="text/javascript">
+    function myFunction() {
+        var temporary = "/Alumini/Donations/PaymentGateway?DonationId=@Model.Donation_ID&DonorId=@UserId&DonationStatus=Success&DonationAmount=temp1&Comments=temp2";
+        temporary = temporary.replace("temp1", $("#txtAmount").val());
+        temporary = temporary.replace("temp2", $("#txtComments").val());
+        window.location.href = temporary;
+    }
+
+    $(document).ready(function () {
+
+        // initialize progress bar
+        $("#progressbar").progressbar({ value: @ViewBag.DonatedPercentage });
+    });
+</script>
